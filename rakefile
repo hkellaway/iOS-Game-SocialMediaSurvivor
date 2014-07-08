@@ -1,0 +1,21 @@
+desc "Commits changes."
+# Usage: rake commit "Commit message."
+task :commit do
+  message = ARGV.last
+  task message.to_sym do ; end
+  system "git add --all"
+  system "git commit -am '#{message}'"
+  puts "Git commit attempt complete."
+end
+
+desc "Updates GitHub."
+# Usage: rake ship "Commit message."
+task :ship do
+  message = ARGV.last
+  task message.to_sym do ; end
+  system "git add --all"
+  system "git commit -am '#{message}'"
+  system "git pull origin master"
+  system "git push origin master"
+  puts "Git push attempt complete.."
+end
