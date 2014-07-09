@@ -1413,7 +1413,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>SocialMediaStatus</string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
