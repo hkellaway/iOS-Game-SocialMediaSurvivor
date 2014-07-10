@@ -140,10 +140,10 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				7ACA6110196EF09000307164 /* Gameplay.h */,
 				7ACA6111196EF09000307164 /* Gameplay.m */,
-				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
-				7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */,
 				7AC1996F196DC91600D216C4 /* PopularityMeter.h */,
 				7AC19970196DC91600D216C4 /* PopularityMeter.m */,
+				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
+				7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";

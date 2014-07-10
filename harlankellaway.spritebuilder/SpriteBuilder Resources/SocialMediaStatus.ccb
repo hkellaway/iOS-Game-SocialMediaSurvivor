@@ -425,7 +425,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>recirculate</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -751,7 +751,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>favorite</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -1077,7 +1077,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>block</string>
 									<integer>1</integer>
 								</array>
 							</dict>
