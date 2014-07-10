@@ -20,20 +20,9 @@ static const int NUM_STATUSES = 9;
 
 - (void)didLoadFromCCB
 {
-//    for(int i = 0; i < NUM_STATUSES; i++)
-//    {
-//        _statuses[i] = [[SocialMediaStatus alloc] initWithText:@"Hello World" andActionType:1];
-//    }
-//    
-//    SocialMediaStatus *status1 = _statuses[0];
-//    
-//    status1.position = ccp(128, 284);
-//    status1.visible = TRUE;
-//    
-//    [self addChild:status1];
-    
+    // TODO: don't hardcode values
     CGFloat xPos = 128;
-    CGFloat yStart = 556;
+    CGFloat yStart = [UIScreen mainScreen].bounds.size.height;
     CGFloat height = 68;
     CGFloat spacing = 12;
     
@@ -41,59 +30,14 @@ static const int NUM_STATUSES = 9;
     {
         SocialMediaStatus *status = _statuses[i];
         
-        CGPoint pos = ccp(xPos, (yStart - (i * height)) + spacing);
-        CCLOG(@"position: (%f, %f)", pos.x, pos.y);
-        
         status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
         
+        status.statusText = [NSString stringWithFormat:@"Hello World"];
+        status.actionType = 2;
+        
         [self addChild:status];
     }
-    
-//    SocialMediaStatus *status1 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status1.position = ccp(128,568);
-//    
-//    [self addChild:status1];
-//    
-//    SocialMediaStatus *status2 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status2.position = ccp(128,500);
-//    
-//    [self addChild:status2];
-//    
-//    SocialMediaStatus *status3 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status3.position = ccp(128,432);
-//    
-//    [self addChild:status3];
-//    
-//    SocialMediaStatus *status4 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status4.position = ccp(128,364);
-//    
-//    [self addChild:status4];
-//    
-//    SocialMediaStatus *status5 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status5.position = ccp(128,296);
-//    
-//    [self addChild:status5];
-//    
-//    SocialMediaStatus *status6 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status6.position = ccp(128,228);
-//    
-//    [self addChild:status6];
-//    
-//    SocialMediaStatus *status7 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status7.position = ccp(128,160);
-//    
-//    [self addChild:status7];
-//    
-//    SocialMediaStatus *status8 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status8.position = ccp(128,92);
-//    
-//    [self addChild:status8];
-//    
-//    SocialMediaStatus *status9 = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//    status9.position = ccp(128,24);
-//    
-//    [self addChild:status9];
     
     // tell this scene to accept touches
     self.userInteractionEnabled = YES;
