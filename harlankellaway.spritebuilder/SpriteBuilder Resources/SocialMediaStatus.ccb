@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>SpriteAvatar</string>
 				<key>memberVarAssignmentName</key>
-				<string>_statusAvatar</string>
+				<string>_avatar</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -367,7 +367,7 @@
 						<key>displayName</key>
 						<string>ButtonRecirculate</string>
 						<key>memberVarAssignmentName</key>
-						<string>_statusRecirculateButton</string>
+						<string>_recirculateButton</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -693,7 +693,7 @@
 						<key>displayName</key>
 						<string>ButtonFavorite</string>
 						<key>memberVarAssignmentName</key>
-						<string>_statusFavoriteButton</string>
+						<string>_favoriteButton</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -1019,7 +1019,7 @@
 						<key>displayName</key>
 						<string>ButtonBlock</string>
 						<key>memberVarAssignmentName</key>
-						<string>_statusBlockButton</string>
+						<string>_blockButton</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -1332,6 +1332,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1504,8 +1506,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

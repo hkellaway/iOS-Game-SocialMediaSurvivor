@@ -9,5 +9,8 @@
 #import "PopularityMeter.h"
 
 @implementation PopularityMeter
-
+{
+    CCSprite *_meterTop;
+    CCSprite *_meterMiddle;
+}
 @end

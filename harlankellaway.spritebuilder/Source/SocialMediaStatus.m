@@ -9,5 +9,11 @@
 #import "SocialMediaStatus.h"
 
 @implementation SocialMediaStatus
-
+{
+    CCSprite *_avatar;
+    CCLabelTTF *_statusText;
+    CCButton *_recirculateButton;
+    CCButton *_favoriteButton;
+    CCButton *_blockButton;
+}
 @end

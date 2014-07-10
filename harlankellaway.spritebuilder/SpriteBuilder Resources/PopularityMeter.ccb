@@ -134,6 +134,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -289,7 +291,7 @@
 				<key>displayName</key>
 				<string>Top</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_meterTop</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -380,8 +382,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
