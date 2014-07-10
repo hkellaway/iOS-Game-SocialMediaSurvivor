@@ -10,34 +10,15 @@
 
 @implementation MainScene
 {
-    CCSprite *_socialMediaStream;
+    
 }
 
-- (void)didLoadFromCCB
+- (void)play
 {
+    CCLOG(@"play button pressed");
     
-    // tell this scene to accept touches
-    self.userInteractionEnabled = YES;
-}
-
-- (void)update:(CCTime)delta
-{
-    // TODO: scrolling functionality to be implemented here
-}
-
-// called on every touch in this scene
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    // touch location inside Social Media Stream
-    CGPoint touchLocation = [touch locationInNode:_socialMediaStream];
-    
-    CCLOG(@"Bounding box of SocialMediaStream: (%f, %f)", [_socialMediaStream boundingBox].origin.x, [_socialMediaStream boundingBox].origin.y);
-    
-    // start catapult dragging when a touch inside of the catapult arm occurs
-    if (CGRectContainsPoint([_socialMediaStream boundingBox], touchLocation))
-    {
-        CCLOG(@"Touch made in Social Media Stream: (%f, %f)", touchLocation.x, touchLocation.y);
-    }
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
 @end
