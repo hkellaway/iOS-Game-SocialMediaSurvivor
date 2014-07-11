@@ -80,48 +80,6 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
-		<key>SocialMediaGameAssets/avatar_happy1.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/barVertical_red_bottom.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/barVertical_red_mid.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/barVertical_red_top.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/barVertical_white_bottom.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/barVertical_white_mid.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/barVertical_white_top.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/button_status.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/stream_background.png</key>
-		<dict/>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>
