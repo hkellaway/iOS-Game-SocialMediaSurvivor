@@ -12,7 +12,7 @@ static const  int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 static const int ACTION_TYPE_BLOCK = 3;
 
-static const float SCALE_FACTOR = 0.55;
+static const float SCALE_FACTOR = 0.4;
 
 @implementation SocialMediaStatus
 {

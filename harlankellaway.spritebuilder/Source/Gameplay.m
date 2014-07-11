@@ -9,7 +9,7 @@
 #import "Gameplay.h"
 #import "SocialMediaStatus.h"
 
-static const int NUM_STATUSES = 9;
+static const int NUM_STATUSES = 12;
 
 @implementation Gameplay
 {
@@ -23,20 +23,24 @@ static const int NUM_STATUSES = 9;
     // TODO: don't hardcode values
     CGFloat xPos = 128;
     CGFloat yStart = [UIScreen mainScreen].bounds.size.height;
-    CGFloat height = 68;
+    CGFloat height = 44;
     CGFloat spacing = 12;
     
     for(int i = 0; i < NUM_STATUSES; i++)
     {
-        SocialMediaStatus *status = _statuses[i];
+//        SocialMediaStatus *status = _statuses[i];
+//        status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
-        status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-        status.position = ccp(xPos, (yStart - (i * height)) + spacing);
+        _statuses[i] = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
-        status.statusText = [NSString stringWithFormat:@"Hello World"];
-        status.actionType = 2;
+        _statuses[i].position = ccp(xPos, (yStart - (i * height)) + spacing);
         
-        [self addChild:status];
+        _statuses[i].statusText = [NSString stringWithFormat:@"Hello World"];
+        _statuses[i].actionType = 2;
+        
+        CCLOG(@"status (xPosition, yPosition, actionType ) = (%f, %f, %d)", xPos, (yStart - (i * height)) + spacing, _statuses[i].actionType);
+        
+        [self addChild:_statuses[i]];
     }
     
     // tell this scene to accept touches
