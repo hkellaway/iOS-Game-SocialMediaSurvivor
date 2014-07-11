@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>14</integer>
+	<integer>15</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -55,7 +55,7 @@
 						<array>
 							<dict>
 								<key>UUID</key>
-								<integer>11</integer>
+								<integer>14</integer>
 								<key>baseClass</key>
 								<string>CCLabelTTF</string>
 								<key>children</key>
@@ -133,7 +133,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>HelveticaNeue-Bold</string>
+										<string>SocialMediaGameAssets/Istok-Bold.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -142,7 +142,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>16</real>
+											<real>20</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -152,20 +152,7 @@
 										<key>type</key>
 										<string>Check</string>
 										<key>value</key>
-										<true/>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>color</string>
-										<key>type</key>
-										<string>Color3</string>
-										<key>value</key>
-										<array>
-											<real>0.50196081399917603</real>
-											<real>0.50196081399917603</real>
-											<real>0.50196081399917603</real>
-											<real>1</real>
-										</array>
+										<false/>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -272,6 +259,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -494,7 +483,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_recirculate.png</string>
+									<string>SocialMediaGameAssets/button_recirculate_highlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -518,7 +507,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_recirculate.png</string>
+									<string>ccbResources/ccbButtonHighlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -537,7 +526,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_recirculate.png</string>
+									<string>SocialMediaGameAssets/button_recirculate_highlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -820,7 +809,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_favorite.png</string>
+									<string>SocialMediaGameAssets/button_favorite_highlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -844,7 +833,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_favorite.png</string>
+									<string>ccbResources/ccbButtonHighlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -863,7 +852,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_favorite.png</string>
+									<string>SocialMediaGameAssets/button_favorite_highlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1179,8 +1168,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -1234,7 +1221,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.037502288818359375</real>
+			<real>0.0500030517578125</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>

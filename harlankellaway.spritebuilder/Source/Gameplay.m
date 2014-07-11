@@ -10,13 +10,13 @@
 #import "SocialMediaStatus.h"
 
 static const int NUM_STATUSES = 12;
-static const int NUM_ACTION_STATES = 2;
+static const int NUM_ACTION_STATES = 3;
 
 static const int NUM_STATUS_OPTIONS = 5;
 
 @implementation Gameplay
 {
-    CCSprite *_socialMediaStream;
+    CCLabelTTF *_messageNumber;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
     
@@ -25,6 +25,7 @@ static const int NUM_STATUS_OPTIONS = 5;
 
 - (void)didLoadFromCCB
 {
+    
     // TODO: don't hardcode values
     CGFloat xPos = 128;
     CGFloat yStart = [UIScreen mainScreen].bounds.size.height;
@@ -41,18 +42,17 @@ static const int NUM_STATUS_OPTIONS = 5;
     
     for(int i = 0; i < NUM_STATUSES; i++)
     {
-//        SocialMediaStatus *status = _statuses[i];
-//        status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
+        SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
-        _statuses[i] = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
+        status.position = ccp(xPos, (yStart - (i * height)) + spacing);
         
-        _statuses[i].position = ccp(xPos, (yStart - (i * height)) + spacing);
+        status.statusText.string = _statusTextOptions[0 + arc4random() % (NUM_STATUS_OPTIONS)];
         
-        _statuses[i].statusText.string = _statusTextOptions[0 + arc4random() % (NUM_STATUS_OPTIONS)];
+        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
         
-        _statuses[i].actionType = 1 + arc4random() % (NUM_ACTION_STATES);
+        CCLOG(@"Status #%d: (Text, actionType) = (%@, %d)", i, status.statusText.string, status.actionType);
         
-        CCLOG(@"status (xPosition, yPosition, actionType ) = (%f, %f, %d)", xPos, (yStart - (i * height)) + spacing, _statuses[i].actionType);
+        _statuses[i] = status;
         
         [self addChild:_statuses[i]];
     }
@@ -86,6 +86,13 @@ static const int NUM_STATUS_OPTIONS = 5;
 {
     // when touches are cancelled, meaning the users drags their finger off the screen or onto something else
     CCLOG(@"Touch Cancelled");
+}
+
+# pragma mark - custom methods
+
+- (void)checkMessages
+{
+    CCLOG(@"Message button pressed");
 }
 
 @end
