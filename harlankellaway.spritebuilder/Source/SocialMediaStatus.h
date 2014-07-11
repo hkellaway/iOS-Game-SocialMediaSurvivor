@@ -10,7 +10,7 @@
 
 @interface SocialMediaStatus : CCSprite
 
-@property (nonatomic, strong) NSString *statusText;
+@property (nonatomic, strong) CCLabelTTF *statusText;
 @property (nonatomic, assign) int actionType;
 
 @end

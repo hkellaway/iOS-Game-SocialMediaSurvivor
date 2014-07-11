@@ -10,12 +10,17 @@
 #import "SocialMediaStatus.h"
 
 static const int NUM_STATUSES = 12;
+static const int NUM_ACTION_STATES = 2;
+
+static const int NUM_STATUS_OPTIONS = 5;
 
 @implementation Gameplay
 {
     CCSprite *_socialMediaStream;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
+    
+    NSString *_statusTextOptions[NUM_STATUS_OPTIONS];
 }
 
 - (void)didLoadFromCCB
@@ -26,6 +31,14 @@ static const int NUM_STATUSES = 12;
     CGFloat height = 44;
     CGFloat spacing = 12;
     
+    
+    // TODO: don't hardcode status options
+    _statusTextOptions[0] = @"Buckets are so hilarious!";
+    _statusTextOptions[1] = @"Most trees are blue..";
+    _statusTextOptions[2] = @"Are snakes real?";
+    _statusTextOptions[3] = @"Daft punk is dope.";
+    _statusTextOptions[4] = @"I love straws";
+    
     for(int i = 0; i < NUM_STATUSES; i++)
     {
 //        SocialMediaStatus *status = _statuses[i];
@@ -35,8 +48,9 @@ static const int NUM_STATUSES = 12;
         
         _statuses[i].position = ccp(xPos, (yStart - (i * height)) + spacing);
         
-        _statuses[i].statusText = [NSString stringWithFormat:@"Hello World"];
-        _statuses[i].actionType = 2;
+        _statuses[i].statusText.string = _statusTextOptions[0 + arc4random() % (NUM_STATUS_OPTIONS)];
+        
+        _statuses[i].actionType = 1 + arc4random() % (NUM_ACTION_STATES);
         
         CCLOG(@"status (xPosition, yPosition, actionType ) = (%f, %f, %d)", xPos, (yStart - (i * height)) + spacing, _statuses[i].actionType);
         
