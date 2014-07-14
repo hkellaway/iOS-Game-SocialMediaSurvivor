@@ -48,7 +48,9 @@ static const int NUM_STATUS_OPTIONS = 5;
         
         status.statusText.string = _statusTextOptions[0 + arc4random() % (NUM_STATUS_OPTIONS)];
         
-        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
+//        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
+        
+        status.actionType = 1;
         
         CCLOG(@"Status #%d: (Text, actionType) = (%@, %d)", i, status.statusText.string, status.actionType);
         

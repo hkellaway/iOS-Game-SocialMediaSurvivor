@@ -7,10 +7,13 @@
 //
 
 #import "CCSprite.h"
+#import "Gameplay.h"
 
 @interface SocialMediaStatus : CCSprite
 
 @property (nonatomic, strong) CCLabelTTF *statusText;
 @property (nonatomic, assign) int actionType;
+
+@property (nonatomic, weak) Gameplay *gameplay;
 
 @end

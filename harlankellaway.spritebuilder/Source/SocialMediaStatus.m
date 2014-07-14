@@ -10,7 +10,6 @@
 
 static const  int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
-static const int ACTION_TYPE_BLOCK = 3;
 
 static const float SCALE_FACTOR = 0.38;
 
@@ -39,6 +38,11 @@ static const float SCALE_FACTOR = 0.38;
     if(_actionType == ACTION_TYPE_RECIRCULATE)
     {
         CCLOG(@"Yay!");
+        
+        CCSprite *meterMiddle = _gameplay._meterMiddle;
+        meterMiddle.scaleY = meterMiddle.scaleY * 2.0;
+        
+        CCLOG(@"Scaling attempt complete");
     }
 }
 
@@ -47,16 +51,6 @@ static const float SCALE_FACTOR = 0.38;
     CCLOG(@"Favorite button pressed");
     
     if(_actionType == ACTION_TYPE_FAVORITE)
-    {
-        CCLOG(@"Yay!");
-    }
-}
-
-- (void)block
-{
-    CCLOG(@"Block button pressed");
-    
-    if(_actionType == ACTION_TYPE_BLOCK)
     {
         CCLOG(@"Yay!");
     }
