@@ -8,6 +8,7 @@
 
 #import "Gameplay.h"
 #import "SocialMediaStatus.h"
+#import "Level.h"
 
 static const int NUM_STATUSES = 12;
 static const int NUM_ACTION_STATES = 3;
@@ -17,6 +18,7 @@ static const int NUM_ACTION_STATES = 3;
     CCLabelTTF *_messageNumber;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
+    Level *_loadedLevel;
 }
 
 - (void)didLoadFromCCB

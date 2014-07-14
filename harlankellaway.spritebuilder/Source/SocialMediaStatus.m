@@ -15,7 +15,6 @@ static const float SCALE_FACTOR = 0.38;
 
 @implementation SocialMediaStatus
 {
-    CCSprite *_avatar;
     CCButton *_recirculateButton;
     CCButton *_favoriteButton;
     CCButton *_blockButton;
