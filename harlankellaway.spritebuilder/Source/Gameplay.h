@@ -11,5 +11,6 @@
 @interface Gameplay : CCNode
 
 @property (nonatomic, strong) CCSprite *meterMiddle;
+@property (nonatomic, strong) CCSprite *meterTop;
 
 @end

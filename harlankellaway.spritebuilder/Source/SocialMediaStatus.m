@@ -31,6 +31,8 @@ static const float SCALE_FACTOR = 0.38;
 
 # pragma mark - button actions
 
+// TODO: Do not duplicate button pressing functionality with each button press function
+
 - (void)recirculate
 {
     CCLOG(@"Recirculate button pressed");
@@ -40,7 +42,13 @@ static const float SCALE_FACTOR = 0.38;
         CCLOG(@"Yay!");
         
         CCSprite *meterMiddle = _gameplay.meterMiddle;
-        meterMiddle.scaleY = meterMiddle.scaleY * 2.0;
+        CCSprite *meterTop = _gameplay.meterTop;
+        
+        meterMiddle.scaleY = meterMiddle.scaleY + 1;
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + 1);
+        
+        
+
         
         CCLOG(@"Scaling attempt complete");
     }
