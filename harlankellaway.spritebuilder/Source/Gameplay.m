@@ -15,14 +15,22 @@ static const int NUM_ACTION_STATES = 3;
 
 @implementation Gameplay
 {
-    CCLabelTTF *_messageNumber;
+    CCNode *_messageNotification;
+    CCLabelTTF *_numMessagesLabel;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
-    Level *_loadedLevel;
+    Level *_currentLevel;
 }
 
 - (void)didLoadFromCCB
 {
+    _currentLevel = [[Level alloc] init];
+//    [_levelNode addChild:_loadedLevel];
+    _currentLevel.streamSpeed = 0;
+    NSString *noun = _currentLevel.noun;
+    NSString *pluralNoun = _currentLevel.pluralNoun;
+    
+    CCLOG(@"Noun = %@, plural noun = %@", noun, pluralNoun);
     
     // TODO: don't hardcode values
     CGFloat xPos = 128;

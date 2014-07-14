@@ -1030,7 +1030,7 @@
 								<key>displayName</key>
 								<string>LabelMessageNumber</string>
 								<key>memberVarAssignmentName</key>
-								<string>_messageNumber</string>
+								<string>_numMessagesLabel</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -1224,12 +1224,14 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>ImageMessagBubble</string>
+						<string>ImageMessageBubble</string>
 						<key>memberVarAssignmentName</key>
 						<string>_messageNotification</string>
 						<key>memberVarAssignmentType</key>

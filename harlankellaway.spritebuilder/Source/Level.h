@@ -9,7 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface Level : NSObject
+{
+    NSString *noun;
+    NSString *pluralNoun;
+}
 
 @property (nonatomic, assign) int streamSpeed;
+
+@property (copy, nonatomic) NSString *noun;
+@property (copy, nonatomic) NSString *pluralNoun;
 
 @end
