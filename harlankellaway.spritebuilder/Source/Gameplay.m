@@ -44,7 +44,7 @@ static const int NUM_ACTION_STATES = 3;
         
         status.gameplay = self;
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
-        status.statusText.string = [self getRandomStatus];
+        status.statusText.string = [_currentLevel getStatus];
 //        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
         status.actionType = 1;
         
@@ -91,22 +91,6 @@ static const int NUM_ACTION_STATES = 3;
 - (void)checkMessages
 {
     CCLOG(@"Message button pressed");
-}
-
-- (NSString*)getRandomStatus
-{
-    int numStatuses = 5;
-    
-    NSString *_statusTextOptions[numStatuses];
-    
-    // TODO: don't hardcode status options
-    _statusTextOptions[0] = @"Buckets are so hilarious!";
-    _statusTextOptions[1] = @"Most trees are blue..";
-    _statusTextOptions[2] = @"Are snakes real?";
-    _statusTextOptions[3] = @"Daft punk is dope.";
-    _statusTextOptions[4] = @"I love straws";
-    
-    return _statusTextOptions[0 + arc4random() % (numStatuses)];
 }
 
 @end

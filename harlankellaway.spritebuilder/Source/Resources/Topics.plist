@@ -2,8 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Noun</key>
-	<string>Bucket</string>
+	<key>Nouns</key>
+	<array/>
+	<key>NounsDictionary</key>
+	<dict>
+		<key></key>
+		<string></string>
+	</dict>
 	<key>PluralNoun</key>
 	<string>Buckets</string>
 </dict>

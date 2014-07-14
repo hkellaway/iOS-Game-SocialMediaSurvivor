@@ -13,6 +13,8 @@
 @synthesize noun;
 @synthesize pluralNoun;
 
+# pragma mark - initializers
+
 - (id)init
 {
     self = [super init];
@@ -21,20 +23,9 @@
     {
         NSString *errorDesc = nil;
         NSPropertyListFormat format;
-        NSString *plistPath;
-        NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         
-        // get file-styem path to file containing XML property list
-        plistPath = [rootPath stringByAppendingPathComponent:@"Topics.plist"];
-        
-        // if file doesn't exist at file-system path, check application's main bundle
-        if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-        {
-            plistPath = [[NSBundle mainBundle] pathForResource:@"Topics" ofType:@"plist"];
-        }
-        
-        // read property list into memory as NSData object
-        NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+        // read property list into memorty as NSData object
+        NSData *plistXML = [self getPListInfo:@"Topics"];
         
         // convert static property list into corresponding property-list objects
         NSDictionary *topicsDictionary = (NSDictionary *)[NSPropertyListSerialization
@@ -54,6 +45,50 @@
     }
     
     return self;
+}
+
+# pragma mark - custom methods
+
+- (NSString *)getStatus
+{
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    NSData *statusesXML = [self getPListInfo:@"Statuses"];
+    
+    // convert static property list into corresponding property-list objects
+    NSArray *statusesArray = (NSArray *)[NSPropertyListSerialization
+                                                      propertyListFromData:statusesXML
+                                                      mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                                      format:&format
+                                                      errorDescription:&errorDesc];
+    
+    if(!statusesArray)
+    {
+        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+    }
+    
+    self.statuses = (NSString *)statusesArray;
+    
+    return statusesArray[0 + arc4random() % [statusesArray count]];
+}
+
+# pragma mark - helper methods
+
+- (NSData *)getPListInfo: (NSString *)pListName
+{
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    // get file-styem path to file containing XML property list
+    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
+    
+    // if file doesn't exist at file-system path, check application's main bundle
+    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
+    }
+                 
+    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end
