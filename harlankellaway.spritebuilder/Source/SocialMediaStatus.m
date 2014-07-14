@@ -44,11 +44,21 @@ static const float SCALE_FACTOR = 0.38;
         CCSprite *meterMiddle = _gameplay.meterMiddle;
         CCSprite *meterTop = _gameplay.meterTop;
         
-        meterMiddle.scaleY = meterMiddle.scaleY + 1;
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + 1);
+//        CCLOG(@"Meter mid scale Y is now = %f; Meter top pos is now = (%f,%f)", meterMiddle.scaleY, meterTop.position.x, meterTop.position.y);
         
+        // TODO: calculate scale factor
+        CGFloat scaleFactor = 0.25;
+        CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
         
-
+        meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
+        
+        CCLOG(@"meterMiddle scaled height = %f", meterMiddle.contentSize.height + (scaleFactor * meterMiddle.scaleY));
+        
+//        CCLOG(@"meterMiddle.contentSize.height = %f", meterMiddle.contentSize.height);
+        
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth * 0.25));
+//        
+//         CCLOG(@"Meter mid scale Y is now = %f; Meter top pos is now = (%f,%f)", meterMiddle.scaleY, meterTop.position.x, meterTop.position.y);
         
         CCLOG(@"Scaling attempt complete");
     }
