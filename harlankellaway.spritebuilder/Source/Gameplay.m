@@ -32,6 +32,8 @@ static const int NUM_ACTION_STATES = 3;
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
+        status.gameplay = self;
+        
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
         
         status.statusText.string = [self getRandomStatus];

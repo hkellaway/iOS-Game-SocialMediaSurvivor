@@ -39,7 +39,7 @@ static const float SCALE_FACTOR = 0.38;
     {
         CCLOG(@"Yay!");
         
-        CCSprite *meterMiddle = _gameplay._meterMiddle;
+        CCSprite *meterMiddle = _gameplay.meterMiddle;
         meterMiddle.scaleY = meterMiddle.scaleY * 2.0;
         
         CCLOG(@"Scaling attempt complete");
