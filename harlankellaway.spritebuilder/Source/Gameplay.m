@@ -11,7 +11,7 @@
 #import "Level.h"
 
 static const int NUM_STATUSES = 12;
-static const int NUM_ACTION_STATES = 3;
+//static const int NUM_ACTION_STATES = 3;
 
 @implementation Gameplay
 {
@@ -26,11 +26,10 @@ static const int NUM_ACTION_STATES = 3;
 {
     _currentLevel = [[Level alloc] init];
 //    [_levelNode addChild:_loadedLevel];
-    _currentLevel.streamSpeed = 0;
-    NSString *noun = _currentLevel.noun;
-    NSString *pluralNoun = _currentLevel.pluralNoun;
     
-    CCLOG(@"Noun = %@, plural noun = %@", noun, pluralNoun);
+    _currentLevel.streamSpeed = 0;
+//    NSMutableArray *topics = _currentLevel.topics;
+//    NSMutableArray *statuses = _currentLevel.statuses;
     
     // TODO: don't hardcode values
     CGFloat xPos = 128;
@@ -44,7 +43,7 @@ static const int NUM_ACTION_STATES = 3;
         
         status.gameplay = self;
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
-        status.statusText.string = [_currentLevel getStatus];
+        status.statusText.string = [_currentLevel getRandomStatus];
 //        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
         status.actionType = 1;
         

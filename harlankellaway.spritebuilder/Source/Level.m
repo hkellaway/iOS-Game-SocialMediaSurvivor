@@ -2,16 +2,13 @@
 //  Level.m
 //  harlankellaway
 //
-//  Created by Admin Harlan on 7/14/14.
+//  Created by Harlan Kellaway on 7/14/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
 #import "Level.h"
 
 @implementation Level
-
-@synthesize noun;
-@synthesize pluralNoun;
 
 # pragma mark - initializers
 
@@ -23,37 +20,50 @@
     {
         NSString *errorDesc = nil;
         NSPropertyListFormat format;
+        _topics = [NSMutableArray array];
+        _statuses = [NSMutableArray array];
         
         // read property list into memorty as NSData object
-        NSData *plistXML = [self getPListInfo:@"Topics"];
+        NSData *plistXML = [self getPListXML:@"Topics"];
         
         // convert static property list into corresponding property-list objects
-        NSDictionary *topicsDictionary = (NSDictionary *)[NSPropertyListSerialization
+        // Topics p-list contains array of dictionarys
+        NSArray *topicsPListXML = (NSArray *)[NSPropertyListSerialization
                                               propertyListFromData:plistXML
                                               mutabilityOption:NSPropertyListMutableContainersAndLeaves
                                               format:&format
                                               errorDescription:&errorDesc];
         
-        if(!topicsDictionary)
+        if(!topicsPListXML)
         {
             NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
         }
         
+        for(int i = 0; i < [topicsPListXML count]; i++)
+        {
+           [self.topics addObject:[(NSDictionary *)topicsPListXML[i] objectForKey:@"Noun"]];
+        }
+        
         // assign d
-        self.noun = [topicsDictionary objectForKey:@"Noun"];
-        self.pluralNoun = [topicsDictionary objectForKey:@"PluralNoun"];
+//        self.noun = [topicsDictionary objectForKey:@"Noun"];
+//        self.pluralNoun = [topicsDictionary objectForKey:@"PluralNoun"];
     }
     
     return self;
 }
 
+- (void)setTopics:(NSMutableArray *)topics
+{
+    _topics = [[NSMutableArray alloc] init];
+}
+
 # pragma mark - custom methods
 
-- (NSString *)getStatus
+- (NSString *)getRandomStatus
 {
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
-    NSData *statusesXML = [self getPListInfo:@"Statuses"];
+    NSData *statusesXML = [self getPListXML:@"Statuses"];
     
     // convert static property list into corresponding property-list objects
     NSArray *statusesArray = (NSArray *)[NSPropertyListSerialization
@@ -67,14 +77,14 @@
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
-    self.statuses = (NSString *)statusesArray;
+//    self.statuses = (NSString *)statusesArray;
     
     return statusesArray[0 + arc4random() % [statusesArray count]];
 }
 
 # pragma mark - helper methods
 
-- (NSData *)getPListInfo: (NSString *)pListName
+- (NSData *)getPListXML: (NSString *)pListName
 {
     NSString *plistPath;
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];

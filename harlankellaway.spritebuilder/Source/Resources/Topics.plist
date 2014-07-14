@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Nouns</key>
-	<array/>
-	<key>NounsDictionary</key>
+<array>
 	<dict>
-		<key></key>
-		<string></string>
+		<key>Noun</key>
+		<string>Bucket</string>
+		<key>PluralNoun</key>
+		<string>Buckets</string>
 	</dict>
-	<key>PluralNoun</key>
-	<string>Buckets</string>
-</dict>
+	<dict>
+		<key>Noun</key>
+		<string>Snake</string>
+		<key>PluralNoun</key>
+		<string>Snakes</string>
+	</dict>
+	<dict>
+		<key>PluralNoun</key>
+		<string>Straws</string>
+		<key>Noun</key>
+		<string>Straw</string>
+	</dict>
+	<dict>
+		<key>PluralNoun</key>
+		<string>Rock songs</string>
+		<key>Noun</key>
+		<string>Rock song</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>Tree</string>
+		<key>PluralNoun</key>
+		<string>Trees</string>
+	</dict>
+</array>
 </plist>
