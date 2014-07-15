@@ -47,13 +47,20 @@ static const float SCALE_FACTOR = 0.38;
         CGFloat scaleFactor = 0.25;
         CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
         
+        CCLOG(@"meterMiddle pos before = (%f, %f)", meterMiddle.position.x, meterMiddle.position.y);
+        
         meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
         
-        CCLOG(@"meterMiddle scaled height = %f", meterMiddle.contentSize.height + (scaleFactor * meterMiddle.scaleY));
+        CCLOG(@"meterMiddle pos after = (%f, %f)", meterMiddle.position.x, meterMiddle.position.y);
         
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth * 0.25));
+        CCLOG(@"meterTop pos before = (%f, %f)", meterTop.position.x, meterTop.position.y);
+        
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
+        
+        CCLOG(@"meterTop pos after = (%f, %f)", meterTop.position.x, meterTop.position.y);
         
         CCLOG(@"Scaling attempt complete");
+        
     }
 }
 
@@ -66,5 +73,15 @@ static const float SCALE_FACTOR = 0.38;
         CCLOG(@"Yay!");
     }
 }
+
+# pragma mark - instance methods
+
+- (void)refresh
+{
+    CCLOG(@"Entering refresh method!");
+    self.visible = FALSE;
+}
+
+#pragma mark - helper methods
 
 @end

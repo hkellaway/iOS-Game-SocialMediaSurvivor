@@ -13,7 +13,10 @@
 
 @property (nonatomic, strong) CCLabelTTF *statusText;
 @property (nonatomic, assign) int actionType;
+@property (nonatomic, assign) BOOL isAtScreenBottom;
 
 @property (nonatomic, weak) Gameplay *gameplay;
+
+- (void)refresh;
 
 @end

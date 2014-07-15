@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7AC1996D196DC8EA00D216C4 /* SocialMediaStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */; };
-		7AC19971196DC91600D216C4 /* PopularityMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC19970196DC91600D216C4 /* PopularityMeter.m */; };
 		7ACA6112196EF09000307164 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACA6111196EF09000307164 /* Gameplay.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -64,8 +63,6 @@
 /* Begin PBXFileReference section */
 		7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialMediaStatus.h; path = Source/SocialMediaStatus.h; sourceTree = "<group>"; };
 		7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialMediaStatus.m; path = Source/SocialMediaStatus.m; sourceTree = "<group>"; };
-		7AC1996F196DC91600D216C4 /* PopularityMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopularityMeter.h; path = Source/PopularityMeter.h; sourceTree = "<group>"; };
-		7AC19970196DC91600D216C4 /* PopularityMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopularityMeter.m; path = Source/PopularityMeter.m; sourceTree = "<group>"; };
 		7ACA6110196EF09000307164 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
 		7ACA6111196EF09000307164 /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -149,8 +146,6 @@
 				7ACA6111196EF09000307164 /* Gameplay.m */,
 				CE2C4DD119744E14008C8185 /* Level.h */,
 				CE2C4DD219744E14008C8185 /* Level.m */,
-				7AC1996F196DC91600D216C4 /* PopularityMeter.h */,
-				7AC19970196DC91600D216C4 /* PopularityMeter.m */,
 				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
 				7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */,
 			);
@@ -371,7 +366,6 @@
 				7ACA6112196EF09000307164 /* Gameplay.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				7AC1996D196DC8EA00D216C4 /* SocialMediaStatus.m in Sources */,
-				7AC19971196DC91600D216C4 /* PopularityMeter.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CE2C4DD319744E14008C8185 /* Level.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
