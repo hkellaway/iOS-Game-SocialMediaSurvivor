@@ -11,10 +11,11 @@
 #import "Level.h"
 
 static const int NUM_STATUSES = 12;
-//static const int NUM_ACTION_STATES = 3;
+static const int NUM_ACTION_STATES = 3;
 
 @implementation Gameplay
 {
+    CCNode *_stream;
     CCNode *_messageNotification;
     CCLabelTTF *_numMessagesLabel;
     
@@ -25,27 +26,25 @@ static const int NUM_STATUSES = 12;
 - (void)didLoadFromCCB
 {
     _currentLevel = [[Level alloc] init];
-//    [_levelNode addChild:_loadedLevel];
     
     _currentLevel.streamSpeed = 0;
-//    NSMutableArray *topics = _currentLevel.topics;
-//    NSMutableArray *statuses = _currentLevel.statuses;
-    
-    // TODO: don't hardcode values
-    CGFloat xPos = 128;
     CGFloat yStart = [UIScreen mainScreen].bounds.size.height;
-    CGFloat height = 44;
     CGFloat spacing = 12;
     
     for(int i = 0; i < NUM_STATUSES; i++)
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
-        status.gameplay = self;
+        // TODO: don't hardcode xPos offset
+        CGFloat height = status.contentSize.height * status.scaleY;
+        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2) + 31;
+        
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
         status.statusText.string = [_currentLevel getRandomStatus];
-//        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
-        status.actionType = 1;
+        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
+        
+        // set weak property
+        status.gameplay = self;
         
         CCLOG(@"Status #%d: (Text, actionType) = (%@, %d)", i, status.statusText.string, status.actionType);
         
@@ -60,7 +59,13 @@ static const int NUM_STATUSES = 12;
 
 - (void)update:(CCTime)delta
 {
-    // TODO: scrolling functionality to be implemented here
+    // scrolling of SocialMediaStatues
+    for(int i = 0; i < NUM_STATUSES; i++)
+    {
+        SocialMediaStatus *status = _statuses[i];
+        
+//        status.position = ccp(status.position.x, status.position.y - 2.0);
+    }
 }
 
 // called on every touch in this scene
