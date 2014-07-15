@@ -14,5 +14,6 @@
 @property (nonatomic, strong) CCSprite *meterMiddle;
 @property (nonatomic, strong) CCSprite *meterTop;
 @property (nonatomic, strong) Level *currentLevel;
+@property (nonatomic, assign) int numStatuses;
 
 @end

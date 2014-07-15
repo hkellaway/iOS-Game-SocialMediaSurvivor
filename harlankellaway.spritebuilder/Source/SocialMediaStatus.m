@@ -8,7 +8,10 @@
 
 #import "SocialMediaStatus.h"
 
-static const  int ACTION_TYPE_RECIRCULATE = 1;
+static const int NUM_STATUSES = 28;
+static const int STATUS_SPACING = 12;
+
+static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
 static const float SCALE_FACTOR = 0.38;
@@ -74,8 +77,11 @@ static const float SCALE_FACTOR = 0.38;
     
     self.statusText.string = @"Status changed";
     
-    // move to top of screen
-    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
+    // move to above last status in line
+//    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
+
+    self.position = ccp(self.position.x, NUM_STATUSES * (self.contentSize.height * STATUS_SPACING));
+    
     self.isAtScreenBottom = FALSE;
     self.statusText.string = [_gameplay.currentLevel getRandomStatus];
 }

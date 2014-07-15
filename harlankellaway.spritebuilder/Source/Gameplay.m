@@ -10,6 +10,7 @@
 #import "SocialMediaStatus.h"
 #import "Level.h"
 
+// TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 28;
 static const int NUM_ACTION_STATES = 3;
 
@@ -28,8 +29,28 @@ static const int NUM_ACTION_STATES = 3;
     _currentLevel = [[Level alloc] init];
     
     _currentLevel.streamSpeed = 2.0;
-    CGFloat yStart = [UIScreen mainScreen].bounds.size.height;
     CGFloat spacing = 12;
+    
+//    for(int i = 0; i < NUM_STATUSES; i++)
+//    {
+//        SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
+//        
+//        CGFloat height = status.contentSize.height * status.scaleY;
+//        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
+//        
+//        status.position = ccp(xPos, (yStart - (i * height)) + spacing);
+//        status.statusText.string = [_currentLevel getRandomStatus];
+//        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
+////        status.actionType = 1;
+//        status.isAtScreenBottom = FALSE;
+//        
+//        // set weak property
+//        status.gameplay = self;
+//        
+//        _statuses[i] = status;
+//        
+//        [_stream addChild:status];
+//    }
     
     for(int i = 0; i < NUM_STATUSES; i++)
     {
@@ -38,10 +59,8 @@ static const int NUM_ACTION_STATES = 3;
         CGFloat height = status.contentSize.height * status.scaleY;
         CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
         
-        status.position = ccp(xPos, (yStart - (i * height)) + spacing);
-        status.statusText.string = [_currentLevel getRandomStatus];
+        status.position = ccp(xPos, ((i * height)) + spacing);
         status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
-//        status.actionType = 1;
         status.isAtScreenBottom = FALSE;
         
         // set weak property
