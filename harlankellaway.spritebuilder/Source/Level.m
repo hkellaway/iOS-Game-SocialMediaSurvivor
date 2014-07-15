@@ -43,10 +43,6 @@
         {
            [self.topics addObject:[(NSDictionary *)topicsPListXML[i] objectForKey:@"Noun"]];
         }
-        
-        // assign d
-//        self.noun = [topicsDictionary objectForKey:@"Noun"];
-//        self.pluralNoun = [topicsDictionary objectForKey:@"PluralNoun"];
     }
     
     return self;
@@ -77,9 +73,9 @@
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
-//    self.statuses = (NSString *)statusesArray;
+    NSString *randomTopic = _topics[0 + arc4random() % [_topics count]];
     
-    return statusesArray[0 + arc4random() % [statusesArray count]];
+    return [(statusesArray[0 + arc4random() % [statusesArray count]]) stringByReplacingOccurrencesOfString:@"NOUN" withString:[randomTopic lowercaseString]];
 }
 
 # pragma mark - helper methods

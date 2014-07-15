@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic, assign) int streamSpeed;
-@property (nonatomic) assign) int numStatuses;
+@property (nonatomic, assign) int numStatuses;
 
 #pragma mark - p-list data
 
