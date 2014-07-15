@@ -35,8 +35,6 @@ static const int NUM_ACTION_STATES = 3;
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
-        // TODO: don't hardcode xPos offset
-        //CGFloat xPosOffset = 31;
         CGFloat height = status.contentSize.height * status.scaleY;
         CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
         
