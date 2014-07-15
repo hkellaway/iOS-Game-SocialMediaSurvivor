@@ -7,10 +7,12 @@
 //
 
 #import "CCNode.h"
+#import "Level.h"
 
 @interface Gameplay : CCNode
 
 @property (nonatomic, strong) CCSprite *meterMiddle;
 @property (nonatomic, strong) CCSprite *meterTop;
+@property (nonatomic, strong) Level *currentLevel;
 
 @end

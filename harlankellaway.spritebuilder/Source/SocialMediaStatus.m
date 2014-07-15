@@ -47,17 +47,9 @@ static const float SCALE_FACTOR = 0.38;
         CGFloat scaleFactor = 0.25;
         CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
         
-        CCLOG(@"meterMiddle pos before = (%f, %f)", meterMiddle.position.x, meterMiddle.position.y);
-        
         meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
         
-        CCLOG(@"meterMiddle pos after = (%f, %f)", meterMiddle.position.x, meterMiddle.position.y);
-        
-        CCLOG(@"meterTop pos before = (%f, %f)", meterTop.position.x, meterTop.position.y);
-        
         meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
-        
-        CCLOG(@"meterTop pos after = (%f, %f)", meterTop.position.x, meterTop.position.y);
         
         CCLOG(@"Scaling attempt complete");
         
@@ -79,7 +71,13 @@ static const float SCALE_FACTOR = 0.38;
 - (void)refresh
 {
     CCLOG(@"Entering refresh method!");
-    self.visible = FALSE;
+    
+    self.statusText.string = @"Status changed";
+    
+    // move to top of screen
+    self.position = ccp(self.position.x, [UIScreen mainScreen].bounds.size.height);
+    self.isAtScreenBottom = FALSE;
+    self.statusText.string = [_gameplay.currentLevel getRandomStatus];
 }
 
 #pragma mark - helper methods

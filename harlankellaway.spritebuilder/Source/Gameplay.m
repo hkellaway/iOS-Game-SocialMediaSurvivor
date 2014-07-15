@@ -10,7 +10,7 @@
 #import "SocialMediaStatus.h"
 #import "Level.h"
 
-static const int NUM_STATUSES = 6;
+static const int NUM_STATUSES = 2;
 static const int NUM_ACTION_STATES = 3;
 
 @implementation Gameplay
@@ -27,7 +27,7 @@ static const int NUM_ACTION_STATES = 3;
 {
     _currentLevel = [[Level alloc] init];
     
-    _currentLevel.streamSpeed = 0;
+    _currentLevel.streamSpeed = 2.0;
     CGFloat yStart = [UIScreen mainScreen].bounds.size.height;
     CGFloat spacing = 12;
     
@@ -36,13 +36,14 @@ static const int NUM_ACTION_STATES = 3;
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
         // TODO: don't hardcode xPos offset
+        CGFloat xPosOffset = 31;
         CGFloat height = status.contentSize.height * status.scaleY;
-        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2) + 31;
+        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2) + xPosOffset;
         
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
         status.statusText.string = [_currentLevel getRandomStatus];
-//        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
-        status.actionType = 1;
+        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
+//        status.actionType = 1;
         status.isAtScreenBottom = FALSE;
         
         // set weak property
@@ -64,9 +65,9 @@ static const int NUM_ACTION_STATES = 3;
     {
         SocialMediaStatus *status = _statuses[i];
         
-        status.position = ccp(status.position.x, status.position.y - 2.0);
+        status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
         
-        if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
+        if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
         {
             status.isAtScreenBottom = TRUE;
             CCLOG(@"In if! id = %d, postion.y = %f", i, status.position.y);

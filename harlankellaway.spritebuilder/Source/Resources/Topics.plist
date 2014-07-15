@@ -284,7 +284,7 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Eyes</string>
+		<string>Eye</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -497,10 +497,6 @@
 	<dict>
 		<key>Noun</key>
 		<string>Painbrush</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Pants</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
