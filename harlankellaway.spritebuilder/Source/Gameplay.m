@@ -10,7 +10,7 @@
 #import "SocialMediaStatus.h"
 #import "Level.h"
 
-static const int NUM_STATUSES = 2;
+static const int NUM_STATUSES = 10;
 static const int NUM_ACTION_STATES = 3;
 
 @implementation Gameplay
@@ -36,9 +36,8 @@ static const int NUM_ACTION_STATES = 3;
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
         // TODO: don't hardcode xPos offset
-        CGFloat xPosOffset = 31;
         CGFloat height = status.contentSize.height * status.scaleY;
-        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2) + xPosOffset;
+        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
         
         status.position = ccp(xPos, (yStart - (i * height)) + spacing);
         status.statusText.string = [_currentLevel getRandomStatus];
@@ -51,7 +50,8 @@ static const int NUM_ACTION_STATES = 3;
         
         _statuses[i] = status;
         
-        [self addChild:_statuses[i]];
+//        [self addChild:_statuses[i]];
+        [_stream addChild:status];
     }
     
     // tell this scene to accept touches

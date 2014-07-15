@@ -75,7 +75,7 @@ static const float SCALE_FACTOR = 0.38;
     self.statusText.string = @"Status changed";
     
     // move to top of screen
-    self.position = ccp(self.position.x, [UIScreen mainScreen].bounds.size.height);
+    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
     self.isAtScreenBottom = FALSE;
     self.statusText.string = [_gameplay.currentLevel getRandomStatus];
 }
