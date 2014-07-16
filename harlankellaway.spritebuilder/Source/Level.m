@@ -18,41 +18,49 @@
     
     if(self)
     {
-        NSString *errorDesc = nil;
-        NSPropertyListFormat format;
         _topics = [NSMutableArray array];
         
-        // read property list into memorty as NSData object
-        NSData *plistXML = [self getPListXML:@"Topics"];
+        NSString *errorDesc = nil;
+        NSPropertyListFormat format;
         
-        // convert static property list into corresponding property-list objects
-        // Topics p-list contains array of dictionarys
-        NSArray *topicsPListXML = (NSArray *)[NSPropertyListSerialization
+        // get Level data from p-list
+        NSData *plistXML = [self getPListXML:@"Levels"];
+        
+        NSArray *levelsArray = (NSArray *)[NSPropertyListSerialization
                                               propertyListFromData:plistXML
                                               mutabilityOption:NSPropertyListMutableContainersAndLeaves
                                               format:&format
                                               errorDescription:&errorDesc];
         
-        if(!topicsPListXML)
+        if(!levelsArray)
         {
             NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
         }
         
-        for(int i = 0; i < [topicsPListXML count]; i++)
-        {
-           [self.topics addObject:[(NSDictionary *)topicsPListXML[i] objectForKey:@"Noun"]];
-        }
+        _numTopics = [[levelsArray[levelNum - 1] objectForKey:@"NumTopics"] integerValue];
+        _streamSpeed = [[levelsArray[levelNum - 1] objectForKey:@"StreamSpeed"] integerValue];
         
-        plistXML = [self getPListXML:@"Levels"];
+        // get Topics
+        plistXML = [self getPListXML:@"Topics"];
         
-        NSArray *levelsPListXML = (NSArray *)[NSPropertyListSerialization
+        // convert static property list into corresponding property-list objects
+        // Topics p-list contains array of dictionarys
+        NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
                                               propertyListFromData:plistXML
                                               mutabilityOption:NSPropertyListMutableContainersAndLeaves
                                               format:&format
                                               errorDescription:&errorDesc];
         
-        _numTopics = [[levelsPListXML[levelNum - 1] objectForKey:@"NumTopics"] integerValue];
-        _streamSpeed = [[levelsPListXML[levelNum - 1] objectForKey:@"StreamSpeed"] integerValue];
+        if(!topicsArray)
+        {
+            NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+        }
+        
+        for(int i = 0; i < _numTopics; i++)
+        {
+            [self.topics addObject:[(NSDictionary *)topicsArray[0 + arc4random() % [topicsArray count]] objectForKey:@"Noun"]];
+            CCLOG(@"Topic added: %@", self.topics[i]);
+        }
     }
     
     return self;

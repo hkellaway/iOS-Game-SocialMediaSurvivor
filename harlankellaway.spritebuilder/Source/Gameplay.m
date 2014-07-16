@@ -64,7 +64,7 @@ static const int NUM_ACTION_STATES = 3;
     {
         SocialMediaStatus *status = _statuses[i];
         
-//        status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
+        status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
         
         if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
         {
