@@ -16,4 +16,6 @@
 @property (nonatomic, strong) Level *currentLevel;
 @property (nonatomic, assign) int numStatuses;
 
+@property (nonatomic, copy) NSMutableArray *allTopics;
+
 @end

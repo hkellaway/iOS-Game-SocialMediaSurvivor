@@ -13,17 +13,16 @@
 
 }
 
+#pragma mark - p-list data
+
 @property (nonatomic, assign) NSInteger streamSpeed;
 @property (nonatomic, assign) NSInteger numTopics;
 
-#pragma mark - p-list data
-
-@property (copy, nonatomic) NSMutableArray *topics;
-@property (copy, nonatomic) NSMutableArray *statuses;
+//@property (copy, nonatomic) NSMutableArray *levelTopics;
 
 # pragma mark - methods
 
 - (id)initWithLevelNum:(int)levelNum;
-- (NSString *)getRandomStatus;
+//- (NSString *)getRandomStatus;
 
 @end

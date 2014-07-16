@@ -26,12 +26,41 @@ static const int NUM_ACTION_STATES = 3;
 
 - (void)didLoadFromCCB
 {
+    // get all Topics
+    _allTopics = [NSMutableArray array];
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    
+    // get Level data from p-list
+    NSData *plistXML = [self getPListXML:@"Topics"];
+    
+    // convert static property list into corresponding property-list objects
+    // Topics p-list contains array of dictionarys
+    NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
+                                       propertyListFromData:plistXML
+                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                       format:&format
+                                       errorDescription:&errorDesc];
+    if(!topicsArray)
+    {
+        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+    }
+    
+    for(int i = 0; i < [topicsArray count]; i++)
+    {
+        NSDictionary *dict = (NSDictionary *)topicsArray[i];
+        [_allTopics addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
+    }
+    
     // load first Level
     _currentLevel = [[Level alloc] initWithLevelNum:1];
     
-//    _currentLevel.streamSpeed = 2.0;
+    // get random topics for Level including an amount of trending topics
+    
+    
     CGFloat spacing = 12;
     
+    // create SocialMediaStatus objects
     for(int i = 0; i < NUM_STATUSES; i++)
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
@@ -40,11 +69,12 @@ static const int NUM_ACTION_STATES = 3;
         CGFloat xPos = ((_stream.contentSize.width) / 2);
         
         status.position = ccp(xPos, ((i * height)) + spacing);
-        status.statusText.string = [_currentLevel getRandomStatus];
+//        status.statusText.string = [_currentLevel getRandomStatus];
+        status.statusText.string = [NSString stringWithFormat:@"hello world"];
         status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
         status.isAtScreenBottom = FALSE;
         
-        // set weak property
+        // set weak property(s)
         status.gameplay = self;
         
         _statuses[i] = status;
@@ -55,6 +85,11 @@ static const int NUM_ACTION_STATES = 3;
     
     // tell this scene to accept touches
     self.userInteractionEnabled = YES;
+}
+
+- (void)setTopics:(NSMutableArray *)topics
+{
+    _allTopics = [[NSMutableArray alloc] init];
 }
 
 - (void)update:(CCTime)delta
@@ -103,5 +138,25 @@ static const int NUM_ACTION_STATES = 3;
 {
     CCLOG(@"Message button pressed");
 }
+
+# pragma mark - helper methods
+
+- (NSData *)getPListXML: (NSString *)pListName
+{
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    // get file-styem path to file containing XML property list
+    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
+    
+    // if file doesn't exist at file-system path, check application's main bundle
+    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
+    }
+    
+    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
+}
+
 
 @end

@@ -70,10 +70,6 @@ static const float SCALE_FACTOR = 0.38;
 
 - (void)refresh
 {
-    CCLOG(@"Entering refresh method!");
-    
-    self.statusText.string = @"Status changed";
-    
     // move to above last status in line
 //    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
 
@@ -83,7 +79,8 @@ static const float SCALE_FACTOR = 0.38;
     self.position = ccp(self.position.x, newY);
     
     self.isAtScreenBottom = FALSE;
-    self.statusText.string = [_gameplay.currentLevel getRandomStatus];
+//    self.statusText.string = [_gameplay.currentLevel getRandomStatus];
+    self.statusText.string = [NSString stringWithFormat:@"setting status in refresh method"];
 }
 
 #pragma mark - helper methods
