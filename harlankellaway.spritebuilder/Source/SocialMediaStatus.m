@@ -73,7 +73,7 @@ static const float SCALE_FACTOR = 0.38;
     // move to above last status in line
 //    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
 
-    int numStatuses = 10;
+    int numStatuses = 28;
     int spacing = 12;
     int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing);
     

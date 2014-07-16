@@ -35,8 +35,11 @@
             NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
         }
         
+        // initialize instance variables
         _numTopics = [[levelsArray[levelNum - 1] objectForKey:@"NumTopics"] integerValue];
         _streamSpeed = [[levelsArray[levelNum - 1] objectForKey:@"StreamSpeed"] integerValue];
+        _topicsToRecirculate = [[NSMutableArray alloc] init];
+        _topicsToFavorite = [[NSMutableArray alloc] init];
     }
     
     return self;

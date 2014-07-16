@@ -22,7 +22,7 @@
 		<key>Noun</key>
 		<string>Tree</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Adult</string>
 	</dict>
@@ -125,7 +125,7 @@
 	<dict>
 		<key>Noun</key>
 		<string>Bowl</string>
-    </dict>
+	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Box</string>
@@ -160,7 +160,7 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>CArrot</string>
+		<string>Carrot</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -757,7 +757,6 @@
 	<dict>
 		<key>Noun</key>
 		<string>X-ray</string>
-    </dict>
-    
+	</dict>
 </array>
 </plist>

@@ -10,5 +10,13 @@
 		<key>NumTopics</key>
 		<integer>3</integer>
 	</dict>
+	<dict>
+		<key>LevelNum</key>
+		<integer>2</integer>
+		<key>StreamSpeed</key>
+		<integer>4</integer>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
 </array>
 </plist>

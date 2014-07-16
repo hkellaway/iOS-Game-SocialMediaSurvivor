@@ -11,8 +11,7 @@
 #import "Level.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 10;
-static const int NUM_ACTION_STATES = 3;
+static const int NUM_STATUSES = 28;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 static const int ACTION_TYPE_RECIRCULATE = 1;
@@ -27,24 +26,32 @@ static const int ACTION_TYPE_FAVORITE = 2;
     SocialMediaStatus *_statuses[NUM_STATUSES];
     Level *_currentLevel;
     
-//    double numToRecirculate;
-//    double numToFavorite;
-    
+    int numToRecirculate;
+    int numToFavorite;
     CGFloat statusSpacing;
 }
 
 - (void)didLoadFromCCB
 {
+    // set visibility of elements
     _messageNotification.visible = FALSE;
     
-    // get all Topics
+    // initialize variables
     _allTopics = [NSMutableArray array];
     int numAllTopics;
     
+    // TODO: don't hardcode loading Level 1
+    _currentLevel = [[Level alloc] initWithLevelNum:1];
+    
+    numToRecirculate = NUM_STATUSES * PERCENTAGE_STATUS_TO_RECIRCULATE;
+    numToFavorite = NUM_STATUSES * PERCENTAGE_STATUS_TO_FAVORITE;
+    _currentLevel.topicsToRecirculate = [[NSMutableArray alloc] init];
+    _currentLevel.topicsToFavorite = [[NSMutableArray alloc] init];
+    statusSpacing = 12;
+    
+    // load Topics from p-list
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
-    
-    // get Level data from p-list
     NSData *plistXML = [self getPListXML:@"Topics"];
     
     // convert static property list into corresponding property-list objects
@@ -59,6 +66,7 @@ static const int ACTION_TYPE_FAVORITE = 2;
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
+    // TODO: don't load in all Topics each time Gameplay loads
     for(int i = 0; i < [topicsArray count]; i++)
     {
         [_allTopics addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
@@ -66,16 +74,21 @@ static const int ACTION_TYPE_FAVORITE = 2;
     
     numAllTopics = [_allTopics count];
     
-    // load first Level
-    _currentLevel = [[Level alloc] initWithLevelNum:1];
+    // get order recirculate/favorite/avoid for this set of Statuses
+    NSMutableArray *randomActions = [self getRandomActionTypes:NUM_STATUSES percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
     
-    // set counters
-//    numToRecirculate = floor(NUM_STATUSES * PERCENTAGE_STATUS_TO_RECIRCULATE);
-//    numToFavorite = floor(NUM_STATUSES * PERCENTAGE_STATUS_TO_FAVORITE);
+    // set topics to that are to be recirculated/favorited
+    for(int j = 0; j < numToRecirculate; j++)
+    {
+        [_currentLevel.topicsToRecirculate addObject:[self getRandomTopic]];
+    }
     
-    statusSpacing = 12;
+    for(int k = 0; k < numToFavorite; k++)
+    {
+        [_currentLevel.topicsToFavorite addObject:[self getRandomTopic]];
+    }
     
-    NSMutableArray *randomStatuses = [self generateRandomStatuses:NUM_STATUSES percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
+    CCLOG(@"pause");
     
     // create SocialMediaStatus objects
     for(int i = 0; i < NUM_STATUSES; i++)
@@ -86,10 +99,26 @@ static const int ACTION_TYPE_FAVORITE = 2;
         CGFloat xPos = ((_stream.contentSize.width) / 2);
         
         status.position = ccp(xPos, ((i * height)) + statusSpacing);
-//        status.statusText.string = [_currentLevel getRandomStatus];
         
-        status.statusText.string = (NSString *)[randomStatuses objectAtIndex:i];
-        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
+        status.statusText.string = (NSString *)[randomActions objectAtIndex:i];
+        
+        if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
+        {
+            status.actionType = ACTION_TYPE_RECIRCULATE;
+            status.statusText.string = _currentLevel.topicsToRecirculate[0 + arc4random() % ([_currentLevel.topicsToRecirculate count])];
+        }
+        else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE]])
+        {
+            status.actionType = ACTION_TYPE_FAVORITE;
+            status.statusText.string = _currentLevel.topicsToFavorite[0 + arc4random() % ([_currentLevel.topicsToFavorite count])];
+        }
+        else
+        {
+            status.actionType = 0;
+//            status.statusText.string = [NSString stringWithFormat:@"RANDOM"];
+            status.statusText.string = [self getRandomTopic];
+        }
+            
         status.isAtScreenBottom = FALSE;
         
         // set weak property(s)
@@ -176,9 +205,12 @@ static const int ACTION_TYPE_FAVORITE = 2;
     return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
-#pragma mark - helper methods
+- (NSString *)getRandomTopic
+{
+    return _allTopics[0 + arc4random() % ([_allTopics count])];
+}
 
-- (NSMutableArray *)generateRandomStatuses:(int)numStatuses
+- (NSMutableArray *)getRandomActionTypes:(int)numStatuses
                          percentToRecirculate:(CGFloat)percentToRecirculate
                             percentToFavorite:(CGFloat)percentToFavorite
 {
@@ -190,17 +222,17 @@ static const int ACTION_TYPE_FAVORITE = 2;
     {
         if(recirculatedCounter > 0)
         {
-            statuses[i] = [NSString stringWithFormat:@"to recirculate"];
+            statuses[i] = [NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE];
             recirculatedCounter--;
         }
         else if(favoritedCounter > 0)
         {
-            statuses[i] = [NSString stringWithFormat:@"to favorite"];
+            statuses[i] = [NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE];
             favoritedCounter--;
         }
         else
         {
-            statuses[i] = [NSString stringWithFormat:@"random"];
+            statuses[i] = [NSString stringWithFormat:@"%d", 0];
         }
     }
 
@@ -214,15 +246,5 @@ static const int ACTION_TYPE_FAVORITE = 2;
     
     return statuses;
 }
-
-//- (void)shuffle
-//{
-//    NSUInteger count = [self count];
-//    for (NSUInteger i = 0; i < count; ++i) {
-//        NSInteger remainingCount = count - i;
-//        NSInteger exchangeIndex = i + arc4random_uniform(remainingCount);
-//        [self exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
-//    }
-//}
 
 @end

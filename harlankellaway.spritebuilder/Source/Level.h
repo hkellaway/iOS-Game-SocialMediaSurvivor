@@ -18,11 +18,11 @@
 @property (nonatomic, assign) NSInteger streamSpeed;
 @property (nonatomic, assign) NSInteger numTopics;
 
-//@property (copy, nonatomic) NSMutableArray *levelTopics;
+@property (nonatomic, strong) NSMutableArray *topicsToRecirculate;
+@property (nonatomic, strong) NSMutableArray *topicsToFavorite;
 
 # pragma mark - methods
 
 - (id)initWithLevelNum:(int)levelNum;
-//- (NSString *)getRandomStatus;
 
 @end
