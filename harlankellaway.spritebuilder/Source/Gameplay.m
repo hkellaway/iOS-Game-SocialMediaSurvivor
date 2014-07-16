@@ -26,31 +26,11 @@ static const int NUM_ACTION_STATES = 3;
 
 - (void)didLoadFromCCB
 {
-    _currentLevel = [[Level alloc] init];
+    // load first Level
+    _currentLevel = [[Level alloc] initWithLevelNum:1];
     
-    _currentLevel.streamSpeed = 2.0;
+//    _currentLevel.streamSpeed = 2.0;
     CGFloat spacing = 12;
-    
-//    for(int i = 0; i < NUM_STATUSES; i++)
-//    {
-//        SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
-//        
-//        CGFloat height = status.contentSize.height * status.scaleY;
-//        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
-//        
-//        status.position = ccp(xPos, (yStart - (i * height)) + spacing);
-//        status.statusText.string = [_currentLevel getRandomStatus];
-//        status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
-////        status.actionType = 1;
-//        status.isAtScreenBottom = FALSE;
-//        
-//        // set weak property
-//        status.gameplay = self;
-//        
-//        _statuses[i] = status;
-//        
-//        [_stream addChild:status];
-//    }
     
     for(int i = 0; i < NUM_STATUSES; i++)
     {
@@ -84,7 +64,7 @@ static const int NUM_ACTION_STATES = 3;
     {
         SocialMediaStatus *status = _statuses[i];
         
-        status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
+//        status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
         
         if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
         {

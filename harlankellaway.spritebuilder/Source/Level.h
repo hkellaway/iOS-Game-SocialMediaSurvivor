@@ -13,8 +13,8 @@
 
 }
 
-@property (nonatomic, assign) int streamSpeed;
-@property (nonatomic, assign) int numStatuses;
+@property (nonatomic, assign) NSInteger streamSpeed;
+@property (nonatomic, assign) NSInteger numTopics;
 
 #pragma mark - p-list data
 
@@ -23,6 +23,7 @@
 
 # pragma mark - methods
 
+- (id)initWithLevelNum:(int)levelNum;
 - (NSString *)getRandomStatus;
 
 @end

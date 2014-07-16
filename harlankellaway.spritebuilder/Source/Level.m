@@ -12,7 +12,7 @@
 
 # pragma mark - initializers
 
-- (id)init
+- (id)initWithLevelNum:(int)levelNum
 {
     self = [super init];
     
@@ -21,7 +21,6 @@
         NSString *errorDesc = nil;
         NSPropertyListFormat format;
         _topics = [NSMutableArray array];
-        _statuses = [NSMutableArray array];
         
         // read property list into memorty as NSData object
         NSData *plistXML = [self getPListXML:@"Topics"];
@@ -43,6 +42,17 @@
         {
            [self.topics addObject:[(NSDictionary *)topicsPListXML[i] objectForKey:@"Noun"]];
         }
+        
+        plistXML = [self getPListXML:@"Levels"];
+        
+        NSArray *levelsPListXML = (NSArray *)[NSPropertyListSerialization
+                                              propertyListFromData:plistXML
+                                              mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                              format:&format
+                                              errorDescription:&errorDesc];
+        
+        _numTopics = [[levelsPListXML[levelNum - 1] objectForKey:@"NumTopics"] integerValue];
+        _streamSpeed = [[levelsPListXML[levelNum - 1] objectForKey:@"StreamSpeed"] integerValue];
     }
     
     return self;
