@@ -57,7 +57,7 @@ static const int NUM_ACTION_STATES = 3;
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
         CGFloat height = status.contentSize.height * status.scaleY;
-        CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
+        CGFloat xPos = ((_stream.contentSize.width) / 2);
         
         status.position = ccp(xPos, ((i * height)) + spacing);
         status.statusText.string = [_currentLevel getRandomStatus];

@@ -79,7 +79,7 @@ static const float SCALE_FACTOR = 0.38;
 
     int numStatuses = 13;
     int spacing = 12;
-    int newY = ((numStatuses - 1) * ((self.contentSize.height * self.scaleY) + spacing)) - (((self.contentSize.height * self.scaleY) / 2));
+    int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing);
     self.position = ccp(self.position.x, newY);
     
     self.isAtScreenBottom = FALSE;
