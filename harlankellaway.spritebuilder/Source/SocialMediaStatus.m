@@ -73,14 +73,12 @@ static const float SCALE_FACTOR = 0.38;
     // move to above last status in line
 //    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
 
-    int numStatuses = 13;
+    int numStatuses = 10;
     int spacing = 12;
     int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing);
-    self.position = ccp(self.position.x, newY);
     
+    self.position = ccp(self.position.x, newY);
     self.isAtScreenBottom = FALSE;
-//    self.statusText.string = [_gameplay.currentLevel getRandomStatus];
-    self.statusText.string = [NSString stringWithFormat:@"setting status in refresh method"];
 }
 
 #pragma mark - helper methods
