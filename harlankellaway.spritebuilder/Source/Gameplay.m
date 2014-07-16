@@ -11,7 +11,7 @@
 #import "Level.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 28;
+static const int NUM_STATUSES = 13;
 static const int NUM_ACTION_STATES = 3;
 
 @implementation Gameplay
@@ -60,6 +60,7 @@ static const int NUM_ACTION_STATES = 3;
         CGFloat xPos = ((status.contentSize.width * status.scaleX) / 2);
         
         status.position = ccp(xPos, ((i * height)) + spacing);
+        status.statusText.string = [_currentLevel getRandomStatus];
         status.actionType = 0 + arc4random() % (NUM_ACTION_STATES);
         status.isAtScreenBottom = FALSE;
         
@@ -70,6 +71,7 @@ static const int NUM_ACTION_STATES = 3;
         
         [_stream addChild:status];
     }
+    
     
     // tell this scene to accept touches
     self.userInteractionEnabled = YES;
