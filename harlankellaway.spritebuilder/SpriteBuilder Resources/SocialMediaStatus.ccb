@@ -133,7 +133,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>SocialMediaGameAssets/Istok-Bold.ttf</string>
+										<string>SocialMediaGameAssets/HammersmithOne.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -272,6 +272,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -1179,8 +1181,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
