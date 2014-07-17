@@ -13,7 +13,7 @@
 #import "Inbox.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 28;
+static const int NUM_STATUSES = 13;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 static const int ACTION_TYPE_RECIRCULATE = 1;
@@ -44,7 +44,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     statusSpacing = 12;
     
     // clock
-    _clock = (Clock *)[CCBReader load:@"Clock"];
+//    _clock = (Clock *)[CCBReader load:@"Clock"];
     _clock.gameplay = self;
     timer = [NSTimer scheduledTimerWithTimeInterval:(TIMER_INTERVAL_IN_SECONDS)
                                                  target: self
@@ -65,7 +65,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _currentLevel = [[Level alloc] initWithLevelNum:1];
     
     // inbox
-    _inbox = (Inbox *)[CCBReader load:@"Inbox"];
+//    _inbox = (Inbox *)[CCBReader load:@"Inbox"];
     
     // set visibility of elements
     _messageNotification.visible = FALSE;

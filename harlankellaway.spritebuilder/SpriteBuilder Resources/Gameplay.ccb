@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>162</integer>
+	<integer>163</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -241,7 +241,7 @@
 				<key>displayName</key>
 				<string>Inbox</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_inbox</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -290,8 +290,6 @@
 						<string>Inbox.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1372,7 +1370,7 @@
 						<key>displayName</key>
 						<string>Clock</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>_clock</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
