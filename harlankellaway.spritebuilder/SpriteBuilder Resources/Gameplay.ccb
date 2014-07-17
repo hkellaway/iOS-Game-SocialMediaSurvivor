@@ -253,7 +253,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>ButtonMessageCheck</string>
+								<string>ButtonInboxCheck</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -313,7 +313,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string>checkMessages</string>
+											<string>checkInbox</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -568,6 +568,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -586,9 +588,9 @@
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>LabelMessageNumber</string>
+										<string>LabelNumNotifications</string>
 										<key>memberVarAssignmentName</key>
-										<string>_numMessagesLabel</string>
+										<string>_numInboxNotifications</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -787,7 +789,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>ImageMessageBubble</string>
+								<string>ImageInboxNotification</string>
 								<key>memberVarAssignmentName</key>
 								<string>_messageNotification</string>
 								<key>memberVarAssignmentType</key>
@@ -870,7 +872,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>NodeMessage</string>
+						<string>NodeInboxButton</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>

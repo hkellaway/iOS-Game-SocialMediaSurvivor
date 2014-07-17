@@ -24,7 +24,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCNode *_stream;
     Clock *_clock;
     CCNode *_messageNotification;
-    CCLabelTTF *_numMessagesLabel;
+    CCLabelTTF *_numInboxNotifications;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
     Level *_currentLevel;
@@ -197,15 +197,22 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 # pragma mark - custom methods
 
+- (void)checkInbox
+{
+    CCLOG(@"Message button pressed");
+}
+
+-(void)onTimerFiring
+{
+    CCLOG(@"tickNum = %d", _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS);
+    
+    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", (_clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS)];
+}
+
 - (void)gameOver
 {
     [timer invalidate];
     timer = nil;
-}
-
-- (void)checkMessages
-{
-    CCLOG(@"Message button pressed");
 }
 
 # pragma mark - helper methods
@@ -267,13 +274,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
     
     return statuses;
-}
-
--(void)onTimerFiring
-{
-    CCLOG(@"tickNum = %d", _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS);
-    
-    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", (_clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS)];
 }
 
 @end
