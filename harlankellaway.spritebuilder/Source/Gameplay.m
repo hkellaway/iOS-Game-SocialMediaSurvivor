@@ -210,15 +210,22 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 -(void)onTimerFiring
 {
-    CCLOG(@"tickNum = %d", _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS);
+    int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
     
-    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", (_clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS)];
+    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
+    
+    if(newTime == 0)
+    {
+        [self gameOver];
+    }
 }
 
 - (void)gameOver
 {
     [timer invalidate];
     timer = nil;
+    
+    _inbox.visible = TRUE;
 }
 
 # pragma mark - helper methods

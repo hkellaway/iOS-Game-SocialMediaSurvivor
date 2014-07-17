@@ -123,7 +123,7 @@
 										<string>Text</string>
 										<key>value</key>
 										<array>
-											<string>Hello World! #firsttweet</string>
+											<string>Hello World! #myfirsttweet</string>
 											<false/>
 										</array>
 									</dict>
