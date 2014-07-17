@@ -10,6 +10,7 @@
 #import "SocialMediaStatus.h"
 #import "Level.h"
 #import "Clock.h"
+#import "Inbox.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 28;
@@ -25,6 +26,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     Clock *_clock;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
+    Inbox *_inbox;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
     Level *_currentLevel;
@@ -37,9 +39,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 - (void)didLoadFromCCB
 {
-    // set visibility of elements
-    _messageNotification.visible = FALSE;
-    
     // initialize variables
     
     statusSpacing = 12;
@@ -64,6 +63,13 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // TODO: don't hardcode loading Level 1
     // level
     _currentLevel = [[Level alloc] initWithLevelNum:1];
+    
+    // inbox
+    _inbox = (Inbox *)[CCBReader load:@"Inbox"];
+    
+    // set visibility of elements
+    _messageNotification.visible = FALSE;
+    _inbox.visible = FALSE;
     
     // load Topics from p-list
     NSString *errorDesc = nil;
@@ -200,6 +206,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 - (void)checkInbox
 {
     CCLOG(@"Message button pressed");
+    
+    [_inbox toggleVisibility];
 }
 
 -(void)onTimerFiring
