@@ -9,6 +9,7 @@
 #import "Gameplay.h"
 #import "SocialMediaStatus.h"
 #import "Level.h"
+#import "Clock.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 28;
@@ -16,10 +17,12 @@ static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
+static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 @implementation Gameplay
 {
     CCNode *_stream;
+    Clock *_clock;
     CCNode *_messageNotification;
     CCLabelTTF *_numMessagesLabel;
     
@@ -29,6 +32,7 @@ static const int ACTION_TYPE_FAVORITE = 2;
     int numToRecirculate;
     int numToFavorite;
     CGFloat statusSpacing;
+    NSTimer *timer;
 }
 
 - (void)didLoadFromCCB
@@ -37,17 +41,29 @@ static const int ACTION_TYPE_FAVORITE = 2;
     _messageNotification.visible = FALSE;
     
     // initialize variables
+    
+    statusSpacing = 12;
+    
+    // clock
+    _clock = (Clock *)[CCBReader load:@"Clock"];
+    _clock.gameplay = self;
+    timer = [NSTimer scheduledTimerWithTimeInterval:(TIMER_INTERVAL_IN_SECONDS)
+                                                 target: self
+                                               selector:@selector(onTimerFiring)
+                                               userInfo: nil repeats: YES];
+    
+    // topics
     _allTopics = [NSMutableArray array];
     int numAllTopics;
-    
-    // TODO: don't hardcode loading Level 1
-    _currentLevel = [[Level alloc] initWithLevelNum:1];
     
     numToRecirculate = NUM_STATUSES * PERCENTAGE_STATUS_TO_RECIRCULATE;
     numToFavorite = NUM_STATUSES * PERCENTAGE_STATUS_TO_FAVORITE;
     _currentLevel.topicsToRecirculate = [[NSMutableArray alloc] init];
     _currentLevel.topicsToFavorite = [[NSMutableArray alloc] init];
-    statusSpacing = 12;
+    
+    // TODO: don't hardcode loading Level 1
+    // level
+    _currentLevel = [[Level alloc] initWithLevelNum:1];
     
     // load Topics from p-list
     NSString *errorDesc = nil;
@@ -100,7 +116,7 @@ static const int ACTION_TYPE_FAVORITE = 2;
         
         status.position = ccp(xPos, ((i * height)) + statusSpacing);
         
-        status.statusText.string = (NSString *)[randomActions objectAtIndex:i];
+//        status.statusText.string = (NSString *)[randomActions objectAtIndex:i];
         
         if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
         {
@@ -181,6 +197,12 @@ static const int ACTION_TYPE_FAVORITE = 2;
 
 # pragma mark - custom methods
 
+- (void)gameOver
+{
+    [timer invalidate];
+    timer = nil;
+}
+
 - (void)checkMessages
 {
     CCLOG(@"Message button pressed");
@@ -245,6 +267,13 @@ static const int ACTION_TYPE_FAVORITE = 2;
     }
     
     return statuses;
+}
+
+-(void)onTimerFiring
+{
+    CCLOG(@"tickNum = %d", _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS);
+    
+    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", (_clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS)];
 }
 
 @end

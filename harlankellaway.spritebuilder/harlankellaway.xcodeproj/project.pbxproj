@@ -42,6 +42,7 @@
 		CE2C4DD619744FA8008C8185 /* Topics.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD519744FA8008C8185 /* Topics.plist */; };
 		CE2C4DD819745FC6008C8185 /* Statuses.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD719745FC6008C8185 /* Statuses.plist */; };
 		CE37ECC91976C37C0043D969 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE37ECC81976C37B0043D969 /* Levels.plist */; };
+		CE37ECCF1977524F0043D969 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE37ECCE1977524F0043D969 /* Clock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		CE2C4DD519744FA8008C8185 /* Topics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Topics.plist; sourceTree = "<group>"; };
 		CE2C4DD719745FC6008C8185 /* Statuses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Statuses.plist; sourceTree = "<group>"; };
 		CE37ECC81976C37B0043D969 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		CE37ECCD1977524F0043D969 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Source/Clock.h; sourceTree = "<group>"; };
+		CE37ECCE1977524F0043D969 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Source/Clock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				7ACA6110196EF09000307164 /* Gameplay.h */,
 				7ACA6111196EF09000307164 /* Gameplay.m */,
+				CE37ECCD1977524F0043D969 /* Clock.h */,
+				CE37ECCE1977524F0043D969 /* Clock.m */,
 				CE2C4DD119744E14008C8185 /* Level.h */,
 				CE2C4DD219744E14008C8185 /* Level.m */,
 				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
@@ -367,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE37ECCF1977524F0043D969 /* Clock.m in Sources */,
 				7ACA6112196EF09000307164 /* Gameplay.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				7AC1996D196DC8EA00D216C4 /* SocialMediaStatus.m in Sources */,
