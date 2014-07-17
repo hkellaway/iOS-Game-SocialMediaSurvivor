@@ -10,4 +10,6 @@
 
 @interface Trend : CCSprite
 
+@property (nonatomic, assign) int actionType;
+
 @end

@@ -11,6 +11,7 @@
 #import "Level.h"
 #import "Clock.h"
 #import "Inbox.h"
+#import "Trend.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
@@ -44,7 +45,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     statusSpacing = 12;
     
     // clock
-//    _clock = (Clock *)[CCBReader load:@"Clock"];
     _clock.gameplay = self;
     timer = [NSTimer scheduledTimerWithTimeInterval:(TIMER_INTERVAL_IN_SECONDS)
                                                  target: self
@@ -63,9 +63,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // TODO: don't hardcode loading Level 1
     // level
     _currentLevel = [[Level alloc] initWithLevelNum:1];
-    
-    // inbox
-//    _inbox = (Inbox *)[CCBReader load:@"Inbox"];
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -102,6 +99,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // set topics to that are to be recirculated/favorited
     for(int j = 0; j < numToRecirculate; j++)
     {
+        
         [_currentLevel.topicsToRecirculate addObject:[self getRandomTopic]];
     }
     
