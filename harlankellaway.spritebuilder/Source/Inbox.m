@@ -9,26 +9,15 @@
 #import "Inbox.h"
 
 @implementation Inbox
-{
-//    CCSprite *_inboxBackground;
-}
 
 - (void)didLoadFromCCB
 {
-//    [self setVisiblity:TRUE];
     self.visible = FALSE;
 }
 
 - (void)toggleVisibility
 {
-    CCLOG(@"Toggling Inbox visibility");
     self.visible = !self.visible;
-}
-
-- (void)setVisiblity:(BOOL)visibility
-{
-//    isVisible = visibility;
-//    _inboxBackground.visible = visibility;
 }
 
 @end

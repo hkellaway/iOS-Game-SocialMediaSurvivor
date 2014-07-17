@@ -12,6 +12,7 @@
 #import "Clock.h"
 #import "Inbox.h"
 #import "Trend.h"
+#import "GameState.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
@@ -60,9 +61,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _currentLevel.topicsToRecirculate = [[NSMutableArray alloc] init];
     _currentLevel.topicsToFavorite = [[NSMutableArray alloc] init];
     
-    // TODO: don't hardcode loading Level 1
     // level
-    _currentLevel = [[Level alloc] initWithLevelNum:1];
+    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -222,10 +222,16 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 - (void)gameOver
 {
+    // stop timer
     [timer invalidate];
     timer = nil;
     
+    // rese global values
+    [GameState sharedInstance].levelNum = 1;
+    
     _inbox.visible = TRUE;
+    
+    
 }
 
 # pragma mark - helper methods

@@ -8,9 +8,6 @@
 
 #import "Trend.h"
 
-static const int ACTION_TYPE_RECIRCULATE = 1;
-static const int ACTION_TYPE_FAVORITE = 2;
-
 @implementation Trend
 
 @end
