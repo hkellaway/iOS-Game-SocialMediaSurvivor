@@ -44,6 +44,7 @@
 		CE37ECC91976C37C0043D969 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE37ECC81976C37B0043D969 /* Levels.plist */; };
 		CE37ECCF1977524F0043D969 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE37ECCE1977524F0043D969 /* Clock.m */; };
 		CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B1C197777D800A2EAD2 /* Inbox.m */; };
+		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		CE37ECCE1977524F0043D969 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Source/Clock.m; sourceTree = "<group>"; };
 		CE6A7B1B197777D800A2EAD2 /* Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Inbox.h; path = Source/Inbox.h; sourceTree = "<group>"; };
 		CE6A7B1C197777D800A2EAD2 /* Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Inbox.m; path = Source/Inbox.m; sourceTree = "<group>"; };
+		CE6A7B1F19783F3D00A2EAD2 /* Trend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Trend.h; path = Source/Trend.h; sourceTree = "<group>"; };
+		CE6A7B2019783F3D00A2EAD2 /* Trend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trend.m; path = Source/Trend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				7ACA6110196EF09000307164 /* Gameplay.h */,
 				7ACA6111196EF09000307164 /* Gameplay.m */,
+				CE6A7B1F19783F3D00A2EAD2 /* Trend.h */,
+				CE6A7B2019783F3D00A2EAD2 /* Trend.m */,
 				CE6A7B1B197777D800A2EAD2 /* Inbox.h */,
 				CE6A7B1C197777D800A2EAD2 /* Inbox.m */,
 				CE37ECCD1977524F0043D969 /* Clock.h */,
@@ -380,6 +385,7 @@
 				CE37ECCF1977524F0043D969 /* Clock.m in Sources */,
 				7ACA6112196EF09000307164 /* Gameplay.m in Sources */,
 				CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */,
+				CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				7AC1996D196DC8EA00D216C4 /* SocialMediaStatus.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
