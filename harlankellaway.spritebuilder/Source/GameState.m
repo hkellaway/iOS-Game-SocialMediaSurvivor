@@ -9,6 +9,8 @@
 #import "GameState.h"
 
 static NSString *const GAME_STATE_LEVEL_NUM_KEY = @"GameStateLevelNumKey";
+static NSString *const GAME_STATE_TRENDS_TO_RECIRCULATE_KEY = @"GameStateTrendsToRecirculateKey";
+static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFavoriteKey";
 
 @implementation GameState
 
@@ -35,18 +37,29 @@ static NSString *const GAME_STATE_LEVEL_NUM_KEY = @"GameStateLevelNumKey";
     
     if(self)
     {
-//        NSNumber *levelNum = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_NUM_KEY];
-        
-        // TODO: if key is nil, set to 1
-        
-        NSNumber *levelNum = @1;
-        self.trendsToRecirculate = [NSMutableArray array];
-        self.trendsToFavorite = [NSMutableArray array];
-        
-        [self.trendsToRecirculate addObject:@"Hello World"];
-        [self.trendsToFavorite addObject:@"Hello World"];
+        // try to read in defaults - if nil, initialize
+        NSNumber *levelNum = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_NUM_KEY];
+
+        if(levelNum == nil)
+        {
+            levelNum = @1;
+        }
         
         self.levelNum = [levelNum integerValue];
+        
+        NSMutableArray *trendsToRecirculate = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_TRENDS_TO_RECIRCULATE_KEY];
+        
+        if(!trendsToRecirculate)
+        {
+            trendsToRecirculate = [NSMutableArray array];
+        }
+        
+        NSMutableArray *trendsToFavorite = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
+        
+        if(!trendsToFavorite)
+        {
+            trendsToFavorite = [NSMutableArray array];
+        }
     }
     
     return self;
@@ -63,6 +76,24 @@ static NSString *const GAME_STATE_LEVEL_NUM_KEY = @"GameStateLevelNumKey";
     // store change
     [[NSUserDefaults standardUserDefaults]setObject:levelNSNumber forKey:GAME_STATE_LEVEL_NUM_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+- (void)setTrendsToRecirculate:(NSMutableArray *)trendsToRecirculate
+{
+    _trendsToRecirculate = trendsToRecirculate;
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults]setObject:trendsToRecirculate forKey:GAME_STATE_TRENDS_TO_RECIRCULATE_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+- (void)setTrendsToFavorite:(NSMutableArray *)trendsToFavorite
+{
+    _trendsToFavorite = trendsToFavorite;
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults]setObject:trendsToFavorite forKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
+    [NSUserDefaults standardUserDefaults]synchronize;
 }
 
 @end

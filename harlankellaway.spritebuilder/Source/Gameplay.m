@@ -85,7 +85,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
-    // TODO: don't load in all Topics each time Gameplay loads
+    // TODO: DON'T LOAD IN ALL TOPICS EACH TIME GAMEPLAY LOADS
     for(int i = 0; i < [topicsArray count]; i++)
     {
         [_allTopics addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
@@ -108,10 +108,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         
         // create Trend and store in shared GameState
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        
-        // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
-        [trend runAction:[CCActionRemove action]];
-        
+        [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
         [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", randomTopic]];
         [[GameState sharedInstance].trendsToRecirculate addObject:trend];
     }
