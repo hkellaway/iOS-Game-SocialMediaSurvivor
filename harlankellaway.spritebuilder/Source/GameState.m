@@ -93,7 +93,7 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
     
     // store change
     [[NSUserDefaults standardUserDefaults]setObject:trendsToFavorite forKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
-    [NSUserDefaults standardUserDefaults]synchronize;
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 @end

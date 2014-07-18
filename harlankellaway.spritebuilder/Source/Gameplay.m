@@ -119,9 +119,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         
         [_currentLevel.topicsToFavorite addObject:randomTopic];
         
-//        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-//        trend.trendText.string = [NSString stringWithFormat:@"Favorite statuses on %@", randomTopic];
-//        [[GameState sharedInstance].trendsToFavorite addObject:trend];
+        // create Trend and store in shared GameState
+        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
+        [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
+        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", randomTopic]];
+        [[GameState sharedInstance].trendsToFavorite addObject:trend];
     }
     
     // create SocialMediaStatus objects
@@ -240,10 +242,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // rese global values
     [GameState sharedInstance].levelNum = 1;
+    [GameState sharedInstance].trendsToRecirculate = nil;
+    [GameState sharedInstance].trendsToFavorite = nil;
     
     _inbox.visible = TRUE;
-    
-    
 }
 
 # pragma mark - helper methods
