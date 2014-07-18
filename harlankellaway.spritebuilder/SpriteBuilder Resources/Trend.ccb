@@ -117,7 +117,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/bullet_point.png</string>
+									<string>SocialMediaGameAssets/checkbox_unchecked.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -341,8 +341,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -421,6 +419,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -557,7 +557,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>0.10938167572021484</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>

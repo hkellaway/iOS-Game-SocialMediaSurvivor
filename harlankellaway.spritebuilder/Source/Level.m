@@ -17,7 +17,9 @@
     self = [super init];
     
     if(self)
-    { 
+    {
+        self.levelNum = levelNum;
+        
         NSString *errorDesc = nil;
         NSPropertyListFormat format;
         

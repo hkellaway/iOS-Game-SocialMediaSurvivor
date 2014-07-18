@@ -9,5 +9,13 @@
 #import "Trend.h"
 
 @implementation Trend
+{
+    CCLabelTTF *_trendText;
+}
+
+- (void)setTrendText:(NSString *)text
+{
+    _trendText.string = text;
+}
 
 @end

@@ -35,7 +35,17 @@ static NSString *const GAME_STATE_LEVEL_NUM_KEY = @"GameStateLevelNumKey";
     
     if(self)
     {
-        NSNumber *levelNum = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_NUM_KEY];
+//        NSNumber *levelNum = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_NUM_KEY];
+        
+        // TODO: if key is nil, set to 1
+        
+        NSNumber *levelNum = @1;
+        self.trendsToRecirculate = [NSMutableArray array];
+        self.trendsToFavorite = [NSMutableArray array];
+        
+        [self.trendsToRecirculate addObject:@"Hello World"];
+        [self.trendsToFavorite addObject:@"Hello World"];
+        
         self.levelNum = [levelNum integerValue];
     }
     

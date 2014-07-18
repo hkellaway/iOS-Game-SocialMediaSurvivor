@@ -21,6 +21,8 @@
 @property (nonatomic, strong) NSMutableArray *topicsToRecirculate;
 @property (nonatomic, strong) NSMutableArray *topicsToFavorite;
 
+@property (nonatomic, assign) int levelNum;
+
 # pragma mark - methods
 
 - (id)initWithLevelNum:(int)levelNum;

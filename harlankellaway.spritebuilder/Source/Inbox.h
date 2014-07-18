@@ -11,7 +11,6 @@
 
 @interface Inbox : CCSprite
 {
-//    bool isVisible;
 }
 
 @property (nonatomic, weak) Gameplay *gameplay;

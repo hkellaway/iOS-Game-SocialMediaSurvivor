@@ -74,7 +74,7 @@ static const float SCALE_FACTOR = 0.38;
 //    self.position = ccp(self.position.x, [CCDirector sharedDirector].viewSize.height + (self.contentSize.height * self.scaleY) / 2);
 
     int numStatuses = 13;
-    int spacing = 12;
+    int spacing = _gameplay.statusSpacing;
     int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing);
     
     self.position = ccp(self.position.x, newY);

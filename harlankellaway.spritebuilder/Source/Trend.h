@@ -10,4 +10,8 @@
 
 @interface Trend : CCSprite
 
+//@property (nonatomic, copy) CCLabelTTF *trendText;
+
+- (void)setTrendText:(NSString *)text;
+
 @end

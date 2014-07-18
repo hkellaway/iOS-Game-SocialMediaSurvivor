@@ -16,6 +16,7 @@
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
+
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 static const int ACTION_TYPE_RECIRCULATE = 1;
@@ -35,15 +36,14 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     int numToRecirculate;
     int numToFavorite;
-    CGFloat statusSpacing;
     NSTimer *timer;
 }
 
 - (void)didLoadFromCCB
 {
     // initialize variables
-    
-    statusSpacing = 12;
+    _numStatuses = NUM_STATUSES;
+    _statusSpacing = 12;
     
     // clock
     _clock.gameplay = self;
@@ -56,17 +56,17 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _allTopics = [NSMutableArray array];
     int numAllTopics;
     
-    numToRecirculate = NUM_STATUSES * PERCENTAGE_STATUS_TO_RECIRCULATE;
-    numToFavorite = NUM_STATUSES * PERCENTAGE_STATUS_TO_FAVORITE;
+    numToRecirculate = _numStatuses * PERCENTAGE_STATUS_TO_RECIRCULATE;
+    numToFavorite = _numStatuses * PERCENTAGE_STATUS_TO_FAVORITE;
     _currentLevel.topicsToRecirculate = [[NSMutableArray alloc] init];
     _currentLevel.topicsToFavorite = [[NSMutableArray alloc] init];
     
     // level
-    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
+    int currentLevelNum = [GameState sharedInstance].levelNum;
+    _currentLevel = [[Level alloc] initWithLevelNum:currentLevelNum];
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
-    _inbox.visible = FALSE;
     
     // load Topics from p-list
     NSString *errorDesc = nil;
@@ -94,33 +94,48 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     numAllTopics = [_allTopics count];
     
     // get order recirculate/favorite/avoid for this set of Statuses
-    NSMutableArray *randomActions = [self getRandomActionTypes:NUM_STATUSES percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
+    NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
     
     // set topics to that are to be recirculated/favorited
+    // add Trend objects to global GameState Topics array
     for(int j = 0; j < numToRecirculate; j++)
     {
+        // get random topic
+        NSString *randomTopic = [self getRandomTopic];
         
-        [_currentLevel.topicsToRecirculate addObject:[self getRandomTopic]];
+        // add to topics array
+        [_currentLevel.topicsToRecirculate addObject:randomTopic];
+        
+        // create Trend and store in shared GameState
+        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
+        
+        // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
+        [trend runAction:[CCActionRemove action]];
+        
+        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", randomTopic]];
+        [[GameState sharedInstance].trendsToRecirculate addObject:trend];
     }
     
     for(int k = 0; k < numToFavorite; k++)
     {
-        [_currentLevel.topicsToFavorite addObject:[self getRandomTopic]];
+        NSString *randomTopic = [self getRandomTopic];
+        
+        [_currentLevel.topicsToFavorite addObject:randomTopic];
+        
+//        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
+//        trend.trendText.string = [NSString stringWithFormat:@"Favorite statuses on %@", randomTopic];
+//        [[GameState sharedInstance].trendsToFavorite addObject:trend];
     }
     
-    CCLOG(@"pause");
-    
     // create SocialMediaStatus objects
-    for(int i = 0; i < NUM_STATUSES; i++)
+    for(int i = 0; i < _numStatuses; i++)
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
         
         CGFloat height = status.contentSize.height * status.scaleY;
         CGFloat xPos = ((_stream.contentSize.width) / 2);
         
-        status.position = ccp(xPos, ((i * height)) + statusSpacing);
-        
-//        status.statusText.string = (NSString *)[randomActions objectAtIndex:i];
+        status.position = ccp(xPos, ((i * height)) + _statusSpacing);
         
         if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
         {
@@ -162,7 +177,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 - (void)update:(CCTime)delta
 {
     // scrolling of SocialMediaStatues
-    for(int i = 0; i < NUM_STATUSES; i++)
+    for(int i = 0; i < _numStatuses; i++)
     {
         SocialMediaStatus *status = _statuses[i];
         

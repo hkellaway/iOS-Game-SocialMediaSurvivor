@@ -90,6 +90,11 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/bullet_point.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/button_favorite.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -110,12 +115,32 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/button_play.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/button_recirculate.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/button_recirculate_highlighted.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/checkbox_checked.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/checkbox_unchecked.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state1.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
