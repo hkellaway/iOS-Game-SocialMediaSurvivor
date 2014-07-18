@@ -96,6 +96,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // get order recirculate/favorite/avoid for this set of Statuses
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
     
+    NSMutableArray *tempTopics = [[NSMutableArray alloc] init];
+    
     // set topics to that are to be recirculated/favorited
     // add Trend objects to global GameState Topics array
     for(int j = 0; j < numToRecirculate; j++)
@@ -109,12 +111,19 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         // create Trend and store in shared GameState
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
-        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", randomTopic]];
-        [[GameState sharedInstance].trendsToRecirculate addObject:trend];
+        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", randomTopic.lowercaseString]];
+        
+        [tempTopics addObject:trend];
     }
+    
+    [[GameState sharedInstance] setTrendsToRecirculate:tempTopics];
+    
+    tempTopics = [[NSMutableArray alloc] init];
     
     for(int k = 0; k < numToFavorite; k++)
     {
+        tempTopics = [[NSMutableArray alloc] initWithCapacity:numToFavorite];
+        
         NSString *randomTopic = [self getRandomTopic];
         
         [_currentLevel.topicsToFavorite addObject:randomTopic];
@@ -122,9 +131,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         // create Trend and store in shared GameState
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
-        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", randomTopic]];
-        [[GameState sharedInstance].trendsToFavorite addObject:trend];
+        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", randomTopic.lowercaseString]];
+        
+        [tempTopics addObject:trend];
     }
+    
+    [[GameState sharedInstance] setTrendsToFavorite:tempTopics];
     
     // create SocialMediaStatus objects
     for(int i = 0; i < _numStatuses; i++)
@@ -230,7 +242,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     if(newTime == 0)
     {
-        [self gameOver];
+        CCLOG(@"Round over!");
+//        [self gameOver];
     }
 }
 
