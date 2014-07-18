@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>13</integer>
+	<integer>17</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -243,8 +243,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -255,24 +253,24 @@
 				<array>
 					<dict>
 						<key>UUID</key>
-						<integer>11</integer>
+						<integer>13</integer>
 						<key>baseClass</key>
-						<string>CCLayoutBox</string>
+						<string>CCNode</string>
 						<key>children</key>
 						<array>
 							<dict>
 								<key>UUID</key>
-								<integer>12</integer>
+								<integer>11</integer>
 								<key>baseClass</key>
-								<string>CCBFile</string>
+								<string>CCLayoutBox</string>
 								<key>children</key>
 								<array/>
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>Trend3</string>
+								<string>LayoutBoxTrends</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_trendsBox</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -292,11 +290,22 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
+											<real>0.5</real>
+											<real>0.5</real>
+											<integer>0</integer>
+											<integer>2</integer>
+											<integer>2</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>anchorPoint</string>
+										<key>type</key>
+										<string>Point</string>
+										<key>value</key>
+										<array>
 											<real>0.0</real>
 											<real>0.0</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
 										</array>
 									</dict>
 									<dict>
@@ -306,143 +315,30 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.5</real>
-											<real>0.5</real>
+											<real>1</real>
+											<real>1</real>
 											<false/>
 											<integer>0</integer>
 										</array>
 									</dict>
 									<dict>
 										<key>name</key>
-										<string>ccbFile</string>
+										<string>direction</string>
 										<key>type</key>
-										<string>CCBFile</string>
+										<string>IntegerLabeled</string>
 										<key>value</key>
-										<string>Trend.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>10</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Trend2</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
+										<integer>1</integer>
 									</dict>
 									<dict>
 										<key>name</key>
-										<string>position</string>
+										<string>spacing</string>
 										<key>type</key>
-										<string>Position</string>
+										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>0.0</real>
 											<real>30</real>
 											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
 										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.5</real>
-											<real>0.5</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Trend.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>9</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Trend1</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>0.0</real>
-											<real>60</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.5</real>
-											<real>0.5</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Trend.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -450,7 +346,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>LayoutBoxTrends</string>
+						<string>CCNode</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -472,11 +368,24 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>93</real>
-									<real>0.0</real>
+									<real>19</real>
+									<real>60.5</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>contentSize</string>
+								<key>type</key>
+								<string>Size</string>
+								<key>value</key>
+								<array>
+									<real>0.80000001192092896</real>
+									<real>0.5</real>
+									<integer>2</integer>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -487,7 +396,7 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>0.5</real>
 								</array>
 							</dict>
 							<dict>
@@ -500,25 +409,6 @@
 									<real>1</real>
 									<real>1</real>
 									<false/>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>direction</string>
-								<key>type</key>
-								<string>IntegerLabeled</string>
-								<key>value</key>
-								<integer>1</integer>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>spacing</string>
-								<key>type</key>
-								<string>FloatScale</string>
-								<key>value</key>
-								<array>
-									<real>30</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -557,7 +447,7 @@
 								<key>value</key>
 								<array>
 									<real>93</real>
-									<real>93</real>
+									<real>174</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -764,7 +654,7 @@
 								<key>value</key>
 								<array>
 									<real>93</real>
-									<real>180</real>
+									<real>281</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -1010,11 +900,13 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>15</real>
+							<real>35</real>
 							<integer>0</integer>
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

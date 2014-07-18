@@ -52,6 +52,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                                                selector:@selector(onTimerFiring)
                                                userInfo: nil repeats: YES];
     
+    // inbox
+    _inbox.gameplay = self;
+    
     // topics
     _allTopics = [NSMutableArray array];
     int numAllTopics;
@@ -108,34 +111,24 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         // add to topics array
         [_currentLevel.topicsToRecirculate addObject:randomTopic];
         
-        // create Trend and store in shared GameState
-        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
-        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", randomTopic.lowercaseString]];
-        
-        [tempTopics addObject:trend];
+        [tempTopics addObject:randomTopic];
     }
     
+    // store topics in GameState
     [[GameState sharedInstance] setTrendsToRecirculate:tempTopics];
     
     tempTopics = [[NSMutableArray alloc] init];
     
     for(int k = 0; k < numToFavorite; k++)
     {
-        tempTopics = [[NSMutableArray alloc] initWithCapacity:numToFavorite];
-        
         NSString *randomTopic = [self getRandomTopic];
         
         [_currentLevel.topicsToFavorite addObject:randomTopic];
         
-        // create Trend and store in shared GameState
-        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
-        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", randomTopic.lowercaseString]];
-        
-        [tempTopics addObject:trend];
+        [tempTopics addObject:randomTopic];
     }
     
+    // store topics in GameState
     [[GameState sharedInstance] setTrendsToFavorite:tempTopics];
     
     // create SocialMediaStatus objects

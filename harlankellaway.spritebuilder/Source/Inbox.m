@@ -11,6 +11,9 @@
 #import "GameState.h"
 
 @implementation Inbox
+{
+    CCNode *_trendsBox;
+}
 
 - (void)didLoadFromCCB
 {
@@ -24,6 +27,7 @@
     if(self.visible)
     {
         [self refresh];
+        _trendsBox.visible = TRUE;
     }
 }
 
@@ -33,14 +37,24 @@
     NSMutableArray *trendsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
     NSMutableArray *trendsToFavorite = [GameState sharedInstance].trendsToFavorite;
     
-    for(int i = 0; i < [trendsToRecirculate count]; i++)
-    {
-        [self addChild:(Trend *)trendsToRecirculate[i]];
-    }
-    
     for(int j = 0; j < [trendsToFavorite count]; j++)
     {
-        [self addChild:(Trend *)trendsToFavorite[j]];
+        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
+        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", ((NSString *)trendsToFavorite[j]).lowercaseString]];
+        trend.scaleX = trend.scaleX / 2;
+        trend.scaleY = trend.scaleY / 2;
+        [_trendsBox addChild:trend];
+    }
+    
+    
+    
+    for(int i = 0; i < [trendsToRecirculate count]; i++)
+    {
+        Trend *trend = (Trend *)[CCBReader load:@"Trend"];
+        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", ((NSString *)trendsToRecirculate[i]).lowercaseString]];
+        trend.scaleX = trend.scaleX / 2;
+        trend.scaleY = trend.scaleY / 2;
+        [_trendsBox addChild:trend];
     }
 }
 

@@ -52,7 +52,6 @@ static const float SCALE_FACTOR = 0.38;
         meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
         
         CCLOG(@"Scaling attempt complete");
-        
     }
 }
 
@@ -63,6 +62,19 @@ static const float SCALE_FACTOR = 0.38;
     if(_actionType == ACTION_TYPE_FAVORITE)
     {
         CCLOG(@"Yay!");
+        
+        CCSprite *meterMiddle = _gameplay.meterMiddle;
+        CCSprite *meterTop = _gameplay.meterTop;
+        
+        // TODO: calculate scale factor
+        CGFloat scaleFactor = 0.25;
+        CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
+        
+        meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
+        
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
+        
+        CCLOG(@"Scaling attempt complete");
     }
 }
 
