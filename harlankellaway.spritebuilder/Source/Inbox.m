@@ -12,11 +12,16 @@
 
 @implementation Inbox
 {
+    CCLabelTTF *_inboxLabel;
     CCNode *_trendsBox;
+    NSMutableArray *trendsToRecirculate;
+    NSMutableArray *trendsToFavorite;
 }
 
 - (void)didLoadFromCCB
 {
+    trendsToRecirculate = [NSMutableArray array];
+    trendsToFavorite = [NSMutableArray array];
     self.visible = FALSE;
 }
 
@@ -26,7 +31,10 @@
 
     if(self.visible)
     {
-        [self refresh];
+        if(([trendsToRecirculate count] == 0) & ([trendsToFavorite count] == 0))
+        {
+            [self refresh];
+        }
         _trendsBox.visible = TRUE;
     }
 }
@@ -34,8 +42,8 @@
 - (void)refresh
 {
     // read Trends from shared GameState
-    NSMutableArray *trendsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
-    NSMutableArray *trendsToFavorite = [GameState sharedInstance].trendsToFavorite;
+    trendsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
+    trendsToFavorite = [GameState sharedInstance].trendsToFavorite;
     
     for(int j = 0; j < [trendsToFavorite count]; j++)
     {
@@ -45,8 +53,6 @@
         trend.scaleY = trend.scaleY / 2;
         [_trendsBox addChild:trend];
     }
-    
-    
     
     for(int i = 0; i < [trendsToRecirculate count]; i++)
     {

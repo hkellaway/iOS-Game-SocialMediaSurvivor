@@ -80,11 +80,6 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
-		<key>SocialMediaGameAssets/background.jpg</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
 		<key>SocialMediaGameAssets/background.png</key>
 		<dict>
 			<key>scaleFrom</key>

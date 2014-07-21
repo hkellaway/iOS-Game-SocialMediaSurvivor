@@ -304,8 +304,8 @@
 										<string>Point</string>
 										<key>value</key>
 										<array>
-											<real>0.0</real>
-											<real>0.0</real>
+											<real>0.5</real>
+											<real>0.5</real>
 										</array>
 									</dict>
 									<dict>
@@ -346,7 +346,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCNode</string>
+						<string>NodeTrends</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -369,7 +369,7 @@
 								<key>value</key>
 								<array>
 									<real>19</real>
-									<real>60.5</real>
+									<real>49</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -413,6 +413,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -447,7 +449,7 @@
 								<key>value</key>
 								<array>
 									<real>93</real>
-									<real>174</real>
+									<real>151</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -633,7 +635,7 @@
 						<key>displayName</key>
 						<string>LabelInbox</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>_inboxLabel</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -654,7 +656,7 @@
 								<key>value</key>
 								<array>
 									<real>93</real>
-									<real>281</real>
+									<real>258</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -905,8 +907,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

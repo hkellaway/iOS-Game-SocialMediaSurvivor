@@ -46,6 +46,7 @@
 		CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B1C197777D800A2EAD2 /* Inbox.m */; };
 		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
 		CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B23197863AD00A2EAD2 /* GameState.m */; };
+		CEF62CBE197D71B400E3D6A6 /* LevelIntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62CBD197D71B400E3D6A6 /* LevelIntroScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		CE6A7B2019783F3D00A2EAD2 /* Trend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trend.m; path = Source/Trend.m; sourceTree = "<group>"; };
 		CE6A7B22197863AD00A2EAD2 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameState.h; path = Source/GameState.h; sourceTree = "<group>"; };
 		CE6A7B23197863AD00A2EAD2 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameState.m; path = Source/GameState.m; sourceTree = "<group>"; };
+		CEF62CBC197D71B400E3D6A6 /* LevelIntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelIntroScene.h; path = Source/LevelIntroScene.h; sourceTree = "<group>"; };
+		CEF62CBD197D71B400E3D6A6 /* LevelIntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelIntroScene.m; path = Source/LevelIntroScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				CE6A7B23197863AD00A2EAD2 /* GameState.m */,
 				CE6A7B1B197777D800A2EAD2 /* Inbox.h */,
 				CE6A7B1C197777D800A2EAD2 /* Inbox.m */,
+				CEF62CBC197D71B400E3D6A6 /* LevelIntroScene.h */,
+				CEF62CBD197D71B400E3D6A6 /* LevelIntroScene.m */,
 				CE2C4DD119744E14008C8185 /* Level.h */,
 				CE2C4DD219744E14008C8185 /* Level.m */,
 				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
@@ -395,6 +400,7 @@
 				7AC1996D196DC8EA00D216C4 /* SocialMediaStatus.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CE2C4DD319744E14008C8185 /* Level.m in Sources */,
+				CEF62CBE197D71B400E3D6A6 /* LevelIntroScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */,
 			);
