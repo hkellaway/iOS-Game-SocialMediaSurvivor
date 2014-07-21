@@ -65,8 +65,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _currentLevel.topicsToFavorite = [[NSMutableArray alloc] init];
     
     // level
-    int currentLevelNum = [GameState sharedInstance].levelNum;
-    _currentLevel = [[Level alloc] initWithLevelNum:currentLevelNum];
+//    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -273,10 +272,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
-- (NSString *)getRandomTopic
-{
-    return _allTopics[0 + arc4random() % ([_allTopics count])];
-}
+//- (NSString *)getRandomTopic
+//{
+//    return _allTopics[0 + arc4random() % ([_allTopics count])];
+//}
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
                          percentToRecirculate:(CGFloat)percentToRecirculate
@@ -313,6 +312,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
     
     return statuses;
+}
+
+- (NSString *)getRandomTopic
+{
+    return _allTopics[0 + arc4random() % ([_allTopics count])];
 }
 
 @end

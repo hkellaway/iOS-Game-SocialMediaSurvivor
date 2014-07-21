@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>13</integer>
+	<integer>19</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -213,7 +213,7 @@
 														<key>value</key>
 														<array>
 															<real>0.5</real>
-															<real>0.5</real>
+															<real>1</real>
 														</array>
 													</dict>
 													<dict>
@@ -235,7 +235,7 @@
 														<key>type</key>
 														<string>IntegerLabeled</string>
 														<key>value</key>
-														<integer>0</integer>
+														<integer>1</integer>
 													</dict>
 													<dict>
 														<key>name</key>
@@ -244,7 +244,7 @@
 														<string>FloatScale</string>
 														<key>value</key>
 														<array>
-															<real>0.0</real>
+															<real>35</real>
 															<integer>0</integer>
 														</array>
 													</dict>
@@ -981,7 +981,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCButton</string>
+				<string>ButtonStart</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -1041,7 +1041,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>startLevel</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1307,7 +1307,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCLabelTTF</string>
+				<string>LabelStart</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -1642,7 +1642,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>0.087505340576171875</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>
