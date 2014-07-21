@@ -13,7 +13,9 @@
 + (instancetype)sharedInstance;
 
 @property (nonatomic, assign) NSInteger levelNum;
+@property (nonatomic, strong) NSMutableArray *allTopics;
 @property (nonatomic, strong) NSMutableArray *trendsToRecirculate;
 @property (nonatomic, strong) NSMutableArray *trendsToFavorite;
+@property (nonatomic, assign) double streamSpeed;
 
 @end

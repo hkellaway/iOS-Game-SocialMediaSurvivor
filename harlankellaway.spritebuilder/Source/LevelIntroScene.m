@@ -10,6 +10,7 @@
 #import "GameState.h"
 #import "Trend.h"
 
+// TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
@@ -36,35 +37,28 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     // read in current Level and set Scene title
     _levelLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
     
-    // load Topics from p-list
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    NSData *plistXML = [self getPListXML:@"Topics"];
-    
-    // convert static property list into corresponding property-list objects
-    // Topics p-list contains array of dictionarys
-    NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
-                                       propertyListFromData:plistXML
-                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                       format:&format
-                                       errorDescription:&errorDesc];
-    if(!topicsArray)
-    {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-    }
-    
-    // TODO: DON'T LOAD IN ALL TOPICS EACH TIME LEVEL LOADS
-    for(int i = 0; i < [topicsArray count]; i++)
-    {
-        [_allTopics addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
-    }
-
-    
-    // TODO: DON'T LOAD IN ALL TOPICS EACH TIME GAMEPLAY LOADS
-    for(int i = 0; i < [topicsArray count]; i++)
-    {
-        [_allTopics addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
-    }
+//    // load Topics from p-list
+//    NSString *errorDesc = nil;
+//    NSPropertyListFormat format;
+//    NSData *plistXML = [self getPListXML:@"Topics"];
+//    
+//    // convert static property list into corresponding property-list objects
+//    // Topics p-list contains array of dictionarys
+//    NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
+//                                       propertyListFromData:plistXML
+//                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
+//                                       format:&format
+//                                       errorDescription:&errorDesc];
+//    if(!topicsArray)
+//    {
+//        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+//    }
+//
+//    // TODO: DON'T LOAD IN ALL TOPICS EACH TIME LEVEL LOADS
+//    for(int i = 0; i < [topicsArray count]; i++)
+//    {
+//        [ addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
+//    }
     
     NSMutableArray *tempTopics = [[NSMutableArray alloc] init];
     
@@ -130,7 +124,8 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
 
 - (NSString *)getRandomTopic
 {
-    return _allTopics[0 + arc4random() % ([_allTopics count])];
+    NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
+    return allTopics[0 + arc4random() % ([allTopics count])];
 }
 
 - (NSData *)getPListXML: (NSString *)pListName

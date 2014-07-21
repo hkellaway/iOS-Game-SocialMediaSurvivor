@@ -11,7 +11,6 @@
 #import "Level.h"
 #import "Clock.h"
 #import "Inbox.h"
-#import "Trend.h"
 #import "GameState.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
@@ -19,6 +18,7 @@ static const int NUM_STATUSES = 13;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
+
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
@@ -32,11 +32,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     Inbox *_inbox;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
-    Level *_currentLevel;
-    
-    int numToRecirculate;
-    int numToFavorite;
-    NSTimer *timer;
+    NSTimer *_timer;
+    NSMutableArray *_topicsToRecirculate;
+    NSMutableArray *_topicsToFavorite;
 }
 
 - (void)didLoadFromCCB
@@ -47,7 +45,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // clock
     _clock.gameplay = self;
-    timer = [NSTimer scheduledTimerWithTimeInterval:(TIMER_INTERVAL_IN_SECONDS)
+    _timer = [NSTimer scheduledTimerWithTimeInterval:(TIMER_INTERVAL_IN_SECONDS)
                                                  target: self
                                                selector:@selector(onTimerFiring)
                                                userInfo: nil repeats: YES];
@@ -55,80 +53,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // inbox
     _inbox.gameplay = self;
     
-    // topics
-    _allTopics = [NSMutableArray array];
-    int numAllTopics;
-    
-    numToRecirculate = _numStatuses * PERCENTAGE_STATUS_TO_RECIRCULATE;
-    numToFavorite = _numStatuses * PERCENTAGE_STATUS_TO_FAVORITE;
-    _currentLevel.topicsToRecirculate = [[NSMutableArray alloc] init];
-    _currentLevel.topicsToFavorite = [[NSMutableArray alloc] init];
-    
-    // level
-//    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
-    
     // set visibility of elements
     _messageNotification.visible = FALSE;
     
-    // load Topics from p-list
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    NSData *plistXML = [self getPListXML:@"Topics"];
-    
-    // convert static property list into corresponding property-list objects
-    // Topics p-list contains array of dictionarys
-    NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
-                                       propertyListFromData:plistXML
-                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                       format:&format
-                                       errorDescription:&errorDesc];
-    if(!topicsArray)
-    {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-    }
-    
-    // TODO: DON'T LOAD IN ALL TOPICS EACH TIME GAMEPLAY LOADS
-    for(int i = 0; i < [topicsArray count]; i++)
-    {
-        [_allTopics addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
-    }
-    
-    numAllTopics = [_allTopics count];
-    
     // get order recirculate/favorite/avoid for this set of Statuses
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
-    
-    NSMutableArray *tempTopics = [[NSMutableArray alloc] init];
-    
-    // set topics to that are to be recirculated/favorited
-    // add Trend objects to global GameState Topics array
-    for(int j = 0; j < numToRecirculate; j++)
-    {
-        // get random topic
-        NSString *randomTopic = [self getRandomTopic];
-        
-        // add to topics array
-        [_currentLevel.topicsToRecirculate addObject:randomTopic];
-        
-        [tempTopics addObject:randomTopic];
-    }
-    
-    // store topics in GameState
-    [[GameState sharedInstance] setTrendsToRecirculate:tempTopics];
-    
-    tempTopics = [[NSMutableArray alloc] init];
-    
-    for(int k = 0; k < numToFavorite; k++)
-    {
-        NSString *randomTopic = [self getRandomTopic];
-        
-        [_currentLevel.topicsToFavorite addObject:randomTopic];
-        
-        [tempTopics addObject:randomTopic];
-    }
-    
-    // store topics in GameState
-    [[GameState sharedInstance] setTrendsToFavorite:tempTopics];
     
     // create SocialMediaStatus objects
     for(int i = 0; i < _numStatuses; i++)
@@ -143,18 +72,26 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
         {
             status.actionType = ACTION_TYPE_RECIRCULATE;
-            status.statusText.string = _currentLevel.topicsToRecirculate[0 + arc4random() % ([_currentLevel.topicsToRecirculate count])];
+            
+            _topicsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
+            
+            status.statusText.string = _topicsToRecirculate[0 + arc4random() % ([_topicsToRecirculate count])];
         }
         else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE]])
         {
             status.actionType = ACTION_TYPE_FAVORITE;
-            status.statusText.string = _currentLevel.topicsToFavorite[0 + arc4random() % ([_currentLevel.topicsToFavorite count])];
+            
+            _topicsToFavorite = [GameState sharedInstance].trendsToFavorite;
+            
+            status.statusText.string = _topicsToFavorite[0 + arc4random() % ([_topicsToFavorite count])];
         }
         else
         {
             status.actionType = 0;
-//            status.statusText.string = [NSString stringWithFormat:@"RANDOM"];
-            status.statusText.string = [self getRandomTopic];
+//            status.statusText.string = [self getRandomTopic];
+            
+            NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
+            status.statusText.string = allTopics[0 + arc4random() % ([allTopics count])];
         }
             
         status.isAtScreenBottom = FALSE;
@@ -172,11 +109,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     self.userInteractionEnabled = YES;
 }
 
-- (void)setTopics:(NSMutableArray *)topics
-{
-    _allTopics = [[NSMutableArray alloc] init];
-}
-
 - (void)update:(CCTime)delta
 {
     // scrolling of SocialMediaStatues
@@ -184,7 +116,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     {
         SocialMediaStatus *status = _statuses[i];
         
-        status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
+        //status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
+        
+        status.position = ccp(status.position.x, status.position.y - [GameState sharedInstance].streamSpeed);
         
         if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
         {
@@ -242,15 +176,13 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 - (void)gameOver
 {
     // stop timer
-    [timer invalidate];
-    timer = nil;
+    [_timer invalidate];
+    _timer = nil;
     
     // rese global values
     [GameState sharedInstance].levelNum = 1;
     [GameState sharedInstance].trendsToRecirculate = nil;
     [GameState sharedInstance].trendsToFavorite = nil;
-    
-    _inbox.visible = TRUE;
 }
 
 # pragma mark - helper methods
@@ -271,11 +203,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
-
-//- (NSString *)getRandomTopic
-//{
-//    return _allTopics[0 + arc4random() % ([_allTopics count])];
-//}
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
                          percentToRecirculate:(CGFloat)percentToRecirculate
@@ -312,11 +239,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
     
     return statuses;
-}
-
-- (NSString *)getRandomTopic
-{
-    return _allTopics[0 + arc4random() % ([_allTopics count])];
 }
 
 @end
