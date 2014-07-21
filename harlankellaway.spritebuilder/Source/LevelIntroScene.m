@@ -14,4 +14,9 @@
     CCNode *_trendsBox;
 }
 
+- (void)startLevel
+{
+    CCLOG(@"Level Start button pressed");
+}
+
 @end
