@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEF62D57197F256C00E3D6A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D56197F256C00E3D6A6 /* Foundation.framework */; };
+		CEF62D59197F256C00E3D6A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D58197F256C00E3D6A6 /* CoreGraphics.framework */; };
+		CEF62D5B197F256C00E3D6A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D5A197F256C00E3D6A6 /* UIKit.framework */; };
+		CEF62D61197F256C00E3D6A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D5F197F256C00E3D6A6 /* InfoPlist.strings */; };
+		CEF62D63197F256C00E3D6A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62D62197F256C00E3D6A6 /* main.m */; };
+		CEF62D67197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */; };
+		CEF62D6A197F256C00E3D6A6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */; };
+		CEF62D6D197F256C00E3D6A6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D6B197F256C00E3D6A6 /* Main_iPad.storyboard */; };
+		CEF62D70197F256C00E3D6A6 /* IDOL_TUTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62D6F197F256C00E3D6A6 /* IDOL_TUTViewController.m */; };
+		CEF62D72197F256C00E3D6A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D71197F256C00E3D6A6 /* Images.xcassets */; };
+		CEF62D79197F256C00E3D6A6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D78197F256C00E3D6A6 /* XCTest.framework */; };
+		CEF62D7A197F256C00E3D6A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D56197F256C00E3D6A6 /* Foundation.framework */; };
+		CEF62D7B197F256C00E3D6A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D5A197F256C00E3D6A6 /* UIKit.framework */; };
+		CEF62D83197F256C00E3D6A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D81197F256C00E3D6A6 /* InfoPlist.strings */; };
+		CEF62D85197F256C00E3D6A6 /* IDOL_OnDemand_TutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62D84197F256C00E3D6A6 /* IDOL_OnDemand_TutorialTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEF62D7C197F256C00E3D6A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF62D4B197F256C00E3D6A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF62D52197F256C00E3D6A6;
+			remoteInfo = "IDOL OnDemand Tutorial";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEF62D53197F256C00E3D6A6 /* IDOL OnDemand Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDOL OnDemand Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF62D56197F256C00E3D6A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CEF62D58197F256C00E3D6A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CEF62D5A197F256C00E3D6A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CEF62D5E197F256C00E3D6A6 /* IDOL OnDemand Tutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDOL OnDemand Tutorial-Info.plist"; sourceTree = "<group>"; };
+		CEF62D60197F256C00E3D6A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEF62D62197F256C00E3D6A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEF62D64197F256C00E3D6A6 /* IDOL OnDemand Tutorial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDOL OnDemand Tutorial-Prefix.pch"; sourceTree = "<group>"; };
+		CEF62D65197F256C00E3D6A6 /* IDOL_TUTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDOL_TUTAppDelegate.h; sourceTree = "<group>"; };
+		CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTAppDelegate.m; sourceTree = "<group>"; };
+		CEF62D69197F256C00E3D6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CEF62D6C197F256C00E3D6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CEF62D6E197F256C00E3D6A6 /* IDOL_TUTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDOL_TUTViewController.h; sourceTree = "<group>"; };
+		CEF62D6F197F256C00E3D6A6 /* IDOL_TUTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTViewController.m; sourceTree = "<group>"; };
+		CEF62D71197F256C00E3D6A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CEF62D77197F256C00E3D6A6 /* IDOL OnDemand TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDOL OnDemand TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF62D78197F256C00E3D6A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CEF62D80197F256C00E3D6A6 /* IDOL OnDemand TutorialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDOL OnDemand TutorialTests-Info.plist"; sourceTree = "<group>"; };
+		CEF62D82197F256C00E3D6A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEF62D84197F256C00E3D6A6 /* IDOL_OnDemand_TutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDOL_OnDemand_TutorialTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEF62D50197F256C00E3D6A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF62D59197F256C00E3D6A6 /* CoreGraphics.framework in Frameworks */,
+				CEF62D5B197F256C00E3D6A6 /* UIKit.framework in Frameworks */,
+				CEF62D57197F256C00E3D6A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF62D74197F256C00E3D6A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF62D79197F256C00E3D6A6 /* XCTest.framework in Frameworks */,
+				CEF62D7B197F256C00E3D6A6 /* UIKit.framework in Frameworks */,
+				CEF62D7A197F256C00E3D6A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEF62D4A197F256C00E3D6A6 = {
+			isa = PBXGroup;
+			children = (
+				CEF62D5C197F256C00E3D6A6 /* IDOL OnDemand Tutorial */,
+				CEF62D7E197F256C00E3D6A6 /* IDOL OnDemand TutorialTests */,
+				CEF62D55197F256C00E3D6A6 /* Frameworks */,
+				CEF62D54197F256C00E3D6A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEF62D54197F256C00E3D6A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF62D53197F256C00E3D6A6 /* IDOL OnDemand Tutorial.app */,
+				CEF62D77197F256C00E3D6A6 /* IDOL OnDemand TutorialTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF62D55197F256C00E3D6A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEF62D56197F256C00E3D6A6 /* Foundation.framework */,
+				CEF62D58197F256C00E3D6A6 /* CoreGraphics.framework */,
+				CEF62D5A197F256C00E3D6A6 /* UIKit.framework */,
+				CEF62D78197F256C00E3D6A6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEF62D5C197F256C00E3D6A6 /* IDOL OnDemand Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CEF62D65197F256C00E3D6A6 /* IDOL_TUTAppDelegate.h */,
+				CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */,
+				CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */,
+				CEF62D6B197F256C00E3D6A6 /* Main_iPad.storyboard */,
+				CEF62D6E197F256C00E3D6A6 /* IDOL_TUTViewController.h */,
+				CEF62D6F197F256C00E3D6A6 /* IDOL_TUTViewController.m */,
+				CEF62D71197F256C00E3D6A6 /* Images.xcassets */,
+				CEF62D5D197F256C00E3D6A6 /* Supporting Files */,
+			);
+			path = "IDOL OnDemand Tutorial";
+			sourceTree = "<group>";
+		};
+		CEF62D5D197F256C00E3D6A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEF62D5E197F256C00E3D6A6 /* IDOL OnDemand Tutorial-Info.plist */,
+				CEF62D5F197F256C00E3D6A6 /* InfoPlist.strings */,
+				CEF62D62197F256C00E3D6A6 /* main.m */,
+				CEF62D64197F256C00E3D6A6 /* IDOL OnDemand Tutorial-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEF62D7E197F256C00E3D6A6 /* IDOL OnDemand TutorialTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF62D84197F256C00E3D6A6 /* IDOL_OnDemand_TutorialTests.m */,
+				CEF62D7F197F256C00E3D6A6 /* Supporting Files */,
+			);
+			path = "IDOL OnDemand TutorialTests";
+			sourceTree = "<group>";
+		};
+		CEF62D7F197F256C00E3D6A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEF62D80197F256C00E3D6A6 /* IDOL OnDemand TutorialTests-Info.plist */,
+				CEF62D81197F256C00E3D6A6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEF62D52197F256C00E3D6A6 /* IDOL OnDemand Tutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF62D88197F256C00E3D6A6 /* Build configuration list for PBXNativeTarget "IDOL OnDemand Tutorial" */;
+			buildPhases = (
+				CEF62D4F197F256C00E3D6A6 /* Sources */,
+				CEF62D50197F256C00E3D6A6 /* Frameworks */,
+				CEF62D51197F256C00E3D6A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IDOL OnDemand Tutorial";
+			productName = "IDOL OnDemand Tutorial";
+			productReference = CEF62D53197F256C00E3D6A6 /* IDOL OnDemand Tutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEF62D76197F256C00E3D6A6 /* IDOL OnDemand TutorialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF62D8B197F256C00E3D6A6 /* Build configuration list for PBXNativeTarget "IDOL OnDemand TutorialTests" */;
+			buildPhases = (
+				CEF62D73197F256C00E3D6A6 /* Sources */,
+				CEF62D74197F256C00E3D6A6 /* Frameworks */,
+				CEF62D75197F256C00E3D6A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF62D7D197F256C00E3D6A6 /* PBXTargetDependency */,
+			);
+			name = "IDOL OnDemand TutorialTests";
+			productName = "IDOL OnDemand TutorialTests";
+			productReference = CEF62D77197F256C00E3D6A6 /* IDOL OnDemand TutorialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEF62D4B197F256C00E3D6A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = "IDOL-TUT";
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___HARLANKELLAWAY___";
+				TargetAttributes = {
+					CEF62D76197F256C00E3D6A6 = {
+						TestTargetID = CEF62D52197F256C00E3D6A6;
+					};
+				};
+			};
+			buildConfigurationList = CEF62D4E197F256C00E3D6A6 /* Build configuration list for PBXProject "IDOL OnDemand Tutorial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEF62D4A197F256C00E3D6A6;
+			productRefGroup = CEF62D54197F256C00E3D6A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEF62D52197F256C00E3D6A6 /* IDOL OnDemand Tutorial */,
+				CEF62D76197F256C00E3D6A6 /* IDOL OnDemand TutorialTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEF62D51197F256C00E3D6A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF62D6D197F256C00E3D6A6 /* Main_iPad.storyboard in Resources */,
+				CEF62D72197F256C00E3D6A6 /* Images.xcassets in Resources */,
+				CEF62D6A197F256C00E3D6A6 /* Main_iPhone.storyboard in Resources */,
+				CEF62D61197F256C00E3D6A6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF62D75197F256C00E3D6A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF62D83197F256C00E3D6A6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEF62D4F197F256C00E3D6A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF62D67197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m in Sources */,
+				CEF62D70197F256C00E3D6A6 /* IDOL_TUTViewController.m in Sources */,
+				CEF62D63197F256C00E3D6A6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF62D73197F256C00E3D6A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF62D85197F256C00E3D6A6 /* IDOL_OnDemand_TutorialTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEF62D7D197F256C00E3D6A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF62D52197F256C00E3D6A6 /* IDOL OnDemand Tutorial */;
+			targetProxy = CEF62D7C197F256C00E3D6A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEF62D5F197F256C00E3D6A6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF62D60197F256C00E3D6A6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF62D69197F256C00E3D6A6 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CEF62D6B197F256C00E3D6A6 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF62D6C197F256C00E3D6A6 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CEF62D81197F256C00E3D6A6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF62D82197F256C00E3D6A6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEF62D86197F256C00E3D6A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEF62D87197F256C00E3D6A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEF62D89197F256C00E3D6A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Prefix.pch";
+				INFOPLIST_FILE = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CEF62D8A197F256C00E3D6A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Prefix.pch";
+				INFOPLIST_FILE = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CEF62D8C197F256C00E3D6A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDOL OnDemand Tutorial.app/IDOL OnDemand Tutorial";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IDOL OnDemand TutorialTests/IDOL OnDemand TutorialTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CEF62D8D197F256C00E3D6A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDOL OnDemand Tutorial.app/IDOL OnDemand Tutorial";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Prefix.pch";
+				INFOPLIST_FILE = "IDOL OnDemand TutorialTests/IDOL OnDemand TutorialTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEF62D4E197F256C00E3D6A6 /* Build configuration list for PBXProject "IDOL OnDemand Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF62D86197F256C00E3D6A6 /* Debug */,
+				CEF62D87197F256C00E3D6A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF62D88197F256C00E3D6A6 /* Build configuration list for PBXNativeTarget "IDOL OnDemand Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF62D89197F256C00E3D6A6 /* Debug */,
+				CEF62D8A197F256C00E3D6A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CEF62D8B197F256C00E3D6A6 /* Build configuration list for PBXNativeTarget "IDOL OnDemand TutorialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF62D8C197F256C00E3D6A6 /* Debug */,
+				CEF62D8D197F256C00E3D6A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEF62D4B197F256C00E3D6A6 /* Project object */;
+}
