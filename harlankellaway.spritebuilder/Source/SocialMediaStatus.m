@@ -38,8 +38,6 @@ static const float SCALE_FACTOR = 0.38;
     
     if(_actionType == ACTION_TYPE_RECIRCULATE)
     {
-        CCLOG(@"Yay!");
-        
         CCSprite *meterMiddle = _gameplay.meterMiddle;
         CCSprite *meterTop = _gameplay.meterTop;
         
@@ -50,9 +48,9 @@ static const float SCALE_FACTOR = 0.38;
         meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
         
         meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
-        
-        CCLOG(@"Scaling attempt complete");
     }
+    
+    [self disable];
 }
 
 - (void)favorite
@@ -61,8 +59,6 @@ static const float SCALE_FACTOR = 0.38;
     
     if(_actionType == ACTION_TYPE_FAVORITE)
     {
-        CCLOG(@"Yay!");
-        
         CCSprite *meterMiddle = _gameplay.meterMiddle;
         CCSprite *meterTop = _gameplay.meterTop;
         
@@ -73,9 +69,9 @@ static const float SCALE_FACTOR = 0.38;
         meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
         
         meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
-        
-        CCLOG(@"Scaling attempt complete");
     }
+    
+    [self disable];
 }
 
 # pragma mark - instance methods
@@ -94,5 +90,11 @@ static const float SCALE_FACTOR = 0.38;
 }
 
 #pragma mark - helper methods
+
+- (void)disable
+{
+    _recirculateButton.enabled = FALSE;
+    _favoriteButton.enabled = FALSE;
+}
 
 @end
