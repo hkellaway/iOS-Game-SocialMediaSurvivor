@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>19</integer>
+	<integer>20</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -263,7 +263,7 @@
 						<key>displayName</key>
 						<string>LayoutBoxTrends</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>_inboxTrendsBox</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -826,8 +826,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

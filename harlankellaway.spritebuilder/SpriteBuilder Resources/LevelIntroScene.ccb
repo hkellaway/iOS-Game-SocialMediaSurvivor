@@ -178,7 +178,7 @@
 												<key>displayName</key>
 												<string>LayoutBoxTrends</string>
 												<key>memberVarAssignmentName</key>
-												<string>_trendsBox</string>
+												<string>_levelIntroTrendsBox</string>
 												<key>memberVarAssignmentType</key>
 												<integer>1</integer>
 												<key>properties</key>

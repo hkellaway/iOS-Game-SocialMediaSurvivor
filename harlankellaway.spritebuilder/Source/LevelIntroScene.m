@@ -20,7 +20,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
 @implementation LevelIntroScene
 {
     CCLabelTTF *_levelLabel;
-    CCNode *_trendsBox;
+    CCNode *_levelIntroTrendsBox;
     
     NSMutableArray *_allTopics;
     int numToRecirculate;
@@ -96,7 +96,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
         [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", ((NSString *)trendsToFavorite[j]).lowercaseString]];
         trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
         trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
-        [_trendsBox addChild:trend];
+        [_levelIntroTrendsBox addChild:trend];
     }
     
     for(int i = 0; i < [trendsToRecirculate count]; i++)
@@ -105,7 +105,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
         [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", ((NSString *)trendsToRecirculate[i]).lowercaseString]];
         trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
         trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
-        [_trendsBox addChild:trend];
+        [_levelIntroTrendsBox addChild:trend];
     }
 }
 
