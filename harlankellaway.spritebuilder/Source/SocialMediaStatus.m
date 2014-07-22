@@ -84,6 +84,7 @@ static const float SCALE_FACTOR = 0.38;
     
     self.position = ccp(self.position.x, newY);
     self.isAtScreenBottom = FALSE;
+    [self enable];
 }
 
 #pragma mark - helper methods
@@ -92,6 +93,12 @@ static const float SCALE_FACTOR = 0.38;
 {
     _recirculateButton.enabled = FALSE;
     _favoriteButton.enabled = FALSE;
+}
+
+- (void)enable
+{
+    _recirculateButton.enabled = TRUE;
+    _favoriteButton.enabled = TRUE;
 }
 
 @end

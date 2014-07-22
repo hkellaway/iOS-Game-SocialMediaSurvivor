@@ -48,20 +48,19 @@
     for(int j = 0; j < [trendsToFavorite count]; j++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-//        [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
+        
         [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", ((NSString *)trendsToFavorite[j]).lowercaseString]];
-//        trend.scaleX = trend.scaleX / 2;
-//        trend.scaleY = trend.scaleY / 2;
+        trend.scaleX = trend.scaleX / 2;
+        trend.scaleY = trend.scaleY / 2;
         [_inboxTrendsBox addChild:trend];
     }
     
     for(int i = 0; i < [trendsToRecirculate count]; i++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-//        [trend runAction:[CCActionRemove action]];          // TODO: REMOVE THIS HACKY FIX FOR COCOS2D 3.1 BUG
         [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", ((NSString *)trendsToRecirculate[i]).lowercaseString]];
-//        trend.scaleX = trend.scaleX / 2;
-//        trend.scaleY = trend.scaleY / 2;
+        trend.scaleX = trend.scaleX / 2;
+        trend.scaleY = trend.scaleY / 2;
         [_inboxTrendsBox addChild:trend];
     }
 }
