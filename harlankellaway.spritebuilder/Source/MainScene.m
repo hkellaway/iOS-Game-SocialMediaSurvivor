@@ -17,8 +17,8 @@
 {
     CCLOG(@"play button pressed");
     
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"LevelIntroScene"];
-    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 @end

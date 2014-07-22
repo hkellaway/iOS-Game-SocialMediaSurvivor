@@ -169,7 +169,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     if(newTime == 0)
     {
         CCLOG(@"Round over!");
-//        [self gameOver];
+        [self gameOver];
     }
 }
 
@@ -179,10 +179,14 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     [_timer invalidate];
     _timer = nil;
     
-    // rese global values
+    // reset global values
     [GameState sharedInstance].levelNum = 1;
     [GameState sharedInstance].trendsToRecirculate = nil;
     [GameState sharedInstance].trendsToFavorite = nil;
+    
+    // load GameOver scene
+    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 # pragma mark - helper methods
