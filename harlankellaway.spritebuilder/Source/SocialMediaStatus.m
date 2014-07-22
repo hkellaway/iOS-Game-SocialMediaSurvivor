@@ -45,9 +45,9 @@ static const float SCALE_FACTOR = 0.38;
         CGFloat scaleFactor = 0.25;
         CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
         
-        meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
+        meterMiddle.scaleY = meterMiddle.scaleY + scaleFactor;
         
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + meterMiddleGrowth);
     }
     
     [self disable];
@@ -66,9 +66,9 @@ static const float SCALE_FACTOR = 0.38;
         CGFloat scaleFactor = 0.25;
         CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
         
-        meterMiddle.scaleY = meterMiddle.scaleY + meterMiddleGrowth;
+        meterMiddle.scaleY = meterMiddle.scaleY + scaleFactor;
         
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddleGrowth / meterMiddle.contentSize.height));
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + meterMiddleGrowth);
     }
     
     [self disable];
@@ -83,7 +83,7 @@ static const float SCALE_FACTOR = 0.38;
 
     int numStatuses = 13;
     int spacing = _gameplay.statusSpacing;
-    int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing);
+    int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing) - self.contentSize.height * self.scaleY/2;
     
     self.position = ccp(self.position.x, newY);
     self.isAtScreenBottom = FALSE;

@@ -78,8 +78,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>17.5</real>
-									<real>24</real>
+									<real>21</real>
+									<real>26.5</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -117,7 +117,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/checkbox_unchecked.png</string>
+									<string>SocialMediaGameAssets/checkbox_checked.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -134,6 +134,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -167,8 +169,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>211</real>
-									<real>24</real>
+									<real>218</real>
+									<real>27</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -419,8 +421,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

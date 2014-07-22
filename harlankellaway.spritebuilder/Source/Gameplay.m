@@ -67,7 +67,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         CGFloat height = status.contentSize.height * status.scaleY;
         CGFloat xPos = ((_stream.contentSize.width) / 2);
         
-        status.position = ccp(xPos, ((i * height)) + _statusSpacing);
+        status.position = ccp(xPos, (i*(height + _statusSpacing)) + height/2);
         
         if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
         {
