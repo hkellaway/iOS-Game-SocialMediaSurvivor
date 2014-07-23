@@ -23,6 +23,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     CCNode *_levelIntroTrendsBox;
     
     NSMutableArray *_allTopics;
+    NSMutableSet *_usedTopics;
     int numToRecirculate;
     int numToFavorite;
 }
@@ -31,34 +32,12 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
 {
     // initialize variables
     _allTopics = [NSMutableArray array];
+    _usedTopics = [NSMutableSet set];
     numToRecirculate = NUM_STATUSES * PERCENTAGE_STATUS_TO_RECIRCULATE;
     numToFavorite = NUM_STATUSES * PERCENTAGE_STATUS_TO_FAVORITE;
     
     // read in current Level and set Scene title
     _levelLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
-    
-//    // load Topics from p-list
-//    NSString *errorDesc = nil;
-//    NSPropertyListFormat format;
-//    NSData *plistXML = [self getPListXML:@"Topics"];
-//    
-//    // convert static property list into corresponding property-list objects
-//    // Topics p-list contains array of dictionarys
-//    NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
-//                                       propertyListFromData:plistXML
-//                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
-//                                       format:&format
-//                                       errorDescription:&errorDesc];
-//    if(!topicsArray)
-//    {
-//        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-//    }
-//
-//    // TODO: DON'T LOAD IN ALL TOPICS EACH TIME LEVEL LOADS
-//    for(int i = 0; i < [topicsArray count]; i++)
-//    {
-//        [ addObject:[(NSDictionary *)topicsArray[i] objectForKey:@"Noun"]];
-//    }
     
     NSMutableArray *tempTopics = [[NSMutableArray alloc] init];
     
@@ -68,6 +47,13 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
         // get random topic
         NSString *randomTopic = [self getRandomTopic];
         
+        // if topic already used, find another topic
+        while([_usedTopics containsObject:randomTopic])
+        {
+            randomTopic = [self getRandomTopic];
+        }
+        
+        [_usedTopics addObject:randomTopic];
         [tempTopics addObject:randomTopic];
     }
     
@@ -80,6 +66,12 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     {
         NSString *randomTopic = [self getRandomTopic];
         
+        while([_usedTopics containsObject:randomTopic])
+        {
+            randomTopic = [self getRandomTopic];
+        }
+        
+        [_usedTopics addObject:randomTopic];
         [tempTopics addObject:randomTopic];
     }
     

@@ -88,7 +88,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         else
         {
             status.actionType = 0;
-//            status.statusText.string = [self getRandomTopic];
             
             NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
             status.statusText.string = allTopics[0 + arc4random() % ([allTopics count])];
@@ -123,7 +122,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
         {
             status.isAtScreenBottom = TRUE;
-            CCLOG(@"In if! id = %d, postion.y = %f", i, status.position.y);
+            
+            // if status is not disabled and should have been Recir/Faved, decrease Meter
+            [status checkState];
+            
+            // change topic, move to top, etc.
             [status refresh];
         }
     }

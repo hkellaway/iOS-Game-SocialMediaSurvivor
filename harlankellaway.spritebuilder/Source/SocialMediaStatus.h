@@ -17,6 +17,7 @@
 
 @property (nonatomic, weak) Gameplay *gameplay;
 
+- (void)checkState;
 - (void)refresh;
 
 @end

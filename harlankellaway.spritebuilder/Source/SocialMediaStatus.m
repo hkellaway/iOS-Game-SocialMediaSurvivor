@@ -35,14 +35,24 @@ static const float METER_SCALE_FACTOR = 3.0;
 
 - (void)recirculate
 {
+    CCSprite *meterMiddle = _gameplay.meterMiddle;
+    CCSprite *meterTop = _gameplay.meterTop;
+    
+    CCLOG(@"action type = %d, scaleY start = %f", _actionType, meterMiddle.scaleY);
+    
     if(_actionType == ACTION_TYPE_RECIRCULATE)
     {
-        CCSprite *meterMiddle = _gameplay.meterMiddle;
-        CCSprite *meterTop = _gameplay.meterTop;
-        
         meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
         
         meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
+    }
+    else
+    {
+        meterMiddle.scaleY = meterMiddle.scaleY - METER_SCALE_FACTOR;
+        
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y - (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
+        
+        CCLOG(@"scaleY end = %f", meterMiddle.scaleY);
     }
     
     [self disable];
@@ -65,6 +75,19 @@ static const float METER_SCALE_FACTOR = 3.0;
 
 # pragma mark - instance methods
 
+- (void)checkState
+{
+    // if not disabled, check if status should have been recirculated/favorited
+    if(_recirculateButton.enabled || _favoriteButton.enabled)
+    {
+        // if if should have been recirc/faved, scaled down
+        if(self.actionType == ACTION_TYPE_RECIRCULATE || self.actionType == ACTION_TYPE_FAVORITE)
+        {
+            [self scaleMeter:(0)];
+        }
+    }
+}
+
 - (void)refresh
 {
     int numStatuses = _gameplay.numStatuses;
@@ -77,6 +100,27 @@ static const float METER_SCALE_FACTOR = 3.0;
 }
 
 #pragma mark - helper methods
+
+// if 0, scale down; if 1, scale up
+- (void)scaleMeter:(int)scaleDirection
+{
+    CCSprite *meterMiddle = _gameplay.meterMiddle;
+    CCSprite *meterTop = _gameplay.meterTop;
+    
+    float middleAmt = meterMiddle.scaleY + METER_SCALE_FACTOR;
+    float topAmt = meterMiddle.contentSize.height * METER_SCALE_FACTOR;
+    
+    if(!scaleDirection)
+    {
+        meterMiddle.scaleY = meterMiddle.scaleY + middleAmt;
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + topAmt);
+    }
+    else
+    {
+        meterMiddle.scaleY = meterMiddle.scaleY - middleAmt;
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y - topAmt);
+    }
+}
 
 - (void)disable
 {
