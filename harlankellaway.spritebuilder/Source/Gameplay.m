@@ -115,7 +115,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     {
         SocialMediaStatus *status = _statuses[i];
         
-        //status.position = ccp(status.position.x, status.position.y - _currentLevel.streamSpeed);
+        double speed = [GameState sharedInstance].streamSpeed;
         
         status.position = ccp(status.position.x, status.position.y - [GameState sharedInstance].streamSpeed);
         
@@ -184,6 +184,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // reset global values
     [GameState sharedInstance].levelNum = 1;
+    [GameState sharedInstance].streamSpeed = 3;
     [GameState sharedInstance].trendsToRecirculate = nil;
     [GameState sharedInstance].trendsToFavorite = nil;
     

@@ -52,12 +52,15 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
         NSNumber *streamSpeed = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_STREAM_SPEED_KEY];
         
         // get current stream speed
-        if(streamSpeed == nil)
+        if(streamSpeed == 0 || streamSpeed == nil)
         {
-            streamSpeed = @2;
+            streamSpeed = @3;
+            
+            [[NSUserDefaults standardUserDefaults]setObject:streamSpeed forKey:GAME_STATE_STREAM_SPEED_KEY];
+            [[NSUserDefaults standardUserDefaults]synchronize];
         }
         
-        self.streamSpeed = [levelNum doubleValue];
+        self.streamSpeed = [streamSpeed doubleValue];
         
         // load in all Topics if none are available
         _allTopics = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_ALL_TOPICS_KEY];

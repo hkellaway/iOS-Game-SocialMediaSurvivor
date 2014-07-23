@@ -12,13 +12,14 @@ static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
 static const float STATUS_SCALE_FACTOR = 0.38;
-static const float METER_SCALE_FACTOR = 3.0;
+static const float METER_SCALE_FACTOR = 1.0;
 
 @implementation SocialMediaStatus
 {
     CCButton *_recirculateButton;
     CCButton *_favoriteButton;
     CCButton *_blockButton;
+    CCSprite *_meterBackground;
 }
 
 # pragma mark - initializers
@@ -27,6 +28,8 @@ static const float METER_SCALE_FACTOR = 3.0;
 {
     self.scaleX = self.scaleX * STATUS_SCALE_FACTOR;
     self.scaleY = self.scaleY * STATUS_SCALE_FACTOR;
+    
+    _meterBackground = _gameplay.meterBackground;
 }
 
 # pragma mark - button actions
@@ -37,8 +40,6 @@ static const float METER_SCALE_FACTOR = 3.0;
 {
     CCSprite *meterMiddle = _gameplay.meterMiddle;
     CCSprite *meterTop = _gameplay.meterTop;
-    
-    CCLOG(@"action type = %d, scaleY start = %f", _actionType, meterMiddle.scaleY);
     
     if(_actionType == ACTION_TYPE_RECIRCULATE)
     {
@@ -51,8 +52,6 @@ static const float METER_SCALE_FACTOR = 3.0;
         meterMiddle.scaleY = meterMiddle.scaleY - METER_SCALE_FACTOR;
         
         meterTop.position = ccp(meterTop.position.x, meterTop.position.y - (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
-        
-        CCLOG(@"scaleY end = %f", meterMiddle.scaleY);
     }
     
     [self disable];
@@ -108,7 +107,7 @@ static const float METER_SCALE_FACTOR = 3.0;
     CCSprite *meterTop = _gameplay.meterTop;
     
     float middleAmt = meterMiddle.scaleY + METER_SCALE_FACTOR;
-    float topAmt = meterMiddle.contentSize.height * METER_SCALE_FACTOR;
+    float topAmt = meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR);
     
     if(!scaleDirection)
     {

@@ -6,7 +6,7 @@
 		<key>LevelNum</key>
 		<integer>1</integer>
 		<key>StreamSpeed</key>
-		<integer>1</integer>
+		<integer>3</integer>
 		<key>NumTopics</key>
 		<integer>3</integer>
 	</dict>
