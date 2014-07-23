@@ -41,7 +41,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 {
     // initialize variables
     _numStatuses = NUM_STATUSES;
-    _statusSpacing = 6;
+    _statusSpacing = 4;
     
     // clock
     _clock.gameplay = self;

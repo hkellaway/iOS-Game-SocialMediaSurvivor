@@ -11,7 +11,8 @@
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
-static const float SCALE_FACTOR = 0.38;
+static const float STATUS_SCALE_FACTOR = 0.38;
+static const float METER_SCALE_FACTOR = 3.0;
 
 @implementation SocialMediaStatus
 {
@@ -24,8 +25,8 @@ static const float SCALE_FACTOR = 0.38;
 
 - (void)didLoadFromCCB
 {
-    self.scaleX = self.scaleX * SCALE_FACTOR;
-    self.scaleY = self.scaleY * SCALE_FACTOR;
+    self.scaleX = self.scaleX * STATUS_SCALE_FACTOR;
+    self.scaleY = self.scaleY * STATUS_SCALE_FACTOR;
 }
 
 # pragma mark - button actions
@@ -34,20 +35,14 @@ static const float SCALE_FACTOR = 0.38;
 
 - (void)recirculate
 {
-    CCLOG(@"Recirculate button pressed");
-    
     if(_actionType == ACTION_TYPE_RECIRCULATE)
     {
         CCSprite *meterMiddle = _gameplay.meterMiddle;
         CCSprite *meterTop = _gameplay.meterTop;
         
-        // TODO: calculate scale factor
-        CGFloat scaleFactor = 0.25;
-        CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
+        meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
         
-        meterMiddle.scaleY = meterMiddle.scaleY + scaleFactor;
-        
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + meterMiddleGrowth);
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
     }
     
     [self disable];
@@ -55,20 +50,14 @@ static const float SCALE_FACTOR = 0.38;
 
 - (void)favorite
 {
-    CCLOG(@"Favorite button pressed");
-    
     if(_actionType == ACTION_TYPE_FAVORITE)
     {
         CCSprite *meterMiddle = _gameplay.meterMiddle;
         CCSprite *meterTop = _gameplay.meterTop;
         
-        // TODO: calculate scale factor
-        CGFloat scaleFactor = 0.25;
-        CGFloat meterMiddleGrowth = meterMiddle.contentSize.height * scaleFactor;
+        meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
         
-        meterMiddle.scaleY = meterMiddle.scaleY + scaleFactor;
-        
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + meterMiddleGrowth);
+        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
     }
     
     [self disable];

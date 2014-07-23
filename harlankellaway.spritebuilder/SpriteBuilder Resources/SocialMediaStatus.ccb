@@ -518,7 +518,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonHighlighted.png</string>
+									<string>SocialMediaGameAssets/button_recirculate_highlighted.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -844,7 +844,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ccbResources/ccbButtonHighlighted.png</string>
+									<string>SocialMediaGameAssets/button_favorite_highlighted.png</string>
 								</array>
 							</dict>
 							<dict>
