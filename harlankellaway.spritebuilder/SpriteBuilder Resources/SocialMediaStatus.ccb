@@ -123,7 +123,7 @@
 										<string>Text</string>
 										<key>value</key>
 										<array>
-											<string>Hello World! #myfirsttweet</string>
+											<string>Text</string>
 											<false/>
 										</array>
 									</dict>
@@ -142,7 +142,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>20</real>
+											<real>36</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -272,8 +272,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -415,8 +413,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
-									<real>1</real>
+									<real>1.2000000476837158</real>
+									<real>1.2000000476837158</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -741,8 +739,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
-									<real>1</real>
+									<real>1.2000000476837158</real>
+									<real>1.2000000476837158</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -1009,6 +1007,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
