@@ -10,6 +10,6 @@
 
 @interface IDOL_TUTViewController : UIViewController
 
-@property (strong)IBOutlet UILabel *label;
+- (IBAction)changeColor:(id)sender;
 
 @end
