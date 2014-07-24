@@ -38,39 +38,16 @@ static const float METER_SCALE_FACTOR = 1.0;
 
 - (void)recirculate
 {
-    CCSprite *meterMiddle = _gameplay.meterMiddle;
-    CCSprite *meterTop = _gameplay.meterTop;
-    
-    if(_actionType == ACTION_TYPE_RECIRCULATE)
-    {
-        meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
-        
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
-    }
-    else
-    {
-        meterMiddle.scaleY = meterMiddle.scaleY - METER_SCALE_FACTOR;
-        
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y - (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
-    }
+    // scale up if correction action selected
+    (_actionType == ACTION_TYPE_RECIRCULATE) ? [self scaleMeter:1] : [self scaleMeter:0];
     
     [self disable];
 }
 
 - (void)favorite
 {
-    if(_actionType == ACTION_TYPE_FAVORITE)
-    {
-//        CCSprite *meterMiddle = _gameplay.meterMiddle;
-//        CCSprite *meterTop = _gameplay.meterTop;
-//        
-//        meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
-//        
-//        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
-        
-        [self scaleMeter:1];
-    }
-    else { [self scaleMeter:0]; }
+    // scale up if correction action selected
+    (_actionType == ACTION_TYPE_FAVORITE) ? [self scaleMeter:1] : [self scaleMeter:0];
     
     [self disable];
 }
@@ -103,25 +80,16 @@ static const float METER_SCALE_FACTOR = 1.0;
 
 #pragma mark - helper methods
 
-// if 0, scale down; if 1, scale up
 - (void)scaleMeter:(int)scaleDirection
 {
     CCSprite *meterMiddle = _gameplay.meterMiddle;
     CCSprite *meterTop = _gameplay.meterTop;
     
-    float middleAmt = meterMiddle.scaleY + METER_SCALE_FACTOR;
-    float topAmt = meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR);
+    // scale down if 0, up if 1
+    meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY - METER_SCALE_FACTOR : meterMiddle.scaleY + METER_SCALE_FACTOR);
     
-    if(scaleDirection)
-    {
-        meterMiddle.scaleY = middleAmt;
-        meterTop.position = ccp(meterTop.position.x, topAmt);
-    }
-    else
-    {
-        meterMiddle.scaleY = (middleAmt * -1);
-        meterTop.position = ccp(meterTop.position.x, (topAmt * -1));
-    }
+    // move top
+    meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));
 }
 
 - (void)disable
