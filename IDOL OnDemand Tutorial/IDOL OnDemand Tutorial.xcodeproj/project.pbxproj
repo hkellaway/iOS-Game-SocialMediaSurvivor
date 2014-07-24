@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE153B7E19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B7D19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m */; };
+		CE153B81198092650065C2D5 /* IDOL-TUTBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B80198092650065C2D5 /* IDOL-TUTBooksViewController.m */; };
+		CE69B2E719808C0900CDDCE1 /* Books.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CA19808C0900CDDCE1 /* Books.plist */; };
+		CE69B2E819808C0900CDDCE1 /* angels-demons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */; };
+		CE69B2E919808C0900CDDCE1 /* azkaban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */; };
+		CE69B2EA19808C0900CDDCE1 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CE19808C0900CDDCE1 /* background.jpg */; };
+		CE69B2EB19808C0900CDDCE1 /* bard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CF19808C0900CDDCE1 /* bard.jpg */; };
+		CE69B2EC19808C0900CDDCE1 /* bilbo-song.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D019808C0900CDDCE1 /* bilbo-song.png */; };
+		CE69B2ED19808C0900CDDCE1 /* blindsight.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D119808C0900CDDCE1 /* blindsight.png */; };
+		CE69B2EE19808C0900CDDCE1 /* brain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D219808C0900CDDCE1 /* brain.jpg */; };
+		CE69B2EF19808C0900CDDCE1 /* chamber.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D319808C0900CDDCE1 /* chamber.jpg */; };
+		CE69B2F019808C0900CDDCE1 /* da-vinci-code.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D419808C0900CDDCE1 /* da-vinci-code.jpg */; };
+		CE69B2F119808C0900CDDCE1 /* deception-point.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D519808C0900CDDCE1 /* deception-point.jpg */; };
+		CE69B2F219808C0900CDDCE1 /* digital-fortress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D619808C0900CDDCE1 /* digital-fortress.jpg */; };
+		CE69B2F319808C0900CDDCE1 /* fatal-cure.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D719808C0900CDDCE1 /* fatal-cure.jpeg */; };
+		CE69B2F419808C0900CDDCE1 /* fellowship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D819808C0900CDDCE1 /* fellowship.jpg */; };
+		CE69B2F519808C0900CDDCE1 /* fever.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2D919808C0900CDDCE1 /* fever.jpg */; };
+		CE69B2F619808C0900CDDCE1 /* goblet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2DA19808C0900CDDCE1 /* goblet.jpg */; };
+		CE69B2F719808C0900CDDCE1 /* hallows.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2DB19808C0900CDDCE1 /* hallows.jpg */; };
+		CE69B2F819808C0900CDDCE1 /* intervention.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2DC19808C0900CDDCE1 /* intervention.jpg */; };
+		CE69B2F919808C0900CDDCE1 /* invasion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2DD19808C0900CDDCE1 /* invasion.jpg */; };
+		CE69B2FA19808C0900CDDCE1 /* lost-symbol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2DE19808C0900CDDCE1 /* lost-symbol.jpg */; };
+		CE69B2FB19808C0900CDDCE1 /* phoenix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2DF19808C0900CDDCE1 /* phoenix.jpg */; };
+		CE69B2FC19808C0900CDDCE1 /* prince.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E019808C0900CDDCE1 /* prince.jpg */; };
+		CE69B2FD19808C0900CDDCE1 /* return-king.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E119808C0900CDDCE1 /* return-king.jpg */; };
+		CE69B2FE19808C0900CDDCE1 /* shock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E219808C0900CDDCE1 /* shock.jpg */; };
+		CE69B2FF19808C0900CDDCE1 /* sphinx.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E319808C0900CDDCE1 /* sphinx.jpeg */; };
+		CE69B30019808C0900CDDCE1 /* stone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E419808C0900CDDCE1 /* stone.jpg */; };
+		CE69B30119808C0900CDDCE1 /* the-hobbit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E519808C0900CDDCE1 /* the-hobbit.jpg */; };
+		CE69B30219808C0900CDDCE1 /* two-towers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2E619808C0900CDDCE1 /* two-towers.jpg */; };
 		CEF62D57197F256C00E3D6A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D56197F256C00E3D6A6 /* Foundation.framework */; };
 		CEF62D59197F256C00E3D6A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D58197F256C00E3D6A6 /* CoreGraphics.framework */; };
 		CEF62D5B197F256C00E3D6A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D5A197F256C00E3D6A6 /* UIKit.framework */; };
@@ -15,7 +45,6 @@
 		CEF62D67197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */; };
 		CEF62D6A197F256C00E3D6A6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */; };
 		CEF62D6D197F256C00E3D6A6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D6B197F256C00E3D6A6 /* Main_iPad.storyboard */; };
-		CEF62D70197F256C00E3D6A6 /* IDOL_TUTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62D6F197F256C00E3D6A6 /* IDOL_TUTViewController.m */; };
 		CEF62D72197F256C00E3D6A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF62D71197F256C00E3D6A6 /* Images.xcassets */; };
 		CEF62D79197F256C00E3D6A6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D78197F256C00E3D6A6 /* XCTest.framework */; };
 		CEF62D7A197F256C00E3D6A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF62D56197F256C00E3D6A6 /* Foundation.framework */; };
@@ -35,6 +64,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE153B7C19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDOL_TUTAuthorsViewControllerTableViewController.h; sourceTree = "<group>"; };
+		CE153B7D19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTAuthorsViewControllerTableViewController.m; sourceTree = "<group>"; };
+		CE153B7F198092650065C2D5 /* IDOL-TUTBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDOL-TUTBooksViewController.h"; sourceTree = "<group>"; };
+		CE153B80198092650065C2D5 /* IDOL-TUTBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IDOL-TUTBooksViewController.m"; sourceTree = "<group>"; };
+		CE69B2CA19808C0900CDDCE1 /* Books.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Books.plist; sourceTree = "<group>"; };
+		CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "angels-demons.jpg"; sourceTree = "<group>"; };
+		CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = azkaban.jpg; sourceTree = "<group>"; };
+		CE69B2CE19808C0900CDDCE1 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		CE69B2CF19808C0900CDDCE1 /* bard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bard.jpg; sourceTree = "<group>"; };
+		CE69B2D019808C0900CDDCE1 /* bilbo-song.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bilbo-song.png"; sourceTree = "<group>"; };
+		CE69B2D119808C0900CDDCE1 /* blindsight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blindsight.png; sourceTree = "<group>"; };
+		CE69B2D219808C0900CDDCE1 /* brain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brain.jpg; sourceTree = "<group>"; };
+		CE69B2D319808C0900CDDCE1 /* chamber.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chamber.jpg; sourceTree = "<group>"; };
+		CE69B2D419808C0900CDDCE1 /* da-vinci-code.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "da-vinci-code.jpg"; sourceTree = "<group>"; };
+		CE69B2D519808C0900CDDCE1 /* deception-point.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "deception-point.jpg"; sourceTree = "<group>"; };
+		CE69B2D619808C0900CDDCE1 /* digital-fortress.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "digital-fortress.jpg"; sourceTree = "<group>"; };
+		CE69B2D719808C0900CDDCE1 /* fatal-cure.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fatal-cure.jpeg"; sourceTree = "<group>"; };
+		CE69B2D819808C0900CDDCE1 /* fellowship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fellowship.jpg; sourceTree = "<group>"; };
+		CE69B2D919808C0900CDDCE1 /* fever.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fever.jpg; sourceTree = "<group>"; };
+		CE69B2DA19808C0900CDDCE1 /* goblet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goblet.jpg; sourceTree = "<group>"; };
+		CE69B2DB19808C0900CDDCE1 /* hallows.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hallows.jpg; sourceTree = "<group>"; };
+		CE69B2DC19808C0900CDDCE1 /* intervention.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intervention.jpg; sourceTree = "<group>"; };
+		CE69B2DD19808C0900CDDCE1 /* invasion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = invasion.jpg; sourceTree = "<group>"; };
+		CE69B2DE19808C0900CDDCE1 /* lost-symbol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lost-symbol.jpg"; sourceTree = "<group>"; };
+		CE69B2DF19808C0900CDDCE1 /* phoenix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = phoenix.jpg; sourceTree = "<group>"; };
+		CE69B2E019808C0900CDDCE1 /* prince.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prince.jpg; sourceTree = "<group>"; };
+		CE69B2E119808C0900CDDCE1 /* return-king.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "return-king.jpg"; sourceTree = "<group>"; };
+		CE69B2E219808C0900CDDCE1 /* shock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shock.jpg; sourceTree = "<group>"; };
+		CE69B2E319808C0900CDDCE1 /* sphinx.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sphinx.jpeg; sourceTree = "<group>"; };
+		CE69B2E419808C0900CDDCE1 /* stone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone.jpg; sourceTree = "<group>"; };
+		CE69B2E519808C0900CDDCE1 /* the-hobbit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-hobbit.jpg"; sourceTree = "<group>"; };
+		CE69B2E619808C0900CDDCE1 /* two-towers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "two-towers.jpg"; sourceTree = "<group>"; };
 		CEF62D53197F256C00E3D6A6 /* IDOL OnDemand Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDOL OnDemand Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF62D56197F256C00E3D6A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CEF62D58197F256C00E3D6A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,8 +108,6 @@
 		CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTAppDelegate.m; sourceTree = "<group>"; };
 		CEF62D69197F256C00E3D6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CEF62D6C197F256C00E3D6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		CEF62D6E197F256C00E3D6A6 /* IDOL_TUTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDOL_TUTViewController.h; sourceTree = "<group>"; };
-		CEF62D6F197F256C00E3D6A6 /* IDOL_TUTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTViewController.m; sourceTree = "<group>"; };
 		CEF62D71197F256C00E3D6A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEF62D77197F256C00E3D6A6 /* IDOL OnDemand TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDOL OnDemand TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF62D78197F256C00E3D6A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -81,9 +140,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE69B2C919808C0900CDDCE1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE69B2CA19808C0900CDDCE1 /* Books.plist */,
+				CE69B2CB19808C0900CDDCE1 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE69B2CB19808C0900CDDCE1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */,
+				CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */,
+				CE69B2CE19808C0900CDDCE1 /* background.jpg */,
+				CE69B2CF19808C0900CDDCE1 /* bard.jpg */,
+				CE69B2D019808C0900CDDCE1 /* bilbo-song.png */,
+				CE69B2D119808C0900CDDCE1 /* blindsight.png */,
+				CE69B2D219808C0900CDDCE1 /* brain.jpg */,
+				CE69B2D319808C0900CDDCE1 /* chamber.jpg */,
+				CE69B2D419808C0900CDDCE1 /* da-vinci-code.jpg */,
+				CE69B2D519808C0900CDDCE1 /* deception-point.jpg */,
+				CE69B2D619808C0900CDDCE1 /* digital-fortress.jpg */,
+				CE69B2D719808C0900CDDCE1 /* fatal-cure.jpeg */,
+				CE69B2D819808C0900CDDCE1 /* fellowship.jpg */,
+				CE69B2D919808C0900CDDCE1 /* fever.jpg */,
+				CE69B2DA19808C0900CDDCE1 /* goblet.jpg */,
+				CE69B2DB19808C0900CDDCE1 /* hallows.jpg */,
+				CE69B2DC19808C0900CDDCE1 /* intervention.jpg */,
+				CE69B2DD19808C0900CDDCE1 /* invasion.jpg */,
+				CE69B2DE19808C0900CDDCE1 /* lost-symbol.jpg */,
+				CE69B2DF19808C0900CDDCE1 /* phoenix.jpg */,
+				CE69B2E019808C0900CDDCE1 /* prince.jpg */,
+				CE69B2E119808C0900CDDCE1 /* return-king.jpg */,
+				CE69B2E219808C0900CDDCE1 /* shock.jpg */,
+				CE69B2E319808C0900CDDCE1 /* sphinx.jpeg */,
+				CE69B2E419808C0900CDDCE1 /* stone.jpg */,
+				CE69B2E519808C0900CDDCE1 /* the-hobbit.jpg */,
+				CE69B2E619808C0900CDDCE1 /* two-towers.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		CEF62D4A197F256C00E3D6A6 = {
 			isa = PBXGroup;
 			children = (
+				CE69B2C919808C0900CDDCE1 /* Resources */,
 				CEF62D5C197F256C00E3D6A6 /* IDOL OnDemand Tutorial */,
 				CEF62D7E197F256C00E3D6A6 /* IDOL OnDemand TutorialTests */,
 				CEF62D55197F256C00E3D6A6 /* Frameworks */,
@@ -114,12 +217,14 @@
 		CEF62D5C197F256C00E3D6A6 /* IDOL OnDemand Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				CE153B7C19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.h */,
+				CE153B7D19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m */,
+				CE153B7F198092650065C2D5 /* IDOL-TUTBooksViewController.h */,
+				CE153B80198092650065C2D5 /* IDOL-TUTBooksViewController.m */,
 				CEF62D65197F256C00E3D6A6 /* IDOL_TUTAppDelegate.h */,
 				CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */,
 				CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */,
 				CEF62D6B197F256C00E3D6A6 /* Main_iPad.storyboard */,
-				CEF62D6E197F256C00E3D6A6 /* IDOL_TUTViewController.h */,
-				CEF62D6F197F256C00E3D6A6 /* IDOL_TUTViewController.m */,
 				CEF62D71197F256C00E3D6A6 /* Images.xcassets */,
 				CEF62D5D197F256C00E3D6A6 /* Supporting Files */,
 			);
@@ -232,10 +337,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE69B2F819808C0900CDDCE1 /* intervention.jpg in Resources */,
 				CEF62D6D197F256C00E3D6A6 /* Main_iPad.storyboard in Resources */,
+				CE69B2F519808C0900CDDCE1 /* fever.jpg in Resources */,
 				CEF62D72197F256C00E3D6A6 /* Images.xcassets in Resources */,
+				CE69B2F719808C0900CDDCE1 /* hallows.jpg in Resources */,
 				CEF62D6A197F256C00E3D6A6 /* Main_iPhone.storyboard in Resources */,
 				CEF62D61197F256C00E3D6A6 /* InfoPlist.strings in Resources */,
+				CE69B30019808C0900CDDCE1 /* stone.jpg in Resources */,
+				CE69B30219808C0900CDDCE1 /* two-towers.jpg in Resources */,
+				CE69B2EB19808C0900CDDCE1 /* bard.jpg in Resources */,
+				CE69B2E719808C0900CDDCE1 /* Books.plist in Resources */,
+				CE69B30119808C0900CDDCE1 /* the-hobbit.jpg in Resources */,
+				CE69B2F219808C0900CDDCE1 /* digital-fortress.jpg in Resources */,
+				CE69B2FD19808C0900CDDCE1 /* return-king.jpg in Resources */,
+				CE69B2EA19808C0900CDDCE1 /* background.jpg in Resources */,
+				CE69B2FE19808C0900CDDCE1 /* shock.jpg in Resources */,
+				CE69B2F019808C0900CDDCE1 /* da-vinci-code.jpg in Resources */,
+				CE69B2EC19808C0900CDDCE1 /* bilbo-song.png in Resources */,
+				CE69B2EF19808C0900CDDCE1 /* chamber.jpg in Resources */,
+				CE69B2EE19808C0900CDDCE1 /* brain.jpg in Resources */,
+				CE69B2FF19808C0900CDDCE1 /* sphinx.jpeg in Resources */,
+				CE69B2F419808C0900CDDCE1 /* fellowship.jpg in Resources */,
+				CE69B2F619808C0900CDDCE1 /* goblet.jpg in Resources */,
+				CE69B2E919808C0900CDDCE1 /* azkaban.jpg in Resources */,
+				CE69B2E819808C0900CDDCE1 /* angels-demons.jpg in Resources */,
+				CE69B2FB19808C0900CDDCE1 /* phoenix.jpg in Resources */,
+				CE69B2FC19808C0900CDDCE1 /* prince.jpg in Resources */,
+				CE69B2FA19808C0900CDDCE1 /* lost-symbol.jpg in Resources */,
+				CE69B2F919808C0900CDDCE1 /* invasion.jpg in Resources */,
+				CE69B2ED19808C0900CDDCE1 /* blindsight.png in Resources */,
+				CE69B2F119808C0900CDDCE1 /* deception-point.jpg in Resources */,
+				CE69B2F319808C0900CDDCE1 /* fatal-cure.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +388,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF62D67197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m in Sources */,
-				CEF62D70197F256C00E3D6A6 /* IDOL_TUTViewController.m in Sources */,
+				CE153B7E19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m in Sources */,
 				CEF62D63197F256C00E3D6A6 /* main.m in Sources */,
+				CE153B81198092650065C2D5 /* IDOL-TUTBooksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
