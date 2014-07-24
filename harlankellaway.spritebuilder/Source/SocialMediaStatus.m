@@ -61,13 +61,16 @@ static const float METER_SCALE_FACTOR = 1.0;
 {
     if(_actionType == ACTION_TYPE_FAVORITE)
     {
-        CCSprite *meterMiddle = _gameplay.meterMiddle;
-        CCSprite *meterTop = _gameplay.meterTop;
+//        CCSprite *meterMiddle = _gameplay.meterMiddle;
+//        CCSprite *meterTop = _gameplay.meterTop;
+//        
+//        meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
+//        
+//        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
         
-        meterMiddle.scaleY = meterMiddle.scaleY + METER_SCALE_FACTOR;
-        
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR));
+        [self scaleMeter:1];
     }
+    else { [self scaleMeter:0]; }
     
     [self disable];
 }
@@ -109,15 +112,15 @@ static const float METER_SCALE_FACTOR = 1.0;
     float middleAmt = meterMiddle.scaleY + METER_SCALE_FACTOR;
     float topAmt = meterTop.position.y + (meterMiddle.contentSize.height * METER_SCALE_FACTOR);
     
-    if(!scaleDirection)
+    if(scaleDirection)
     {
-        meterMiddle.scaleY = meterMiddle.scaleY + middleAmt;
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y + topAmt);
+        meterMiddle.scaleY = middleAmt;
+        meterTop.position = ccp(meterTop.position.x, topAmt);
     }
     else
     {
-        meterMiddle.scaleY = meterMiddle.scaleY - middleAmt;
-        meterTop.position = ccp(meterTop.position.x, meterTop.position.y - topAmt);
+        meterMiddle.scaleY = (middleAmt * -1);
+        meterTop.position = ccp(meterTop.position.x, (topAmt * -1));
     }
 }
 

@@ -52,13 +52,13 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
         NSNumber *streamSpeed = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_STREAM_SPEED_KEY];
         
         // get current stream speed
-        if(streamSpeed == 0 || streamSpeed == nil)
-        {
+//        if(streamSpeed == 0 || streamSpeed == nil)
+//        {
             streamSpeed = @3;
             
             [[NSUserDefaults standardUserDefaults]setObject:streamSpeed forKey:GAME_STATE_STREAM_SPEED_KEY];
             [[NSUserDefaults standardUserDefaults]synchronize];
-        }
+//        }
         
         self.streamSpeed = [streamSpeed doubleValue];
         
