@@ -10,6 +10,6 @@
 
 @interface IDOL_TUTTweetsViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *tweets;
+@property (strong, nonatomic) NSMutableDictionary *tweets;
 
 @end

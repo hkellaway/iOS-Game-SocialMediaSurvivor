@@ -10,6 +10,9 @@
 
 @interface IDOL_TUTTweetsViewController ()
 
+@property int numTweets;
+@property NSString *hashtag;
+
 @end
 
 @implementation IDOL_TUTTweetsViewController
@@ -26,7 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tweets = [self getTweetsWithHastag:@"F1"];
+    
+    // initialize instance variables
+    _numTweets = 0;
+    _hashtag = @"F1";
+    
+    // set view title
+    self.title = [NSString stringWithFormat:@"Tweets for #%@", _hashtag];
+    
+    // fetch tweets
+    self.tweets = [self getTweetsWithHashtag:_hashtag];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +58,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.tweets count];
+    return [[self.tweets allKeys] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,7 +69,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // set cell text to tweet
-    NSString *tweet = [self.tweets objectAtIndex:[indexPath row]];
+    NSString *tweet = (NSString *)[self.tweets objectForKey:[NSString stringWithFormat:@"%i", [indexPath row]]];
     [cell.textLabel setText:tweet];
     
     return cell;
@@ -114,12 +126,12 @@
 
 #pragma mark - Helper methods
 
-- (NSMutableArray *)getTweetsWithHastag:(NSString *)hastag
+- (NSMutableDictionary *)getTweetsWithHashtag:(NSString *)hashtag
 {
-    NSMutableArray *tweets = [NSMutableArray array];
-    [tweets addObject:@"I love cats"];
-    [tweets addObject:@"I like dogs"];
-    [tweets addObject:@"I like dogs and I hate cats."];
+    NSMutableDictionary *tweets = [NSMutableDictionary dictionary];
+    [tweets setObject:@"I love cats" forKey:@"0"];
+    [tweets setObject:@"I like dogs" forKey:@"1"];
+    [tweets setObject:@"I like dogs and I hate cats" forKey:@"2"];
     
     return tweets;
 }
