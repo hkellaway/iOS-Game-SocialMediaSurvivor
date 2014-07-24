@@ -18,10 +18,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="SQe-GI-yzz"/>
+                    <connections>
+                        <segue destination="6SY-kk-w9c" kind="push" identifier="DetailsViewController" id="pEl-bB-644"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhu-iW-1kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1794" y="-170"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="sAX-RN-JbL">
+            <objects>
+                <tableViewController id="6SY-kk-w9c" customClass="IDOL_TUTDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KYO-ba-icv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="6SY-kk-w9c" id="gXE-oZ-WKn"/>
+                            <outlet property="delegate" destination="6SY-kk-w9c" id="5Os-Ye-QDh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="slr-lH-vGC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXP-vi-Zmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198" y="-157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w5x-pC-gsp">

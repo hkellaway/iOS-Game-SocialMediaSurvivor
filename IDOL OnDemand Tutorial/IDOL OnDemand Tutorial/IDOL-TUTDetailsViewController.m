@@ -1,24 +1,20 @@
 //
-//  IDOL-TUTTweetsViewController.m
+//  IDOL-TUTDetailsViewController.m
 //  IDOL OnDemand Tutorial
 //
-//  Created by Harlan Kellaway on 7/23/14.
+//  Created by Harlan Kellaway on 7/24/14.
 //  Copyright (c) 2014 ___HARLANKELLAWAY___. All rights reserved.
 //
 
-#import "IDOL-TUTTweetsViewController.h"
 #import "IDOL-TUTDetailsViewController.h"
 
-@interface IDOL_TUTTweetsViewController ()
+@interface IDOL_TUTDetailsViewController ()
 
-@property NSString *hashtag;
-
-// used to temporarily store user's tweet selection
-@property NSString *tweetID;
+@property NSMutableArray *tweetDetails;
 
 @end
 
-@implementation IDOL_TUTTweetsViewController
+@implementation IDOL_TUTDetailsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,14 +29,13 @@
 {
     [super viewDidLoad];
     
-    // initialize instance variables
-    _hashtag = @"F1";
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // set view title
-    self.title = [NSString stringWithFormat:@"Tweets for #%@", _hashtag];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    // fetch tweets
-    self.tweets = [self getTweetsWithHashtag:_hashtag];
+    self.tweetDetails = [NSMutableArray array];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,39 +48,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[self.tweets allKeys] count];
+    // TODO: Change this to number of details required by spec
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // set up cell
     static NSString *CellIdentifier = @"Cell Identifier";
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // set cell text to tweet
-    NSString *tweet = (NSString *)[self.tweets objectForKey:[NSString stringWithFormat:@"%i", [indexPath row]]];
-    [cell.textLabel setText:tweet];
+    NSString *tweetDetail = [self.tweetDetails objectAtIndex:[indexPath row]];
+    
+    // Configure Cell
+    [cell.textLabel setText:tweetDetail];
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    // get tweet ID selected
-    self.tweetID = [NSString stringWithFormat:@"%i", [indexPath row]];
-    
-    // perform segue between Views
-    [self performSegueWithIdentifier:@"DetailsViewController" sender:self];
 }
 
 /*
@@ -137,16 +125,46 @@
 }
 */
 
-#pragma mark - Helper methods
+#pragma mark - Overrides for getters/setters
 
-- (NSMutableDictionary *)getTweetsWithHashtag:(NSString *)hashtag
+// go through tweet IDs ands et tweetDetails accordingly
+- (void)setTweetID:(NSString *)tweetID
 {
-    NSMutableDictionary *tweets = [NSMutableDictionary dictionary];
-    [tweets setObject:@"I love cats" forKey:@"0"];
-    [tweets setObject:@"I like dogs" forKey:@"1"];
-    [tweets setObject:@"I like dogs and I hate cats" forKey:@"2"];
+    // if tweetID is empty, set instance variable to parameter
+    if (_tweetID != tweetID)
+    {
+        _tweetID = tweetID;
+        
+        // TODO: get num tweetIDs
+        int numTweetIDs = 3;
+        
+        for(int i = 0; i < numTweetIDs; i++)
+        {
+            // TODO: get array ot tweetID objects
+            NSString *tempTweetID = [NSString stringWithFormat:@"%i", i];
+            
+            // TODO: get each TweetDetails object and make comparison
+            if([tempTweetID isEqualToString:tweetID])
+            {
+                [self.tweetDetails  setObject:[NSString stringWithFormat:@"Tweet Details for Tweet ID %i", i] atIndexedSubscript:i];
+            }
+        }
+    }
     
-    return tweets;
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Books" ofType:@"plist"];
+//        NSArray *authors = [NSArray arrayWithContentsOfFile:filePath];
+//        
+//        int count = authors.count;
+//        for (int i = 0; i < count; i++) {
+//            NSDictionary *authorDictionary = [authors objectAtIndex:i];
+//            NSString *tempAuthor = [authorDictionary objectForKey:@"Author"];
+//            
+//            if ([tempAuthor isEqualToString:_author]) {
+//                self.books = [authorDictionary objectForKey:@"Books"];
+//            }
+//        }
+//    }
+    
 }
 
 @end

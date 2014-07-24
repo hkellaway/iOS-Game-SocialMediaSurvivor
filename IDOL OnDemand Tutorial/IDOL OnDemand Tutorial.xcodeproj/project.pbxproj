@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE153B871980AF380065C2D5 /* IDOL-TUTTweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B861980AF380065C2D5 /* IDOL-TUTTweetsViewController.m */; };
+		CE153B8A1980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B891980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.m */; };
 		CE69B2E719808C0900CDDCE1 /* Books.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CA19808C0900CDDCE1 /* Books.plist */; };
 		CE69B2E819808C0900CDDCE1 /* angels-demons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */; };
 		CE69B2E919808C0900CDDCE1 /* azkaban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */; };
@@ -65,6 +66,8 @@
 /* Begin PBXFileReference section */
 		CE153B851980AF380065C2D5 /* IDOL-TUTTweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDOL-TUTTweetsViewController.h"; sourceTree = "<group>"; };
 		CE153B861980AF380065C2D5 /* IDOL-TUTTweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IDOL-TUTTweetsViewController.m"; sourceTree = "<group>"; };
+		CE153B881980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDOL-TUTDetailsViewController.h"; sourceTree = "<group>"; };
+		CE153B891980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IDOL-TUTDetailsViewController.m"; sourceTree = "<group>"; };
 		CE69B2CA19808C0900CDDCE1 /* Books.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Books.plist; sourceTree = "<group>"; };
 		CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "angels-demons.jpg"; sourceTree = "<group>"; };
 		CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = azkaban.jpg; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 			children = (
 				CEF62D65197F256C00E3D6A6 /* IDOL_TUTAppDelegate.h */,
 				CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */,
+				CE153B881980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.h */,
+				CE153B891980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.m */,
 				CE153B851980AF380065C2D5 /* IDOL-TUTTweetsViewController.h */,
 				CE153B861980AF380065C2D5 /* IDOL-TUTTweetsViewController.m */,
 				CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */,
@@ -383,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF62D67197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m in Sources */,
+				CE153B8A1980BEEA0065C2D5 /* IDOL-TUTDetailsViewController.m in Sources */,
 				CE153B871980AF380065C2D5 /* IDOL-TUTTweetsViewController.m in Sources */,
 				CEF62D63197F256C00E3D6A6 /* main.m in Sources */,
 			);
