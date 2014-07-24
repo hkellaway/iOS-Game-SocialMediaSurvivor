@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE153B7E19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B7D19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m */; };
-		CE153B81198092650065C2D5 /* IDOL-TUTBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B80198092650065C2D5 /* IDOL-TUTBooksViewController.m */; };
+		CE153B841980ABAC0065C2D5 /* IDOL_TUTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE153B831980ABAC0065C2D5 /* IDOL_TUTViewController.m */; };
 		CE69B2E719808C0900CDDCE1 /* Books.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CA19808C0900CDDCE1 /* Books.plist */; };
 		CE69B2E819808C0900CDDCE1 /* angels-demons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */; };
 		CE69B2E919808C0900CDDCE1 /* azkaban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */; };
@@ -64,10 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE153B7C19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDOL_TUTAuthorsViewControllerTableViewController.h; sourceTree = "<group>"; };
-		CE153B7D19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTAuthorsViewControllerTableViewController.m; sourceTree = "<group>"; };
-		CE153B7F198092650065C2D5 /* IDOL-TUTBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDOL-TUTBooksViewController.h"; sourceTree = "<group>"; };
-		CE153B80198092650065C2D5 /* IDOL-TUTBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IDOL-TUTBooksViewController.m"; sourceTree = "<group>"; };
+		CE153B821980ABAC0065C2D5 /* IDOL_TUTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDOL_TUTViewController.h; sourceTree = "<group>"; };
+		CE153B831980ABAC0065C2D5 /* IDOL_TUTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDOL_TUTViewController.m; sourceTree = "<group>"; };
 		CE69B2CA19808C0900CDDCE1 /* Books.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Books.plist; sourceTree = "<group>"; };
 		CE69B2CC19808C0900CDDCE1 /* angels-demons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "angels-demons.jpg"; sourceTree = "<group>"; };
 		CE69B2CD19808C0900CDDCE1 /* azkaban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = azkaban.jpg; sourceTree = "<group>"; };
@@ -217,12 +214,10 @@
 		CEF62D5C197F256C00E3D6A6 /* IDOL OnDemand Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				CE153B7C19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.h */,
-				CE153B7D19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m */,
-				CE153B7F198092650065C2D5 /* IDOL-TUTBooksViewController.h */,
-				CE153B80198092650065C2D5 /* IDOL-TUTBooksViewController.m */,
 				CEF62D65197F256C00E3D6A6 /* IDOL_TUTAppDelegate.h */,
 				CEF62D66197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m */,
+				CE153B821980ABAC0065C2D5 /* IDOL_TUTViewController.h */,
+				CE153B831980ABAC0065C2D5 /* IDOL_TUTViewController.m */,
 				CEF62D68197F256C00E3D6A6 /* Main_iPhone.storyboard */,
 				CEF62D6B197F256C00E3D6A6 /* Main_iPad.storyboard */,
 				CEF62D71197F256C00E3D6A6 /* Images.xcassets */,
@@ -388,9 +383,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF62D67197F256C00E3D6A6 /* IDOL_TUTAppDelegate.m in Sources */,
-				CE153B7E19808CD50065C2D5 /* IDOL_TUTAuthorsViewControllerTableViewController.m in Sources */,
 				CEF62D63197F256C00E3D6A6 /* main.m in Sources */,
-				CE153B81198092650065C2D5 /* IDOL-TUTBooksViewController.m in Sources */,
+				CE153B841980ABAC0065C2D5 /* IDOL_TUTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
