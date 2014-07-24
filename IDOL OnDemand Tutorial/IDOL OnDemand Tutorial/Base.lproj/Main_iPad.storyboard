@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nvr-9J-RHV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="LAr-gl-D78">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="A41-0b-qFG">
             <objects>
-                <viewController id="Nvr-9J-RHV" sceneMemberID="viewController">
+                <viewController id="Nvr-9J-RHV" customClass="IDOL_TUTTweetsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NnL-ZF-52Y"/>
                         <viewControllerLayoutGuide type="bottom" id="Gqn-6y-ux7"/>
@@ -17,8 +17,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rap-Cd-Sa9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38g-51-w1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="-831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ol5-1x-zVT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LAr-gl-D78" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXi-MS-aFw">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nvr-9J-RHV" kind="relationship" relationship="rootViewController" id="9pk-yr-OK7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fD-d0-4dR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128" y="-831"/>
         </scene>
