@@ -6,9 +6,14 @@
 //  Copyright (c) 2014 ___HARLANKELLAWAY___. All rights reserved.
 //
 
+
+//// At application launch, the application creates an instance of the AppDelegate class as a singleton ////
+
 #import "IDOL_TUTAppDelegate.h"
 
 @implementation IDOL_TUTAppDelegate
+
+//// When the UIApplication instance has finished preparing the application for launch, it will notify the AppDelegate instance that the application will finish launching — but hasn't quite yet. ////
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

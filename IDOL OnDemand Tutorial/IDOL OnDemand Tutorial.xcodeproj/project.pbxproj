@@ -395,6 +395,7 @@
 				GCC_PREFIX_HEADER = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,6 +409,7 @@
 				GCC_PREFIX_HEADER = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "IDOL OnDemand Tutorial/IDOL OnDemand Tutorial-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -471,6 +473,7 @@
 				CEF62D8A197F256C00E3D6A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEF62D8B197F256C00E3D6A6 /* Build configuration list for PBXNativeTarget "IDOL OnDemand TutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +482,7 @@
 				CEF62D8D197F256C00E3D6A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

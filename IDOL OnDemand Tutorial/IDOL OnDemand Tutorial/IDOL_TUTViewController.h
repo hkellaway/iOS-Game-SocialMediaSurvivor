@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IDOL_TUTViewController : UIViewController
+@interface IDOL_TUTViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-- (IBAction)changeColor:(id)sender;
+//@property IBOutlet UILabel *label;
+
+@property IBOutlet UITableView *tableView;
+
+@property NSArray *fruits;
+
+@property NSDictionary *alphabetizedFruits;
 
 @end
