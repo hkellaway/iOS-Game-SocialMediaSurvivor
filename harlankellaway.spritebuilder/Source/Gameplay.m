@@ -101,7 +101,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         _statuses[i] = status;
         
         // TODO: save meter scaling to GameState
-        _meterMiddle.scaleY = 3.0;
+        _meterMiddle.scaleY = 25.0;
+        _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
         
         [_stream addChild:status];
     }
@@ -135,6 +136,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
             if(meterMiddleStart <= 1.0 & meterMiddleScaled <= 1.0)
             {
                 [self gameOver];
+            }
+            
+            // if meter scaling resulted in scale hitting the top, increase player rank
+            if((_meterMiddle.contentSize.height * _meterMiddle.scaleY) >= _meterBackground.contentSize.height)
+            {
+                [self increaseRank];
             }
             
             // change topic, move to top, etc.
@@ -185,6 +192,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         CCLOG(@"Round over!");
         [self gameOver];
     }
+}
+
+- (void)increaseRank
+{
+    CCLOG(@"Rank Increased!");
 }
 
 - (void)gameOver
