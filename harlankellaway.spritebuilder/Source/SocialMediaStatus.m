@@ -85,8 +85,18 @@ static const float METER_SCALE_FACTOR = 1.0;
     CCSprite *meterMiddle = _gameplay.meterMiddle;
     CCSprite *meterTop = _gameplay.meterTop;
     
+    // if scaling down, check if meterMiddle is at origin
+    if(!scaleDirection)
+    {
+        // if scaling down while at origin, game is over
+        if(!meterMiddle.scaleY == 1)
+        {
+             //TODO:
+        }
+    }
+    
     // scale down if 0, up if 1
-    meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY - METER_SCALE_FACTOR : meterMiddle.scaleY + METER_SCALE_FACTOR);
+    meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY + METER_SCALE_FACTOR : meterMiddle.scaleY - METER_SCALE_FACTOR);
     
     // move top
     meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));

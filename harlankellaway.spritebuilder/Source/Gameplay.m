@@ -100,6 +100,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         
         _statuses[i] = status;
         
+        // TODO: save meter scaling to GameState
+        _meterMiddle.scaleY = 3.0;
+        
         [_stream addChild:status];
     }
     
@@ -115,16 +118,24 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     {
         SocialMediaStatus *status = _statuses[i];
         
-        double speed = [GameState sharedInstance].streamSpeed;
-        
         status.position = ccp(status.position.x, status.position.y - [GameState sharedInstance].streamSpeed);
         
         if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
         {
             status.isAtScreenBottom = TRUE;
             
+            float meterMiddleStart = _meterMiddle.scaleY;
+            
             // if status is not disabled and should have been Recir/Faved, decrease Meter
             [status checkState];
+            
+            float meterMiddleScaled = _meterMiddle.scaleY;
+            
+            // if meter scaling resulted in scale hitting 1.0, game is over
+            if(meterMiddleStart <= 1.0 & meterMiddleScaled <= 1.0)
+            {
+                [self gameOver];
+            }
             
             // change topic, move to top, etc.
             [status refresh];
