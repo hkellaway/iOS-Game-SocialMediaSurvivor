@@ -26,4 +26,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - instance methods
+
+- (IBAction)startApp:(id)sender
+{
+    NSLog(@"Entering method: startApp");
+}
+
+#pragma mark - helper methods
+
 @end

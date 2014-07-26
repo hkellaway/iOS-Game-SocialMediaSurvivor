@@ -10,4 +10,6 @@
 
 @interface APViewController : UIViewController
 
+- (IBAction)startApp:(id)sender;
+
 @end
