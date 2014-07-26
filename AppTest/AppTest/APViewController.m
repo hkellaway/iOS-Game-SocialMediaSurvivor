@@ -47,9 +47,6 @@
 - (IBAction)startApp:(id)sender
 {
     NSLog(@"Entering method: startApp");
-    
-    // segue to main menu
-    [self performSegueWithIdentifier:@"MainMenuViewController" sender:sender];
 }
 
 #pragma mark - helper methods
