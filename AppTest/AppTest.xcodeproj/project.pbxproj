@@ -21,6 +21,8 @@
 		CED98C0119841FE300BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
 		CED98C0919841FE300BDA725 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED98C0719841FE300BDA725 /* InfoPlist.strings */; };
 		CED98C0B19841FE400BDA725 /* AppTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C0A19841FE400BDA725 /* AppTestTests.m */; };
+		CED98C16198423F600BDA725 /* APMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C15198423F600BDA725 /* APMainMenuViewController.m */; };
+		CED98C191984241E00BDA725 /* APFacebookFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C181984241E00BDA725 /* APFacebookFriendsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		CED98C0619841FE300BDA725 /* AppTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppTestTests-Info.plist"; sourceTree = "<group>"; };
 		CED98C0819841FE300BDA725 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CED98C0A19841FE400BDA725 /* AppTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTestTests.m; sourceTree = "<group>"; };
+		CED98C14198423F600BDA725 /* APMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMainMenuViewController.h; sourceTree = "<group>"; };
+		CED98C15198423F600BDA725 /* APMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMainMenuViewController.m; sourceTree = "<group>"; };
+		CED98C171984241D00BDA725 /* APFacebookFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFacebookFriendsTableViewController.h; sourceTree = "<group>"; };
+		CED98C181984241E00BDA725 /* APFacebookFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APFacebookFriendsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				CED98BEE19841FE200BDA725 /* APAppDelegate.h */,
 				CED98BEF19841FE200BDA725 /* APAppDelegate.m */,
 				CED98BF119841FE200BDA725 /* Main.storyboard */,
+				CED98C14198423F600BDA725 /* APMainMenuViewController.h */,
+				CED98C15198423F600BDA725 /* APMainMenuViewController.m */,
+				CED98C171984241D00BDA725 /* APFacebookFriendsTableViewController.h */,
+				CED98C181984241E00BDA725 /* APFacebookFriendsTableViewController.m */,
 				CED98BF419841FE200BDA725 /* APViewController.h */,
 				CED98BF519841FE200BDA725 /* APViewController.m */,
 				CED98BF719841FE200BDA725 /* Images.xcassets */,
@@ -252,7 +262,9 @@
 			files = (
 				CED98BEC19841FE200BDA725 /* main.m in Sources */,
 				CED98BF619841FE200BDA725 /* APViewController.m in Sources */,
+				CED98C191984241E00BDA725 /* APFacebookFriendsTableViewController.m in Sources */,
 				CED98BF019841FE200BDA725 /* APAppDelegate.m in Sources */,
+				CED98C16198423F600BDA725 /* APMainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
