@@ -1,6 +1,6 @@
 //
-//  App_TestTests.m
-//  App TestTests
+//  AppTestTests.m
+//  AppTestTests
 //
 //  Created by Harlan Kellaway on 7/26/14.
 //  Copyright (c) 2014 ___HARLANKELLAWAY___. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface App_TestTests : XCTestCase
+@interface AppTestTests : XCTestCase
 
 @end
 
-@implementation App_TestTests
+@implementation AppTestTests
 
 - (void)setUp
 {
