@@ -36,25 +36,6 @@
             </objects>
             <point key="canvasLocation" x="96" y="-3"/>
         </scene>
-        <!--Facebook Friends Table View Controller-->
-        <scene sceneID="1pf-6K-zxS">
-            <objects>
-                <tableViewController id="22n-Oe-hxb" customClass="APFacebookFriendsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fUa-mf-Sz4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="22n-Oe-hxb" id="K92-Ne-YRq"/>
-                            <outlet property="delegate" destination="22n-Oe-hxb" id="aY0-wJ-4BD"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="mAE-qv-HuI"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eTS-rU-9aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1089" y="-717"/>
-        </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="gn5-fX-MaO">
             <objects>
@@ -102,14 +83,54 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tfr-PK-Cwt"/>
                     <connections>
-                        <segue destination="22n-Oe-hxb" kind="push" identifier="FacebookFriendsViewController" id="G9m-2z-gCh"/>
                         <segue destination="rTS-bB-XMM" kind="push" identifier="ServerPingViewController" id="r2h-tO-RUO"/>
                         <segue destination="Pu5-wM-nrX" kind="push" identifier="AnimationTestViewController" id="5rA-6o-uag"/>
+                        <segue destination="w12-em-rPV" kind="push" identifier="FacebookFriendsViewController" id="DrC-54-ohV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9z-jF-6N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="557" y="-3"/>
+        </scene>
+        <!--Facebook Friends View Controller-->
+        <scene sceneID="uTN-fz-kt3">
+            <objects>
+                <viewController id="w12-em-rPV" customClass="APFacebookFriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0QG-O9-mFq"/>
+                        <viewControllerLayoutGuide type="bottom" id="9sN-NL-CJ6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MYE-7y-Wvh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsS-Az-D54">
+                                <rect key="frame" x="0.0" y="346" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reload">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Py-vo-dte" userLabel="Table View - Facebook Friends">
+                                <rect key="frame" x="-1" y="64" width="322" height="274"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w12-em-rPV" id="VT6-Go-vuF"/>
+                                    <outlet property="delegate" destination="w12-em-rPV" id="tUX-2f-Yoo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6pD-cJ-Dgl"/>
+                    <connections>
+                        <outlet property="facebookFriendsTableView" destination="5Py-vo-dte" id="buf-AJ-nX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gl1-2n-OEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="-666"/>
         </scene>
         <!--Server Ping View Controller-->
         <scene sceneID="2Eg-8y-UDQ">

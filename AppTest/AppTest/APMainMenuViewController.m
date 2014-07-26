@@ -7,7 +7,7 @@
 //
 
 #import "APMainMenuViewController.h"
-#import "APFacebookFriendsTableViewController.h"
+#import "APFacebookFriendsViewController.h"
 
 @interface APMainMenuViewController ()
 
@@ -45,7 +45,7 @@
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.destinationViewController isKindOfClass:[APFacebookFriendsTableViewController class]])
+    if ([segue.destinationViewController isKindOfClass:[APFacebookFriendsViewController class]])
     {
         NSLog(@"Segue triggered: FacebookFriendsViewController");
     }
