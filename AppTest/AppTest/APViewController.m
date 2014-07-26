@@ -7,6 +7,7 @@
 //
 
 #import "APViewController.h"
+#import "APMainMenuViewController.h"
 
 @interface APViewController ()
 
@@ -26,11 +27,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - instance methods
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"Entered method: prepareForSegue");
+    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[APMainMenuViewController class]])
+    {
+        NSLog(@"Segue triggered: APMainMenuViewController");
+    }
+}
+
+#pragma mark - Instance Methods
 
 - (IBAction)startApp:(id)sender
 {
     NSLog(@"Entering method: startApp");
+    
+    // segue to main menu
+    [self performSegueWithIdentifier:@"MainMenuViewController" sender:sender];
 }
 
 #pragma mark - helper methods
