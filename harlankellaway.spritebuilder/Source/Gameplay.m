@@ -101,7 +101,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         _statuses[i] = status;
         
         // TODO: save meter scaling to GameState
-        _meterMiddle.scaleY = 25.0;
+        _meterMiddle.scaleY = 45.0;
         _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
         
         [_stream addChild:status];
@@ -138,8 +138,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                 [self gameOver];
             }
             
+            float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
+            float backgroundHeight = _meterBackground.contentSize.height;
+            
             // if meter scaling resulted in scale hitting the top, increase player rank
-            if((_meterMiddle.contentSize.height * _meterMiddle.scaleY) >= _meterBackground.contentSize.height)
+            if(middleHeight >= backgroundHeight)
             {
                 [self increaseRank];
             }
@@ -197,6 +200,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 - (void)increaseRank
 {
     CCLOG(@"Rank Increased!");
+    
+    NSInteger newRank = [GameState sharedInstance].playerRank + 1;
+    
+    [[GameState sharedInstance] setPlayerRank:newRank];
+    
+    CCLOG(@"Rank: %i", [GameState sharedInstance].playerRank);
 }
 
 - (void)gameOver
@@ -208,6 +217,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // reset global values
     [GameState sharedInstance].levelNum = 1;
     [GameState sharedInstance].streamSpeed = 3;
+    [GameState sharedInstance].playerRank = 1;
     [GameState sharedInstance].trendsToRecirculate = nil;
     [GameState sharedInstance].trendsToFavorite = nil;
     

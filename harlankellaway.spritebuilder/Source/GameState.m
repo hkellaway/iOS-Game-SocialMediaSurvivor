@@ -13,6 +13,7 @@ static NSString *const GAME_STATE_STREAM_SPEED_KEY = @"GameStateStreamSpeedKey";
 static NSString *const GAME_STATE_LEVEL_ALL_TOPICS_KEY = @"GameStateAllTopicsKey";
 static NSString *const GAME_STATE_TRENDS_TO_RECIRCULATE_KEY = @"GameStateTrendsToRecirculateKey";
 static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFavoriteKey";
+static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
 
 @implementation GameState
 
@@ -50,8 +51,7 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
         self.levelNum = [levelNum integerValue];
         
         NSNumber *streamSpeed = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_STREAM_SPEED_KEY];
-        
-        // get current stream speed
+
 //        if(streamSpeed == 0 || streamSpeed == nil)
 //        {
             streamSpeed = @1;
@@ -61,6 +61,16 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
 //        }
         
         self.streamSpeed = [streamSpeed doubleValue];
+        
+        // load player's current Rank
+        NSNumber *playerRank = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_PLAYER_RANK_KEY];
+        
+        if(playerRank == nil)
+        {
+            playerRank = @1;
+        }
+        
+        self.playerRank = [playerRank integerValue];
         
         // load in all Topics if none are available
         _allTopics = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_ALL_TOPICS_KEY];
@@ -123,6 +133,17 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
     
     // store change
     [[NSUserDefaults standardUserDefaults]setObject:levelNSNumber forKey:GAME_STATE_LEVEL_NUM_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+- (void)setPlayerRank:(NSInteger)playerRank
+{
+    _playerRank = playerRank;
+    
+    NSNumber *rankNSNumber = [NSNumber numberWithInt:playerRank];
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults]setObject:rankNSNumber forKey:GAME_STATE_PLAYER_RANK_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
