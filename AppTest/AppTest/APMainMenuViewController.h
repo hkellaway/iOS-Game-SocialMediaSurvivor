@@ -11,5 +11,7 @@
 @interface APMainMenuViewController : UIViewController
 
 - (IBAction)goToFacebookFriendsScene:(id)sender;
+- (IBAction)goToServerPingScene:(id)sender;
+- (IBAction)goToAnimationTestScene:(id)sender;
 
 @end

@@ -53,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTS-rU-9aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093" y="-741"/>
+            <point key="canvasLocation" x="1089" y="-717"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="gn5-fX-MaO">
@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-j9-HFg">
-                                <rect key="frame" x="0.0" y="269" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="231" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook Friends">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,17 +77,77 @@
                                     <action selector="goToFacebookFriendsScene:" destination="Sfg-FH-f1m" eventType="touchUpInside" id="2nU-DC-rYF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utJ-mZ-fMe">
+                                <rect key="frame" x="0.0" y="269" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Server Ping">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToServerPingScene:" destination="Sfg-FH-f1m" eventType="touchUpInside" id="AaQ-Ax-V6D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-YX-dl5">
+                                <rect key="frame" x="0.0" y="307" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Animation Test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToAnimationTestScene:" destination="Sfg-FH-f1m" eventType="touchUpInside" id="rva-dT-LAa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tfr-PK-Cwt"/>
                     <connections>
                         <segue destination="22n-Oe-hxb" kind="push" identifier="FacebookFriendsViewController" id="G9m-2z-gCh"/>
+                        <segue destination="rTS-bB-XMM" kind="push" identifier="ServerPingViewController" id="r2h-tO-RUO"/>
+                        <segue destination="Pu5-wM-nrX" kind="push" identifier="AnimationTestViewController" id="5rA-6o-uag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9z-jF-6N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="557" y="-3"/>
+        </scene>
+        <!--Server Ping View Controller-->
+        <scene sceneID="2Eg-8y-UDQ">
+            <objects>
+                <viewController id="rTS-bB-XMM" customClass="APServerPingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g3k-zx-8YQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="X6S-sK-YIf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ASS-2H-B07">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RSd-Zl-Hi2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2L-qZ-mFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="-3"/>
+        </scene>
+        <!--Animation Test View Controller-->
+        <scene sceneID="DNa-hI-iIx">
+            <objects>
+                <viewController id="Pu5-wM-nrX" customClass="APAnimationTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lJQ-nk-qiB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ufq-Un-iKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iL9-bg-Ccr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="43Q-5j-J1I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zO6-dR-EKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozc-xs-kbv">

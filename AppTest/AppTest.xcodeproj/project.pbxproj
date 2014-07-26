@@ -23,6 +23,8 @@
 		CED98C0B19841FE400BDA725 /* AppTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C0A19841FE400BDA725 /* AppTestTests.m */; };
 		CED98C16198423F600BDA725 /* APMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C15198423F600BDA725 /* APMainMenuViewController.m */; };
 		CED98C191984241E00BDA725 /* APFacebookFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C181984241E00BDA725 /* APFacebookFriendsTableViewController.m */; };
+		CED98C1C198433AC00BDA725 /* APServerPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C1B198433AC00BDA725 /* APServerPingViewController.m */; };
+		CED98C1F198433D900BDA725 /* APAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C1E198433D900BDA725 /* APAnimationTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		CED98C15198423F600BDA725 /* APMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMainMenuViewController.m; sourceTree = "<group>"; };
 		CED98C171984241D00BDA725 /* APFacebookFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFacebookFriendsTableViewController.h; sourceTree = "<group>"; };
 		CED98C181984241E00BDA725 /* APFacebookFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APFacebookFriendsTableViewController.m; sourceTree = "<group>"; };
+		CED98C1A198433AC00BDA725 /* APServerPingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APServerPingViewController.h; sourceTree = "<group>"; };
+		CED98C1B198433AC00BDA725 /* APServerPingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APServerPingViewController.m; sourceTree = "<group>"; };
+		CED98C1D198433D900BDA725 /* APAnimationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAnimationTestViewController.h; sourceTree = "<group>"; };
+		CED98C1E198433D900BDA725 /* APAnimationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAnimationTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +126,14 @@
 			children = (
 				CED98BEE19841FE200BDA725 /* APAppDelegate.h */,
 				CED98BEF19841FE200BDA725 /* APAppDelegate.m */,
-				CED98C14198423F600BDA725 /* APMainMenuViewController.h */,
-				CED98C15198423F600BDA725 /* APMainMenuViewController.m */,
+				CED98C1D198433D900BDA725 /* APAnimationTestViewController.h */,
+				CED98C1E198433D900BDA725 /* APAnimationTestViewController.m */,
 				CED98C171984241D00BDA725 /* APFacebookFriendsTableViewController.h */,
 				CED98C181984241E00BDA725 /* APFacebookFriendsTableViewController.m */,
+				CED98C14198423F600BDA725 /* APMainMenuViewController.h */,
+				CED98C15198423F600BDA725 /* APMainMenuViewController.m */,
+				CED98C1A198433AC00BDA725 /* APServerPingViewController.h */,
+				CED98C1B198433AC00BDA725 /* APServerPingViewController.m */,
 				CED98BF419841FE200BDA725 /* APViewController.h */,
 				CED98BF519841FE200BDA725 /* APViewController.m */,
 				CED98BF119841FE200BDA725 /* Main.storyboard */,
@@ -263,7 +273,9 @@
 				CED98BEC19841FE200BDA725 /* main.m in Sources */,
 				CED98BF619841FE200BDA725 /* APViewController.m in Sources */,
 				CED98C191984241E00BDA725 /* APFacebookFriendsTableViewController.m in Sources */,
+				CED98C1F198433D900BDA725 /* APAnimationTestViewController.m in Sources */,
 				CED98BF019841FE200BDA725 /* APAppDelegate.m in Sources */,
+				CED98C1C198433AC00BDA725 /* APServerPingViewController.m in Sources */,
 				CED98C16198423F600BDA725 /* APMainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

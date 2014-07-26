@@ -57,9 +57,21 @@
 {
     NSLog (@"Entered method: goToFacebookFriendsScene");
     
-//    [self prepareForSegue:@"FacebookFriendsViewController" sender:sender];
-    
     [self performSegueWithIdentifier:@"FacebookFriendsViewController" sender:self];
+}
+
+- (IBAction)goToServerPingScene:(id)sender
+{
+    NSLog (@"Entered method: goToServerPingScene");
+    
+    [self performSegueWithIdentifier:@"ServerPingViewController" sender:self];
+}
+
+- (IBAction)goToAnimationTestScene:(id)sender
+{
+    NSLog (@"Entered method: goToAnimationTestScene");
+    
+    [self performSegueWithIdentifier:@"AnimationTestViewController" sender:self];
 }
 
 @end
