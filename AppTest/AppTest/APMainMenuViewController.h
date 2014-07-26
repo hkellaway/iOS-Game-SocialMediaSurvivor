@@ -10,4 +10,6 @@
 
 @interface APMainMenuViewController : UIViewController
 
+- (IBAction)goToFacebookFriendsScene:(id)sender;
+
 @end

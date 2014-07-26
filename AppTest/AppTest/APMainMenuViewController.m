@@ -38,7 +38,7 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+//In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"Entered method: prepareForSegue");
@@ -47,8 +47,19 @@
     // Pass the selected object to the new view controller.
     if ([segue.destinationViewController isKindOfClass:[APFacebookFriendsTableViewController class]])
     {
-        NSLog(@"Segue triggered: APFacebookFriendsTableViewController");
+        NSLog(@"Segue triggered: FacebookFriendsViewController");
     }
+}
+
+#pragma mark - Instance Methods
+
+- (IBAction)goToFacebookFriendsScene:(id)sender
+{
+    NSLog (@"Entered method: goToFacebookFriendsScene");
+    
+//    [self prepareForSegue:@"FacebookFriendsViewController" sender:sender];
+    
+    [self performSegueWithIdentifier:@"FacebookFriendsViewController" sender:self];
 }
 
 @end

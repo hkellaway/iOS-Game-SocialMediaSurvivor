@@ -24,7 +24,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startApp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yUt-h1-Fcn"/>
-                                    <segue destination="Sfg-FH-f1m" kind="push" identifier="MainMenuViewController" id="9mz-qZ-z2s"/>
+                                    <segue destination="Sfg-FH-f1m" kind="push" identifier="MainMenuViewController" id="HjJ-Ql-feh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,11 +66,23 @@
                     <view key="view" contentMode="scaleToFill" id="KGr-Op-wyV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-j9-HFg">
+                                <rect key="frame" x="0.0" y="269" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook Friends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToFacebookFriendsScene:" destination="Sfg-FH-f1m" eventType="touchUpInside" id="2nU-DC-rYF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tfr-PK-Cwt"/>
                     <connections>
-                        <segue destination="22n-Oe-hxb" kind="push" identifier="FacebookFriendsViewController" id="mAT-cX-EUa"/>
+                        <segue destination="22n-Oe-hxb" kind="push" identifier="FacebookFriendsViewController" id="G9m-2z-gCh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9z-jF-6N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
