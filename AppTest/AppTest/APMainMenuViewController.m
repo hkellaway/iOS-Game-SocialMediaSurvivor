@@ -7,6 +7,7 @@
 //
 
 #import "APMainMenuViewController.h"
+#import "APFacebookFriendsTableViewController.h"
 
 @interface APMainMenuViewController ()
 
@@ -35,15 +36,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"Entered method: prepareForSegue");
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[APFacebookFriendsTableViewController class]])
+    {
+        NSLog(@"Segue triggered: APFacebookFriendsTableViewController");
+    }
 }
-*/
 
 @end

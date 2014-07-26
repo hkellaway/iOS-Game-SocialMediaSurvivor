@@ -33,8 +33,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    // set View title
+    self.title = @"Facebook Friends";
+    
     // load Facebook friends
-    self.facebookFriends = [self getFacebookFriends:@"Test"];
+    self.facebookFriends = [self getFacebookFriends:@"Test Facebook User"];
 }
 
 - (void)didReceiveMemoryWarning

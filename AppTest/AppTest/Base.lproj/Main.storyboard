@@ -24,6 +24,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startApp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yUt-h1-Fcn"/>
+                                    <segue destination="Sfg-FH-f1m" kind="push" identifier="MainMenuViewController" id="9mz-qZ-z2s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,7 +34,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-43"/>
+            <point key="canvasLocation" x="96" y="-3"/>
+        </scene>
+        <!--Facebook Friends Table View Controller-->
+        <scene sceneID="1pf-6K-zxS">
+            <objects>
+                <tableViewController id="22n-Oe-hxb" customClass="APFacebookFriendsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fUa-mf-Sz4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="22n-Oe-hxb" id="K92-Ne-YRq"/>
+                            <outlet property="delegate" destination="22n-Oe-hxb" id="aY0-wJ-4BD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mAE-qv-HuI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTS-rU-9aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093" y="-741"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="gn5-fX-MaO">
+            <objects>
+                <viewController id="Sfg-FH-f1m" customClass="APMainMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bmh-v1-7Ft"/>
+                        <viewControllerLayoutGuide type="bottom" id="H6H-zQ-Tn9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KGr-Op-wyV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tfr-PK-Cwt"/>
+                    <connections>
+                        <segue destination="22n-Oe-hxb" kind="push" identifier="FacebookFriendsViewController" id="mAT-cX-EUa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9z-jF-6N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557" y="-3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozc-xs-kbv">
@@ -51,7 +93,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edZ-KY-DkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="-35"/>
+            <point key="canvasLocation" x="-337" y="-11"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
