@@ -32,6 +32,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // load Facebook friends
+    self.facebookFriends = [self getFacebookFriends:@"Test"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +47,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.facebookFriends count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"CellIdentifier";
     
-    // Configure the cell...
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell
+    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
+    [cell.textLabel setText:facebookFriend];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -115,5 +120,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Helper Methods
+
+- (NSMutableArray *)getFacebookFriends:(NSString *)facebookUser
+{
+    // TODO: Implement Facebook friend fetching
+    NSMutableArray *facebookFriendsArray = [NSMutableArray array];
+    
+    [facebookFriendsArray addObject:@"Friend A"];
+    [facebookFriendsArray addObject:@"Friend B"];
+    [facebookFriendsArray addObject:@"Friend C"];
+    // END placeholder code
+    
+    return facebookFriendsArray;
+}
 
 @end

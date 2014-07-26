@@ -10,4 +10,6 @@
 
 @interface APFacebookFriendsTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *facebookFriends;
+
 @end
