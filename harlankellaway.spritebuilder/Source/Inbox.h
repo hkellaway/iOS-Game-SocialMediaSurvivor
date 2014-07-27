@@ -7,13 +7,10 @@
 //
 
 #import "CCSprite.h"
-#import "Gameplay.h"
 
 @interface Inbox : CCSprite
 {
 }
-
-@property (nonatomic, weak) Gameplay *gameplay;
 
 - (void)toggleVisibility;
 

@@ -1,5 +1,5 @@
 //
-//  LevelOver.h
+//  LevelOverPopup.h
 //  harlankellaway
 //
 //  Created by Harlan Kellaway on 7/27/14.
@@ -8,6 +8,6 @@
 
 #import "CCNode.h"
 
-@interface LevelOver : CCNode
+@interface LevelOverPopup : CCNode
 
 @end

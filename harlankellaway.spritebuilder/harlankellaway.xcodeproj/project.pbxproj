@@ -20,7 +20,6 @@
 		B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		B71F5919188484E7003F4D28 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590F188484E7003F4D28 /* Settings.png */; };
 		B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5910188484E7003F4D28 /* Settings@2x.png */; };
-		B737893B180761570076A88C /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
 		B737893F1807617C0076A88C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		B7378975180762440076A88C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896B180762440076A88C /* Default-568h@2x.png */; };
 		B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896C180762440076A88C /* Default-Landscape~ipad.png */; };
@@ -38,7 +37,6 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
-		CE2697141981765C00EF5A8C /* LevelOver.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2697131981765C00EF5A8C /* LevelOver.m */; };
 		CE2C4DD319744E14008C8185 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C4DD219744E14008C8185 /* Level.m */; };
 		CE2C4DD619744FA8008C8185 /* Topics.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD519744FA8008C8185 /* Topics.plist */; };
 		CE2C4DD819745FC6008C8185 /* Statuses.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD719745FC6008C8185 /* Statuses.plist */; };
@@ -47,6 +45,8 @@
 		CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B1C197777D800A2EAD2 /* Inbox.m */; };
 		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
 		CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B23197863AD00A2EAD2 /* GameState.m */; };
+		CE88B01F19858AFC00F88F8B /* LevelOver.m in Sources */ = {isa = PBXBuildFile; fileRef = CE88B01E19858AFC00F88F8B /* LevelOver.m */; };
+		CE88B0221985927D00F88F8B /* LevelOverPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE88B0211985927D00F88F8B /* LevelOverPopup.m */; };
 		CE9215AF198172BD00473C87 /* LevelIntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9215AE198172BD00473C87 /* LevelIntroScene.m */; };
 		CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62CC0197ED10800E3D6A6 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
@@ -84,7 +84,6 @@
 		B71F590E188484E7003F4D28 /* iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone@2x.png"; path = "Icons/iPhone@2x.png"; sourceTree = "<group>"; };
 		B71F590F188484E7003F4D28 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Settings.png; path = Icons/Settings.png; sourceTree = "<group>"; };
 		B71F5910188484E7003F4D28 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@2x.png"; path = "Icons/Settings@2x.png"; sourceTree = "<group>"; };
-		B737893A180761570076A88C /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Published-iOS"; path = "Source/Resources/Published-iOS"; sourceTree = SOURCE_ROOT; };
 		B737893D1807617C0076A88C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		B737893E1807617C0076A88C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = "<group>"; };
 		B7378940180761A80076A88C /* cocos2d-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-ios.xcodeproj"; path = "Source/libs/cocos2d-iphone/cocos2d-ios.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -107,8 +106,6 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
-		CE2697121981765C00EF5A8C /* LevelOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelOver.h; path = Source/LevelOver.h; sourceTree = "<group>"; };
-		CE2697131981765C00EF5A8C /* LevelOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelOver.m; path = Source/LevelOver.m; sourceTree = "<group>"; };
 		CE2C4DD119744E14008C8185 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		CE2C4DD219744E14008C8185 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
 		CE2C4DD519744FA8008C8185 /* Topics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Topics.plist; sourceTree = "<group>"; };
@@ -122,6 +119,10 @@
 		CE6A7B2019783F3D00A2EAD2 /* Trend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trend.m; path = Source/Trend.m; sourceTree = "<group>"; };
 		CE6A7B22197863AD00A2EAD2 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameState.h; path = Source/GameState.h; sourceTree = "<group>"; };
 		CE6A7B23197863AD00A2EAD2 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameState.m; path = Source/GameState.m; sourceTree = "<group>"; };
+		CE88B01D19858AFC00F88F8B /* LevelOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelOver.h; path = Source/LevelOver.h; sourceTree = "<group>"; };
+		CE88B01E19858AFC00F88F8B /* LevelOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelOver.m; path = Source/LevelOver.m; sourceTree = "<group>"; };
+		CE88B0201985927D00F88F8B /* LevelOverPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelOverPopup.h; path = Source/LevelOverPopup.h; sourceTree = "<group>"; };
+		CE88B0211985927D00F88F8B /* LevelOverPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelOverPopup.m; path = Source/LevelOverPopup.m; sourceTree = "<group>"; };
 		CE9215AD198172BD00473C87 /* LevelIntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelIntroScene.h; path = Source/LevelIntroScene.h; sourceTree = "<group>"; };
 		CE9215AE198172BD00473C87 /* LevelIntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelIntroScene.m; path = Source/LevelIntroScene.m; sourceTree = "<group>"; };
 		CEF62CBF197ED10800E3D6A6 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
@@ -179,8 +180,10 @@
 				CE2C4DD219744E14008C8185 /* Level.m */,
 				CE9215AD198172BD00473C87 /* LevelIntroScene.h */,
 				CE9215AE198172BD00473C87 /* LevelIntroScene.m */,
-				CE2697121981765C00EF5A8C /* LevelOver.h */,
-				CE2697131981765C00EF5A8C /* LevelOver.m */,
+				CE88B01D19858AFC00F88F8B /* LevelOver.h */,
+				CE88B01E19858AFC00F88F8B /* LevelOver.m */,
+				CE88B0201985927D00F88F8B /* LevelOverPopup.h */,
+				CE88B0211985927D00F88F8B /* LevelOverPopup.m */,
 				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
 				7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */,
 				CE6A7B1F19783F3D00A2EAD2 /* Trend.h */,
@@ -260,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				B73789911807667A0076A88C /* Icons */,
-				B737893A180761570076A88C /* Published-iOS */,
 				CE2C4DD519744FA8008C8185 /* Topics.plist */,
 				CE2C4DD719745FC6008C8185 /* Statuses.plist */,
 				CE37ECC81976C37B0043D969 /* Levels.plist */,
@@ -364,7 +366,6 @@
 				CE2C4DD819745FC6008C8185 /* Statuses.plist in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
-				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				CE2C4DD619744FA8008C8185 /* Topics.plist in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
@@ -412,9 +413,10 @@
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CE2C4DD319744E14008C8185 /* Level.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				CE2697141981765C00EF5A8C /* LevelOver.m in Sources */,
 				CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */,
+				CE88B01F19858AFC00F88F8B /* LevelOver.m in Sources */,
 				CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */,
+				CE88B0221985927D00F88F8B /* LevelOverPopup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

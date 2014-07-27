@@ -7,7 +7,6 @@
 //
 
 #import "CCNode.h"
-#import "Level.h"
 
 @interface Gameplay : CCNode
 

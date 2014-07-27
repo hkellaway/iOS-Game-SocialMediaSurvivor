@@ -12,6 +12,9 @@
 #import "Clock.h"
 #import "Inbox.h"
 #import "GameState.h"
+#import "LevelOver.h"
+
+#import "LevelOverPopup.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
@@ -30,6 +33,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
     Inbox *_inbox;
+    LevelOver *_levelOver;
+    
+    LevelOverPopup *_levelOverPopup;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
     NSTimer *_timer;
@@ -49,9 +55,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                                                  target: self
                                                selector:@selector(onTimerFiring)
                                                userInfo: nil repeats: YES];
-    
-    // inbox
-    _inbox.gameplay = self;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -101,7 +104,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         _statuses[i] = status;
         
         // TODO: save meter scaling to GameState
-        _meterMiddle.scaleY = 45.0;
+        _meterMiddle.scaleY = 20.0;
         _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
         
         [_stream addChild:status];
@@ -193,8 +196,19 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     if(newTime == 0)
     {
         CCLOG(@"Round over!");
-        [self gameOver];
+        
+        [self levelOver];
     }
+}
+
+- (void)levelOver
+{
+    [self stopTimer];
+    
+//    _levelOver = (LevelOver *)[CCBReader load:@"LevelOver"];
+//    [_levelOver setVisible:TRUE];
+    
+    _levelOverPopup.visible = TRUE;
 }
 
 - (void)increaseRank
@@ -210,9 +224,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 - (void)gameOver
 {
-    // stop timer
-    [_timer invalidate];
-    _timer = nil;
+    [self stopTimer];
     
     // reset global values
     [GameState sharedInstance].levelNum = 1;
@@ -227,6 +239,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 }
 
 # pragma mark - helper methods
+
+- (void)stopTimer
+{
+    [_timer invalidate];
+    _timer = nil;
+}
 
 - (NSData *)getPListXML: (NSString *)pListName
 {
