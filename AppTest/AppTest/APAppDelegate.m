@@ -7,12 +7,17 @@
 //
 
 #import "APAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation APAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // makes sure FBLoginView class is loaded before views are dhow
+    [FBLoginView class];
+    
     return YES;
 }
 							
@@ -41,6 +46,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+# pragma mark - Custom Methods
+
+// This method will handle ALL the session state changes in the app
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+{
+    // If the session was opened successfully
+    // customize your code...
 }
 
 @end

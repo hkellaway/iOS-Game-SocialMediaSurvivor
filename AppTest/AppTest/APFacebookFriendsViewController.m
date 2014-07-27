@@ -8,9 +8,13 @@
 
 #import "APFacebookFriendsViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "APAppDelegate.h"
+
+static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
 
 @interface APFacebookFriendsViewController ()
 
+@property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
 
 @end
 
@@ -36,7 +40,15 @@
     self.title = @"Facebook Friends";
     
     // load Facebook friends
-    self.facebookFriends = [self getFacebookFriends:@"Test Facebook User"];
+    // TODO: implement logging in with Facebook (see FacebookSDK/Samples/HelloFacebook)
+    self.facebookFriends = [self getFacebookFriends:2104320];
+}
+
+- (void)viewDidUnload
+{
+    self.friendPickerController = nil;
+    
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,18 +99,21 @@
 
 #pragma mark - Helper Methods
 
-- (NSMutableArray *)getFacebookFriends:(NSString *)facebookUser
+- (NSMutableArray *)getFacebookFriends:(int)facebookUserID
 {
-    // TODO: Implement Facebook friend fetching
     NSMutableArray *facebookFriendsArray = [NSMutableArray array];
     
-    [facebookFriendsArray addObject:@"Friend A"];
-    [facebookFriendsArray addObject:@"Friend B"];
-    [facebookFriendsArray addObject:@"Friend C"];
-    [facebookFriendsArray addObject:@"Friend D"];
-    [facebookFriendsArray addObject:@"Friend E"];
-    [facebookFriendsArray addObject:@"Friend F"];
-    // END placeholder code
+    // open FB session
+    
+    // TODO: implement code from FBFriendPicker Sample
+        
+    
+//    [facebookFriendsArray addObject:@"Friend A"];
+//    [facebookFriendsArray addObject:@"Friend B"];
+//    [facebookFriendsArray addObject:@"Friend C"];
+//    [facebookFriendsArray addObject:@"Friend D"];
+//    [facebookFriendsArray addObject:@"Friend E"];
+//    [facebookFriendsArray addObject:@"Friend F"];
     
     return facebookFriendsArray;
 }
