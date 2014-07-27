@@ -25,6 +25,7 @@
 		CED98C1C198433AC00BDA725 /* APServerPingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C1B198433AC00BDA725 /* APServerPingViewController.m */; };
 		CED98C1F198433D900BDA725 /* APAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C1E198433D900BDA725 /* APAnimationTestViewController.m */; };
 		CED98C2219846AF500BDA725 /* APFacebookFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED98C2119846AF500BDA725 /* APFacebookFriendsViewController.m */; };
+		CED98C2419847F2E00BDA725 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98C2319847F2E00BDA725 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CED98C1E198433D900BDA725 /* APAnimationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAnimationTestViewController.m; sourceTree = "<group>"; };
 		CED98C2019846AF500BDA725 /* APFacebookFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFacebookFriendsViewController.h; sourceTree = "<group>"; };
 		CED98C2119846AF500BDA725 /* APFacebookFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APFacebookFriendsViewController.m; sourceTree = "<group>"; };
+		CED98C2319847F2E00BDA725 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */,
+				CED98C2419847F2E00BDA725 /* FacebookSDK.framework in Frameworks */,
 				CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */,
 				CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */,
 			);
@@ -113,6 +116,7 @@
 		CED98BDE19841FE200BDA725 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CED98C2319847F2E00BDA725 /* FacebookSDK.framework */,
 				CED98BDF19841FE200BDA725 /* Foundation.framework */,
 				CED98BE119841FE200BDA725 /* CoreGraphics.framework */,
 				CED98BE319841FE200BDA725 /* UIKit.framework */,
@@ -401,6 +405,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppTest/AppTest-Prefix.pch";
 				INFOPLIST_FILE = "AppTest/AppTest-Info.plist";
@@ -414,6 +422,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppTest/AppTest-Prefix.pch";
 				INFOPLIST_FILE = "AppTest/AppTest-Info.plist";

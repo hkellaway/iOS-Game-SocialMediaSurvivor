@@ -7,6 +7,7 @@
 //
 
 #import "APFacebookFriendsViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface APFacebookFriendsViewController ()
 
