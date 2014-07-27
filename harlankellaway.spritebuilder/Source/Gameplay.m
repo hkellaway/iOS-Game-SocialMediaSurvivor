@@ -12,7 +12,7 @@
 #import "Clock.h"
 #import "Inbox.h"
 #import "GameState.h"
-#import "LevelOver.h"
+//#import "LevelOver.h"
 
 #import "LevelOverPopup.h"
 
@@ -33,7 +33,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
     Inbox *_inbox;
-    LevelOver *_levelOver;
+//    LevelOver *_levelOver;
     
     LevelOverPopup *_levelOverPopup;
     

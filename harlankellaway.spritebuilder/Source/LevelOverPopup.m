@@ -12,9 +12,7 @@
 
 - (void)didLoadFromCCB
 {
-    CCLOG(@"Entering LevelOverPopup.didLoadFromCCB()");
-    
-    self.visible = FALSE;
+    self.visible = TRUE;
 }
 
 @end
