@@ -94,6 +94,9 @@
     [facebookFriendsArray addObject:@"Friend A"];
     [facebookFriendsArray addObject:@"Friend B"];
     [facebookFriendsArray addObject:@"Friend C"];
+    [facebookFriendsArray addObject:@"Friend D"];
+    [facebookFriendsArray addObject:@"Friend E"];
+    [facebookFriendsArray addObject:@"Friend F"];
     // END placeholder code
     
     return facebookFriendsArray;
