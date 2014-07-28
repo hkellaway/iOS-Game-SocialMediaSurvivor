@@ -14,6 +14,7 @@ static NSString *const GAME_STATE_LEVEL_ALL_TOPICS_KEY = @"GameStateAllTopicsKey
 static NSString *const GAME_STATE_TRENDS_TO_RECIRCULATE_KEY = @"GameStateTrendsToRecirculateKey";
 static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFavoriteKey";
 static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
+static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
 
 @implementation GameState
 
@@ -57,7 +58,6 @@ static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
             streamSpeed = @1;
             
             [[NSUserDefaults standardUserDefaults]setObject:streamSpeed forKey:GAME_STATE_STREAM_SPEED_KEY];
-            [[NSUserDefaults standardUserDefaults]synchronize];
 //        }
         
         self.streamSpeed = [streamSpeed doubleValue];
@@ -71,6 +71,16 @@ static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
         }
         
         self.playerRank = [playerRank integerValue];
+        
+        // load player's current Score
+        NSNumber *playerScore = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_PLAYER_SCORE_KEY];
+        
+        if(playerScore == nil)
+        {
+            playerScore = @0;
+        }
+        
+        self.playerScore = [playerScore integerValue];
         
         // load in all Topics if none are available
         _allTopics = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_ALL_TOPICS_KEY];
@@ -118,6 +128,10 @@ static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
         {
             trendsToFavorite = [NSMutableArray array];
         }
+        
+        // save defaults
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    
     }
     
     return self;
@@ -147,6 +161,17 @@ static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
+- (void)setPlayerScore:(NSInteger)playerScore
+{
+    _playerScore = playerScore;
+    
+    NSNumber *scoreNSNumber = [NSNumber numberWithInt:playerScore];
+    
+    // store chance
+    [[NSUserDefaults standardUserDefaults]setObject:scoreNSNumber forKey:GAME_STATE_PLAYER_SCORE_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 - (void)setTrendsToRecirculate:(NSMutableArray *)trendsToRecirculate
 {
     _trendsToRecirculate = trendsToRecirculate;
@@ -164,22 +189,36 @@ static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
     [[NSUserDefaults standardUserDefaults]setObject:trendsToFavorite forKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
-    
-    - (NSData *)getPListXML: (NSString *)pListName
+
+# pragma mark - Instance Methods
+
+- (void)clearDefaults
+{
+    [self setLevelNum:1];
+    [self setStreamSpeed:0];
+    [self setPlayerRank:1];
+    [self setPlayerScore:0];
+    [self setTrendsToRecirculate:nil];
+    [self setTrendsToFavorite:nil];
+}
+
+# pragma mark - Helper Methods
+
+- (NSData *)getPListXML: (NSString *)pListName
+{
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        
+    // get file-styem path to file containing XML property list
+    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
+        
+    // if file doesn't exist at file-system path, check application's main bundle
+    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
     {
-        NSString *plistPath;
-        NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        
-        // get file-styem path to file containing XML property list
-        plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-        
-        // if file doesn't exist at file-system path, check application's main bundle
-        if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-        {
-            plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-        }
-        
-        return [[NSFileManager defaultManager] contentsAtPath:plistPath];
+        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
     }
+        
+    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
+}
 
 @end

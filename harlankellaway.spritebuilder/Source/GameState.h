@@ -18,5 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *trendsToFavorite;
 @property (nonatomic, assign) double streamSpeed;
 @property (nonatomic, assign) NSInteger playerRank;
+@property (nonatomic, assign) NSInteger playerScore;
+
+- (void)clearDefaults;
 
 @end

@@ -201,17 +201,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
 }
 
-- (void)levelOver
-{
-    _isLevelOver = TRUE;
-    
-    // stopTimer
-    [self stopTimer];
-    
-    // make Level Over stats visible
-    [_levelOverPopup setVisible:TRUE];
-}
-
 - (void)increaseRank
 {
     CCLOG(@"Rank Increased!");
@@ -223,16 +212,23 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCLOG(@"Rank: %i", [GameState sharedInstance].playerRank);
 }
 
+- (void)levelOver
+{
+    _isLevelOver = TRUE;
+    
+    // stopTimer
+    [self stopTimer];
+    
+    // make Level Over stats visible
+    [_levelOverPopup setVisible:TRUE];
+}
+
 - (void)gameOver
 {
     [self stopTimer];
     
     // reset global values
-    [GameState sharedInstance].levelNum = 1;
-    [GameState sharedInstance].streamSpeed = 3;
-    [GameState sharedInstance].playerRank = 1;
-    [GameState sharedInstance].trendsToRecirculate = nil;
-    [GameState sharedInstance].trendsToFavorite = nil;
+    [[GameState sharedInstance] clearDefaults];
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
