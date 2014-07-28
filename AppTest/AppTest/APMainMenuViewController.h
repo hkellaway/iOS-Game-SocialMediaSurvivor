@@ -10,6 +10,8 @@
 
 @interface APMainMenuViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+
 - (IBAction)goToFacebookFriendsScene:(id)sender;
 - (IBAction)goToServerPingScene:(id)sender;
 - (IBAction)goToAnimationTestScene:(id)sender;

@@ -47,6 +47,8 @@
 - (IBAction)startApp:(id)sender
 {
     NSLog(@"Entering method: startApp");
+    
+    
 }
 
 #pragma mark - helper methods

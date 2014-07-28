@@ -48,6 +48,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coding Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-in-xxA" userLabel="Label - Title">
+                                <rect key="frame" x="0.0" y="118" width="320" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="44"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-j9-HFg">
                                 <rect key="frame" x="0.0" y="231" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tfr-PK-Cwt"/>
                     <connections>
+                        <outlet property="titleLabel" destination="gVx-in-xxA" id="dpE-3I-ImY"/>
                         <segue destination="rTS-bB-XMM" kind="push" identifier="ServerPingViewController" id="r2h-tO-RUO"/>
                         <segue destination="Pu5-wM-nrX" kind="push" identifier="AnimationTestViewController" id="5rA-6o-uag"/>
                         <segue destination="w12-em-rPV" kind="push" identifier="FacebookFriendsViewController" id="DrC-54-ohV"/>

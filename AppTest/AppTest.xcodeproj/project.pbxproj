@@ -16,7 +16,7 @@
 		CE3A83DD1985F49C001A0DA8 /* Machinato_SB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D31985F49C001A0DA8 /* Machinato_SB.ttf */; };
 		CE3A83DE1985F49C001A0DA8 /* Machinato_XLITE-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */; };
 		CE3A83DF1985F49C001A0DA8 /* Machinato_XLITE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */; };
-		CE3A83E01985F49C001A0DA8 /* Machinato-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D61985F49C001A0DA8 /* Machinato-I.ttf */; };
+		CE3A83E01985F49C001A0DA8 /* Machinato_LITE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D61985F49C001A0DA8 /* Machinato_LITE.ttf */; };
 		CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D71985F49C001A0DA8 /* Machinato.ttf */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
@@ -59,7 +59,7 @@
 		CE3A83D31985F49C001A0DA8 /* Machinato_SB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_SB.ttf; sourceTree = "<group>"; };
 		CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato_XLITE-I.ttf"; sourceTree = "<group>"; };
 		CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_XLITE.ttf; sourceTree = "<group>"; };
-		CE3A83D61985F49C001A0DA8 /* Machinato-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato-I.ttf"; sourceTree = "<group>"; };
+		CE3A83D61985F49C001A0DA8 /* Machinato_LITE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_LITE.ttf; sourceTree = "<group>"; };
 		CE3A83D71985F49C001A0DA8 /* Machinato.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato.ttf; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,11 +123,11 @@
 				CE3A83CF1985F49C001A0DA8 /* Machinato_B.ttf */,
 				CE3A83D01985F49C001A0DA8 /* Machinato_I.ttf */,
 				CE3A83D11985F49C001A0DA8 /* Machinato_LITE-I.ttf */,
+				CE3A83D61985F49C001A0DA8 /* Machinato_LITE.ttf */,
 				CE3A83D21985F49C001A0DA8 /* Machinato_SB-I.ttf */,
 				CE3A83D31985F49C001A0DA8 /* Machinato_SB.ttf */,
 				CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */,
 				CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */,
-				CE3A83D61985F49C001A0DA8 /* Machinato-I.ttf */,
 				CE3A83D71985F49C001A0DA8 /* Machinato.ttf */,
 				CE3A83B81985D002001A0DA8 /* logo2x.png */,
 			);
@@ -296,7 +296,7 @@
 			files = (
 				CE3A83DF1985F49C001A0DA8 /* Machinato_XLITE.ttf in Resources */,
 				CE3A83D81985F49C001A0DA8 /* Machinato_B-I.ttf in Resources */,
-				CE3A83E01985F49C001A0DA8 /* Machinato-I.ttf in Resources */,
+				CE3A83E01985F49C001A0DA8 /* Machinato_LITE.ttf in Resources */,
 				CED98BF819841FE200BDA725 /* Images.xcassets in Resources */,
 				CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */,
 				CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */,
