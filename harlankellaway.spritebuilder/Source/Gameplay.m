@@ -205,12 +205,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 {
     _isLevelOver = TRUE;
     
+    // stopTimer
     [self stopTimer];
     
-//    _levelOver = (LevelOver *)[CCBReader load:@"LevelOver"];
-//    [_levelOver setVisible:TRUE];
-    
-    _levelOverPopup.visible = TRUE;
+    // make Level Over stats visible
+    [_levelOverPopup setVisible:TRUE];
 }
 
 - (void)increaseRank

@@ -162,7 +162,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCButton</string>
+								<string>ButtonNextLevel</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -222,7 +222,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
+											<string>goToNextLevel</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -477,8 +477,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -490,9 +488,9 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCLayoutBox</string>
+								<string>LayoutBoxStats</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_levelOverStatsBox</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -574,9 +572,9 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCLabelTTF</string>
+								<string>LevelOverLabel</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_levelOverLabel</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -770,6 +768,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -938,7 +938,7 @@
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
-		<string></string>
+		<string>_goToNextLevel</string>
 		<key>memberVarAssignmentType</key>
 		<integer>1</integer>
 		<key>properties</key>
