@@ -16,11 +16,9 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
 @interface APServerPingViewController ()
 {
     NSMutableData *_responseData;
-    NSTimer *timer;
     
     uint64_t startTime;
     uint64_t endTime;
-//    uint64_t elapsedTime;
     uint64_t elapsedTimeNano;
     mach_timebase_info_data_t timeBaseInfo;
 }
@@ -70,13 +68,6 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
 {
     // response received; initialize
     _responseData = [[NSMutableData alloc] init];
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:(0.1)
-                                             target: self
-                                           selector:@selector(onTimerFiring)
-                                           userInfo: nil
-                                            repeats: YES
-             ];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -129,12 +120,8 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
 
 - (IBAction)pingServer:(id)sender
 {
-    // set up timer
-    startTime = mach_absolute_time();
-    endTime = 0;
-//    elapsedTime = 0;
-    elapsedTimeNano = 0;
-    mach_timebase_info(&timeBaseInfo);
+    // set label text
+    _pingResultsLabel.text = @"Pinging...";
     
     // create request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:PING_URL]];
@@ -146,25 +133,17 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
     NSString *postString = PING_PARAMETERS;
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     
-    // create url connection and fire request
+    // create url connection
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection start];
-}
-
-# pragma mark - Helper Methods
-
--(void)stopTimer
-{
-    if (timer != nil)
-    {
-        [timer invalidate];
-        timer = nil;
-    }
-}
-
--(void)onTimerFiring
-{
     
+    // initialize timer
+    startTime = mach_absolute_time();
+    endTime = 0;
+    elapsedTimeNano = 0;
+    mach_timebase_info(&timeBaseInfo);
+    
+    // fire request
+    [connection start];
 }
 
 @end
