@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83B81985D002001A0DA8 /* logo2x.png */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3A83B81985D002001A0DA8 /* logo2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2x.png; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE3A83B71985CFF2001A0DA8 /* AppTestAssets */ = {
+			isa = PBXGroup;
+			children = (
+				CE3A83B81985D002001A0DA8 /* logo2x.png */,
+			);
+			path = AppTestAssets;
+			sourceTree = "<group>";
+		};
 		CED98BD319841FE100BDA725 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		CED98BE519841FE200BDA725 /* AppTest */ = {
 			isa = PBXGroup;
 			children = (
+				CE3A83B71985CFF2001A0DA8 /* AppTestAssets */,
 				CED98BEE19841FE200BDA725 /* APAppDelegate.h */,
 				CED98BEF19841FE200BDA725 /* APAppDelegate.m */,
 				CED98C1D198433D900BDA725 /* APAnimationTestViewController.h */,
@@ -254,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED98BF819841FE200BDA725 /* Images.xcassets in Resources */,
+				CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */,
 				CED98BEA19841FE200BDA725 /* InfoPlist.strings in Resources */,
 				CED98BF319841FE200BDA725 /* Main.storyboard in Resources */,
 			);
@@ -493,6 +505,7 @@
 				CED98C1019841FE400BDA725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CED98C1119841FE400BDA725 /* Build configuration list for PBXNativeTarget "AppTestTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +514,7 @@
 				CED98C1319841FE400BDA725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

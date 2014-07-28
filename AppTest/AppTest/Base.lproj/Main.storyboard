@@ -163,9 +163,29 @@
                     <view key="view" contentMode="scaleToFill" id="iL9-bg-Ccr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Su-3o-40m">
+                                <rect key="frame" x="137" y="409" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Spin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinLogo:" destination="Pu5-wM-nrX" eventType="touchUpInside" id="tHH-KR-Tgh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ikk-nO-8pt" userLabel="Image View - Logo">
+                                <rect key="frame" x="46" y="122" width="228" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="43Q-5j-J1I"/>
+                    <connections>
+                        <outlet property="logoImage" destination="Ikk-nO-8pt" id="kPY-vH-sAB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zO6-dR-EKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,6 +210,9 @@
             <point key="canvasLocation" x="-337" y="-11"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo2x.png" width="228" height="216"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

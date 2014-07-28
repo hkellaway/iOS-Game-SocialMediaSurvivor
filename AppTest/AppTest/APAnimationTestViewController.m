@@ -13,6 +13,9 @@
 @end
 
 @implementation APAnimationTestViewController
+{
+    BOOL isAnimatedLogo;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,5 +51,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+# pragma mark - Instance Methods
+
+- (IBAction)spinLogo:(id)sender
+{
+    isAnimatedLogo = !isAnimatedLogo;
+    
+    [self spinWithOptions: UIViewAnimationOptionCurveEaseIn];
+}
+
+- (void) spinWithOptions: (UIViewAnimationOptions) options
+{
+    // will spin 360 degrees every 2 seconds
+    [UIView animateWithDuration: 0.5f
+                          delay: 0.0f
+                        options: options
+                     animations: ^{
+                         _logoImage.transform = CGAffineTransformRotate(_logoImage.transform, M_PI / 2);
+                     }
+                     completion: ^(BOOL finished) {
+                         if (finished) {
+                             if (isAnimatedLogo)
+                             {
+                                 // if flag still set, keep spinning with constant speed
+                                 [self spinWithOptions: UIViewAnimationOptionCurveLinear];
+                             }
+                         }
+                     }];
+}
 
 @end

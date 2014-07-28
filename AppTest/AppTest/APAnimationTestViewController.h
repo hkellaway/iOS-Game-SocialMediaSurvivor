@@ -10,4 +10,7 @@
 
 @interface APAnimationTestViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIImageView *logoImage;
+- (IBAction)spinLogo:(id)sender;
+
 @end

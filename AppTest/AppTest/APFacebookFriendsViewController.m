@@ -233,28 +233,4 @@ static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
     return facebookFriendsArray;
 }
 
-- (void)openSession
-{
-    
-    NSArray *permissions = [[NSArray alloc] initWithObjects:
-                            @"public_profile",
-                            @"user_friends",
-                            nil];
-    
-    
-    [FBSession openActiveSessionWithReadPermissions:permissions
-                                       allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session,
-       FBSessionState state, NSError *error) {
-//         [self sessionStateChanged:session state:state error:error];
-         
-         // Retrieve the app delegate
-         APAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-         
-         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-         [appDelegate sessionStateChanged:session state:state error:error];
-     }];
-}
-
 @end
