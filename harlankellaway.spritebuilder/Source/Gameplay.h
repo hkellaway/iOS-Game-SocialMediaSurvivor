@@ -15,5 +15,6 @@
 @property (nonatomic, strong) CCSprite *meterBackground;
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;
+@property (nonatomic, assign) BOOL isLevelOver;
 
 @end

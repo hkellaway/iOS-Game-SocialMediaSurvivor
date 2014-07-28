@@ -10,6 +10,6 @@
 
 @interface LevelIntroScene : CCScene
 
-- (void)toggleVisibility;
+//- (void)toggleVisibility;
 
 @end

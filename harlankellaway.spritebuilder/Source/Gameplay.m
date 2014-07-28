@@ -12,7 +12,6 @@
 #import "Clock.h"
 #import "Inbox.h"
 #import "GameState.h"
-//#import "LevelOver.h"
 
 #import "LevelOverPopup.h"
 
@@ -33,8 +32,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
     Inbox *_inbox;
-//    LevelOver *_levelOver;
-    
     LevelOverPopup *_levelOverPopup;
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
@@ -55,6 +52,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                                                  target: self
                                                selector:@selector(onTimerFiring)
                                                userInfo: nil repeats: YES];
+    
+    // level
+    _isLevelOver = FALSE;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -203,6 +203,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 - (void)levelOver
 {
+    _isLevelOver = TRUE;
+    
     [self stopTimer];
     
 //    _levelOver = (LevelOver *)[CCBReader load:@"LevelOver"];

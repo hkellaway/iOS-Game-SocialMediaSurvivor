@@ -12,7 +12,7 @@
 
 - (void)didLoadFromCCB
 {
-    self.visible = TRUE;
+    self.visible = FALSE;
 }
 
 @end

@@ -20,6 +20,8 @@ static const float METER_SCALE_FACTOR = 1.0;
     CCButton *_favoriteButton;
     CCButton *_blockButton;
     CCSprite *_meterBackground;
+    
+    
 }
 
 # pragma mark - initializers
@@ -85,6 +87,10 @@ static const float METER_SCALE_FACTOR = 1.0;
     CCSprite *meterMiddle = _gameplay.meterMiddle;
     CCSprite *meterTop = _gameplay.meterTop;
     
+    // don't scale while game is over
+    if(!_gameplay.isLevelOver)
+    {
+    
     // if scaling down, check if meterMiddle is at origin
     if(!scaleDirection)
     {
@@ -100,6 +106,8 @@ static const float METER_SCALE_FACTOR = 1.0;
     
     // move top
     meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));
+    }
+    
 }
 
 - (void)disable
