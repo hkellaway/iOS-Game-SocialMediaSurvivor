@@ -14,6 +14,11 @@
     CCButton *_goToNextLevel;
     CCLayoutBox *_levelOverStatsBox;
     CCLabelTTF *_levelOverLabel;
+    
+    CCLabelTTF *_recirculateLabel;
+    CCLabelTTF *_favoritesLabel;
+    CCLabelTTF *_rankLabel;
+    CCLabelTTF *_scoreLabel;
 }
 
 
@@ -29,8 +34,7 @@
     if(visible)
     {
         // set content of Level Over node
-        NSInteger levelNum = [GameState sharedInstance].levelNum;
-        _levelOverLabel.string = [NSString stringWithFormat:@"Day %i Recap", levelNum];
+        _levelOverLabel.string = [NSString stringWithFormat:@"Day %d Recap", [GameState sharedInstance].levelNum];
     }
     
     [super setVisible:visible];
