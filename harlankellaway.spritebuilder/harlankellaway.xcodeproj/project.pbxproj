@@ -37,6 +37,7 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		CE0476111986A32F00778AA9 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = CE0476101986A32F00778AA9 /* Published-iOS */; };
 		CE2C4DD319744E14008C8185 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C4DD219744E14008C8185 /* Level.m */; };
 		CE2C4DD619744FA8008C8185 /* Topics.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD519744FA8008C8185 /* Topics.plist */; };
 		CE2C4DD819745FC6008C8185 /* Statuses.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD719745FC6008C8185 /* Statuses.plist */; };
@@ -106,6 +107,7 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		CE0476101986A32F00778AA9 /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-iOS"; sourceTree = "<group>"; };
 		CE2C4DD119744E14008C8185 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		CE2C4DD219744E14008C8185 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
 		CE2C4DD519744FA8008C8185 /* Topics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Topics.plist; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE0476101986A32F00778AA9 /* Published-iOS */,
 				B73789911807667A0076A88C /* Icons */,
 				CE2C4DD519744FA8008C8185 /* Topics.plist */,
 				CE2C4DD719745FC6008C8185 /* Statuses.plist */,
@@ -362,6 +365,7 @@
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
+				CE0476111986A32F00778AA9 /* Published-iOS in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				CE2C4DD819745FC6008C8185 /* Statuses.plist in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
