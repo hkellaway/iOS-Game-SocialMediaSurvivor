@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83B81985D002001A0DA8 /* logo2x.png */; };
+		CE3A83D81985F49C001A0DA8 /* Machinato_B-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83CE1985F49C001A0DA8 /* Machinato_B-I.ttf */; };
+		CE3A83D91985F49C001A0DA8 /* Machinato_B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83CF1985F49C001A0DA8 /* Machinato_B.ttf */; };
+		CE3A83DA1985F49C001A0DA8 /* Machinato_I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D01985F49C001A0DA8 /* Machinato_I.ttf */; };
+		CE3A83DB1985F49C001A0DA8 /* Machinato_LITE-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D11985F49C001A0DA8 /* Machinato_LITE-I.ttf */; };
+		CE3A83DC1985F49C001A0DA8 /* Machinato_SB-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D21985F49C001A0DA8 /* Machinato_SB-I.ttf */; };
+		CE3A83DD1985F49C001A0DA8 /* Machinato_SB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D31985F49C001A0DA8 /* Machinato_SB.ttf */; };
+		CE3A83DE1985F49C001A0DA8 /* Machinato_XLITE-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */; };
+		CE3A83DF1985F49C001A0DA8 /* Machinato_XLITE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */; };
+		CE3A83E01985F49C001A0DA8 /* Machinato-I.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D61985F49C001A0DA8 /* Machinato-I.ttf */; };
+		CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3A83D71985F49C001A0DA8 /* Machinato.ttf */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -41,6 +51,16 @@
 
 /* Begin PBXFileReference section */
 		CE3A83B81985D002001A0DA8 /* logo2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2x.png; sourceTree = "<group>"; };
+		CE3A83CE1985F49C001A0DA8 /* Machinato_B-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato_B-I.ttf"; sourceTree = "<group>"; };
+		CE3A83CF1985F49C001A0DA8 /* Machinato_B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_B.ttf; sourceTree = "<group>"; };
+		CE3A83D01985F49C001A0DA8 /* Machinato_I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_I.ttf; sourceTree = "<group>"; };
+		CE3A83D11985F49C001A0DA8 /* Machinato_LITE-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato_LITE-I.ttf"; sourceTree = "<group>"; };
+		CE3A83D21985F49C001A0DA8 /* Machinato_SB-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato_SB-I.ttf"; sourceTree = "<group>"; };
+		CE3A83D31985F49C001A0DA8 /* Machinato_SB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_SB.ttf; sourceTree = "<group>"; };
+		CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato_XLITE-I.ttf"; sourceTree = "<group>"; };
+		CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato_XLITE.ttf; sourceTree = "<group>"; };
+		CE3A83D61985F49C001A0DA8 /* Machinato-I.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Machinato-I.ttf"; sourceTree = "<group>"; };
+		CE3A83D71985F49C001A0DA8 /* Machinato.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Machinato.ttf; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +119,16 @@
 		CE3A83B71985CFF2001A0DA8 /* AppTestAssets */ = {
 			isa = PBXGroup;
 			children = (
+				CE3A83CE1985F49C001A0DA8 /* Machinato_B-I.ttf */,
+				CE3A83CF1985F49C001A0DA8 /* Machinato_B.ttf */,
+				CE3A83D01985F49C001A0DA8 /* Machinato_I.ttf */,
+				CE3A83D11985F49C001A0DA8 /* Machinato_LITE-I.ttf */,
+				CE3A83D21985F49C001A0DA8 /* Machinato_SB-I.ttf */,
+				CE3A83D31985F49C001A0DA8 /* Machinato_SB.ttf */,
+				CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */,
+				CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */,
+				CE3A83D61985F49C001A0DA8 /* Machinato-I.ttf */,
+				CE3A83D71985F49C001A0DA8 /* Machinato.ttf */,
 				CE3A83B81985D002001A0DA8 /* logo2x.png */,
 			);
 			path = AppTestAssets;
@@ -264,10 +294,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3A83DF1985F49C001A0DA8 /* Machinato_XLITE.ttf in Resources */,
+				CE3A83D81985F49C001A0DA8 /* Machinato_B-I.ttf in Resources */,
+				CE3A83E01985F49C001A0DA8 /* Machinato-I.ttf in Resources */,
 				CED98BF819841FE200BDA725 /* Images.xcassets in Resources */,
 				CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */,
+				CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */,
+				CE3A83DE1985F49C001A0DA8 /* Machinato_XLITE-I.ttf in Resources */,
 				CED98BEA19841FE200BDA725 /* InfoPlist.strings in Resources */,
+				CE3A83DC1985F49C001A0DA8 /* Machinato_SB-I.ttf in Resources */,
+				CE3A83D91985F49C001A0DA8 /* Machinato_B.ttf in Resources */,
 				CED98BF319841FE200BDA725 /* Main.storyboard in Resources */,
+				CE3A83DA1985F49C001A0DA8 /* Machinato_I.ttf in Resources */,
+				CE3A83DD1985F49C001A0DA8 /* Machinato_SB.ttf in Resources */,
+				CE3A83DB1985F49C001A0DA8 /* Machinato_LITE-I.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

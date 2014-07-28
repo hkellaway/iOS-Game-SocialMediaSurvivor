@@ -95,8 +95,6 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
         elapsedTimeNano = (endTime - startTime) * timeBaseInfo.numer / timeBaseInfo.denom;
         
         text = [NSString stringWithFormat:@"%.02f", elapsedTimeNano / 1000000.00];
-        
-        NSLog(@"elapsed milliseconds = %.02f", elapsedTimeNano / 1000000.00);
     }
     else
     {
