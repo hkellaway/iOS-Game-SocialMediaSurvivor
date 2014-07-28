@@ -7,8 +7,23 @@
 //
 
 #import "APServerPingViewController.h"
+#import "mach/mach_time.h"
+
+static NSString* PING_URL = @"http://ec2-54-243-205-92.compute-1.amazonaws.com/Tests/ping.php";
+static NSString* PING_SUCCESS_MESSAGE = @"Success!";
+static NSString* PING_PARAMETERS = @"Password=EGOT";
 
 @interface APServerPingViewController ()
+{
+    NSMutableData *_responseData;
+    NSTimer *timer;
+    
+    uint64_t startTime;
+    uint64_t endTime;
+//    uint64_t elapsedTime;
+    uint64_t elapsedTimeNano;
+    mach_timebase_info_data_t timeBaseInfo;
+}
 
 @end
 
@@ -48,5 +63,108 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark NSURLConnection Delegate Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    // response received; initialize
+    _responseData = [[NSMutableData alloc] init];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:(0.1)
+                                             target: self
+                                           selector:@selector(onTimerFiring)
+                                           userInfo: nil
+                                            repeats: YES
+             ];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    // append new data to _responseData
+    [_responseData appendData:data];
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse
+{
+    // not necessary to store a cached response for this connection
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString *text;
+    
+    // if decoded response data equals success message, update label with timing
+    if([[[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding] isEqualToString:PING_SUCCESS_MESSAGE])
+    {
+        endTime = mach_absolute_time();
+        
+        elapsedTimeNano = (endTime - startTime) * timeBaseInfo.numer / timeBaseInfo.denom;
+        
+        text = [NSString stringWithFormat:@"%.02f", elapsedTimeNano / 1000000.00];
+        
+        NSLog(@"elapsed milliseconds = %.02f", elapsedTimeNano / 1000000.00);
+    }
+    else
+    {
+        text = @":( Try again";
+    }
+    
+    _pingResultsLabel.text = text;
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSString *alertTitle = @"Something went wrong";
+    NSString *alertText = [NSString stringWithFormat:@"Please retry. Error message: %@", error];
+    [[[UIAlertView alloc] initWithTitle:alertTitle
+                                message:alertText
+                               delegate:self
+                      cancelButtonTitle:@"OK!"
+                      otherButtonTitles:nil] show];
+}
+
+# pragma mark - Instance Methods
+
+- (IBAction)pingServer:(id)sender
+{
+    // set up timer
+    startTime = mach_absolute_time();
+    endTime = 0;
+//    elapsedTime = 0;
+    elapsedTimeNano = 0;
+    mach_timebase_info(&timeBaseInfo);
+    
+    // create request
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:PING_URL]];
+    
+    // set as post request
+    [request setHTTPMethod:@"POST"];
+    
+    // set parameters
+    NSString *postString = PING_PARAMETERS;
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // create url connection and fire request
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+}
+
+# pragma mark - Helper Methods
+
+-(void)stopTimer
+{
+    if (timer != nil)
+    {
+        [timer invalidate];
+        timer = nil;
+    }
+}
+
+-(void)onTimerFiring
+{
+    
+}
 
 @end

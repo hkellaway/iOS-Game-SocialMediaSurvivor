@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface APServerPingViewController : UIViewController
+@interface APServerPingViewController : UIViewController <NSURLConnectionDelegate>
+
+@property (nonatomic, strong) IBOutlet UILabel *pingResultsLabel;
+
+- (IBAction)pingServer:(id)sender;
 
 @end
