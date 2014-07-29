@@ -29,8 +29,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // TODO: ENTER FONTS IN STORY BOARD
+    // style title
     [_titleLabel setFont:[UIFont fontWithName:@"Machinato-Bold" size:44]];
+    [_titleLabel setText:[_titleLabel.text uppercaseString]];
 }
 
 - (void)didReceiveMemoryWarning
