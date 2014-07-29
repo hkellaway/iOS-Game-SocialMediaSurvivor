@@ -49,7 +49,7 @@ static const float METER_SCALE_FACTOR = 1.0;
         [self scaleMeter:0];
     }
     
-    [self disable];
+    _recirculateButton.enabled = FALSE;
 }
 
 - (void)favorite
@@ -65,7 +65,7 @@ static const float METER_SCALE_FACTOR = 1.0;
         [self scaleMeter:0];
     }
     
-    [self disable];
+    _favoriteButton.enabled = FALSE;
 }
 
 # pragma mark - instance methods
@@ -122,12 +122,6 @@ static const float METER_SCALE_FACTOR = 1.0;
     meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));
     }
     
-}
-
-- (void)disable
-{
-    _recirculateButton.enabled = FALSE;
-    _favoriteButton.enabled = FALSE;
 }
 
 - (void)enable
