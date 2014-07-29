@@ -14,7 +14,7 @@
 
 @implementation APAnimationTestViewController
 {
-    BOOL isAnimatedLogo;
+    int numQuarterRotations;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,9 +36,13 @@
     
     // style labels
     [_promptLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLight" size:16]];
-    [_promptLabel setNumberOfLines:0];
+    [_promptLabel setNumberOfLines:0]; // allow multiple lines
+    
     [_bonusLabel setFont:[UIFont fontWithName:@"Machinato-SemiBoldItalic" size:16]];
     [_bonusLabel setText:[_bonusLabel.text uppercaseString]];
+    
+    // initialize variables
+    numQuarterRotations = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,14 +66,11 @@
 
 - (IBAction)spinLogo:(id)sender
 {
-    isAnimatedLogo = !isAnimatedLogo;
-    
     [self spinWithOptions: UIViewAnimationOptionCurveEaseIn];
 }
 
 - (void) spinWithOptions: (UIViewAnimationOptions) options
 {
-    // will spin 360 degrees every 2 seconds
     [UIView animateWithDuration: 0.5f
                           delay: 0.0f
                         options: options
@@ -77,12 +78,22 @@
                          _logoImage.transform = CGAffineTransformRotate(_logoImage.transform, M_PI / 2);
                      }
                      completion: ^(BOOL finished) {
-                         if (finished) {
-                             if (isAnimatedLogo)
+                         if (finished)
+                         {
+                             numQuarterRotations++;
+                             
+                             if (numQuarterRotations == 4)
                              {
-                                 // if flag still set, keep spinning with constant speed
+                                 // stop animation and reset roatation count
+                                 [_logoImage.layer removeAllAnimations];
+                                 numQuarterRotations = 0;
+                                 
+                             }
+                             else
+                             {
                                  [self spinWithOptions: UIViewAnimationOptionCurveLinear];
                              }
+                                 
                          }
                      }];
 }
