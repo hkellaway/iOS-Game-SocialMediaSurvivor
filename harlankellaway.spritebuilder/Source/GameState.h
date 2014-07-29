@@ -20,6 +20,7 @@
 @property (nonatomic, assign) NSInteger playerRank;
 @property (nonatomic, assign) NSInteger playerScore;
 
-- (void)clearDefaults;
+- (void)clearLevelSettings;
+- (void)clearGameState;
 
 @end

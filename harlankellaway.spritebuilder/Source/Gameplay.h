@@ -7,6 +7,7 @@
 //
 
 #import "CCNode.h"
+//#import "Level.h"
 
 @interface Gameplay : CCNode
 
@@ -16,6 +17,7 @@
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;
 @property (nonatomic, assign) BOOL isLevelOver;
+//@property (nonatomic, strong) Level *currentLevel;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType;
 

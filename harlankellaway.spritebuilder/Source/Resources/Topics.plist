@@ -14,7 +14,7 @@
 		<key>Noun</key>
 		<string>Straw</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Song</string>
 	</dict>
@@ -25,10 +25,6 @@
 	<dict>
 		<key>Noun</key>
 		<string>Adult</string>
-	</dict>
-    <dict>
-		<key>Noun</key>
-		<string>Aeroplane</string>
 	</dict>
 	<dict>
 		<key>Noun</key>

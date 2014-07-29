@@ -8,7 +8,7 @@
 
 #import "Clock.h"
 
-static const int NUM_SECONDS_IN_LEVEL = 60;
+static const int NUM_SECONDS_IN_LEVEL = 5;
 
 @implementation Clock
 

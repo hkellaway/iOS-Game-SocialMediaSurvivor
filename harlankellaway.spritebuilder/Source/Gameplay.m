@@ -12,11 +12,12 @@
 #import "Clock.h"
 #import "Inbox.h"
 #import "GameState.h"
-
 #import "LevelOverPopup.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
+
+static const CGFloat MAX_NUM_LEVELS = 10;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
@@ -38,6 +39,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     NSTimer *_timer;
     NSMutableArray *_topicsToRecirculate;
     NSMutableArray *_topicsToFavorite;
+    Level *_currentLevel;
     
     int numRecirculatedCorrectly;
     int numFavoritedCorrectly;
@@ -45,6 +47,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 - (void)didLoadFromCCB
 {
+    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
+    {
+        [self gameOver];
+    }
+    
     // initialize variables
     _numStatuses = NUM_STATUSES;
     _statusSpacing = 4;
@@ -57,6 +64,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                                                userInfo: nil repeats: YES];
     
     // level
+    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
     _isLevelOver = FALSE;
     
     // set visibility of elements
@@ -241,12 +249,20 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // stopTimer
     [self stopTimer];
     
+    CCLOG(@"stream speed = %f", [GameState sharedInstance].streamSpeed);
+    
     // set Level Over stats
     [_levelOverPopup setRecirculateLabel:[NSString stringWithFormat:@"Number Statuses Recirculated: %i", numRecirculatedCorrectly]];
     [_levelOverPopup setFavoriteLabel:[NSString stringWithFormat:@"Number Statuses Favorited: %i", numFavoritedCorrectly]];
     
     // make Level Over stats visible
     [_levelOverPopup setVisible:TRUE];
+    
+    // clear defaults - next level will be reloaded
+    [[GameState sharedInstance] clearLevelSettings];
+    
+    // set level number to next level
+    [[GameState sharedInstance] setLevelNum:[GameState sharedInstance].levelNum + 1];
 }
 
 - (void)gameOver
@@ -254,7 +270,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     [self stopTimer];
     
     // reset global values
-    [[GameState sharedInstance] clearDefaults];
+    [[GameState sharedInstance] clearLevelSettings];
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];

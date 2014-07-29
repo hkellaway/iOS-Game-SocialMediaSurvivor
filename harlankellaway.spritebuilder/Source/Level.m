@@ -39,7 +39,7 @@
         
         // initialize instance variables
         _numTopics = [[levelsArray[levelNum - 1] objectForKey:@"NumTopics"] integerValue];
-        _streamSpeed = [[levelsArray[levelNum - 1] objectForKey:@"StreamSpeed"] integerValue];
+        _streamSpeed = [[levelsArray[levelNum - 1] objectForKey:@"StreamSpeed"] doubleValue];
         _topicsToRecirculate = [[NSMutableArray alloc] init];
         _topicsToFavorite = [[NSMutableArray alloc] init];
     }

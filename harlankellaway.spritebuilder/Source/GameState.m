@@ -41,6 +41,8 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
     
     if(self)
     {
+        [self clearGameState];
+        
         // try to read in defaults - if nil, initialize
         NSNumber *levelNum = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_NUM_KEY];
 
@@ -55,7 +57,7 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
 
         if(streamSpeed == 0 || streamSpeed == nil)
         {
-            streamSpeed = @1;
+            streamSpeed = @0.5;
             
             [[NSUserDefaults standardUserDefaults]setObject:streamSpeed forKey:GAME_STATE_STREAM_SPEED_KEY];
         }
@@ -192,14 +194,28 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
 
 # pragma mark - Instance Methods
 
-- (void)clearDefaults
+// clear settings related to Level just played
+- (void)clearLevelSettings
 {
-    [self setLevelNum:1];
-    [self setStreamSpeed:0];
-    [self setPlayerRank:1];
-    [self setPlayerScore:0];
-    [self setTrendsToRecirculate:nil];
-    [self setTrendsToFavorite:nil];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateLevelNumKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateStreamSpeedKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToRecirculateKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToFavoriteKey"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)clearGameState
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateLevelNumKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateStreamSpeedKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateAllTopicsKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToRecirculateKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToFavoriteKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStatePlayerRankKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStatePlayerScoreKey"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 # pragma mark - Helper Methods

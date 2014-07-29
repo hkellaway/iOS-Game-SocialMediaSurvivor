@@ -58,7 +58,7 @@
 {
     CCLOG(@"goToNextLevel Pressed!");
     
-    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
+    CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 

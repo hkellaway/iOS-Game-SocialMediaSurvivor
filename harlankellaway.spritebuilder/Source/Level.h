@@ -15,7 +15,7 @@
 
 #pragma mark - p-list data
 
-@property (nonatomic, assign) NSInteger streamSpeed;
+@property (nonatomic, assign) double streamSpeed;
 @property (nonatomic, assign) NSInteger numTopics;
 
 @property (nonatomic, strong) NSMutableArray *topicsToRecirculate;

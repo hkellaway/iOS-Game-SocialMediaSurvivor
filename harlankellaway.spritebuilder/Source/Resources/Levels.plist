@@ -6,7 +6,7 @@
 		<key>LevelNum</key>
 		<integer>1</integer>
 		<key>StreamSpeed</key>
-		<integer>1</integer>
+		<real>0.5</real>
 		<key>NumTopics</key>
 		<integer>3</integer>
 	</dict>
@@ -14,7 +14,71 @@
 		<key>LevelNum</key>
 		<integer>2</integer>
 		<key>StreamSpeed</key>
-		<integer>2</integer>
+		<real>0.75</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>3</integer>
+		<key>StreamSpeed</key>
+		<real>1.0</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>4</integer>
+		<key>StreamSpeed</key>
+		<real>1.25</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>5</integer>
+		<key>StreamSpeed</key>
+		<real>1.5</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>6</integer>
+		<key>StreamSpeed</key>
+		<real>1.75</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>7</integer>
+		<key>StreamSpeed</key>
+		<real>2.0</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>8</integer>
+		<key>StreamSpeed</key>
+		<real>2.25</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>9</integer>
+		<key>StreamSpeed</key>
+		<real>2.5</real>
+		<key>NumTopics</key>
+		<integer>3</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>10</integer>
+		<key>StreamSpeed</key>
+		<real>2.75</real>
 		<key>NumTopics</key>
 		<integer>3</integer>
 	</dict>
