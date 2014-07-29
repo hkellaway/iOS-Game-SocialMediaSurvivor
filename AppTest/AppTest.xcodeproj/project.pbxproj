@@ -33,6 +33,7 @@
 		CE5ECEAE1987415000012D4A /* bg_popup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEAD1987415000012D4A /* bg_popup@2x.png */; };
 		CE5ECEB01987483A00012D4A /* graphic_apppartnericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */; };
 		CE5ECEB2198748A100012D4A /* bg_cell_animationtest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */; };
+		CE5ECEB51987531100012D4A /* APDraggableImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5ECEB41987531100012D4A /* APDraggableImage.m */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -91,6 +92,8 @@
 		CE5ECEAD1987415000012D4A /* bg_popup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_popup@2x.png"; sourceTree = "<group>"; };
 		CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphic_apppartnericon.png; sourceTree = "<group>"; };
 		CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_animationtest@2x.png"; sourceTree = "<group>"; };
+		CE5ECEB31987531100012D4A /* APDraggableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APDraggableImage.h; sourceTree = "<group>"; };
+		CE5ECEB41987531100012D4A /* APDraggableImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APDraggableImage.m; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -218,6 +221,8 @@
 				CED98BEF19841FE200BDA725 /* APAppDelegate.m */,
 				CED98C1D198433D900BDA725 /* APAnimationTestViewController.h */,
 				CED98C1E198433D900BDA725 /* APAnimationTestViewController.m */,
+				CE5ECEB31987531100012D4A /* APDraggableImage.h */,
+				CE5ECEB41987531100012D4A /* APDraggableImage.m */,
 				CED98C2019846AF500BDA725 /* APFacebookFriendsViewController.h */,
 				CED98C2119846AF500BDA725 /* APFacebookFriendsViewController.m */,
 				CED98C14198423F600BDA725 /* APMainMenuViewController.h */,
@@ -388,6 +393,7 @@
 			files = (
 				CED98BEC19841FE200BDA725 /* main.m in Sources */,
 				CED98BF619841FE200BDA725 /* APViewController.m in Sources */,
+				CE5ECEB51987531100012D4A /* APDraggableImage.m in Sources */,
 				CED98C2219846AF500BDA725 /* APFacebookFriendsViewController.m in Sources */,
 				CED98C1F198433D900BDA725 /* APAnimationTestViewController.m in Sources */,
 				CED98BF019841FE200BDA725 /* APAppDelegate.m in Sources */,

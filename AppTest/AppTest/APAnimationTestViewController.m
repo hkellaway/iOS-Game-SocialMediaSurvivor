@@ -7,6 +7,7 @@
 //
 
 #import "APAnimationTestViewController.h"
+#import "APDraggableImage.h"
 
 @interface APAnimationTestViewController ()
 
@@ -43,6 +44,8 @@
     
     // initialize variables
     numQuarterRotations = 0;
+    
+    // TODO: create draggable image
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +90,6 @@
                                  // stop animation and reset roatation count
                                  [_logoImage.layer removeAllAnimations];
                                  numQuarterRotations = 0;
-                                 
                              }
                              else
                              {
