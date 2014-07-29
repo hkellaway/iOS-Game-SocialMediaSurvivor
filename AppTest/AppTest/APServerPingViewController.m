@@ -43,6 +43,13 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
     
     // set View title
     self.title = @"Server Ping";
+    
+    // hide success label
+    [_successLabel setHidden:TRUE];
+    
+    // style labels
+    [_successLabel setFont:[UIFont fontWithName:@"Machinato-Light" size:32]];
+    [_resultsLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLightItalic" size:32]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,14 +101,15 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
         
         elapsedTimeNano = (endTime - startTime) * timeBaseInfo.numer / timeBaseInfo.denom;
         
-        text = [NSString stringWithFormat:@"%.02f", elapsedTimeNano / 1000000.00];
+        text = [NSString stringWithFormat:@"%.02fms", elapsedTimeNano / 1000000.00];
+        [_successLabel setHidden:FALSE];
     }
     else
     {
         text = @":( Try again";
     }
     
-    _pingResultsLabel.text = text;
+    _resultsLabel.text = text;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -118,8 +126,11 @@ static NSString* PING_PARAMETERS = @"Password=EGOT";
 
 - (IBAction)pingServer:(id)sender
 {
+    // hide sucess lable
+    [_successLabel setHidden:TRUE];
+    
     // set label text
-    _pingResultsLabel.text = @"Pinging...";
+    _resultsLabel.text = @"Pinging...";
     
     // create request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:PING_URL]];

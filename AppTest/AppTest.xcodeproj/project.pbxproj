@@ -27,6 +27,10 @@
 		CE5ECEA319873BB300012D4A /* button_serverping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECE9F19873BB300012D4A /* button_serverping@2x.png */; };
 		CE5ECEA419873BB300012D4A /* button_spin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA019873BB300012D4A /* button_spin@2x.png */; };
 		CE5ECEA619873D9200012D4A /* bg_splash_apd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA519873D9200012D4A /* bg_splash_apd@2x.png */; };
+		CE5ECEAA1987406F00012D4A /* bg_animationtest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA71987406F00012D4A /* bg_animationtest@2x.png */; };
+		CE5ECEAB1987406F00012D4A /* bg_facebookfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */; };
+		CE5ECEAC1987406F00012D4A /* bg_serverping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA91987406F00012D4A /* bg_serverping@2x.png */; };
+		CE5ECEAE1987415000012D4A /* bg_popup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEAD1987415000012D4A /* bg_popup@2x.png */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -79,6 +83,10 @@
 		CE5ECE9F19873BB300012D4A /* button_serverping@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_serverping@2x.png"; sourceTree = "<group>"; };
 		CE5ECEA019873BB300012D4A /* button_spin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_spin@2x.png"; sourceTree = "<group>"; };
 		CE5ECEA519873D9200012D4A /* bg_splash_apd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_splash_apd@2x.png"; sourceTree = "<group>"; };
+		CE5ECEA71987406F00012D4A /* bg_animationtest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_animationtest@2x.png"; sourceTree = "<group>"; };
+		CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_facebookfriends@2x.png"; sourceTree = "<group>"; };
+		CE5ECEA91987406F00012D4A /* bg_serverping@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_serverping@2x.png"; sourceTree = "<group>"; };
+		CE5ECEAD1987415000012D4A /* bg_popup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_popup@2x.png"; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +145,10 @@
 		CE3A83B71985CFF2001A0DA8 /* AppTestAssets */ = {
 			isa = PBXGroup;
 			children = (
+				CE5ECEAD1987415000012D4A /* bg_popup@2x.png */,
+				CE5ECEA71987406F00012D4A /* bg_animationtest@2x.png */,
+				CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */,
+				CE5ECEA91987406F00012D4A /* bg_serverping@2x.png */,
 				CE5ECEA519873D9200012D4A /* bg_splash_apd@2x.png */,
 				CE5ECE9D19873BB300012D4A /* button_backarrow@2x.png */,
 				CE5ECE9E19873BB300012D4A /* button_reload@2x.png */,
@@ -325,17 +337,21 @@
 				CE3A83DF1985F49C001A0DA8 /* Machinato_XLITE.ttf in Resources */,
 				CE3A83D81985F49C001A0DA8 /* Machinato_B-I.ttf in Resources */,
 				CE3A83E01985F49C001A0DA8 /* Machinato_LITE.ttf in Resources */,
+				CE5ECEAA1987406F00012D4A /* bg_animationtest@2x.png in Resources */,
 				CED98BF819841FE200BDA725 /* Images.xcassets in Resources */,
 				CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */,
 				CE5ECEA419873BB300012D4A /* button_spin@2x.png in Resources */,
+				CE5ECEAC1987406F00012D4A /* bg_serverping@2x.png in Resources */,
 				CE5ECEA319873BB300012D4A /* button_serverping@2x.png in Resources */,
 				CE5ECEA119873BB300012D4A /* button_backarrow@2x.png in Resources */,
+				CE5ECEAE1987415000012D4A /* bg_popup@2x.png in Resources */,
 				CE5ECEA219873BB300012D4A /* button_reload@2x.png in Resources */,
 				CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */,
 				CE3A83DE1985F49C001A0DA8 /* Machinato_XLITE-I.ttf in Resources */,
 				CED98BEA19841FE200BDA725 /* InfoPlist.strings in Resources */,
 				CE5ECEA619873D9200012D4A /* bg_splash_apd@2x.png in Resources */,
 				CE3A83DC1985F49C001A0DA8 /* Machinato_SB-I.ttf in Resources */,
+				CE5ECEAB1987406F00012D4A /* bg_facebookfriends@2x.png in Resources */,
 				CE3A83D91985F49C001A0DA8 /* Machinato_B.ttf in Resources */,
 				CE5ECE9819873AD500012D4A /* button_facebookfriends@2x.png in Resources */,
 				CE5ECE9A19873B5C00012D4A /* button_animationtest@2x.png in Resources */,

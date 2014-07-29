@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_splash_apd.png" translatesAutoresizingMaskIntoConstraints="NO" id="pY1-eg-rXu" userLabel="Image View - Splash">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_splash_apd.png" translatesAutoresizingMaskIntoConstraints="NO" id="pY1-eg-rXu" userLabel="Image View - Background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -161,20 +161,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-kM-T1B" userLabel="Button - Ping">
-                                <rect key="frame" x="137" y="315" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_serverping.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yu3-aX-e5v" userLabel="Image View - Background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ping">
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_popup.png" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-3b-gRn" userLabel="Image View - Popup">
+                                <rect key="frame" x="40" y="152" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3U-Wb-rwY" userLabel="Label - Ping Results">
+                                <rect key="frame" x="41" y="203" width="240" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-kM-T1B" userLabel="Button - Ping">
+                                <rect key="frame" x="40" y="288" width="241" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button_ping.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pingServer:" destination="rTS-bB-XMM" eventType="touchUpInside" id="3Pz-nU-HUe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click to Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3U-Wb-rwY" userLabel="Label - Ping Results">
-                                <rect key="frame" x="0.0" y="243" width="320" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NICE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTE-f3-dOk">
+                                <rect key="frame" x="41" y="172" width="240" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.37254901960784315" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -182,7 +197,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="RSd-Zl-Hi2"/>
                     <connections>
-                        <outlet property="pingResultsLabel" destination="I3U-Wb-rwY" id="O8b-Ca-8jc"/>
+                        <outlet property="resultsLabel" destination="I3U-Wb-rwY" id="BJ4-F9-7IZ"/>
+                        <outlet property="successLabel" destination="KTE-f3-dOk" id="3JL-Zx-MYY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2L-qZ-mFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,9 +265,12 @@
     </scenes>
     <resources>
         <image name="bg_codingtasks.png" width="320" height="480"/>
+        <image name="bg_popup.png" width="257" height="135"/>
+        <image name="bg_serverping.png" width="320" height="480"/>
         <image name="bg_splash_apd.png" width="320" height="480"/>
         <image name="button_animationtest.png" width="241" height="53"/>
         <image name="button_facebookfriends.png" width="241" height="53"/>
+        <image name="button_ping.png" width="241" height="53"/>
         <image name="button_serverping.png" width="241" height="53"/>
         <image name="logo2x.png" width="228" height="216"/>
     </resources>

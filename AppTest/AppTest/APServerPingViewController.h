@@ -10,7 +10,8 @@
 
 @interface APServerPingViewController : UIViewController <NSURLConnectionDelegate>
 
-@property (nonatomic, strong) IBOutlet UILabel *pingResultsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *successLabel;
+@property (nonatomic, strong) IBOutlet UILabel *resultsLabel;
 
 - (IBAction)pingServer:(id)sender;
 
