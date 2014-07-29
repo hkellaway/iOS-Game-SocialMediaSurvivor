@@ -11,7 +11,7 @@
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
-static const float STATUS_SCALE_FACTOR = 0.38;
+static const float STATUS_SCALE_FACTOR = 0.47;
 static const float METER_SCALE_FACTOR = 1.0;
 
 @implementation SocialMediaStatus

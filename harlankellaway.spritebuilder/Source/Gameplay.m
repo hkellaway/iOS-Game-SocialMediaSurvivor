@@ -250,8 +250,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // stopTimer
     [self stopTimer];
     
-    // disable interaction 
-    
     CCLOG(@"stream speed = %f", [GameState sharedInstance].streamSpeed);
     
     // set Level Over stats
@@ -260,9 +258,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // make Level Over stats visible
     [_levelOverPopup setVisible:TRUE];
-    
-    // clear defaults - next level will be reloaded
-    [[GameState sharedInstance] clearLevelSettings];
     
     // set level number to next level
     [[GameState sharedInstance] setLevelNum:[GameState sharedInstance].levelNum + 1];
@@ -276,7 +271,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     [self stopTimer];
     
     // reset global values
-    [[GameState sharedInstance] clearLevelSettings];
+    [[GameState sharedInstance] clearGameState];
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
