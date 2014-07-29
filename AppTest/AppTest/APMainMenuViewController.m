@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view.
     
     // style title
-    [_titleLabel setFont:[UIFont fontWithName:@"Machinato-Bold" size:44]];
+    [_titleLabel setFont:[UIFont fontWithName:@"Machinato-Bold" size:24]];
     [_titleLabel setText:[_titleLabel.text uppercaseString]];
 }
 

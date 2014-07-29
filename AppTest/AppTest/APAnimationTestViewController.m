@@ -33,6 +33,12 @@
     
     // set View title
     self.title = @"Animation";
+    
+    // style labels
+    [_promptLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLight" size:16]];
+    [_promptLabel setNumberOfLines:0];
+    [_bonusLabel setFont:[UIFont fontWithName:@"Machinato-SemiBoldItalic" size:16]];
+    [_bonusLabel setText:[_bonusLabel.text uppercaseString]];
 }
 
 - (void)didReceiveMemoryWarning

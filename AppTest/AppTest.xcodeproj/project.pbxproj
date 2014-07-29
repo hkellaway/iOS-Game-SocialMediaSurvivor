@@ -31,6 +31,8 @@
 		CE5ECEAB1987406F00012D4A /* bg_facebookfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */; };
 		CE5ECEAC1987406F00012D4A /* bg_serverping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEA91987406F00012D4A /* bg_serverping@2x.png */; };
 		CE5ECEAE1987415000012D4A /* bg_popup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEAD1987415000012D4A /* bg_popup@2x.png */; };
+		CE5ECEB01987483A00012D4A /* graphic_apppartnericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */; };
+		CE5ECEB2198748A100012D4A /* bg_cell_animationtest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -87,6 +89,8 @@
 		CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_facebookfriends@2x.png"; sourceTree = "<group>"; };
 		CE5ECEA91987406F00012D4A /* bg_serverping@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_serverping@2x.png"; sourceTree = "<group>"; };
 		CE5ECEAD1987415000012D4A /* bg_popup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_popup@2x.png"; sourceTree = "<group>"; };
+		CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graphic_apppartnericon.png; sourceTree = "<group>"; };
+		CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_animationtest@2x.png"; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +149,7 @@
 		CE3A83B71985CFF2001A0DA8 /* AppTestAssets */ = {
 			isa = PBXGroup;
 			children = (
+				CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */,
 				CE5ECEAD1987415000012D4A /* bg_popup@2x.png */,
 				CE5ECEA71987406F00012D4A /* bg_animationtest@2x.png */,
 				CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */,
@@ -158,6 +163,8 @@
 				CE5ECE9919873B5C00012D4A /* button_animationtest@2x.png */,
 				CE5ECE9719873AD500012D4A /* button_facebookfriends@2x.png */,
 				CE5ECE951987391A00012D4A /* bg_codingtasks@2x.png */,
+				CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */,
+				CE3A83B81985D002001A0DA8 /* logo2x.png */,
 				CE3A83CE1985F49C001A0DA8 /* Machinato_B-I.ttf */,
 				CE3A83CF1985F49C001A0DA8 /* Machinato_B.ttf */,
 				CE3A83D01985F49C001A0DA8 /* Machinato_I.ttf */,
@@ -168,7 +175,6 @@
 				CE3A83D41985F49C001A0DA8 /* Machinato_XLITE-I.ttf */,
 				CE3A83D51985F49C001A0DA8 /* Machinato_XLITE.ttf */,
 				CE3A83D71985F49C001A0DA8 /* Machinato.ttf */,
-				CE3A83B81985D002001A0DA8 /* logo2x.png */,
 			);
 			path = AppTestAssets;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				CE5ECEAA1987406F00012D4A /* bg_animationtest@2x.png in Resources */,
 				CED98BF819841FE200BDA725 /* Images.xcassets in Resources */,
 				CE3A83B91985D002001A0DA8 /* logo2x.png in Resources */,
+				CE5ECEB2198748A100012D4A /* bg_cell_animationtest@2x.png in Resources */,
 				CE5ECEA419873BB300012D4A /* button_spin@2x.png in Resources */,
 				CE5ECEAC1987406F00012D4A /* bg_serverping@2x.png in Resources */,
 				CE5ECEA319873BB300012D4A /* button_serverping@2x.png in Resources */,
@@ -349,6 +356,7 @@
 				CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */,
 				CE3A83DE1985F49C001A0DA8 /* Machinato_XLITE-I.ttf in Resources */,
 				CED98BEA19841FE200BDA725 /* InfoPlist.strings in Resources */,
+				CE5ECEB01987483A00012D4A /* graphic_apppartnericon.png in Resources */,
 				CE5ECEA619873D9200012D4A /* bg_splash_apd@2x.png in Resources */,
 				CE3A83DC1985F49C001A0DA8 /* Machinato_SB-I.ttf in Resources */,
 				CE5ECEAB1987406F00012D4A /* bg_facebookfriends@2x.png in Resources */,

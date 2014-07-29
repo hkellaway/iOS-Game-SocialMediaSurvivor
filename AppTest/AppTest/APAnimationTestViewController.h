@@ -10,7 +10,10 @@
 
 @interface APAnimationTestViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *promptLabel;
+@property (nonatomic, strong) IBOutlet UILabel *bonusLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *logoImage;
+
 - (IBAction)spinLogo:(id)sender;
 
 @end

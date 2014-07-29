@@ -57,9 +57,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coding Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-in-xxA" userLabel="Label - Title">
-                                <rect key="frame" x="0.0" y="118" width="320" height="67"/>
+                                <rect key="frame" x="0.0" y="153" width="320" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -217,10 +217,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Su-3o-40m">
-                                <rect key="frame" x="137" y="409" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_animationtest.png" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-cK-UV2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Spin">
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_cell_animationtest.png" translatesAutoresizingMaskIntoConstraints="NO" id="u5b-5H-Mqb">
+                                <rect key="frame" x="20" y="65" width="280" height="330"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Su-3o-40m">
+                                <rect key="frame" x="35" y="415" width="241" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button_spin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -228,16 +236,31 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ikk-nO-8pt" userLabel="Image View - Logo">
-                                <rect key="frame" x="46" y="122" width="228" height="216"/>
+                                <rect key="frame" x="98" y="230" width="114" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHB-GR-gGv">
+                                <rect key="frame" x="35" y="65" width="241" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Animate the App Partner icon. Make it spin around 360 degrees when the spin button is pressed. Allow it to be dragged around the screen by touching and dragging.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bonus Points for Creativity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxr-4q-t8D">
+                                <rect key="frame" x="35" y="167" width="241" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="43Q-5j-J1I"/>
                     <connections>
+                        <outlet property="bonusLabel" destination="Lxr-4q-t8D" id="ZCX-za-SuI"/>
                         <outlet property="logoImage" destination="Ikk-nO-8pt" id="kPY-vH-sAB"/>
+                        <outlet property="promptLabel" destination="OHB-GR-gGv" id="heb-cV-s2p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zO6-dR-EKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,6 +287,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_animationtest.png" width="320" height="480"/>
+        <image name="bg_cell_animationtest.png" width="257" height="325"/>
         <image name="bg_codingtasks.png" width="320" height="480"/>
         <image name="bg_popup.png" width="257" height="135"/>
         <image name="bg_serverping.png" width="320" height="480"/>
@@ -272,6 +297,7 @@
         <image name="button_facebookfriends.png" width="241" height="53"/>
         <image name="button_ping.png" width="241" height="53"/>
         <image name="button_serverping.png" width="241" height="53"/>
+        <image name="button_spin.png" width="241" height="53"/>
         <image name="logo2x.png" width="228" height="216"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
