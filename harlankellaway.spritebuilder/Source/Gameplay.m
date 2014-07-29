@@ -64,8 +64,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                                                userInfo: nil repeats: YES];
     
     // level
-    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
     _isLevelOver = FALSE;
+    _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
+    [[GameState sharedInstance] setStreamSpeed:_currentLevel.streamSpeed];
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -76,6 +77,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // statuses
     numRecirculatedCorrectly = 0;
     numFavoritedCorrectly = 0;
+    
+    // meter
+    _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
+    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     // create SocialMediaStatus objects
     for(int i = 0; i < _numStatuses; i++)
@@ -117,10 +122,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         status.gameplay = self;
         
         _statuses[i] = status;
-        
-        // TODO: save meter scaling to GameState
-        _meterMiddle.scaleY = 20.0;
-        _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
         
         [_stream addChild:status];
     }
@@ -263,6 +264,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // set level number to next level
     [[GameState sharedInstance] setLevelNum:[GameState sharedInstance].levelNum + 1];
+    
+    // persist meter scale
+    [[GameState sharedInstance] setMeterScale:_meterMiddle.scaleY];
 }
 
 - (void)gameOver

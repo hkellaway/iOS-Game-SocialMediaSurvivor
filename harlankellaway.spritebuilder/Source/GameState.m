@@ -15,6 +15,7 @@ static NSString *const GAME_STATE_TRENDS_TO_RECIRCULATE_KEY = @"GameStateTrendsT
 static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFavoriteKey";
 static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
 static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
+static NSString *const GAME_STATE_METER_SCALE_KEY = @"GameStateMeterScaleKey";
 
 @implementation GameState
 
@@ -63,6 +64,17 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
         }
         
         self.streamSpeed = [streamSpeed doubleValue];
+        
+        NSNumber *meterScale = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_METER_SCALE_KEY];
+        
+        if(meterScale == nil)
+        {
+            meterScale = @20.0;
+            
+            [[NSUserDefaults standardUserDefaults]setObject:meterScale forKey:GAME_STATE_METER_SCALE_KEY];
+        }
+        
+        self.meterScale = [meterScale doubleValue];
         
         // load player's current Rank
         NSNumber *playerRank = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_PLAYER_RANK_KEY];
@@ -152,6 +164,17 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
+- (void)setMeterScale:(double)meterScale
+{
+    _meterScale = meterScale;
+    
+    NSNumber *meterScaleNSNumber = [NSNumber numberWithInt:meterScale];
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults]setObject:meterScaleNSNumber forKey:GAME_STATE_METER_SCALE_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 - (void)setPlayerRank:(NSInteger)playerRank
 {
     _playerRank = playerRank;
@@ -209,6 +232,7 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
 {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateLevelNumKey"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateStreamSpeedKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateMeterScaleKey"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateAllTopicsKey"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToRecirculateKey"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToFavoriteKey"];
