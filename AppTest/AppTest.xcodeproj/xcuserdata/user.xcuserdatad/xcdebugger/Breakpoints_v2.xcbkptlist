@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppTest/APAnimationTestViewController.h"
-            timestampString = "428299150.721161"
+            timestampString = "428299857.908865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "@interface APAnimationTestViewController"
             landmarkType = "2">
          </BreakpointContent>
