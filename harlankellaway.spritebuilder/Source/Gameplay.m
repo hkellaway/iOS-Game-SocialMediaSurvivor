@@ -38,6 +38,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     NSTimer *_timer;
     NSMutableArray *_topicsToRecirculate;
     NSMutableArray *_topicsToFavorite;
+    
+    int numRecirculatedCorrectly;
+    int numFavoritedCorrectly;
 }
 
 - (void)didLoadFromCCB
@@ -61,6 +64,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // get order recirculate/favorite/avoid for this set of Statuses
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
+    
+    // statuses
+    numRecirculatedCorrectly = 0;
+    numFavoritedCorrectly = 0;
     
     // create SocialMediaStatus objects
     for(int i = 0; i < _numStatuses; i++)
@@ -178,14 +185,22 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCLOG(@"Touch Cancelled");
 }
 
-# pragma mark - custom methods
+# pragma mark - Instance Methods
 
-- (void)checkInbox
+- (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType
 {
-    CCLOG(@"Message button pressed");
+    if(actionType == ACTION_TYPE_RECIRCULATE)
+    {
+        numRecirculatedCorrectly++;
+    }
     
-    [_inbox toggleVisibility];
+    if(actionType == ACTION_TYPE_FAVORITE)
+    {
+        numFavoritedCorrectly++;
+    }
 }
+
+# pragma mark - Custom Methods
 
 -(void)onTimerFiring
 {
@@ -199,6 +214,13 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         
         [self levelOver];
     }
+}
+
+- (void)checkInbox
+{
+    CCLOG(@"Message button pressed");
+    
+    [_inbox toggleVisibility];
 }
 
 - (void)increaseRank
@@ -219,6 +241,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // stopTimer
     [self stopTimer];
     
+    // set Level Over stats
+    [_levelOverPopup setRecirculateLabel:[NSString stringWithFormat:@"Number Statuses Recirculated: %i", numRecirculatedCorrectly]];
+    [_levelOverPopup setFavoriteLabel:[NSString stringWithFormat:@"Number Statuses Favorited: %i", numFavoritedCorrectly]];
+    
     // make Level Over stats visible
     [_levelOverPopup setVisible:TRUE];
 }
@@ -235,7 +261,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-# pragma mark - helper methods
+# pragma mark - Helper Methods
 
 - (void)stopTimer
 {

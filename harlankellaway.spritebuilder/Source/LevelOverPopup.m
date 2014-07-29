@@ -27,7 +27,7 @@
     self.visible = FALSE;
 }
 
-# pragma mark - Override Getters/Setters
+# pragma mark - Instance Methods
 
 - (void)setVisible:(BOOL)visible
 {
@@ -40,9 +40,26 @@
     [super setVisible:visible];
 }
 
+# pragma mark - Instance Methods
+
+- (void)setRecirculateLabel:(NSString *)labelText
+{
+    _recirculateLabel.string = labelText;
+}
+
+- (void)setFavoriteLabel:(NSString *)labelText
+{
+    _favoritesLabel.string = labelText;
+}
+
+# pragma  mark - Custom Methods
+
 - (void)goToNextLevel
 {
     CCLOG(@"goToNextLevel Pressed!");
+    
+    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 @end

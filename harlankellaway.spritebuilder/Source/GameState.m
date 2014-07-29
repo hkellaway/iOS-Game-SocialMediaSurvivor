@@ -53,12 +53,12 @@ static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
         
         NSNumber *streamSpeed = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_STREAM_SPEED_KEY];
 
-//        if(streamSpeed == 0 || streamSpeed == nil)
-//        {
+        if(streamSpeed == 0 || streamSpeed == nil)
+        {
             streamSpeed = @1;
             
             [[NSUserDefaults standardUserDefaults]setObject:streamSpeed forKey:GAME_STATE_STREAM_SPEED_KEY];
-//        }
+        }
         
         self.streamSpeed = [streamSpeed doubleValue];
         

@@ -17,4 +17,6 @@
 @property (nonatomic, assign) int statusSpacing;
 @property (nonatomic, assign) BOOL isLevelOver;
 
+- (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType;
+
 @end

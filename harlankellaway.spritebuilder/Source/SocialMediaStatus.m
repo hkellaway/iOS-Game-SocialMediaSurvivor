@@ -20,8 +20,6 @@ static const float METER_SCALE_FACTOR = 1.0;
     CCButton *_favoriteButton;
     CCButton *_blockButton;
     CCSprite *_meterBackground;
-    
-    
 }
 
 # pragma mark - initializers
@@ -41,7 +39,15 @@ static const float METER_SCALE_FACTOR = 1.0;
 - (void)recirculate
 {
     // scale up if correction action selected
-    (_actionType == ACTION_TYPE_RECIRCULATE) ? [self scaleMeter:1] : [self scaleMeter:0];
+    if (_actionType == ACTION_TYPE_RECIRCULATE)
+    {
+        [self scaleMeter:1];
+        [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_RECIRCULATE];
+    }
+    else
+    {
+        [self scaleMeter:0];
+    }
     
     [self disable];
 }
@@ -49,7 +55,15 @@ static const float METER_SCALE_FACTOR = 1.0;
 - (void)favorite
 {
     // scale up if correction action selected
-    (_actionType == ACTION_TYPE_FAVORITE) ? [self scaleMeter:1] : [self scaleMeter:0];
+    if (_actionType == ACTION_TYPE_FAVORITE)
+    {
+        [self scaleMeter:1];
+        [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_FAVORITE];
+    }
+    else
+    {
+        [self scaleMeter:0];
+    }
     
     [self disable];
 }
