@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>165</integer>
+	<integer>167</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -162,7 +162,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.44999998807907104</real>
+							<real>0.41999998688697815</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -176,7 +176,7 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>210</real>
+							<real>250</real>
 							<real>568</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -228,6 +228,8 @@
 						<real>1</real>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -240,6 +242,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>Inbox</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_inbox</string>
 				<key>memberVarAssignmentType</key>
@@ -1509,6 +1513,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>LevelOverPopup</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_levelOverPopup</string>
 				<key>memberVarAssignmentType</key>
