@@ -10,9 +10,6 @@
 #import "GameState.h"
 #import "Trend.h"
 
-// TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 20;
-
 static const CGFloat TREND_SCALE_FACTOR = 0.65;
 
 @implementation LevelIntroScene
@@ -28,7 +25,10 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
 
 - (void)didLoadFromCCB
 {
-    // initialize variables
+    int levelNum = [GameState sharedInstance].levelNum;
+
+    
+    // otherwise, create Trends for level and start
     _allTopics = [NSMutableArray array];
     _usedTopics = [NSMutableSet set];
     
@@ -49,7 +49,6 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
-    int levelNum = [GameState sharedInstance].levelNum;
     numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
     numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
     

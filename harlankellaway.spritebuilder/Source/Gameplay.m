@@ -219,16 +219,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     if(newTime == 0)
     {
-        CCLOG(@"Round over!");
-        
         [self levelOver];
     }
 }
 
 - (void)checkInbox
 {
-    CCLOG(@"Message button pressed");
-    
     [_inbox toggleVisibility];
 }
 
@@ -249,8 +245,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // stopTimer
     [self stopTimer];
-    
-    CCLOG(@"stream speed = %f", [GameState sharedInstance].streamSpeed);
     
     // set Level Over stats
     [_levelOverPopup setRecirculateLabel:[NSString stringWithFormat:@"Number Statuses Recirculated: %i", numRecirculatedCorrectly]];

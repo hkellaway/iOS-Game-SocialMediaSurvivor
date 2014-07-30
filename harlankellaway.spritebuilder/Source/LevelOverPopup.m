@@ -9,6 +9,8 @@
 #import "LevelOverPopup.h"
 #import "GameState.h"
 
+static const int MAX_NUM_LEVELS = 3;
+
 @implementation LevelOverPopup
 {
     CCButton *_goToNextLevel;
@@ -58,8 +60,20 @@
 {
     CCLOG(@"goToNextLevel Pressed!");
     
-    CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    CCScene *nextScene;
+    
+    CCLOG(@"MAX_NUM_LEVELS + 1 = %i", (MAX_NUM_LEVELS + 1));
+    
+    if([GameState sharedInstance].levelNum == (MAX_NUM_LEVELS + 1))
+    {
+        nextScene = [CCBReader loadAsScene:@"GameOverScene"];
+    }
+    else
+    {
+        nextScene = [CCBReader loadAsScene:@"LevelIntroScene"];
+    }
+    
+    [[CCDirector sharedDirector] replaceScene:nextScene];
 }
 
 @end
