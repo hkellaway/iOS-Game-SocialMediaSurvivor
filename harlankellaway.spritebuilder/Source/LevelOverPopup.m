@@ -58,12 +58,9 @@ static const int MAX_NUM_LEVELS = 3;
 
 - (void)goToNextLevel
 {
-    CCLOG(@"goToNextLevel Pressed!");
-    
     CCScene *nextScene;
     
-    CCLOG(@"MAX_NUM_LEVELS + 1 = %i", (MAX_NUM_LEVELS + 1));
-    
+    // if max number of levels not reached, continue
     if([GameState sharedInstance].levelNum == (MAX_NUM_LEVELS + 1))
     {
         nextScene = [CCBReader loadAsScene:@"GameOverScene"];

@@ -41,6 +41,9 @@
 
 - (void)refresh
 {
+    // set title
+    _inboxLabel.string = [NSString stringWithFormat:@"Day %i", [GameState sharedInstance].levelNum];
+    
     // read Trends from shared GameState
     trendsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
     trendsToFavorite = [GameState sharedInstance].trendsToFavorite;
