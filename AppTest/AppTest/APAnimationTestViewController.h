@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APDraggableImage.h"
 
 @interface APAnimationTestViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *promptLabel;
 @property (nonatomic, strong) IBOutlet UILabel *bonusLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *logoImage;
+@property (nonatomic) IBOutlet APDraggableImage *draggableImage;
 
-- (IBAction)spinLogo:(id)sender;
+- (IBAction)spinImage:(id)sender;
 
 @end

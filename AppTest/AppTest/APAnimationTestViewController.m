@@ -32,6 +32,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // initialize variables
+    numQuarterRotations = 0;
+    
     // set View title
     self.title = @"Animation";
     
@@ -41,11 +44,6 @@
     
     [_bonusLabel setFont:[UIFont fontWithName:@"Machinato-SemiBoldItalic" size:16]];
     [_bonusLabel setText:[_bonusLabel.text uppercaseString]];
-    
-    // initialize variables
-    numQuarterRotations = 0;
-    
-    // TODO: create draggable image
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,18 +65,18 @@
 
 # pragma mark - Instance Methods
 
-- (IBAction)spinLogo:(id)sender
+- (IBAction)spinImage:(id)sender
 {
-    [self spinWithOptions: UIViewAnimationOptionCurveEaseIn];
+    [self spinView:_draggableImage withOptions: UIViewAnimationOptionCurveEaseIn];
 }
 
-- (void) spinWithOptions: (UIViewAnimationOptions) options
+- (void) spinView:(UIView *)viewToSpin withOptions:(UIViewAnimationOptions) options
 {
     [UIView animateWithDuration: 0.5f
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         _logoImage.transform = CGAffineTransformRotate(_logoImage.transform, M_PI / 2);
+                         viewToSpin.transform = CGAffineTransformRotate(viewToSpin.transform, M_PI / 2);
                      }
                      completion: ^(BOOL finished) {
                          if (finished)
@@ -88,12 +86,12 @@
                              if (numQuarterRotations == 4)
                              {
                                  // stop animation and reset roatation count
-                                 [_logoImage.layer removeAllAnimations];
+                                 [viewToSpin.layer removeAllAnimations];
                                  numQuarterRotations = 0;
                              }
                              else
                              {
-                                 [self spinWithOptions: UIViewAnimationOptionCurveLinear];
+                                 [self spinView:viewToSpin withOptions:UIViewAnimationOptionCurveLinear];
                              }
                                  
                          }

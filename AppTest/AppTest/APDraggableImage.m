@@ -21,12 +21,12 @@
 
 #pragma mark - UIImage Methods
 
-- (id)initWithImage:(UIImage *)image
-{
-    if (self = [super initWithImage:image])
-        self.userInteractionEnabled = YES;
-    return self;
-}
+//- (id)initWithImage:(UIImage *)image
+//{
+//    if (self = [super initWithImage:image])
+//        self.userInteractionEnabled = YES;
+//    return self;
+//}
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
@@ -66,13 +66,5 @@
     self.center = newPoint;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
