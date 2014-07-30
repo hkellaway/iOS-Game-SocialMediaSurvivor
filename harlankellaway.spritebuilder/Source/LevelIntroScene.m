@@ -11,10 +11,8 @@
 #import "Trend.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 13;
+static const int NUM_STATUSES = 20;
 
-static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
-static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 static const CGFloat TREND_SCALE_FACTOR = 0.65;
 
 @implementation LevelIntroScene
@@ -33,8 +31,30 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     // initialize variables
     _allTopics = [NSMutableArray array];
     _usedTopics = [NSMutableSet set];
-    numToRecirculate = NUM_STATUSES * PERCENTAGE_STATUS_TO_RECIRCULATE;
-    numToFavorite = NUM_STATUSES * PERCENTAGE_STATUS_TO_FAVORITE;
+    
+    // read in numTopics from Levels pList
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    NSData *plistXML = [self getPListXML:@"Levels"];
+    
+    // convert static property list into corresponding property-list objects
+    // Topics p-list contains array of dictionarys
+    NSArray *levelsArray = (NSArray *)[NSPropertyListSerialization
+                                       propertyListFromData:plistXML
+                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                       format:&format
+                                       errorDescription:&errorDesc];
+    if(!levelsArray)
+    {
+        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+    }
+    
+    int levelNum = [GameState sharedInstance].levelNum;
+    numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
+    numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
+    
+//    numToRecirculate = [[GameState sharedInstance].trendsToRecirculate count];
+//    numToFavorite = [[GameState sharedInstance].trendsToRecirculate count];
     
     // read in current Level and set Scene title
     _levelLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];

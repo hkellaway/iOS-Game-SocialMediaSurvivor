@@ -102,20 +102,20 @@ static double const DEFAULT_METER_SCALE = 20.0;
         }
         
         // trends currently being recirculated
-        NSMutableArray *trendsToRecirculate = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_TRENDS_TO_RECIRCULATE_KEY];
-        
-        if(!trendsToRecirculate)
-        {
-            trendsToRecirculate = [NSMutableArray array];
-        }
-        
-        // trends currently being favorited
-        NSMutableArray *trendsToFavorite = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
-        
-        if(!trendsToFavorite)
-        {
-            trendsToFavorite = [NSMutableArray array];
-        }
+//        NSMutableArray *trendsToRecirculate = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_TRENDS_TO_RECIRCULATE_KEY];
+//        
+//        if(!trendsToRecirculate)
+//        {
+//            trendsToRecirculate = [NSMutableArray array];
+//        }
+//        
+//        // trends currently being favorited
+//        NSMutableArray *trendsToFavorite = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
+//        
+//        if(!trendsToFavorite)
+//        {
+//            trendsToFavorite = [NSMutableArray array];
+//        }
         
         // save defaults
         [[NSUserDefaults standardUserDefaults]synchronize];

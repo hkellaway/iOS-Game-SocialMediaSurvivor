@@ -15,7 +15,7 @@
 #import "LevelOverPopup.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 20;
+static const int NUM_STATUSES = 13;
 
 static const CGFloat MAX_NUM_LEVELS = 10;
 
