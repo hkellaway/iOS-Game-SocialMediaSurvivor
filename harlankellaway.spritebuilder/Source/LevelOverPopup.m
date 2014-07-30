@@ -9,7 +9,7 @@
 #import "LevelOverPopup.h"
 #import "GameState.h"
 
-static const int MAX_NUM_LEVELS = 3;
+static const int MAX_NUM_LEVELS = 6;
 
 @implementation LevelOverPopup
 {
