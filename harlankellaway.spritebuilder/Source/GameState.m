@@ -17,6 +17,12 @@ static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
 static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
 static NSString *const GAME_STATE_METER_SCALE_KEY = @"GameStateMeterScaleKey";
 
+static int const DEFAULT_LEVEL_NUM = 1;
+static double const DEFAULT_STREAM_SPEED = 0.5;
+static int const DEFAULT_PLAYER_RANK = 1;
+static int const DEFAULT_PLAYER_SCORE = 0;
+static double const DEFAULT_METER_SCALE = 20.0;
+
 @implementation GameState
 {
     NSNumber *levelNumDefault;
@@ -53,69 +59,17 @@ static NSString *const GAME_STATE_METER_SCALE_KEY = @"GameStateMeterScaleKey";
     if(self)
     {
         // set defaults
-        levelNumDefault = @1;
-        streamSpeedDefault = @0.5;
-        playerRankDefault = @1;
-        playerScoreDefault = @0;
-        meterScaleDefault = @20.0;
+        levelNumDefault = [NSNumber numberWithInt:DEFAULT_LEVEL_NUM];
+        streamSpeedDefault = [NSNumber numberWithDouble: DEFAULT_STREAM_SPEED];
+        playerRankDefault = [NSNumber numberWithInt: DEFAULT_PLAYER_RANK];
+        playerScoreDefault = [NSNumber numberWithInt: DEFAULT_PLAYER_SCORE];
+        meterScaleDefault = [NSNumber numberWithDouble:DEFAULT_METER_SCALE];
         allTopicsDefault = [NSMutableArray array];
         trendsToRecirculateDefault = [NSMutableArray array];
         trendsToFavoriteDefault = [NSMutableArray array];
         
         [self clearGameState];
-//        
-//        // try to read in defaults - if nil, initialize
-////        NSNumber *levelNum = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_NUM_KEY];
-////
-////        if(levelNum == nil)
-////        {
-////            levelNum = @1;
-////        }
-//        
-//        self.levelNum = [levelNumDefault integerValue];
-//        
-////        NSNumber *streamSpeed = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_STREAM_SPEED_KEY];
-////
-////        if(streamSpeed == 0 || streamSpeed == nil)
-////        {
-////            streamSpeed = @0.5;
-////            
-////            [[NSUserDefaults standardUserDefaults]setObject:streamSpeed forKey:GAME_STATE_STREAM_SPEED_KEY];
-////        }
-//        
-//        self.streamSpeed = [streamSpeedDefault doubleValue];
-//        
-////        NSNumber *meterScale = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_METER_SCALE_KEY];
-////        
-////        if(meterScale == nil)
-////        {
-////            meterScale = @20.0;
-////            
-////            [[NSUserDefaults standardUserDefaults]setObject:meterScale forKey:GAME_STATE_METER_SCALE_KEY];
-////        }
-//        
-//        self.meterScale = [meterScaleDefault doubleValue];
-//        
-////        // load player's current Rank
-////        NSNumber *playerRank = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_PLAYER_RANK_KEY];
-////        
-////        if(playerRank == nil)
-////        {
-////            playerRank = @1;
-////        }
-//        
-//        self.playerRank = [playerRankDefault integerValue];
-//        
-////        // load player's current Score
-////        NSNumber *playerScore = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_PLAYER_SCORE_KEY];
-////        
-////        if(playerScore == nil)
-////        {
-////            playerScore = @0;
-////        }
-//        
-//        self.playerScore = [playerScoreDefault integerValue];
-        
+
         // load in all Topics if none are available
         _allTopics = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_ALL_TOPICS_KEY];
         
@@ -256,20 +210,19 @@ static NSString *const GAME_STATE_METER_SCALE_KEY = @"GameStateMeterScaleKey";
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToRecirculateKey"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToFavoriteKey"];
     
+    // level num
+    [[NSUserDefaults standardUserDefaults]setObject:levelNumDefault forKey:GAME_STATE_LEVEL_NUM_KEY];
+    _levelNum = [levelNumDefault integerValue];
+    
+    // stream speed
+    [[NSUserDefaults standardUserDefaults]setObject:streamSpeedDefault forKey:GAME_STATE_STREAM_SPEED_KEY];
+    _streamSpeed = [streamSpeedDefault doubleValue];
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)clearGameState
 {
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateLevelNumKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateStreamSpeedKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateMeterScaleKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateAllTopicsKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToRecirculateKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToFavoriteKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStatePlayerRankKey"];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStatePlayerScoreKey"];
-    
     // level num
     [[NSUserDefaults standardUserDefaults]setObject:levelNumDefault forKey:GAME_STATE_LEVEL_NUM_KEY];
     _levelNum = [levelNumDefault integerValue];
