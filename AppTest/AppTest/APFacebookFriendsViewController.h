@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface APFacebookFriendsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView *facebookFriendsTableView;
 @property (strong, nonatomic) NSMutableArray *facebookFriends;
+
+@property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 
 @end

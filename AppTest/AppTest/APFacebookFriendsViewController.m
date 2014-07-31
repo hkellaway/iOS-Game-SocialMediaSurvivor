@@ -10,11 +10,9 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "APAppDelegate.h"
 
-static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
+//static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
 
 @interface APFacebookFriendsViewController () //<FBLoginViewDelegate>
-
-@property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
 
 @end
 
@@ -40,36 +38,15 @@ static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
     self.title = @"Facebook Friends";
     self.title = [self.title uppercaseString];
     
-//    // Create Login View so that the app will be granted "status_update" permission.
-//    FBLoginView *loginview = [[FBLoginView alloc] init];
-//    
-//    loginview.frame = CGRectOffset(loginview.frame, 15, 50);
-//#ifdef __IPHONE_7_0
-//#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
-//    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-//        loginview.frame = CGRectOffset(loginview.frame, 5, 25);
-//    }
-//#endif
-//#endif
-//#endif
-//    loginview.delegate = self;
-//    
-//    [self.view addSubview:loginview];
-//    
-//    [loginview sizeToFit];
+    // FB permissions
+    self.loginView.readPermissions = @[@"public_profile", @"user_friends"];
     
-    
-    // load Facebook friends
-    // TODO: implement logging in with Facebook (see FacebookSDK/Samples/HelloFacebook)
-    
+    // get facebook friends
     self.facebookFriends = [self getFacebookFriends:2104320];
 }
 
 - (void)viewDidUnload
 {
-    self.friendPickerController = nil;
-    
     [super viewDidUnload];
 }
 
@@ -101,115 +78,122 @@ static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
     
     UITableViewCell *cell = [self.facebookFriendsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
-    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
-    [cell.textLabel setText:facebookFriend];
+//    // Configure the cell
+//    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
+//    [cell.textLabel setText:facebookFriend];
     
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // set background image for cells
+    NSString *cellImageName;
+    
+    if(indexPath.row == 0)
+    {
+        cellImageName = @"bg_cell_topcap_fbfriends@2x.png";
+    }
+    else if(indexPath.row == ([self.facebookFriends count] -1))
+    {
+        cellImageName = @"bg_cell_bottomcap_fbfriends@2x.png";
+    }
+    else
+    {
+        cellImageName = @"bg_cell_middle_fbfriends@2x.png";
+    }
+    
+    cell.imageView.image = [UIImage imageNamed:cellImageName];
 }
-*/
 
 #pragma mark - Helper Methods
-
-- (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error
-{
-    NSLog(@"FBLoginView encountered an error=%@", error);
-}
-
 - (NSMutableArray *)getFacebookFriends:(int)facebookUserID
 {
     NSMutableArray *facebookFriendsArray = [NSMutableArray array];
     
-    /* open FB session with permission to access Friends */
-    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"]
-                                       allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session, FBSessionState state, NSError *error) {
-         __block NSString *alertText;
-         __block NSString *alertTitle;
-         
-         if (!error){
-             // If the session was opened successfully
-             if (state == FBSessionStateOpen)
-             {
-                 NSLog(@"FB Session Opened!");
-                 
-                 /* get FB friend list */
-                 FBRequest* friendsRequest = [FBRequest requestForMyFriends];
-                 [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
-                                                               NSDictionary* result,
-                                                               NSError *error) {
-                     NSArray* friends = [result objectForKey:@"data"];
-                     NSLog(@"Found: %i friends", friends.count);
-                     
-                     for (NSDictionary<FBGraphUser>* friend in friends)
-                     {
-                         NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
-                     }
-                 }];
-             }
-             else
-             {
-                 // There was an error, handle it
-                 if ([FBErrorUtility shouldNotifyUserForError:error] == YES)
-                 {
-                     // Close the active session
-                     [FBSession.activeSession closeAndClearTokenInformation];
-                     
-                     // Error requires people using an app to make an action outside of the app to recover
-                     // The SDK will provide an error message that we have to show the user
-                     alertTitle = @"Something went wrong";
-                     alertText = [FBErrorUtility userMessageForError:error];
-                     [[[UIAlertView alloc] initWithTitle:alertTitle
-                                                 message:alertText
-                                                delegate:self
-                                       cancelButtonTitle:@"OK!"
-                                       otherButtonTitles:nil] show];
-                     
-                 }
-                 else
-                 {
-                     // If the user cancelled login
-                     if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled)
-                     {
-                         alertTitle = @"Login cancelled";
-                         alertText = @"You cancelled login.";
-                         [[[UIAlertView alloc] initWithTitle:alertTitle
-                                                     message:alertText
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK!"
-                                           otherButtonTitles:nil] show];
-                         
-                     }
-                     else
-                     {
-                         // For simplicity, in this sample, for all other errors we show a generic message
-                         NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"]
-                                                            objectForKey:@"body"]
-                                                           objectForKey:@"error"];
-                         alertTitle = @"Something went wrong";
-                         alertText = [NSString stringWithFormat:@"Please retry. \nIf the problem persists contact us and mention this error code: %@",
-                                      [errorInformation objectForKey:@"message"]];
-                         [[[UIAlertView alloc] initWithTitle:alertTitle
-                                                     message:alertText
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK!"
-                                           otherButtonTitles:nil] show];
-                     }
-                 }
-             }
-         }
-     }];
+    /* Open FB Session */
+    
+    
+//    /* open FB session with permission to access Friends */
+//    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"]
+//                                       allowLoginUI:YES
+//                                  completionHandler:
+//     ^(FBSession *session, FBSessionState state, NSError *error) {
+//         __block NSString *alertText;
+//         __block NSString *alertTitle;
+//         
+//         if (!error){
+//             // If the session was opened successfully
+//             if (state == FBSessionStateOpen)
+//             {
+//                 NSLog(@"FB Session Opened!");
+//                 
+//                 /* get FB friend list */
+//                 FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+//                 [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+//                                                               NSDictionary* result,
+//                                                               NSError *error) {
+//                     NSArray* friends = [result objectForKey:@"data"];
+//                     NSLog(@"Found: %i friends", friends.count);
+//                     
+//                     for (NSDictionary<FBGraphUser>* friend in friends)
+//                     {
+//                         NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
+//                     }
+//                 }];
+//             }
+//             else
+//             {
+//                 // There was an error, handle it
+//                 if ([FBErrorUtility shouldNotifyUserForError:error] == YES)
+//                 {
+//                     // Close the active session
+//                     [FBSession.activeSession closeAndClearTokenInformation];
+//                     
+//                     // Error requires people using an app to make an action outside of the app to recover
+//                     // The SDK will provide an error message that we have to show the user
+//                     alertTitle = @"Something went wrong";
+//                     alertText = [FBErrorUtility userMessageForError:error];
+//                     [[[UIAlertView alloc] initWithTitle:alertTitle
+//                                                 message:alertText
+//                                                delegate:self
+//                                       cancelButtonTitle:@"OK!"
+//                                       otherButtonTitles:nil] show];
+//                     
+//                 }
+//                 else
+//                 {
+//                     // If the user cancelled login
+//                     if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled)
+//                     {
+//                         alertTitle = @"Login cancelled";
+//                         alertText = @"You cancelled login.";
+//                         [[[UIAlertView alloc] initWithTitle:alertTitle
+//                                                     message:alertText
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"OK!"
+//                                           otherButtonTitles:nil] show];
+//                         
+//                     }
+//                     else
+//                     {
+//                         // For simplicity, in this sample, for all other errors we show a generic message
+//                         NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"]
+//                                                            objectForKey:@"body"]
+//                                                           objectForKey:@"error"];
+//                         alertTitle = @"Something went wrong";
+//                         alertText = [NSString stringWithFormat:@"Please retry. \nIf the problem persists contact us and mention this error code: %@",
+//                                      [errorInformation objectForKey:@"message"]];
+//                         [[[UIAlertView alloc] initWithTitle:alertTitle
+//                                                     message:alertText
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"OK!"
+//                                           otherButtonTitles:nil] show];
+//                     }
+//                 }
+//             }
+//         }
+//     }];
     
     // placeholder data
     [facebookFriendsArray addObject:@"Friend A"];

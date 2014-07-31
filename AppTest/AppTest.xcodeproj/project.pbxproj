@@ -34,6 +34,10 @@
 		CE5ECEB01987483A00012D4A /* graphic_apppartnericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */; };
 		CE5ECEB2198748A100012D4A /* bg_cell_animationtest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */; };
 		CE5ECEB51987531100012D4A /* APDraggableImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5ECEB41987531100012D4A /* APDraggableImage.m */; };
+		CE8491D81989CBB100CC6CA9 /* bg_cell_bottomcap_fbfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8491D51989CBB100CC6CA9 /* bg_cell_bottomcap_fbfriends@2x.png */; };
+		CE8491D91989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8491D61989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png */; };
+		CE8491DA1989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8491D71989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png */; };
+		CE8491DD1989D2EE00CC6CA9 /* APFacebookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8491DC1989D2EE00CC6CA9 /* APFacebookCell.m */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -94,6 +98,11 @@
 		CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_animationtest@2x.png"; sourceTree = "<group>"; };
 		CE5ECEB31987531100012D4A /* APDraggableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APDraggableImage.h; sourceTree = "<group>"; };
 		CE5ECEB41987531100012D4A /* APDraggableImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APDraggableImage.m; sourceTree = "<group>"; };
+		CE8491D51989CBB100CC6CA9 /* bg_cell_bottomcap_fbfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_bottomcap_fbfriends@2x.png"; sourceTree = "<group>"; };
+		CE8491D61989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_middle_fbfriends@2x.png"; sourceTree = "<group>"; };
+		CE8491D71989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_topcap_fbfriends@2x.png"; sourceTree = "<group>"; };
+		CE8491DB1989D2EE00CC6CA9 /* APFacebookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFacebookCell.h; sourceTree = "<group>"; };
+		CE8491DC1989D2EE00CC6CA9 /* APFacebookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APFacebookCell.m; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +161,9 @@
 		CE3A83B71985CFF2001A0DA8 /* AppTestAssets */ = {
 			isa = PBXGroup;
 			children = (
+				CE8491D51989CBB100CC6CA9 /* bg_cell_bottomcap_fbfriends@2x.png */,
+				CE8491D61989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png */,
+				CE8491D71989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png */,
 				CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */,
 				CE5ECEAD1987415000012D4A /* bg_popup@2x.png */,
 				CE5ECEA71987406F00012D4A /* bg_animationtest@2x.png */,
@@ -225,6 +237,8 @@
 				CE5ECEB41987531100012D4A /* APDraggableImage.m */,
 				CED98C2019846AF500BDA725 /* APFacebookFriendsViewController.h */,
 				CED98C2119846AF500BDA725 /* APFacebookFriendsViewController.m */,
+				CE8491DB1989D2EE00CC6CA9 /* APFacebookCell.h */,
+				CE8491DC1989D2EE00CC6CA9 /* APFacebookCell.m */,
 				CED98C14198423F600BDA725 /* APMainMenuViewController.h */,
 				CED98C15198423F600BDA725 /* APMainMenuViewController.m */,
 				CED98C1A198433AC00BDA725 /* APServerPingViewController.h */,
@@ -359,8 +373,10 @@
 				CE5ECEAE1987415000012D4A /* bg_popup@2x.png in Resources */,
 				CE5ECEA219873BB300012D4A /* button_reload@2x.png in Resources */,
 				CE3A83E11985F49C001A0DA8 /* Machinato.ttf in Resources */,
+				CE8491D81989CBB100CC6CA9 /* bg_cell_bottomcap_fbfriends@2x.png in Resources */,
 				CE3A83DE1985F49C001A0DA8 /* Machinato_XLITE-I.ttf in Resources */,
 				CED98BEA19841FE200BDA725 /* InfoPlist.strings in Resources */,
+				CE8491D91989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png in Resources */,
 				CE5ECEB01987483A00012D4A /* graphic_apppartnericon.png in Resources */,
 				CE5ECEA619873D9200012D4A /* bg_splash_apd@2x.png in Resources */,
 				CE3A83DC1985F49C001A0DA8 /* Machinato_SB-I.ttf in Resources */,
@@ -370,6 +386,7 @@
 				CE5ECE9A19873B5C00012D4A /* button_animationtest@2x.png in Resources */,
 				CED98BF319841FE200BDA725 /* Main.storyboard in Resources */,
 				CE3A83DA1985F49C001A0DA8 /* Machinato_I.ttf in Resources */,
+				CE8491DA1989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png in Resources */,
 				CE5ECE961987391A00012D4A /* bg_codingtasks@2x.png in Resources */,
 				CE3A83DD1985F49C001A0DA8 /* Machinato_SB.ttf in Resources */,
 				CE3A83DB1985F49C001A0DA8 /* Machinato_LITE-I.ttf in Resources */,
@@ -399,6 +416,7 @@
 				CED98BF019841FE200BDA725 /* APAppDelegate.m in Sources */,
 				CED98C1C198433AC00BDA725 /* APServerPingViewController.m in Sources */,
 				CED98C16198423F600BDA725 /* APMainMenuViewController.m in Sources */,
+				CE8491DD1989D2EE00CC6CA9 /* APFacebookCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_codingtasks.png" translatesAutoresizingMaskIntoConstraints="NO" id="zhM-nk-34g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_codingtasks.png" translatesAutoresizingMaskIntoConstraints="NO" id="zhM-nk-34g" userLabel="Image View - Background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -63,7 +63,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-j9-HFg">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-j9-HFg" userLabel="Button - Facebook">
                                 <rect key="frame" x="26" y="193" width="268" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button_facebookfriends.png">
@@ -73,7 +73,7 @@
                                     <action selector="goToFacebookFriendsScene:" destination="Sfg-FH-f1m" eventType="touchUpInside" id="2nU-DC-rYF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utJ-mZ-fMe">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utJ-mZ-fMe" userLabel="Button - Ping">
                                 <rect key="frame" x="40" y="254" width="241" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button_serverping.png">
@@ -83,7 +83,7 @@
                                     <action selector="goToServerPingScene:" destination="Sfg-FH-f1m" eventType="touchUpInside" id="AaQ-Ax-V6D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-YX-dl5">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-YX-dl5" userLabel="Button - Animation">
                                 <rect key="frame" x="40" y="315" width="241" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button_animationtest.png">
@@ -120,15 +120,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsS-Az-D54">
-                                <rect key="frame" x="0.0" y="422" width="320" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_facebookfriends.png" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-gY-U1o" userLabel="Image View - Background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reload">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Py-vo-dte" userLabel="Table View - Facebook Friends">
-                                <rect key="frame" x="0.0" y="107" width="320" height="282"/>
+                                <rect key="frame" x="20" y="65" width="280" height="282"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
@@ -137,12 +134,25 @@
                                     <outlet property="delegate" destination="w12-em-rPV" id="tUX-2f-Yoo"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-Qa-Oxj" customClass="FBLoginView">
+                                <rect key="frame" x="47" y="416" width="227" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsS-Az-D54">
+                                <rect key="frame" x="0.0" y="355" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button_reload.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6pD-cJ-Dgl"/>
                     <connections>
                         <outlet property="facebookFriendsTableView" destination="5Py-vo-dte" id="buf-AJ-nX6"/>
+                        <outlet property="loginView" destination="x9z-Qa-Oxj" id="aiA-rC-FxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gl1-2n-OEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,12 +299,14 @@
         <image name="bg_animationtest.png" width="320" height="480"/>
         <image name="bg_cell_animationtest.png" width="257" height="325"/>
         <image name="bg_codingtasks.png" width="320" height="480"/>
+        <image name="bg_facebookfriends.png" width="320" height="480"/>
         <image name="bg_popup.png" width="257" height="135"/>
         <image name="bg_serverping.png" width="320" height="480"/>
         <image name="bg_splash_apd.png" width="320" height="480"/>
         <image name="button_animationtest.png" width="241" height="53"/>
         <image name="button_facebookfriends.png" width="241" height="53"/>
         <image name="button_ping.png" width="241" height="53"/>
+        <image name="button_reload.png" width="241" height="53"/>
         <image name="button_serverping.png" width="241" height="53"/>
         <image name="button_spin.png" width="241" height="53"/>
         <image name="logo2x.png" width="228" height="216"/>

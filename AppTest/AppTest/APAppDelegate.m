@@ -45,9 +45,10 @@
                                                             NSFontAttributeName: [UIFont fontWithName:@"Machinato-ExtraLight" size:24.0f],
                                                             NSShadowAttributeName: shadow
                                                             }];
+    // Facebook setup
     
-    // makes sure FBLoginView class is loaded before views
-//    [FBLoginView class];
+    // makes sure FBLoginView class is loaded before the view
+    [FBLoginView class];
     
     return YES;
 }
@@ -77,6 +78,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+// added for FB integration
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
 }
 
 @end
