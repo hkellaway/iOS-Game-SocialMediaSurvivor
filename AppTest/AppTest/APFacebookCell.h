@@ -10,6 +10,6 @@
 
 @interface APFacebookCell : UIView
 
-- (id)initForFBFriend:(NSString *)fbFriendName withImage:(UIImage *)image;
+- (id)initForFBFriend:(NSString *)fbFriendName withImage:(UIImage *)image atXPosition:(int)xPos andYPosition:(int)yPos;
 
 @end

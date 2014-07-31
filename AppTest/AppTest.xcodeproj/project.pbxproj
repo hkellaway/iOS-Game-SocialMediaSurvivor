@@ -38,6 +38,7 @@
 		CE8491D91989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8491D61989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png */; };
 		CE8491DA1989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8491D71989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png */; };
 		CE8491DD1989D2EE00CC6CA9 /* APFacebookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8491DC1989D2EE00CC6CA9 /* APFacebookCell.m */; };
+		CE8491DF1989F55100CC6CA9 /* bg_cell_middle_fbfriends.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8491DE1989F55100CC6CA9 /* bg_cell_middle_fbfriends.png */; };
 		CED98BE019841FE200BDA725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BDF19841FE200BDA725 /* Foundation.framework */; };
 		CED98BE219841FE200BDA725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE119841FE200BDA725 /* CoreGraphics.framework */; };
 		CED98BE419841FE200BDA725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED98BE319841FE200BDA725 /* UIKit.framework */; };
@@ -103,6 +104,7 @@
 		CE8491D71989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell_topcap_fbfriends@2x.png"; sourceTree = "<group>"; };
 		CE8491DB1989D2EE00CC6CA9 /* APFacebookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFacebookCell.h; sourceTree = "<group>"; };
 		CE8491DC1989D2EE00CC6CA9 /* APFacebookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APFacebookCell.m; sourceTree = "<group>"; };
+		CE8491DE1989F55100CC6CA9 /* bg_cell_middle_fbfriends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_cell_middle_fbfriends.png; sourceTree = "<group>"; };
 		CED98BDC19841FE200BDA725 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED98BDF19841FE200BDA725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED98BE119841FE200BDA725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,9 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				CE8491D51989CBB100CC6CA9 /* bg_cell_bottomcap_fbfriends@2x.png */,
+				CE8491DE1989F55100CC6CA9 /* bg_cell_middle_fbfriends.png */,
 				CE8491D61989CBB100CC6CA9 /* bg_cell_middle_fbfriends@2x.png */,
 				CE8491D71989CBB100CC6CA9 /* bg_cell_topcap_fbfriends@2x.png */,
 				CE5ECEB1198748A100012D4A /* bg_cell_animationtest@2x.png */,
+				CE5ECE951987391A00012D4A /* bg_codingtasks@2x.png */,
 				CE5ECEAD1987415000012D4A /* bg_popup@2x.png */,
 				CE5ECEA71987406F00012D4A /* bg_animationtest@2x.png */,
 				CE5ECEA81987406F00012D4A /* bg_facebookfriends@2x.png */,
@@ -177,7 +181,6 @@
 				CE5ECE9B19873B6800012D4A /* button_ping@2x.png */,
 				CE5ECE9919873B5C00012D4A /* button_animationtest@2x.png */,
 				CE5ECE9719873AD500012D4A /* button_facebookfriends@2x.png */,
-				CE5ECE951987391A00012D4A /* bg_codingtasks@2x.png */,
 				CE5ECEAF1987483A00012D4A /* graphic_apppartnericon.png */,
 				CE3A83B81985D002001A0DA8 /* logo2x.png */,
 				CE3A83CE1985F49C001A0DA8 /* Machinato_B-I.ttf */,
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5ECE9C19873B6800012D4A /* button_ping@2x.png in Resources */,
+				CE8491DF1989F55100CC6CA9 /* bg_cell_middle_fbfriends.png in Resources */,
 				CE3A83DF1985F49C001A0DA8 /* Machinato_XLITE.ttf in Resources */,
 				CE3A83D81985F49C001A0DA8 /* Machinato_B-I.ttf in Resources */,
 				CE3A83E01985F49C001A0DA8 /* Machinato_LITE.ttf in Resources */,

@@ -78,33 +78,33 @@
     
     UITableViewCell *cell = [self.facebookFriendsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-//    // Configure the cell
-//    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
-//    [cell.textLabel setText:facebookFriend];
+    // Configure the cell
+    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
+    [cell.textLabel setText:facebookFriend];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // set background image for cells
-    NSString *cellImageName;
-    
-    if(indexPath.row == 0)
-    {
-        cellImageName = @"bg_cell_topcap_fbfriends@2x.png";
-    }
-    else if(indexPath.row == ([self.facebookFriends count] -1))
-    {
-        cellImageName = @"bg_cell_bottomcap_fbfriends@2x.png";
-    }
-    else
-    {
-        cellImageName = @"bg_cell_middle_fbfriends@2x.png";
-    }
-    
-    cell.imageView.image = [UIImage imageNamed:cellImageName];
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // set background image for cells
+//    NSString *cellImageName;
+//    
+//    if(indexPath.row == 0)
+//    {
+//        cellImageName = @"bg_cell_topcap_fbfriends@2x.png";
+//    }
+//    else if(indexPath.row == ([self.facebookFriends count] -1))
+//    {
+//        cellImageName = @"bg_cell_bottomcap_fbfriends@2x.png";
+//    }
+//    else
+//    {
+//        cellImageName = @"bg_cell_middle_fbfriends@2x.png";
+//    }
+//    
+//    cell.imageView.image = [UIImage imageNamed:cellImageName];
+//}
 
 #pragma mark - Helper Methods
 - (NSMutableArray *)getFacebookFriends:(int)facebookUserID

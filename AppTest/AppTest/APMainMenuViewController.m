@@ -9,6 +9,8 @@
 #import "APMainMenuViewController.h"
 #import "APFacebookFriendsViewController.h"
 
+#import "APFacebookCell.h"
+
 @interface APMainMenuViewController ()
 
 @end
