@@ -9,13 +9,45 @@
 #import "APAppDelegate.h"
 
 @implementation APAppDelegate
+{
+    UINavigationController *navigationController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
-    // makes sure FBLoginView class is loaded before views are dhow
-    [FBLoginView class];
+    // initialize navigation controller
+    navigationController = (UINavigationController *)self.window.rootViewController;
+    
+    // set navigation controller background as clear
+    [navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    navigationController.navigationBar.shadowImage = [UIImage new];
+    navigationController.navigationBar.translucent = YES;
+    navigationController.view.backgroundColor = [UIColor clearColor];
+    
+    // set navigation controller back button
+    NSString *backButtonImageName = @"button_backarrow@2x.png";
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:backButtonImageName]];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:backButtonImageName]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    // remove Back text
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -100.f) forBarMetrics:UIBarMetricsDefault]; // move 'Back' textoff-screen
+    
+    // set navigation controller font
+    NSShadow* shadow = [NSShadow new];
+    shadow.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    shadow.shadowColor = [UIColor clearColor];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"Machinato-ExtraLight" size:24.0f],
+                                                            NSShadowAttributeName: shadow
+                                                            }];
+    
+    // makes sure FBLoginView class is loaded before views
+//    [FBLoginView class];
     
     return YES;
 }

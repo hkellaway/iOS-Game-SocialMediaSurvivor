@@ -32,11 +32,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // initialize variables
-    numQuarterRotations = 0;
-    
     // set View title
     self.title = @"Animation";
+    self.title = [self.title uppercaseString];
+    
+    // initialize variables
+    numQuarterRotations = 0;
     
     // style labels
     [_promptLabel setFont:[UIFont fontWithName:@"Machinato-ExtraLight" size:16]];

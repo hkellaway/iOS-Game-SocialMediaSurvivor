@@ -38,6 +38,7 @@ static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
     
     // set View title
     self.title = @"Facebook Friends";
+    self.title = [self.title uppercaseString];
     
 //    // Create Login View so that the app will be granted "status_update" permission.
 //    FBLoginView *loginview = [[FBLoginView alloc] init];
