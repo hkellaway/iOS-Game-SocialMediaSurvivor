@@ -19,5 +19,6 @@
 //@property (nonatomic, strong) Level *currentLevel;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType;
+- (void)gameOver;
 
 @end

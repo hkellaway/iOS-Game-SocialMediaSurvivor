@@ -87,19 +87,16 @@ static const int MAX_NUM_LEVELS = 6;
 
 - (void)goToNextLevel
 {
-    CCScene *nextScene;
-    
     // if max number of levels not reached, continue
     if([GameState sharedInstance].levelNum == (MAX_NUM_LEVELS + 1))
     {
-        nextScene = [CCBReader loadAsScene:@"GameOverScene"];
+        [_gameplay gameOver];
     }
     else
     {
-        nextScene = [CCBReader loadAsScene:@"LevelIntroScene"];
+        CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
+        [[CCDirector sharedDirector] replaceScene:scene];
     }
-    
-    [[CCDirector sharedDirector] replaceScene:nextScene];
 }
 
 - (NSData *)getPListXML: (NSString *)pListName

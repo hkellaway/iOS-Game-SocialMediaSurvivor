@@ -68,6 +68,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _isLevelOver = FALSE;
     _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
     [[GameState sharedInstance] setStreamSpeed:_currentLevel.streamSpeed];
+    _levelOverPopup.gameplay = self;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -161,18 +162,18 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                 [self gameOver];
             }
             
-            float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
-            float backgroundHeight = _meterBackground.contentSize.height;
-            
-            // if meter scaling resulted in scale hitting the top, increase player rank
-            if(middleHeight >= backgroundHeight)
-            {
-                [self increaseRank];
-            }
-            
             // change topic, move to top, etc.
             [status refresh];
         }
+    }
+    
+    float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
+    float backgroundHeight = _meterBackground.contentSize.height;
+    
+    // if meter scaling resulted in scale hitting the top, increase player rank
+    if(middleHeight >= backgroundHeight)
+    {
+        [self increaseRank];
     }
 }
 
@@ -211,6 +212,18 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     {
         numFavoritedCorrectly++;
     }
+}
+
+- (void)gameOver
+{
+    [self stopTimer];
+    
+    // reset global values
+    [[GameState sharedInstance] clearGameState];
+    
+    // load GameOver scene
+    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 # pragma mark - Custom Methods
@@ -265,18 +278,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // persist meter scale
     [[GameState sharedInstance] setMeterScale:_meterMiddle.scaleY];
-}
-
-- (void)gameOver
-{
-    [self stopTimer];
-    
-    // reset global values
-    [[GameState sharedInstance] clearGameState];
-    
-    // load GameOver scene
-    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 # pragma mark - Helper Methods

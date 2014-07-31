@@ -7,6 +7,7 @@
 //
 
 #import "CCSprite.h"
+#import "Gameplay.h"
 
 @interface LevelOverPopup : CCSprite
 
@@ -14,5 +15,7 @@
 - (void)updateFavoriteLabel:(int)numFavorited;
 - (void)updateRankLabel;
 - (void)updateScoreLabel;
+
+@property (nonatomic, weak) Gameplay *gameplay;
 
 @end
