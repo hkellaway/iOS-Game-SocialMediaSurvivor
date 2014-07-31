@@ -68,6 +68,9 @@ static double const DEFAULT_METER_SCALE = 20.0;
         trendsToRecirculateDefault = [NSMutableArray array];
         trendsToFavoriteDefault = [NSMutableArray array];
         
+        // set public default meter scale value
+        _meterScaleOriginal = DEFAULT_METER_SCALE;
+        
         [self clearGameState];
 
         // load in all Topics if none are available
