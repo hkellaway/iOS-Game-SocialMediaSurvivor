@@ -44,14 +44,20 @@ static const int MAX_NUM_LEVELS = 6;
 
 # pragma mark - Instance Methods
 
-- (void)setRecirculateLabel:(NSString *)labelText
+- (void)updateRankLabel
 {
-    _recirculateLabel.string = labelText;
+    //TODO: retrieve Rank Name from Ranks plist
+    _rankLabel.string = [NSString stringWithFormat:@"Rank: %i", [GameState sharedInstance].playerRank];
 }
 
-- (void)setFavoriteLabel:(NSString *)labelText
+- (void)updateRecirculateLabel:(int)numRecirculated
 {
-    _favoritesLabel.string = labelText;
+    _recirculateLabel.string = [NSString stringWithFormat:@"Number recirculated: %i", numRecirculated];
+}
+
+- (void)updateFavoriteLabel:(int)numFavorited
+{
+    _favoritesLabel.string = [NSString stringWithFormat:@"Number favorited: %i", numFavorited];
 }
 
 # pragma  mark - Custom Methods

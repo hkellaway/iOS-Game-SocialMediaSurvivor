@@ -43,6 +43,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     int numRecirculatedCorrectly;
     int numFavoritedCorrectly;
+    BOOL updateRankForLevel;
 }
 
 - (void)didLoadFromCCB
@@ -77,6 +78,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // statuses
     numRecirculatedCorrectly = 0;
     numFavoritedCorrectly = 0;
+    
+    // rank
+    updateRankForLevel = TRUE; // set so rank is updated first round
     
     // meter
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
@@ -232,9 +236,15 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 {
     CCLOG(@"Rank Increased!");
     
-    NSInteger newRank = [GameState sharedInstance].playerRank + 1;
+    // set flag
+    updateRankForLevel = TRUE;
     
-    [[GameState sharedInstance] setPlayerRank:newRank];
+    // save increased rank to GameState
+    [[GameState sharedInstance] setPlayerRank:([GameState sharedInstance].playerRank + 1)];
+    
+    // reset meter height
+    _meterMiddle.scaleY = [GameState sharedInstance].meterScaleOriginal;
+    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     CCLOG(@"Rank: %i", [GameState sharedInstance].playerRank);
 }
@@ -247,8 +257,16 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     [self stopTimer];
     
     // set Level Over stats
-    [_levelOverPopup setRecirculateLabel:[NSString stringWithFormat:@"Number Statuses Recirculated: %i", numRecirculatedCorrectly]];
-    [_levelOverPopup setFavoriteLabel:[NSString stringWithFormat:@"Number Statuses Favorited: %i", numFavoritedCorrectly]];
+    [_levelOverPopup updateRecirculateLabel:numFavoritedCorrectly];
+    [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
+    
+    if(updateRankForLevel)
+    {
+        [_levelOverPopup updateRankLabel];
+    }
+    
+    // reset Rank flag
+    updateRankForLevel = FALSE;
     
     // make Level Over stats visible
     [_levelOverPopup setVisible:TRUE];

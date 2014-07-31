@@ -10,7 +10,8 @@
 
 @interface LevelOverPopup : CCSprite
 
-- (void)setRecirculateLabel:(NSString *)labelText;
-- (void)setFavoriteLabel:(NSString *)labelText;
+- (void)updateRecirculateLabel:(int)numRecirculated;
+- (void)updateFavoriteLabel:(int)numFavorited;
+- (void)updateRankLabel;
 
 @end

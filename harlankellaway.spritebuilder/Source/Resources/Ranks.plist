@@ -3,64 +3,124 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>LevelNum</key>
+		<key>RankNum</key>
 		<integer>1</integer>
-		<key>StreamSpeed</key>
-		<real>0.5</real>
-		<key>NumTopicsToRecirculate</key>
-		<integer>1</integer>
-		<key>NumTopicsToFavorite</key>
-		<integer>1</integer>
-	</dict>
-	<dict>
-		<key>LevelNum</key>
-		<integer>2</integer>
-		<key>StreamSpeed</key>
-		<real>0.5</real>
-		<key>NumTopicsToRecirculate</key>
-		<integer>2</integer>
-		<key>NumTopicsToFavorite</key>
-		<integer>1</integer>
+		<key>RankTitle</key>
+		<string>Social Media Slug</string>
 	</dict>
     <dict>
-		<key>LevelNum</key>
+		<key>RankNum</key>
+		<integer>2</integer>
+		<key>RankTitle</key>
+		<string>Social Media Gopher</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
 		<integer>3</integer>
-		<key>StreamSpeed</key>
-		<real>0.75</real>
-		<key>NumTopicsToRecirculate</key>
-		<integer>2</integer>
-		<key>NumTopicsToFavorite</key>
-		<integer>1</integer>
+		<key>RankTitle</key>
+		<string>Social Media Intern's Assitant</string>
 	</dict>
     <dict>
-		<key>LevelNum</key>
+		<key>RankNum</key>
 		<integer>4</integer>
-		<key>StreamSpeed</key>
-		<real>0.75</real>
-		<key>NumTopicsToRecirculate</key>
-		<integer>1</integer>
-		<key>NumTopicsToFavorite</key>
-		<integer>2</integer>
+		<key>RankTitle</key>
+		<string>Social Media Intern</string>
 	</dict>
     <dict>
-		<key>LevelNum</key>
+		<key>RankNum</key>
 		<integer>5</integer>
-		<key>StreamSpeed</key>
-		<real>1.0</real>
-		<key>NumTopicsToRecirculate</key>
-		<integer>2</integer>
-		<key>NumTopicsToFavorite</key>
-		<integer>1</integer>
+		<key>RankTitle</key>
+		<string>Social Media Assitant Level I</string>
 	</dict>
     <dict>
-		<key>LevelNum</key>
+		<key>RankNum</key>
 		<integer>6</integer>
-		<key>StreamSpeed</key>
-		<real>1.0</real>
-		<key>NumTopicsToRecirculate</key>
-		<integer>1</integer>
-		<key>NumTopicsToFavorite</key>
-		<integer>2</integer>
+		<key>RankTitle</key>
+		<string>Social Media Assistant Level II</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>7</integer>
+		<key>RankTitle</key>
+		<string>Social Media Assistant Level III</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>8</integer>
+		<key>RankTitle</key>
+		<string>Social Media Jr. Manager Level I</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>9</integer>
+		<key>RankTitle</key>
+		<string>Social Media Jr. Manager Level II</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>10</integer>
+		<key>RankTitle</key>
+		<string>Social Media Jr. Manager Level III</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>11</integer>
+		<key>RankTitle</key>
+		<string>Social Media Manager Level I</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>12</integer>
+		<key>RankTitle</key>
+		<string>Social Media Manager Level II</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>13</integer>
+		<key>RankTitle</key>
+		<string>Social Media Manager Level III</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>14</integer>
+		<key>RankTitle</key>
+		<string>Social Media Sr. Manager Level I</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>15</integer>
+		<key>RankTitle</key>
+		<string>Social Media Sr. Manager Level II</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>16</integer>
+		<key>RankTitle</key>
+		<string>Social Media Sr. Manager Level III</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>17</integer>
+		<key>RankTitle</key>
+		<string>Social Media Maven</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>18</integer>
+		<key>RankTitle</key>
+		<string>Social Media Survivor</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>19</integer>
+		<key>RankTitle</key>
+		<string>Social Media Sr. Survivor</string>
+	</dict>
+    <dict>
+		<key>RankNum</key>
+		<integer>20</integer>
+		<key>RankTitle</key>
+		<string>Social Media Survival Expert</string>
 	</dict>
 </array>
 </plist>

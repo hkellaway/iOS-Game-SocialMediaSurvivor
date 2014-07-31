@@ -12,7 +12,7 @@ static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
 static const float STATUS_SCALE_FACTOR = 0.47;
-static const float METER_SCALE_FACTOR = 1.0;
+static const float METER_SCALE_FACTOR = 3.0;
 
 @implementation SocialMediaStatus
 {
@@ -76,7 +76,7 @@ static const float METER_SCALE_FACTOR = 1.0;
     if(_recirculateButton.enabled || _favoriteButton.enabled)
     {
         // if if should have been recirc/faved, scaled down
-        if(self.actionType == ACTION_TYPE_RECIRCULATE || self.actionType == ACTION_TYPE_FAVORITE)
+        if((self.actionType == ACTION_TYPE_RECIRCULATE && _recirculateButton.enabled) || (self.actionType == ACTION_TYPE_FAVORITE && _favoriteButton.enabled))
         {
             [self scaleMeter:(0)];
         }
