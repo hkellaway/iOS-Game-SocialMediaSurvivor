@@ -14,6 +14,7 @@
 @property (nonatomic, strong) IBOutlet UITableView *facebookFriendsTableView;
 @property (strong, nonatomic) NSMutableArray *facebookFriends;
 
+// facebook properties
 @property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 
 @end

@@ -30,8 +30,6 @@
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    NSLog(@"Touch began!");
-    
     // When a touch starts, get the current location in the view
     currentPoint = [[touches anyObject] locationInView:self];
 }

@@ -12,8 +12,8 @@
 
 const int CELL_WIDTH = 271;
 const int CELL_HEIGHT = 64;
-const int CELL_IMAGE_WIDTH = 50;
-const int CELL_IMAGE_HEIGHT = 50;
+const int CELL_IMAGE_WIDTH = 40;
+const int CELL_IMAGE_HEIGHT = 40;
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 

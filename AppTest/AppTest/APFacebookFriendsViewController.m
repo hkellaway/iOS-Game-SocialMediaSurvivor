@@ -8,15 +8,17 @@
 
 #import "APFacebookFriendsViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import "APAppDelegate.h"
+#import "APFacebookCell.h"
+
+//#import "APAppDelegate.h"
 
 //static const NSString* FACEBOOK_APP_ID_FOR_TESTING = @"1433298400287055";
 
-@interface APFacebookFriendsViewController () //<FBLoginViewDelegate>
+@interface APFacebookFriendsViewController ()
 
 @end
 
-@implementation APFacebookFriendsViewController 
+@implementation APFacebookFriendsViewController
 
 @synthesize facebookFriendsTableView;
 
@@ -78,142 +80,31 @@
     
     UITableViewCell *cell = [self.facebookFriendsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
-    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
-    [cell.textLabel setText:facebookFriend];
+//    // Configure the cell
+//    NSString *facebookFriend = [self.facebookFriends objectAtIndex:[indexPath row]];
+//    [cell.textLabel setText:facebookFriend];
+    
+    APFacebookCell *fbCell = [[APFacebookCell alloc] initForFBFriend:(NSString *)[self.facebookFriends objectAtIndex:indexPath.row] withImage:[UIImage imageNamed:@"logo2x.png"] atXPosition:0 andYPosition:0];
+    
+    [cell.contentView addSubview:fbCell];
     
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // set background image for cells
-//    NSString *cellImageName;
-//    
-//    if(indexPath.row == 0)
-//    {
-//        cellImageName = @"bg_cell_topcap_fbfriends@2x.png";
-//    }
-//    else if(indexPath.row == ([self.facebookFriends count] -1))
-//    {
-//        cellImageName = @"bg_cell_bottomcap_fbfriends@2x.png";
-//    }
-//    else
-//    {
-//        cellImageName = @"bg_cell_middle_fbfriends@2x.png";
-//    }
-//    
-//    cell.imageView.image = [UIImage imageNamed:cellImageName];
-//}
 
 #pragma mark - Helper Methods
 - (NSMutableArray *)getFacebookFriends:(int)facebookUserID
 {
     NSMutableArray *facebookFriendsArray = [NSMutableArray array];
     
-    /* Open FB Session */
-    
-    
-//    /* open FB session with permission to access Friends */
-//    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"]
-//                                       allowLoginUI:YES
-//                                  completionHandler:
-//     ^(FBSession *session, FBSessionState state, NSError *error) {
-//         __block NSString *alertText;
-//         __block NSString *alertTitle;
-//         
-//         if (!error){
-//             // If the session was opened successfully
-//             if (state == FBSessionStateOpen)
-//             {
-//                 NSLog(@"FB Session Opened!");
-//                 
-//                 /* get FB friend list */
-//                 FBRequest* friendsRequest = [FBRequest requestForMyFriends];
-//                 [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
-//                                                               NSDictionary* result,
-//                                                               NSError *error) {
-//                     NSArray* friends = [result objectForKey:@"data"];
-//                     NSLog(@"Found: %i friends", friends.count);
-//                     
-//                     for (NSDictionary<FBGraphUser>* friend in friends)
-//                     {
-//                         NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
-//                     }
-//                 }];
-//             }
-//             else
-//             {
-//                 // There was an error, handle it
-//                 if ([FBErrorUtility shouldNotifyUserForError:error] == YES)
-//                 {
-//                     // Close the active session
-//                     [FBSession.activeSession closeAndClearTokenInformation];
-//                     
-//                     // Error requires people using an app to make an action outside of the app to recover
-//                     // The SDK will provide an error message that we have to show the user
-//                     alertTitle = @"Something went wrong";
-//                     alertText = [FBErrorUtility userMessageForError:error];
-//                     [[[UIAlertView alloc] initWithTitle:alertTitle
-//                                                 message:alertText
-//                                                delegate:self
-//                                       cancelButtonTitle:@"OK!"
-//                                       otherButtonTitles:nil] show];
-//                     
-//                 }
-//                 else
-//                 {
-//                     // If the user cancelled login
-//                     if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled)
-//                     {
-//                         alertTitle = @"Login cancelled";
-//                         alertText = @"You cancelled login.";
-//                         [[[UIAlertView alloc] initWithTitle:alertTitle
-//                                                     message:alertText
-//                                                    delegate:self
-//                                           cancelButtonTitle:@"OK!"
-//                                           otherButtonTitles:nil] show];
-//                         
-//                     }
-//                     else
-//                     {
-//                         // For simplicity, in this sample, for all other errors we show a generic message
-//                         NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"]
-//                                                            objectForKey:@"body"]
-//                                                           objectForKey:@"error"];
-//                         alertTitle = @"Something went wrong";
-//                         alertText = [NSString stringWithFormat:@"Please retry. \nIf the problem persists contact us and mention this error code: %@",
-//                                      [errorInformation objectForKey:@"message"]];
-//                         [[[UIAlertView alloc] initWithTitle:alertTitle
-//                                                     message:alertText
-//                                                    delegate:self
-//                                           cancelButtonTitle:@"OK!"
-//                                           otherButtonTitles:nil] show];
-//                     }
-//                 }
-//             }
-//         }
-//     }];
+    /* TOD0: Open FB Session */
+
+    /* TODO: Get Facebook friends name and picture */
     
     // placeholder data
-    [facebookFriendsArray addObject:@"Friend A"];
-    [facebookFriendsArray addObject:@"Friend B"];
-    [facebookFriendsArray addObject:@"Friend C"];
-    [facebookFriendsArray addObject:@"Friend D"];
-    [facebookFriendsArray addObject:@"Friend E"];
-    [facebookFriendsArray addObject:@"Friend F"];
-    [facebookFriendsArray addObject:@"Friend A"];
-    [facebookFriendsArray addObject:@"Friend B"];
-    [facebookFriendsArray addObject:@"Friend C"];
-    [facebookFriendsArray addObject:@"Friend D"];
-    [facebookFriendsArray addObject:@"Friend E"];
-    [facebookFriendsArray addObject:@"Friend F"];
-    [facebookFriendsArray addObject:@"Friend A"];
-    [facebookFriendsArray addObject:@"Friend B"];
-    [facebookFriendsArray addObject:@"Friend C"];
-    [facebookFriendsArray addObject:@"Friend D"];
-    [facebookFriendsArray addObject:@"Friend E"];
-    [facebookFriendsArray addObject:@"Friend F"];
+    [facebookFriendsArray addObject:@"Justin LeClair"];
+    [facebookFriendsArray addObject:@"Drew Johnson"];
+    [facebookFriendsArray addObject:@"Greg Guidone"];
+    [facebookFriendsArray addObject:@"Derrick Xu"];
     
     return facebookFriendsArray;
 }
