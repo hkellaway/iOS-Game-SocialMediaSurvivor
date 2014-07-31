@@ -13,5 +13,6 @@
 - (void)updateRecirculateLabel:(int)numRecirculated;
 - (void)updateFavoriteLabel:(int)numFavorited;
 - (void)updateRankLabel;
+- (void)updateScoreLabel;
 
 @end

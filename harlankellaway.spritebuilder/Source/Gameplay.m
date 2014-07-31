@@ -283,11 +283,11 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 - (void)updateLevelOverPopup
 {
-    // set Level Over stats
     [_levelOverPopup updateRecirculateLabel:numFavoritedCorrectly];
     [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
+    [_levelOverPopup updateScoreLabel];
     
-    // if Rank increased this leve, update Rank label
+    // if Rank increased this level, update Rank label
     if(updateRankForLevel)
     {
         [_levelOverPopup updateRankLabel];

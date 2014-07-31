@@ -7,6 +7,7 @@
 //
 
 #import "SocialMediaStatus.h"
+#import "GameState.h"
 
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
@@ -43,6 +44,7 @@ static const float METER_SCALE_FACTOR = 3.0;
     {
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_RECIRCULATE];
+        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
@@ -59,6 +61,7 @@ static const float METER_SCALE_FACTOR = 3.0;
     {
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_FAVORITE];
+        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {

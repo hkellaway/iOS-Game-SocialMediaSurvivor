@@ -68,6 +68,11 @@ static const int MAX_NUM_LEVELS = 6;
     _rankLabel.string = [NSString stringWithFormat:@"Job Title: %@", rankTitle];
 }
 
+-(void)updateScoreLabel
+{
+    _scoreLabel.string = [NSString stringWithFormat:@"Followers: %i", [GameState sharedInstance].playerScore];
+}
+
 - (void)updateRecirculateLabel:(int)numRecirculated
 {
     _recirculateLabel.string = [NSString stringWithFormat:@"Number recirculated: %i", numRecirculated];
