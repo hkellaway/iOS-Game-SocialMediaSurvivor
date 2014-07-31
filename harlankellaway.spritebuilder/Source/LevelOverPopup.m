@@ -42,12 +42,30 @@ static const int MAX_NUM_LEVELS = 6;
     [super setVisible:visible];
 }
 
-# pragma mark - Instance Methods
-
 - (void)updateRankLabel
 {
-    //TODO: retrieve Rank Name from Ranks plist
-    _rankLabel.string = [NSString stringWithFormat:@"Rank: %i", [GameState sharedInstance].playerRank];
+    // retreive Rank title from p-list
+    
+    // load Topics from p-list
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    NSData *plistXML = [self getPListXML:@"Ranks"];
+    
+    // convert static property list into corresponding property-list objects
+    // Topics p-list contains array of dictionarys
+    NSArray *ranksArray = (NSArray *)[NSPropertyListSerialization
+                                       propertyListFromData:plistXML
+                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                       format:&format
+                                       errorDescription:&errorDesc];
+    if(!ranksArray)
+    {
+        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+    }
+    
+    NSString* rankTitle = [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"];
+    
+    _rankLabel.string = [NSString stringWithFormat:@"Job Title: %@", rankTitle];
 }
 
 - (void)updateRecirculateLabel:(int)numRecirculated
@@ -60,7 +78,7 @@ static const int MAX_NUM_LEVELS = 6;
     _favoritesLabel.string = [NSString stringWithFormat:@"Number favorited: %i", numFavorited];
 }
 
-# pragma  mark - Custom Methods
+# pragma  mark - Helper Methods
 
 - (void)goToNextLevel
 {
@@ -77,6 +95,23 @@ static const int MAX_NUM_LEVELS = 6;
     }
     
     [[CCDirector sharedDirector] replaceScene:nextScene];
+}
+
+- (NSData *)getPListXML: (NSString *)pListName
+{
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    // get file-styem path to file containing XML property list
+    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
+    
+    // if file doesn't exist at file-system path, check application's main bundle
+    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
+    }
+    
+    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end

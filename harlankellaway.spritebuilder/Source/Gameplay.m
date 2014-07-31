@@ -256,19 +256,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // stopTimer
     [self stopTimer];
     
-    // set Level Over stats
-    [_levelOverPopup updateRecirculateLabel:numFavoritedCorrectly];
-    [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
-    
-    if(updateRankForLevel)
-    {
-        [_levelOverPopup updateRankLabel];
-    }
-    
-    // reset Rank flag
-    updateRankForLevel = FALSE;
-    
-    // make Level Over stats visible
+    // update Level Over Popup and display
+    [self updateLevelOverPopup];
     [_levelOverPopup setVisible:TRUE];
     
     // set level number to next level
@@ -292,27 +281,26 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 # pragma mark - Helper Methods
 
+- (void)updateLevelOverPopup
+{
+    // set Level Over stats
+    [_levelOverPopup updateRecirculateLabel:numFavoritedCorrectly];
+    [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
+    
+    // if Rank increased this leve, update Rank label
+    if(updateRankForLevel)
+    {
+        [_levelOverPopup updateRankLabel];
+    }
+    
+    // reset Rank flag
+    updateRankForLevel = FALSE;
+}
+
 - (void)stopTimer
 {
     [_timer invalidate];
     _timer = nil;
-}
-
-- (NSData *)getPListXML: (NSString *)pListName
-{
-    NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    // get file-styem path to file containing XML property list
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-    
-    // if file doesn't exist at file-system path, check application's main bundle
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-    }
-    
-    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
