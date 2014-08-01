@@ -9,15 +9,35 @@
 #import "Popup.h"
 
 @implementation Popup
+{
+    CCLabelTTF *_titleLabel;
+    
+    
+}
 
 - (void)didLoadFromCCB
 {
+    self.visible = FALSE;
+    _titleLabel.string = @"";
     
+    // pause timer
+    [_gameplay.timer invalidate];
+}
+
+- (void)openPopup
+{
+    self.visible = TRUE;
+    
+    [_gameplay pauseTimer];
 }
 
 - (void)closePopup
 {
     CCLOG(@"Close pressed!");
+    
+    self.visible = FALSE;
+    
+    [_gameplay startTimer];
 }
 
 @end

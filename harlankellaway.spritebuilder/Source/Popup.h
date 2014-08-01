@@ -7,7 +7,13 @@
 //
 
 #import "CCNode.h"
+#import "Gameplay.h"
 
 @interface Popup : CCNode
+
+@property (weak) Gameplay *gameplay;
+
+- (void) openPopup;
+- (void)closePopup;
 
 @end

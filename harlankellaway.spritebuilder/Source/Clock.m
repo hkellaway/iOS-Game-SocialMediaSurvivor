@@ -14,6 +14,8 @@ static const int NUM_SECONDS_IN_LEVEL = 20;
 
 - (void)didLoadFromCCB
 {
+    _numSecondsPerLevel = NUM_SECONDS_IN_LEVEL;
+    
     _timeLeft.string = [NSString stringWithFormat:@"%d", NUM_SECONDS_IN_LEVEL];
 }
 

@@ -15,7 +15,7 @@
 @property (nonatomic, assign) int actionType;
 @property (nonatomic, assign) BOOL isAtScreenBottom;
 
-@property (nonatomic, weak) Gameplay *gameplay;
+@property (nonatomic,weak) Gameplay *gameplay;
 
 - (void)checkState;
 - (void)refresh;

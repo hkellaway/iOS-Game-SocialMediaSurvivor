@@ -39,6 +39,8 @@ static const int MAX_NUM_LEVELS = 6;
         _levelOverLabel.string = [NSString stringWithFormat:@"Day %d Recap", [GameState sharedInstance].levelNum];
     }
     
+    [_gameplay pauseTimer];
+    
     [super setVisible:visible];
 }
 
@@ -83,8 +85,6 @@ static const int MAX_NUM_LEVELS = 6;
     _favoritesLabel.string = [NSString stringWithFormat:@"Number favorited: %i", numFavorited];
 }
 
-# pragma  mark - Helper Methods
-
 - (void)goToNextLevel
 {
     // if max number of levels not reached, continue
@@ -98,6 +98,8 @@ static const int MAX_NUM_LEVELS = 6;
         [[CCDirector sharedDirector] replaceScene:scene];
     }
 }
+
+# pragma  mark - Helper Methods
 
 - (NSData *)getPListXML: (NSString *)pListName
 {

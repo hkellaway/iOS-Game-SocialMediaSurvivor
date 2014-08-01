@@ -17,8 +17,14 @@
 @property (nonatomic, assign) int statusSpacing;
 @property (nonatomic, assign) BOOL isLevelOver;
 //@property (nonatomic, strong) Level *currentLevel;
+@property (nonatomic, strong) NSTimer *timer;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType;
+-(void) pauseTimer;
+-(void) startTimer;
 - (void)gameOver;
+
+//- (void)pauseGame;
+//- (void)resumeGame;
 
 @end
