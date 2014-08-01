@@ -39,8 +39,6 @@ static const int MAX_NUM_LEVELS = 6;
         _levelOverLabel.string = [NSString stringWithFormat:@"Day %d Recap", [GameState sharedInstance].levelNum];
     }
     
-    [_gameplay pauseTimer];
-    
     [super setVisible:visible];
 }
 

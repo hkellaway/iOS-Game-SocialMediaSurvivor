@@ -40,7 +40,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
-//    NSTimer *_timer;
     NSMutableArray *_topicsToRecirculate;
     NSMutableArray *_topicsToFavorite;
     Level *_currentLevel;
@@ -49,15 +48,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     int numFavoritedCorrectly;
     BOOL updateRankForLevel;
     
-    NSDate *_timeSinceTimerBegan;
-    int _timePaused;
-    NSDate *_fireDatePaused;
-    
-    //
     NSTimer *timer;
     int timerInterval;
     double timerElapsed;
     NSDate *timerStarted;
+    
+    BOOL _isScrolling;
 }
 
 - (void)didLoadFromCCB
@@ -67,21 +63,16 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         [self gameOver];
     }
     
-    // TODO: implement Timer pausing
-    timerInterval = TIMER_INTERVAL_IN_SECONDS;
-    timerElapsed = 0.0;
-    
     // initialize variables
     _numStatuses = NUM_STATUSES;
     _statusSpacing = 4;
     
+    // timer
+    timerInterval = TIMER_INTERVAL_IN_SECONDS;
+    timerElapsed = 0.0;
+    
     // clock
     _clock.gameplay = self;
-    _timeSinceTimerBegan = nil;
-//    _timer = [NSTimer scheduledTimerWithTimeInterval:(TIMER_INTERVAL_IN_SECONDS)
-//                                                 target: self
-//                                               selector:@selector(onTimerFiring)
-//                                               userInfo: nil repeats: YES];
     
     // level
     _isLevelOver = FALSE;
@@ -108,6 +99,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // popups
     _tutorialMeterPopup.gameplay = self;
+    
+    // stream
+    _isScrolling = TRUE;
     
     // create SocialMediaStatus objects
     for(int i = 0; i < _numStatuses; i++)
@@ -156,12 +150,14 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // tell this scene to accept touches
     self.userInteractionEnabled = YES;
     
-    // TODO: start timer
-    [self startTimer];
+    // sttart timer
+    [self resumeGame];
 }
 
 - (void)update:(CCTime)delta
 {
+    if(_isScrolling)
+    {
     // scrolling of SocialMediaStatues
     for(int i = 0; i < _numStatuses; i++)
     {
@@ -189,6 +185,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
             // change topic, move to top, etc.
             [status refresh];
         }
+    }
     }
     
     float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
@@ -238,9 +235,30 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
 }
 
+- (void)pauseTimer
+{
+    [timer invalidate];
+    timer = nil;
+    timerElapsed = [[NSDate date] timeIntervalSinceDate:timerStarted];
+}
+
+-(void) pauseGame
+{
+    [self pauseTimer];
+    [self pauseScrolling];
+}
+
+-(void) resumeGame
+{
+    timer = [NSTimer scheduledTimerWithTimeInterval:(timerInterval - timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
+    timerStarted = [NSDate date];
+    
+    _isScrolling = TRUE;
+}
+
 - (void)gameOver
 {
-    [self stopTimer];
+//    [self pauseTimer];
     
     // reset global values
     [[GameState sharedInstance] clearGameState];
@@ -252,29 +270,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 # pragma mark - Custom Methods
 
--(void)onTimerFiring
-{
-    // start counting in order to pause
-    if(_clock.timeLeft.string.intValue == _clock.numSecondsPerLevel)
-    {
-        _timeSinceTimerBegan = [[NSDate alloc] initWithTimeIntervalSinceNow: 0];
-    }
-    
-    int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
-    
-    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
-    
-    // trigger tutorial in if not completed yet
-    if((_currentLevel.levelNum == 1) && (newTime == (_clock.numSecondsPerLevel - 5)) && ([GameState sharedInstance].isTutorialComplete == FALSE))
-    {
-        _tutorialMeterPopup.visible = TRUE;
-    }
-    
-    if(newTime == 0)
-    {
-        [self levelOver];
-    }
-}
 
 - (void)checkInbox
 {
@@ -302,8 +297,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 {
     _isLevelOver = TRUE;
     
-    // stopTimer
-    [self stopTimer];
+    // pause timer
+    [self pauseTimer];
     
     // update Level Over Popup and display
     [self updateLevelOverPopup];
@@ -332,25 +327,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // reset Rank flag
     updateRankForLevel = FALSE;
-}
-
-- (void)stopTimer
-{
-    [_timer invalidate];
-    _timer = nil;
-}
-
-- (void)pauseGame
-{
-    _timePaused = _timeSinceTimerBegan.timeIntervalSinceNow;
-    _fireDatePaused= _timer.fireDate;
-    
-    [_timer invalidate];
-}
-
-- (void)resumeGame
-{
-
 }
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
@@ -390,20 +366,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     return statuses;
 }
 
-// TODO: create timer
-
--(void) startTimer
-{
-    timer = [NSTimer scheduledTimerWithTimeInterval:(timerInterval - timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
-    timerStarted = [NSDate date];
-}
-
 -(void) fired
 {
     [timer invalidate];
     timer = nil;
     timerElapsed = 0.0;
-    [self startTimer];
+    [self resumeGame];
     
     // react to timer event here
     int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
@@ -422,11 +390,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
 }
 
--(void) pauseTimer {
-    
-    [timer invalidate];
-    timer = nil;
-    timerElapsed = [[NSDate date] timeIntervalSinceDate:timerStarted];
+- (void)pauseScrolling
+{
+    _isScrolling = FALSE;
 }
 
 @end

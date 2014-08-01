@@ -19,16 +19,14 @@
 {
     self.visible = FALSE;
     _titleLabel.string = @"";
-    
-    // pause timer
-    [_gameplay.timer invalidate];
 }
 
 - (void)openPopup
 {
     self.visible = TRUE;
     
-    [_gameplay pauseTimer];
+    [_gameplay pauseGame
+     ];
 }
 
 - (void)closePopup
@@ -37,7 +35,7 @@
     
     self.visible = FALSE;
     
-    [_gameplay startTimer];
+    [_gameplay resumeGame];
 }
 
 @end
