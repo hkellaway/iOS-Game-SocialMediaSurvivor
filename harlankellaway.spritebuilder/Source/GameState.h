@@ -21,6 +21,8 @@
 @property (nonatomic, assign) NSInteger playerRank;
 @property (nonatomic, assign) NSInteger playerScore;
 
+@property (nonatomic, assign) BOOL isTutorialComplete;
+
 @property (nonatomic, assign) double meterScaleOriginal;
 
 - (void)clearLevelSettings;

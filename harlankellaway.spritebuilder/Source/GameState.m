@@ -16,6 +16,7 @@ static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFa
 static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
 static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
 static NSString *const GAME_STATE_METER_SCALE_KEY = @"GameStateMeterScaleKey";
+static NSString *const GAME_STATE_FLAG_ISTUTORIALCOMPLETE = @"GameStateFlagIsTutorialComplete";
 
 static int const DEFAULT_LEVEL_NUM = 1;
 static double const DEFAULT_STREAM_SPEED = 0.5;
@@ -58,6 +59,9 @@ static double const DEFAULT_METER_SCALE = 20.0;
     
     if(self)
     {
+        // set instance variables
+        _meterScaleOriginal = DEFAULT_METER_SCALE;
+        
         // set defaults
         levelNumDefault = [NSNumber numberWithInt:DEFAULT_LEVEL_NUM];
         streamSpeedDefault = [NSNumber numberWithDouble: DEFAULT_STREAM_SPEED];
@@ -68,11 +72,18 @@ static double const DEFAULT_METER_SCALE = 20.0;
         trendsToRecirculateDefault = [NSMutableArray array];
         trendsToFavoriteDefault = [NSMutableArray array];
         
-        // set public default meter scale value
-        _meterScaleOriginal = DEFAULT_METER_SCALE;
-        
+        // clear GameState
         [self clearGameState];
 
+        // if tutorial not already marked as complete ever, record
+        NSString *currentTutorialState = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE];
+        
+        // if tutorial state not recorded, set to not complete
+        if(currentTutorialState == nil)
+        {
+            [self setFlagITutorialComplete:FALSE];
+        }
+        
         // load in all Topics if none are available
         _allTopics = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LEVEL_ALL_TOPICS_KEY];
         
@@ -113,6 +124,17 @@ static double const DEFAULT_METER_SCALE = 20.0;
 }
 
 # pragma mark - setter overides
+
+- (void)setFlagITutorialComplete:(BOOL)isTutorialComplete
+{
+    _isTutorialComplete = isTutorialComplete;
+    NSString *isTutorialCompleteString = [NSString stringWithFormat:@"%i", isTutorialComplete];
+    
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults]setObject:isTutorialCompleteString forKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
 
 - (void)setStreamSpeed:(double)streamSpeed
 {
