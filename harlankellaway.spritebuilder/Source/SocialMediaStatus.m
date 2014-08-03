@@ -87,14 +87,14 @@ static const float METER_SCALE_FACTOR = 3.0;
 - (void)checkState
 {
     // if not disabled, check if status should have been recirculated/favorited
-//    if(_recirculateButton.enabled || _favoriteButton.enabled)
-//    {
-//        // if if should have been recirc/faved, scaled down
-//        if((self.actionType == ACTION_TYPE_RECIRCULATE && _recirculateButton.enabled) || (self.actionType == ACTION_TYPE_FAVORITE && _favoriteButton.enabled))
-//        {
-//            [self scaleMeter:(0)];
-//        }
-//    }
+    if(_recirculateButton.enabled || _favoriteButton.enabled)
+    {
+        // if if should have been recirc/faved, scaled down
+        if((self.actionType == ACTION_TYPE_RECIRCULATE && _recirculateButton.enabled) || (self.actionType == ACTION_TYPE_FAVORITE && _favoriteButton.enabled))
+        {
+            [self scaleMeter:(0)];
+        }
+    }
 }
 
 - (void)refresh
@@ -119,15 +119,15 @@ static const float METER_SCALE_FACTOR = 3.0;
     if(!_gameplay.isLevelOver)
     {
     
-    // if scaling down, check if meterMiddle is at origin
-    if(!scaleDirection)
-    {
-        // if scaling down while at origin, game is over
-        if(!meterMiddle.scaleY == 1)
-        {
-             //TODO:
-        }
-    }
+//    // if scaling down, check if meterMiddle is at origin
+//    if(!scaleDirection)
+//    {
+//        // if scaling down while at origin, game is over
+//        if(!meterMiddle.scaleY == 1)
+//        {
+//             //TODO:
+//        }
+//    }
     
     // scale down if 0, up if 1
     meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY + METER_SCALE_FACTOR : meterMiddle.scaleY - METER_SCALE_FACTOR);
@@ -141,7 +141,7 @@ static const float METER_SCALE_FACTOR = 3.0;
 - (void)enable
 {
     _recirculateButton.enabled = TRUE;
-//    _favoriteButton.enabled = TRUE;
+    _favoriteButton.enabled = TRUE;
 }
 
 @end
