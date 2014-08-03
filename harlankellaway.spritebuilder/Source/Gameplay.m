@@ -355,10 +355,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     if(updateRankForLevel)
     {
         [_levelOverPopup updateRankLabel];
+        
+        // reset Rank flag
+        updateRankForLevel = FALSE;
     }
-    
-    // reset Rank flag
-    updateRankForLevel = FALSE;
 }
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
