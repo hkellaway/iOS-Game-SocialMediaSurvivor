@@ -1048,8 +1048,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>11</real>
-													<real>29</real>
+													<real>14</real>
+													<real>56</real>
 													<integer>0</integer>
 													<integer>0</integer>
 													<integer>0</integer>
@@ -1087,7 +1087,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>SocialMediaGameAssets/meter_level_top.png</string>
+													<string>SocialMediaGameAssets/meter_top.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -1137,8 +1137,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>11</real>
-													<real>29</real>
+													<real>14</real>
+													<real>28</real>
 													<integer>0</integer>
 													<integer>0</integer>
 													<integer>0</integer>
@@ -1163,7 +1163,7 @@
 												<key>value</key>
 												<array>
 													<real>1</real>
-													<real>0.0</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -1176,7 +1176,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>SocialMediaGameAssets/meter_level_middle.png</string>
+													<string>SocialMediaGameAssets/meter_middle.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -1259,7 +1259,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>SocialMediaGameAssets/meter_level_bottom.png</string>
+											<string>SocialMediaGameAssets/meter_bottom.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1304,7 +1304,7 @@
 								<key>value</key>
 								<array>
 									<real>45.5</real>
-									<real>294</real>
+									<real>290.5</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -1329,7 +1329,7 @@
 								<key>value</key>
 								<array>
 									<real>1</real>
-									<real>1</real>
+									<real>1.2000000476837158</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -1342,7 +1342,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/meter_background.png</string>
+									<string>SocialMediaGameAssets/meter_base.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1393,7 +1393,7 @@
 								<key>value</key>
 								<array>
 									<real>45</real>
-									<real>482</real>
+									<real>475</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -1494,11 +1494,13 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>90</real>
+							<real>70</real>
 							<integer>0</integer>
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1511,6 +1513,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>Popup</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_tutorialMeterPopup</string>
 				<key>memberVarAssignmentType</key>
@@ -1561,8 +1565,6 @@
 						<string>Popup.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

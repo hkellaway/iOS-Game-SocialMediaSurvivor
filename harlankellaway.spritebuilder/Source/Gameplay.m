@@ -71,6 +71,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _numStatuses = NUM_STATUSES;
     _statusSpacing = 4;
     
+    // set visibility of elements
+    _messageNotification.visible = FALSE;
+    
     // timer
     timerInterval = TIMER_INTERVAL_IN_SECONDS;
     timerElapsed = 0.0;
@@ -83,9 +86,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     _currentLevel = [[Level alloc] initWithLevelNum:[GameState sharedInstance].levelNum];
     [[GameState sharedInstance] setStreamSpeed:_currentLevel.streamSpeed];
     _levelOverPopup.gameplay = self;
-    
-    // set visibility of elements
-    _messageNotification.visible = FALSE;
     
     // get order recirculate/favorite/avoid for this set of Statuses
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:PERCENTAGE_STATUS_TO_RECIRCULATE percentToFavorite:PERCENTAGE_STATUS_TO_FAVORITE];
