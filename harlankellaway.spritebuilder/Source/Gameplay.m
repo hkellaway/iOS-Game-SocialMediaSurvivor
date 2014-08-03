@@ -54,6 +54,10 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     NSDate *timerStarted;
     
     BOOL _isScrolling;
+    
+    // animations
+    CCAction *flashFavoriteButton;
+    NSMutableArray *flashFavoriteButtonFrames;
 }
 
 - (void)didLoadFromCCB
@@ -235,6 +239,34 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
 }
 
+-(void) fired
+{
+    [timer invalidate];
+    timer = nil;
+    timerElapsed = 0.0;
+    [self resumeGame];
+    
+    // react to timer event here
+    int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
+    
+    if(newTime == _clock.numSecondsPerLevel - 5)
+    {
+        if((_currentLevel.levelNum == 1) && (!([GameState sharedInstance].isTutorialComplete)))
+        {
+            [_tutorialMeterPopup openPopup];
+            [GameState sharedInstance].isTutorialComplete = TRUE;
+        }
+    }
+    
+    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
+    
+    // level over
+    if(newTime == 0)
+    {
+        [self levelOver];
+    }
+}
+
 - (void)pauseTimer
 {
     [timer invalidate];
@@ -364,30 +396,6 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
     
     return statuses;
-}
-
--(void) fired
-{
-    [timer invalidate];
-    timer = nil;
-    timerElapsed = 0.0;
-    [self resumeGame];
-    
-    // react to timer event here
-    int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
-    
-    if(newTime == 15)
-    {
-        [_tutorialMeterPopup openPopup];
-    }
-    
-    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
-    
-    // level over
-    if(newTime == 0)
-    {
-        [self levelOver];
-    }
 }
 
 - (void)pauseScrolling

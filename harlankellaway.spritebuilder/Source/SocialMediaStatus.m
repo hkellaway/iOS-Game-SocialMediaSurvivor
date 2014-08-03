@@ -17,9 +17,12 @@ static const float METER_SCALE_FACTOR = 3.0;
 
 @implementation SocialMediaStatus
 {
+    CCNode *_recirculateSprite;
     CCButton *_recirculateButton;
+    
+    CCNode *_favoriteSprite;
     CCButton *_favoriteButton;
-    CCButton *_blockButton;
+    
     CCSprite *_meterBackground;
 }
 
@@ -51,7 +54,11 @@ static const float METER_SCALE_FACTOR = 3.0;
         [self scaleMeter:0];
     }
     
+    // disable button
     _recirculateButton.enabled = FALSE;
+    
+    // remove background sprite so disabled button shows
+    _recirculateSprite.visible = FALSE;
 }
 
 - (void)favorite
@@ -68,7 +75,11 @@ static const float METER_SCALE_FACTOR = 3.0;
         [self scaleMeter:0];
     }
     
+    // disable button
     _favoriteButton.enabled = FALSE;
+    
+    // remove background sprite so disabled button shows
+    _favoriteSprite.visible = FALSE;
 }
 
 # pragma mark - instance methods
@@ -76,14 +87,14 @@ static const float METER_SCALE_FACTOR = 3.0;
 - (void)checkState
 {
     // if not disabled, check if status should have been recirculated/favorited
-    if(_recirculateButton.enabled || _favoriteButton.enabled)
-    {
-        // if if should have been recirc/faved, scaled down
-        if((self.actionType == ACTION_TYPE_RECIRCULATE && _recirculateButton.enabled) || (self.actionType == ACTION_TYPE_FAVORITE && _favoriteButton.enabled))
-        {
-            [self scaleMeter:(0)];
-        }
-    }
+//    if(_recirculateButton.enabled || _favoriteButton.enabled)
+//    {
+//        // if if should have been recirc/faved, scaled down
+//        if((self.actionType == ACTION_TYPE_RECIRCULATE && _recirculateButton.enabled) || (self.actionType == ACTION_TYPE_FAVORITE && _favoriteButton.enabled))
+//        {
+//            [self scaleMeter:(0)];
+//        }
+//    }
 }
 
 - (void)refresh
@@ -130,7 +141,7 @@ static const float METER_SCALE_FACTOR = 3.0;
 - (void)enable
 {
     _recirculateButton.enabled = TRUE;
-    _favoriteButton.enabled = TRUE;
+//    _favoriteButton.enabled = TRUE;
 }
 
 @end

@@ -79,9 +79,9 @@ static double const DEFAULT_METER_SCALE = 20.0;
         NSString *currentTutorialState = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE];
         
         // if tutorial state not recorded, set to not complete
-        if(currentTutorialState == nil)
+        if(currentTutorialState == nil || ([currentTutorialState isEqual: @"0"]))
         {
-            [self setFlagITutorialComplete:FALSE];
+            [self setFlagIsTutorialComplete:FALSE];
         }
         
         // load in all Topics if none are available
@@ -125,7 +125,7 @@ static double const DEFAULT_METER_SCALE = 20.0;
 
 # pragma mark - setter overides
 
-- (void)setFlagITutorialComplete:(BOOL)isTutorialComplete
+- (void)setFlagIsTutorialComplete:(BOOL)isTutorialComplete
 {
     _isTutorialComplete = isTutorialComplete;
     NSString *isTutorialCompleteString = [NSString stringWithFormat:@"%i", isTutorialComplete];
