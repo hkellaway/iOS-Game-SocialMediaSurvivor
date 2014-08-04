@@ -17,10 +17,14 @@
 
 @property (nonatomic, strong) CCNode *recirculateSprite;
 @property (nonatomic, strong) CCNode *favoriteSprite;
+@property (nonatomic, strong) CCButton *recirculateButton;
+@property (nonatomic, strong) CCButton *favoriteButton;
 
 @property (nonatomic,weak) Gameplay *gameplay;
 
 - (void)checkState;
 - (void)refresh;
+- (void)flashRecirculateButton;
+- (void)flashFavoriteButton;
 
 @end

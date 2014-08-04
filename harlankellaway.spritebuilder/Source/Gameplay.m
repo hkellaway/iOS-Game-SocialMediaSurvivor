@@ -180,6 +180,20 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
             SocialMediaStatus *status = _statuses[i];
         
             status.position = ccp(status.position.x, status.position.y - ([GameState sharedInstance].streamSpeed * TESTING_SPEED_MULTIPLIER));
+            
+            // if status about to exit screen and action not pressed, flash correct action
+            if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
+            {
+                if(status.recirculateButton.enabled & (status.actionType == ACTION_TYPE_RECIRCULATE))
+                {
+                    [status flashRecirculateButton];
+                }
+                
+                if(status.favoriteButton.enabled & (status.actionType == ACTION_TYPE_FAVORITE))
+                {
+                    [status flashFavoriteButton];
+                }
+            }
         
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
             {
@@ -270,9 +284,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // react to timer event here
     int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
     
-    if(newTime == _clock.numSecondsPerLevel - 5)
-    {
-        if((_currentLevel.levelNum == 1) && (!([GameState sharedInstance].isTutorialComplete)))
+    if(_currentLevel.levelNum == 1)
+    {if((newTime == _clock.numSecondsPerLevel - 5) && (!([GameState sharedInstance].isTutorialComplete)))
         {
             _inbox.visible = FALSE;
             [_tutorialMeterPopup openPopup];

@@ -19,11 +19,10 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
 @implementation SocialMediaStatus
 {
-    CCButton *_recirculateButton;
-    
-    CCButton *_favoriteButton;
-    
     CCSprite *_meterBackground;
+    
+    CCAnimationManager *_recirculateAnimationManager;
+    CCAnimationManager *_favoriteAnimationManager;
 }
 
 # pragma mark - initializers
@@ -34,6 +33,9 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     self.scaleY = self.scaleY * STATUS_SCALE_FACTOR;
     
     _meterBackground = _gameplay.meterBackground;
+
+    _recirculateAnimationManager = _recirculateSprite.animationManager;
+    _favoriteAnimationManager = _favoriteSprite.animationManager;
 }
 
 # pragma mark - button actions
@@ -56,8 +58,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
         if(_actionType == ACTION_TYPE_FAVORITE)
         {
             // flash correct action
-            CCAnimationManager* animationManager = _favoriteSprite.animationManager;
-            [animationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+            [self flashFavoriteButton];
         }
         
         // scale meter down
@@ -85,8 +86,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
          if(_actionType == ACTION_TYPE_RECIRCULATE)
          {
              // flash correct action
-             CCAnimationManager* animationManager = _recirculateSprite.animationManager;
-             [animationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+             [self flashRecirculateButton];
          }
         
         // scale meter down
@@ -113,6 +113,15 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
             [self scaleMeter:(0)];
         }
     }
+}
+
+- (void)flashRecirculateButton
+{
+    [_recirculateAnimationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+}
+- (void)flashFavoriteButton
+{
+    [_favoriteAnimationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
 }
 
 - (void)refresh

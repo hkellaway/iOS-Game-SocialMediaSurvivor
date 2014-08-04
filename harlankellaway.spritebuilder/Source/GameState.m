@@ -22,7 +22,7 @@ static int const DEFAULT_LEVEL_NUM = 1;
 static double const DEFAULT_STREAM_SPEED = 0.5;
 static int const DEFAULT_PLAYER_RANK = 1;
 static int const DEFAULT_PLAYER_SCORE = 0;
-static double const DEFAULT_METER_SCALE = 3.0;
+static double const DEFAULT_METER_SCALE = 5.0;
 
 @implementation GameState
 {
