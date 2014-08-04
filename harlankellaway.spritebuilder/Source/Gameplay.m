@@ -36,6 +36,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCNode *_stream;
     Clock *_clock;
     CCSprite *_meterBottom;
+    CCSprite *_meterIcon;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
     Inbox *_inbox;
@@ -105,8 +106,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     updateRankForLevel = TRUE; // set so rank is updated first round
     
     // meter
-    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
+//    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
 //    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     // popups
@@ -189,7 +190,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
                 float meterMiddleScaled = _meterMiddle.scaleY;
             
                 // if meter scaling resulted in scale hitting 1.0, game is over
-                if(meterMiddleStart <= 1.0 & meterMiddleScaled <= 1.0)
+                if(meterMiddleStart <= 1.0 || meterMiddleScaled <= 1.0)
                 {
                     [self gameOver];
                 }
@@ -201,11 +202,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
     
 //    float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
-    float middleHeight = _meterMiddle.contentSize.height * _meterMiddle.scaleY;
+    float middlePosition = _meterMiddle.positionInPoints.y;
     float backgroundHeight = _meterBackground.contentSize.height * _meterBackground.scaleY;
+    float iconPosition = _meterIcon.positionInPoints.y * _meterBackground.scaleY;
     
     // if meter scaling resulted in scale hitting the top, increase player rank
-    if(middleHeight >= backgroundHeight)
+    if(middlePosition >= backgroundHeight)
     {
         [self increaseRank];
     }
