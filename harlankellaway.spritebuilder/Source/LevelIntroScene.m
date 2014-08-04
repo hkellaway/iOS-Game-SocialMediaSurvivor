@@ -128,8 +128,6 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
 
 - (void)startLevel
 {
-    CCLOG(@"Level Start button pressed");
-    
     // start Gameplay
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];

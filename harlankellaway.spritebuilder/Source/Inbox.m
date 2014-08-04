@@ -10,6 +10,9 @@
 #import "Trend.h"
 #import "GameState.h"
 
+static NSString *IMAGE_NAME_RECIRCULATE = @"SocialMediaGameAssets/button_recirculate_noshadow.png";
+static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_noshadow.png";
+
 @implementation Inbox
 {
     CCLabelTTF *_inboxLabel;
@@ -53,8 +56,7 @@
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
-//        trend.scaleX = trend.scaleX / 2;
-//        trend.scaleY = trend.scaleY / 2;
+        [trend setTrendAction:IMAGE_NAME_FAVORITE];
         [_inboxTrendsBox addChild:trend];
     }
     
@@ -62,8 +64,7 @@
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
-//        trend.scaleX = trend.scaleX / 2;
-//        trend.scaleY = trend.scaleY / 2;
+        [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
         [_inboxTrendsBox addChild:trend];
     }
 }
