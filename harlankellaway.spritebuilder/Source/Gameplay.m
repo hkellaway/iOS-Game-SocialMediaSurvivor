@@ -201,13 +201,20 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         }
     }
     
-//    float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
-    float middlePosition = _meterMiddle.positionInPoints.y;
-    float backgroundHeight = _meterBackground.contentSize.height * _meterBackground.scaleY;
-    float iconPosition = _meterIcon.positionInPoints.y * _meterBackground.scaleY;
+//    float middleHeight = (_meterBottom.scaleY*_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
+//    float b = _meterBottom.positionInPoints.y + (_meterBottom.contentSize.height * _meterBottom.scaleY);
+//    float middlePosition = b + (_meterMiddle.contentSize.height * _meterMiddle.scaleY);
+//    float backgroundHeight = _meterBackground.contentSize.height * _meterBackground.scaleY;
+    float iconPosition = _meterIcon.positionInPoints.y;
+    
+    // meter middle in world space
+    float meterMiddlePosition = [_meterBottom.parent convertToNodeSpace:[[_meterMiddle parent] convertToWorldSpace:_meterMiddle.positionInPoints]].y + ((_meterMiddle.contentSize.height * _meterMiddle.scaleY) * _meterBottom.scaleY);
+    
+    // icon in world space
+//    float iconPosition = [[_meterIcon parent] convertToWorldSpace:_meterIcon.positionInPoints].y;
     
     // if meter scaling resulted in scale hitting the top, increase player rank
-    if(middlePosition >= backgroundHeight)
+    if(meterMiddlePosition >= iconPosition)
     {
         [self increaseRank];
     }
