@@ -52,18 +52,18 @@
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         
-        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", ((NSString *)trendsToFavorite[j]).lowercaseString]];
-        trend.scaleX = trend.scaleX / 2;
-        trend.scaleY = trend.scaleY / 2;
+        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
+//        trend.scaleX = trend.scaleX / 2;
+//        trend.scaleY = trend.scaleY / 2;
         [_inboxTrendsBox addChild:trend];
     }
     
     for(int i = 0; i < [trendsToRecirculate count]; i++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", ((NSString *)trendsToRecirculate[i]).lowercaseString]];
-        trend.scaleX = trend.scaleX / 2;
-        trend.scaleY = trend.scaleY / 2;
+        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
+//        trend.scaleX = trend.scaleX / 2;
+//        trend.scaleY = trend.scaleY / 2;
         [_inboxTrendsBox addChild:trend];
     }
 }

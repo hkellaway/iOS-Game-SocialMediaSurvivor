@@ -9,9 +9,8 @@
 #import "TutorialMeterPopup.h"
 
 @implementation TutorialMeterPopup
-
 {
-    CCLabelTTF *_titleLabel;
+    
 }
 
 - (void)didLoadFromCCB

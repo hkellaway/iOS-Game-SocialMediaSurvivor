@@ -10,6 +10,7 @@
 
 @implementation Trend
 {
+    CCSprite *_trendActionImage;
     CCLabelTTF *_trendText;
 }
 

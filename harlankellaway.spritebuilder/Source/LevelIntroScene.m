@@ -104,7 +104,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     for(int j = 0; j < [trendsToFavorite count]; j++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        [trend setTrendText:[NSString stringWithFormat:@"Favorite statuses on %@", ((NSString *)trendsToFavorite[j]).lowercaseString]];
+        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
         trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
         trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
         [_levelIntroTrendsBox addChild:trend];
@@ -113,7 +113,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     for(int i = 0; i < [trendsToRecirculate count]; i++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        [trend setTrendText:[NSString stringWithFormat:@"Recirculate statuses on %@", ((NSString *)trendsToRecirculate[i]).lowercaseString]];
+        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
         trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
         trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
         [_levelIntroTrendsBox addChild:trend];
