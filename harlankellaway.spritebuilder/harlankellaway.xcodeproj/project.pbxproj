@@ -38,6 +38,7 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		CE0476111986A32F00778AA9 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = CE0476101986A32F00778AA9 /* Published-iOS */; };
+		CE089C27198EFC61007A1E22 /* TutorialMeterPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE089C26198EFC61007A1E22 /* TutorialMeterPopup.m */; };
 		CE2C4DD319744E14008C8185 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C4DD219744E14008C8185 /* Level.m */; };
 		CE2C4DD619744FA8008C8185 /* Topics.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD519744FA8008C8185 /* Topics.plist */; };
 		CE2C4DD819745FC6008C8185 /* Statuses.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C4DD719745FC6008C8185 /* Statuses.plist */; };
@@ -109,6 +110,8 @@
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		CE0476101986A32F00778AA9 /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-iOS"; sourceTree = "<group>"; };
+		CE089C25198EFC61007A1E22 /* TutorialMeterPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialMeterPopup.h; path = Source/TutorialMeterPopup.h; sourceTree = "<group>"; };
+		CE089C26198EFC61007A1E22 /* TutorialMeterPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialMeterPopup.m; path = Source/TutorialMeterPopup.m; sourceTree = "<group>"; };
 		CE2C4DD119744E14008C8185 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		CE2C4DD219744E14008C8185 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
 		CE2C4DD519744FA8008C8185 /* Topics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Topics.plist; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */,
 				CEBE2F28198BDF70007C60B9 /* Popup.h */,
 				CEBE2F29198BDF70007C60B9 /* Popup.m */,
+				CE089C25198EFC61007A1E22 /* TutorialMeterPopup.h */,
+				CE089C26198EFC61007A1E22 /* TutorialMeterPopup.m */,
 				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
 				7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */,
 				CE6A7B1F19783F3D00A2EAD2 /* Trend.h */,
@@ -423,6 +428,7 @@
 				CE2C4DD319744E14008C8185 /* Level.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */,
+				CE089C27198EFC61007A1E22 /* TutorialMeterPopup.m in Sources */,
 				CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */,
 				CE3A83B6198594EC001A0DA8 /* LevelOverPopup.m in Sources */,
 			);

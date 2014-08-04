@@ -13,7 +13,7 @@
 #import "Inbox.h"
 #import "GameState.h"
 #import "LevelOverPopup.h"
-#import "Popup.h"
+#import "TutorialMeterPopup.h"
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 13;
@@ -29,6 +29,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 @implementation Gameplay
 {
+    // TODO: remove this
+    CCSprite *_meterTop;
+    
     // declared in SpriteBuilder
     CCNode *_stream;
     Clock *_clock;
@@ -36,7 +39,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     CCLabelTTF *_numInboxNotifications;
     Inbox *_inbox;
     LevelOverPopup *_levelOverPopup;
-    Popup *_tutorialMeterPopup;
+    TutorialMeterPopup *_tutorialMeterPopup;
     
     
     SocialMediaStatus *_statuses[NUM_STATUSES];
@@ -66,6 +69,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     {
         [self gameOver];
     }
+    
+    // TODO: remove this
+    _meterTop.visible = FALSE;
     
     // initialize variables
     _numStatuses = NUM_STATUSES;
@@ -99,7 +105,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // meter
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
-    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
+//    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     // popups
     _tutorialMeterPopup.gameplay = self;
@@ -192,7 +198,8 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     }
     }
     
-    float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
+//    float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
+    float middleHeight = _meterMiddle.contentSize.height * _meterMiddle.scaleY;
     float backgroundHeight = _meterBackground.contentSize.height;
     
     // if meter scaling resulted in scale hitting the top, increase player rank
@@ -320,7 +327,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // reset meter height
     _meterMiddle.scaleY = [GameState sharedInstance].meterScaleOriginal;
-    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
+//    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     CCLOG(@"Rank: %i", [GameState sharedInstance].playerRank);
 }

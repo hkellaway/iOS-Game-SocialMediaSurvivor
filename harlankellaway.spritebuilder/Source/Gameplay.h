@@ -11,7 +11,7 @@
 @interface Gameplay : CCNode
 
 @property (nonatomic, strong) CCSprite *meterMiddle;
-@property (nonatomic, strong) CCSprite *meterTop;
+//@property (nonatomic, strong) CCSprite *meterTop;
 @property (nonatomic, strong) CCSprite *meterBackground;
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;

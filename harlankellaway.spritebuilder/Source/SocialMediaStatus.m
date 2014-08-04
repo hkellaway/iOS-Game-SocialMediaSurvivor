@@ -13,7 +13,7 @@ static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
 static const float STATUS_SCALE_FACTOR = 0.47;
-static const float METER_SCALE_FACTOR = 0.25;
+static const float METER_SCALE_FACTOR = 1;
 
 @implementation SocialMediaStatus
 {
@@ -113,7 +113,7 @@ static const float METER_SCALE_FACTOR = 0.25;
 - (void)scaleMeter:(int)scaleDirection
 {
     CCSprite *meterMiddle = _gameplay.meterMiddle;
-    CCSprite *meterTop = _gameplay.meterTop;
+//    CCSprite *meterTop = _gameplay.meterTop;
     
     // don't scale while game is over
     if(!_gameplay.isLevelOver)
@@ -133,7 +133,7 @@ static const float METER_SCALE_FACTOR = 0.25;
     meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY + METER_SCALE_FACTOR : meterMiddle.scaleY - METER_SCALE_FACTOR);
     
     // move top
-    meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));
+//    meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));
     }
     
 }

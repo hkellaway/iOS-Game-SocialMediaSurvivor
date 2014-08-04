@@ -1,14 +1,15 @@
 //
-//  Popup.m
+//  TutorialMeterPopup.m
 //  harlankellaway
 //
-//  Created by Harlan Kellaway on 8/1/14.
+//  Created by Harlan Kellaway on 8/3/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "Popup.h"
+#import "TutorialMeterPopup.h"
 
-@implementation Popup
+@implementation TutorialMeterPopup
+
 {
     CCLabelTTF *_titleLabel;
 }
@@ -16,13 +17,11 @@
 - (void)didLoadFromCCB
 {
     self.visible = FALSE;
-    _titleLabel.string = @"";
 }
 
 - (void)openPopup
 {
     self.visible = TRUE;
-    _titleLabel.string = @"Testing!";
     
     [_gameplay pauseGame];
 }
