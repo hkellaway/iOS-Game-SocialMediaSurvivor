@@ -15,6 +15,8 @@ static const int ACTION_TYPE_FAVORITE = 2;
 static const float STATUS_SCALE_FACTOR = 0.47;
 static const float METER_SCALE_FACTOR = 2;
 
+static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
+
 @implementation SocialMediaStatus
 {
     CCNode *_recirculateSprite;
@@ -53,6 +55,14 @@ static const float METER_SCALE_FACTOR = 2;
     }
     else
     {
+        if(_actionType == ACTION_TYPE_FAVORITE)
+        {
+            // flash correct action
+            CCAnimationManager* animationManager = _favoriteSprite.animationManager;
+            [animationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+        }
+        
+        // scale meter down
         [self scaleMeter:0];
     }
     
@@ -65,8 +75,6 @@ static const float METER_SCALE_FACTOR = 2;
 
 - (void)favorite
 {
-           CCLOG(@"meter middle pos = %f", [[_gameplay.meterMiddle parent] convertToWorldSpace:_gameplay.meterMiddle.positionInPoints].y + (_gameplay.meterMiddle.contentSize.height * _gameplay.meterMiddle.scaleY));
-    
     // scale up if correction action selected
     if (_actionType == ACTION_TYPE_FAVORITE)
     {
@@ -76,6 +84,14 @@ static const float METER_SCALE_FACTOR = 2;
     }
     else
     {
+         if(_actionType == ACTION_TYPE_RECIRCULATE)
+         {
+             // flash correct action
+             CCAnimationManager* animationManager = _recirculateSprite.animationManager;
+             [animationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+         }
+        
+        // scale meter down
         [self scaleMeter:0];
     }
     

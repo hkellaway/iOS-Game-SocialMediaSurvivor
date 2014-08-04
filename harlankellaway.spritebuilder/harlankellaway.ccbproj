@@ -100,6 +100,16 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/button_favorite_noshadow.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_favorite_pressed.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/button_message.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -120,7 +130,12 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/button_recirculate_highlighted.png</key>
+		<key>SocialMediaGameAssets/button_recirculate_noshadow.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_recirculate_pressed.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
@@ -140,32 +155,67 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/meter_background.png</key>
+		<key>SocialMediaGameAssets/inbox_background.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/meter_level_bottom.png</key>
+		<key>SocialMediaGameAssets/meter_base.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>SocialMediaGameAssets/meter_bottom.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/meter_level_middle.png</key>
+		<key>SocialMediaGameAssets/meter_icon_happy.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/meter_level_top.png</key>
+		<key>SocialMediaGameAssets/meter_icon_neutral.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/status.png</key>
+		<key>SocialMediaGameAssets/meter_icon_thumbsup.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/status_text_area.png</key>
+		<key>SocialMediaGameAssets/meter_middle.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/meter_top.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/popup_background.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/popup_tutorial_meter.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/status_background.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/status_text_background.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/trend_background.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>

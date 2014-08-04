@@ -116,7 +116,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // stream
     _isScrolling = TRUE;
     
-    // create SocialMediaStatus objects
+    // SocialMediaStatus objects
     for(int i = 0; i < _numStatuses; i++)
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];

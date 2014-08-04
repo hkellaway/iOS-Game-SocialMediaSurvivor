@@ -19,6 +19,8 @@
 //@property (nonatomic, strong) Level *currentLevel;
 //@property (nonatomic, strong) NSTimer *timer;
 
+@property (nonatomic, strong) CCNode *recirculateSprite;
+
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType;
 - (void) pauseTimer;
 -(void) pauseGame;
