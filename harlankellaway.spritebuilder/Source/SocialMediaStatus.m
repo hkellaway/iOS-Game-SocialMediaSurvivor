@@ -19,10 +19,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
 @implementation SocialMediaStatus
 {
-    CCNode *_recirculateSprite;
     CCButton *_recirculateButton;
     
-    CCNode *_favoriteSprite;
     CCButton *_favoriteButton;
     
     CCSprite *_meterBackground;
@@ -124,6 +122,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     int newY = numStatuses * ((self.contentSize.height * self.scaleY) + spacing) - self.contentSize.height * self.scaleY/2;
     
     self.position = ccp(self.position.x, newY);
+    _recirculateSprite.visible = TRUE;
+    _favoriteSprite.visible = TRUE;
     self.isAtScreenBottom = FALSE;
     [self enable];
 }

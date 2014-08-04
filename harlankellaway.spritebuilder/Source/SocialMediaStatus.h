@@ -15,6 +15,9 @@
 @property (nonatomic, assign) int actionType;
 @property (nonatomic, assign) BOOL isAtScreenBottom;
 
+@property (nonatomic, strong) CCNode *recirculateSprite;
+@property (nonatomic, strong) CCNode *favoriteSprite;
+
 @property (nonatomic,weak) Gameplay *gameplay;
 
 - (void)checkState;

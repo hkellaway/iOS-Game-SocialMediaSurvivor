@@ -15,8 +15,11 @@
 #import "LevelOverPopup.h"
 #import "TutorialMeterPopup.h"
 
+// TODO: remove this - only here to compensate for slow simulator animation
+static const int TESTING_SPEED_MULTIPLIER = 3;
+
 // TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 13;
+static const int NUM_STATUSES = 28;
 
 static const CGFloat MAX_NUM_LEVELS = 10;
 
@@ -176,7 +179,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
         {
             SocialMediaStatus *status = _statuses[i];
         
-            status.position = ccp(status.position.x, status.position.y - [GameState sharedInstance].streamSpeed);
+            status.position = ccp(status.position.x, status.position.y - ([GameState sharedInstance].streamSpeed * TESTING_SPEED_MULTIPLIER));
         
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
             {
