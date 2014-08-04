@@ -35,6 +35,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     // declared in SpriteBuilder
     CCNode *_stream;
     Clock *_clock;
+    CCSprite *_meterBottom;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
     Inbox *_inbox;
@@ -104,6 +105,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     updateRankForLevel = TRUE; // set so rank is updated first round
     
     // meter
+    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
 //    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
@@ -168,39 +170,39 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 {
     if(_isScrolling)
     {
-    // scrolling of SocialMediaStatues
-    for(int i = 0; i < _numStatuses; i++)
-    {
-        SocialMediaStatus *status = _statuses[i];
-        
-        status.position = ccp(status.position.x, status.position.y - [GameState sharedInstance].streamSpeed);
-        
-        if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
+        // scrolling of SocialMediaStatues
+        for(int i = 0; i < _numStatuses; i++)
         {
-            status.isAtScreenBottom = TRUE;
-            
-            float meterMiddleStart = _meterMiddle.scaleY;
-            
-            // if status is not disabled and should have been Recir/Faved, decrease Meter
-            [status checkState];
-            
-            float meterMiddleScaled = _meterMiddle.scaleY;
-            
-            // if meter scaling resulted in scale hitting 1.0, game is over
-            if(meterMiddleStart <= 1.0 & meterMiddleScaled <= 1.0)
+            SocialMediaStatus *status = _statuses[i];
+        
+            status.position = ccp(status.position.x, status.position.y - [GameState sharedInstance].streamSpeed);
+        
+            if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
             {
-                [self gameOver];
-            }
+                status.isAtScreenBottom = TRUE;
             
-            // change topic, move to top, etc.
-            [status refresh];
+                float meterMiddleStart = _meterMiddle.scaleY;
+            
+                // if status is not disabled and should have been Recir/Faved, decrease Meter
+                [status checkState];
+            
+                float meterMiddleScaled = _meterMiddle.scaleY;
+            
+                // if meter scaling resulted in scale hitting 1.0, game is over
+                if(meterMiddleStart <= 1.0 & meterMiddleScaled <= 1.0)
+                {
+                    [self gameOver];
+                }
+            
+                // change topic, move to top, etc.
+                [status refresh];
+            }
         }
-    }
     }
     
 //    float middleHeight = (_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
     float middleHeight = _meterMiddle.contentSize.height * _meterMiddle.scaleY;
-    float backgroundHeight = _meterBackground.contentSize.height;
+    float backgroundHeight = _meterBackground.contentSize.height * _meterBackground.scaleY;
     
     // if meter scaling resulted in scale hitting the top, increase player rank
     if(middleHeight >= backgroundHeight)
@@ -260,6 +262,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     {
         if((_currentLevel.levelNum == 1) && (!([GameState sharedInstance].isTutorialComplete)))
         {
+            _inbox.visible = FALSE;
             [_tutorialMeterPopup openPopup];
             [GameState sharedInstance].isTutorialComplete = TRUE;
         }

@@ -5,16 +5,16 @@
 	<key>SequencerJoints</key>
 	<dict>
 		<key>hidden</key>
-		<false/>
+		<true/>
 		<key>locked</key>
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>172</integer>
+	<integer>173</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -1046,11 +1046,11 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>14</real>
-													<real>28</real>
+													<real>0.5</real>
+													<real>0.0</real>
 													<integer>0</integer>
-													<integer>0</integer>
-													<integer>0</integer>
+													<integer>2</integer>
+													<integer>2</integer>
 												</array>
 											</dict>
 											<dict>
@@ -1109,7 +1109,7 @@
 								<key>displayName</key>
 								<string>SpriteMeterBottom</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_meterBottom</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -1185,6 +1185,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1302,7 +1304,7 @@
 								<key>value</key>
 								<array>
 									<real>45.5</real>
-									<real>255.75</real>
+									<real>255.5</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -1447,6 +1449,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>Inbox</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_inbox</string>
 				<key>memberVarAssignmentType</key>
@@ -1482,8 +1486,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.2000000476837158</real>
-							<real>1.2000000476837158</real>
+							<real>1</real>
+							<real>1</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -1497,8 +1501,6 @@
 						<string>Inbox.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1566,7 +1568,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>171</integer>
+				<integer>172</integer>
 				<key>baseClass</key>
 				<string>CCBFile</string>
 				<key>children</key>

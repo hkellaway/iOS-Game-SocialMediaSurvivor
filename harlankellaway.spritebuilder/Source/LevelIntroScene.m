@@ -11,6 +11,8 @@
 #import "Trend.h"
 
 static const CGFloat TREND_SCALE_FACTOR = 0.65;
+static NSString *IMAGE_NAME_RECIRCULATE = @"SocialMediaGameAssets/button_recirculate_noshadow.png";
+static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_noshadow.png";
 
 @implementation LevelIntroScene
 {
@@ -105,6 +107,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
+        [trend setTrendAction:IMAGE_NAME_FAVORITE];
         trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
         trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
         [_levelIntroTrendsBox addChild:trend];
@@ -114,6 +117,7 @@ static const CGFloat TREND_SCALE_FACTOR = 0.65;
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
+        [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
         trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
         trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
         [_levelIntroTrendsBox addChild:trend];

@@ -103,8 +103,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.75</real>
-									<real>0.75</real>
+									<real>0.64999997615814209</real>
+									<real>0.64999997615814209</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -461,7 +461,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>40</real>
+									<real>36</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -578,8 +578,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -663,6 +661,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

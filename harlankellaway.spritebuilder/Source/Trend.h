@@ -13,5 +13,6 @@
 //@property (nonatomic, copy) CCLabelTTF *trendText;
 
 - (void)setTrendText:(NSString *)text;
+- (void)setTrendAction:(NSString *)actionImageName;
 
 @end
