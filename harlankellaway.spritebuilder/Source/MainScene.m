@@ -18,8 +18,12 @@
     // access audio object
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     
-    // play background sound
+    // start background music
     [audio playBg:@"Audio/main_loop4.wav" loop:TRUE];
+    
+    // preload other sound effects
+    [audio preloadEffect:@"Audio/zapThreeToneDown.mp3"];
+    [audio preloadEffect:@"Audio/zapThreeToneUp.mp3"];
 }
 
 - (void)play

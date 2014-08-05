@@ -23,6 +23,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     
     CCAnimationManager *_recirculateAnimationManager;
     CCAnimationManager *_favoriteAnimationManager;
+    
+    OALSimpleAudio *_audio;
 }
 
 # pragma mark - initializers
@@ -36,6 +38,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
     _recirculateAnimationManager = _recirculateSprite.animationManager;
     _favoriteAnimationManager = _favoriteSprite.animationManager;
+    
+    _audio = [OALSimpleAudio sharedInstance];
 }
 
 # pragma mark - button actions
@@ -47,12 +51,18 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     // scale up if correction action selected
     if (_actionType == ACTION_TYPE_RECIRCULATE)
     {
+        // play sound
+        [_audio playEffect:@"Audio/zapThreeToneUp.mp3"];
+        
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_RECIRCULATE];
         [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
+        // play sound
+        [_audio playEffect:@"Audio/zapThreeToneDown.mp3"];
+        
         if(_actionType == ACTION_TYPE_FAVORITE)
         {
             // flash correct action
@@ -75,12 +85,18 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     // scale up if correction action selected
     if (_actionType == ACTION_TYPE_FAVORITE)
     {
+        // play sound
+        [_audio playEffect:@"Audio/zapThreeToneUp.mp3"];
+        
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_FAVORITE];
         [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
+        // play sound
+        [_audio playEffect:@"Audio/zapThreeToneDown.mp3"];
+        
          if(_actionType == ACTION_TYPE_RECIRCULATE)
          {
              // flash correct action
