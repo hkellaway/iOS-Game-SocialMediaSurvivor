@@ -36,7 +36,7 @@ static const int MAX_NUM_LEVELS = 6;
     if(visible)
     {
         // set content of Level Over node
-        _levelOverLabel.string = [NSString stringWithFormat:@"Day %d Recap", [GameState sharedInstance].levelNum];
+        _levelOverLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
     }
     
     [super setVisible:visible];
@@ -65,22 +65,22 @@ static const int MAX_NUM_LEVELS = 6;
     
     NSString* rankTitle = [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"];
     
-    _rankLabel.string = [NSString stringWithFormat:@"Job Title: %@", rankTitle];
+    _rankLabel.string = [NSString stringWithFormat:@"%@", rankTitle];
 }
 
 -(void)updateScoreLabel
 {
-    _scoreLabel.string = [NSString stringWithFormat:@"Followers: %i", [GameState sharedInstance].playerScore];
+    _scoreLabel.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].playerScore];
 }
 
 - (void)updateRecirculateLabel:(int)numRecirculated
 {
-    _recirculateLabel.string = [NSString stringWithFormat:@"Number recirculated: %i", numRecirculated];
+    _recirculateLabel.string = [NSString stringWithFormat:@"# recirculated: %i", numRecirculated];
 }
 
 - (void)updateFavoriteLabel:(int)numFavorited
 {
-    _favoritesLabel.string = [NSString stringWithFormat:@"Number favorited: %i", numFavorited];
+    _favoritesLabel.string = [NSString stringWithFormat:@"# favorited: %i", numFavorited];
 }
 
 - (void)goToNextLevel
