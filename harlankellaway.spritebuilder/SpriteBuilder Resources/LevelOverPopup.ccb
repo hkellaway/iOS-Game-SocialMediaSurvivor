@@ -737,7 +737,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Social Media Assistant</string>
+									<string>Social Media Ultimate Survivor</string>
 									<false/>
 								</array>
 							</dict>
@@ -756,7 +756,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>52</real>
+									<real>42</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1505,8 +1505,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

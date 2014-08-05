@@ -6,121 +6,151 @@
 		<key>RankNum</key>
 		<integer>1</integer>
 		<key>RankTitle</key>
-		<string>Social Media Slug</string>
+		<string>Slug</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>2</integer>
 		<key>RankTitle</key>
-		<string>Social Media Gopher</string>
+		<string>Gopher</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>3</integer>
 		<key>RankTitle</key>
-		<string>Social Media Intern's Assitant</string>
+		<string>Intern&apos;s Backup Assistant</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>4</integer>
 		<key>RankTitle</key>
-		<string>Social Media Intern</string>
+		<string>Intern&apos;s Assistant</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>5</integer>
 		<key>RankTitle</key>
-		<string>Social Media Assitant Level I</string>
+		<string>Backup Intern</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>6</integer>
 		<key>RankTitle</key>
-		<string>Social Media Assistant Level II</string>
+		<string>Intern Level I</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>7</integer>
 		<key>RankTitle</key>
-		<string>Social Media Assistant Level III</string>
+		<string>Intern Level II</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>8</integer>
 		<key>RankTitle</key>
-		<string>Social Media Jr. Manager Level I</string>
+		<string>Intern Level III</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>9</integer>
 		<key>RankTitle</key>
-		<string>Social Media Jr. Manager Level II</string>
+		<string>Jr. Manager&apos;s Assistant</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>10</integer>
 		<key>RankTitle</key>
-		<string>Social Media Jr. Manager Level III</string>
+		<string>Jr. Manager Level I</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>11</integer>
 		<key>RankTitle</key>
-		<string>Social Media Manager Level I</string>
+		<string>Jr. Manager Level II</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>12</integer>
 		<key>RankTitle</key>
-		<string>Social Media Manager Level II</string>
+		<string>Jr. Manager Level III</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>13</integer>
 		<key>RankTitle</key>
-		<string>Social Media Manager Level III</string>
+		<string>Manager&apos;s Asistant</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>14</integer>
 		<key>RankTitle</key>
-		<string>Social Media Sr. Manager Level I</string>
+		<string>Manager Level I</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>15</integer>
 		<key>RankTitle</key>
-		<string>Social Media Sr. Manager Level II</string>
+		<string>Manager Level II</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>16</integer>
 		<key>RankTitle</key>
-		<string>Social Media Sr. Manager Level III</string>
+		<string>Manager Level III</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>17</integer>
 		<key>RankTitle</key>
-		<string>Social Media Maven</string>
+		<string>Sr. Manager&apos;s Assistant</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>18</integer>
 		<key>RankTitle</key>
-		<string>Social Media Survivor</string>
+		<string>Sr. Manager Level I</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>19</integer>
 		<key>RankTitle</key>
-		<string>Social Media Sr. Survivor</string>
+		<string>Sr. Manager Level II</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>RankNum</key>
 		<integer>20</integer>
 		<key>RankTitle</key>
-		<string>Social Media Survival Expert</string>
+		<string>Sr. Manager Level III</string>
+	</dict>
+	<dict>
+		<key>RankNum</key>
+		<integer>21</integer>
+		<key>RankTitle</key>
+		<string>Social Media Expert</string>
+	</dict>
+	<dict>
+		<key>RankNum</key>
+		<integer>22</integer>
+		<key>RankTitle</key>
+		<string>Social Media Maven</string>
+	</dict>
+	<dict>
+		<key>RankNum</key>
+		<integer>23</integer>
+		<key>RankTitle</key>
+		<string>Social Media Goddess</string>
+	</dict>
+	<dict>
+		<key>RankNum</key>
+		<integer>24</integer>
+		<key>RankTitle</key>
+		<string>Social Media Survivor</string>
+	</dict>
+	<dict>
+		<key>RankNum</key>
+		<integer>25</integer>
+		<key>RankTitle</key>
+		<string>Social Media Ultimate Survivor</string>
 	</dict>
 </array>
 </plist>

@@ -6,19 +6,19 @@
 		<key>LevelNum</key>
 		<integer>1</integer>
 		<key>StreamSpeed</key>
-		<real>0.5</real>
+		<real>0.25</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<dict>
 		<key>LevelNum</key>
 		<integer>2</integer>
 		<key>StreamSpeed</key>
-		<real>0.5</real>
+		<real>0.25</real>
 		<key>NumTopicsToRecirculate</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
 		<integer>1</integer>
 	</dict>
@@ -26,9 +26,9 @@
 		<key>LevelNum</key>
 		<integer>3</integer>
 		<key>StreamSpeed</key>
-		<real>0.75</real>
+		<real>0.5</real>
 		<key>NumTopicsToRecirculate</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
 		<integer>1</integer>
 	</dict>
@@ -36,17 +36,17 @@
 		<key>LevelNum</key>
 		<integer>4</integer>
 		<key>StreamSpeed</key>
-		<real>0.75</real>
+		<real>0.5</real>
 		<key>NumTopicsToRecirculate</key>
-		<integer>1</integer>
-		<key>NumTopicsToFavorite</key>
 		<integer>2</integer>
+		<key>NumTopicsToFavorite</key>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>LevelNum</key>
 		<integer>5</integer>
 		<key>StreamSpeed</key>
-		<real>1</real>
+		<real>0.75</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -56,11 +56,51 @@
 		<key>LevelNum</key>
 		<integer>6</integer>
 		<key>StreamSpeed</key>
-		<real>1</real>
+		<real>0.75</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
 		<integer>2</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>7</integer>
+		<key>StreamSpeed</key>
+		<real>1.0</real>
+		<key>NumTopicsToRecirculate</key>
+		<integer>2</integer>
+		<key>NumTopicsToFavorite</key>
+		<integer>2</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>8</integer>
+		<key>StreamSpeed</key>
+		<real>1.5</real>
+		<key>NumTopicsToRecirculate</key>
+		<integer>2</integer>
+		<key>NumTopicsToFavorite</key>
+		<integer>2</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>9</integer>
+		<key>StreamSpeed</key>
+		<real>1.75</real>
+		<key>NumTopicsToRecirculate</key>
+		<integer>2</integer>
+		<key>NumTopicsToFavorite</key>
+		<integer>2</integer>
+	</dict>
+    <dict>
+		<key>LevelNum</key>
+		<integer>10</integer>
+		<key>StreamSpeed</key>
+		<real>1.0</real>
+		<key>NumTopicsToRecirculate</key>
+		<integer>3</integer>
+		<key>NumTopicsToFavorite</key>
+		<integer>1</integer>
 	</dict>
 </array>
 </plist>
