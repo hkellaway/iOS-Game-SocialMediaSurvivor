@@ -323,7 +323,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Num Recirculated</string>
+									<string></string>
 									<false/>
 								</array>
 							</dict>
@@ -530,7 +530,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Num Favorites</string>
+									<string></string>
 									<false/>
 								</array>
 							</dict>
@@ -666,6 +666,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1080,8 +1082,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

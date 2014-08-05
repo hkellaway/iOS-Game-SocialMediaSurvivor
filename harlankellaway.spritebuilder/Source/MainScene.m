@@ -13,10 +13,17 @@
     
 }
 
+- (void)didLoadFromCCB
+{
+    // access audio object
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    
+    // play background sound
+    [audio playBg:@"Audio/main_loop4.wav" loop:TRUE];
+}
+
 - (void)play
 {
-    CCLOG(@"play button pressed");
-    
     CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }

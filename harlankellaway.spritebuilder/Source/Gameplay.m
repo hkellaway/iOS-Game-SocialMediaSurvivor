@@ -17,8 +17,8 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 3;
-static const BOOL TESTING_RUN_TUTORIAL = FALSE;
+static const int TESTING_SPEED_MULTIPLIER = 1;
+static const BOOL TESTING_RUN_TUTORIAL = TRUE;
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 28;
@@ -89,6 +89,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _meterTop.visible = FALSE;
     if (TESTING_RUN_TUTORIAL) { [GameState sharedInstance].isTutorialComplete = FALSE; }
     // ****************//
+    
+    
     
     // initialize variables
     _numStatuses = NUM_STATUSES;

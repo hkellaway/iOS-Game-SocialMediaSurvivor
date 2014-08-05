@@ -49,6 +49,7 @@
 		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
 		CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B23197863AD00A2EAD2 /* GameState.m */; };
 		CE898DB31991168600612895 /* TutorialInboxPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE898DB21991168600612895 /* TutorialInboxPopup.m */; };
+		CE898DB519915E7000612895 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = CE898DB419915E7000612895 /* Audio */; };
 		CE9215AF198172BD00473C87 /* LevelIntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9215AE198172BD00473C87 /* LevelIntroScene.m */; };
 		CEBE2F0C198AADAF007C60B9 /* Ranks.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2F0B198AADAF007C60B9 /* Ranks.plist */; };
 		CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62CC0197ED10800E3D6A6 /* GameOverScene.m */; };
@@ -129,6 +130,7 @@
 		CE6A7B23197863AD00A2EAD2 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameState.m; path = Source/GameState.m; sourceTree = "<group>"; };
 		CE898DB11991168600612895 /* TutorialInboxPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialInboxPopup.h; path = Source/TutorialInboxPopup.h; sourceTree = "<group>"; };
 		CE898DB21991168600612895 /* TutorialInboxPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialInboxPopup.m; path = Source/TutorialInboxPopup.m; sourceTree = "<group>"; };
+		CE898DB419915E7000612895 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		CE9215AD198172BD00473C87 /* LevelIntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelIntroScene.h; path = Source/LevelIntroScene.h; sourceTree = "<group>"; };
 		CE9215AE198172BD00473C87 /* LevelIntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelIntroScene.m; path = Source/LevelIntroScene.m; sourceTree = "<group>"; };
 		CEBE2F0B198AADAF007C60B9 /* Ranks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Ranks.plist; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE898DB419915E7000612895 /* Audio */,
 				CE0476101986A32F00778AA9 /* Published-iOS */,
 				B73789911807667A0076A88C /* Icons */,
 				CE37ECC81976C37B0043D969 /* Levels.plist */,
@@ -381,6 +384,7 @@
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				CE2C4DD619744FA8008C8185 /* Topics.plist in Resources */,
+				CE898DB519915E7000612895 /* Audio in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
