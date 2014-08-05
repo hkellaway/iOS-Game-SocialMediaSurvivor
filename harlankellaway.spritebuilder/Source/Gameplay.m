@@ -357,6 +357,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // reset global values
     [[GameState sharedInstance] clearGameState];
     
+    // reset current Level
+    _currentLevel = nil;
+    
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene];

@@ -232,6 +232,8 @@ static double const DEFAULT_METER_SCALE = 5.0;
 
 - (void)clearGameState
 {
+    // NOTE: do not clear isTutorialComplete
+    
     // level num
     [[NSUserDefaults standardUserDefaults]setObject:levelNumDefault forKey:GAME_STATE_LEVEL_NUM_KEY];
     [self setLevelNum:[levelNumDefault integerValue]];
