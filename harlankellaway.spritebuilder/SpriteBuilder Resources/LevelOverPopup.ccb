@@ -756,7 +756,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>42</real>
+									<real>44</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -907,7 +907,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>80</real>
+									<real>85</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -954,7 +954,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>SocialMediaGameAssets/HammersmithOne.ttf</string>
+								<string>SocialMediaGameAssets/DimboRegular.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -963,7 +963,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>90</real>
+									<real>115</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1080,6 +1080,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

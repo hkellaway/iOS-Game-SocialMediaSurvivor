@@ -13,7 +13,7 @@ static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 
 static const float STATUS_SCALE_FACTOR = 0.47;
-static const float METER_SCALE_FACTOR = 2;
+static const float METER_SCALE_FACTOR = 1;
 
 static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
@@ -44,8 +44,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
 - (void)recirculate
 {
-    CCLOG(@"meter middle pos = %f", [[_gameplay.meterMiddle parent] convertToWorldSpace:_gameplay.meterMiddle.positionInPoints].y + (_gameplay.meterMiddle.contentSize.height * _gameplay.meterMiddle.scaleY));
-    
     // scale up if correction action selected
     if (_actionType == ACTION_TYPE_RECIRCULATE)
     {
