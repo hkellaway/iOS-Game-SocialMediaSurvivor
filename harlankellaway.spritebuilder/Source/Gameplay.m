@@ -14,14 +14,17 @@
 #import "GameState.h"
 #import "LevelOverPopup.h"
 #import "TutorialMeterPopup.h"
+#import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
 static const int TESTING_SPEED_MULTIPLIER = 3;
+static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 28;
+static const int STATUS_SPACING = 4;
 
-static const CGFloat MAX_NUM_LEVELS = 10;
+static const CGFloat MAX_NUM_LEVELS = 6;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
@@ -29,6 +32,12 @@ static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
+
+// configuration when tutorial popups occur
+static const int TUTORIAL_METER_POPUP_IN_LEVEL = 1;
+static const int TUTORIAL_METER_POPUP_AT_TIME = 5;
+static const int TUTORIAL_INBOX_POPUP_IN_LEVEL = 2;
+static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 @implementation Gameplay
 {
@@ -45,8 +54,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     Inbox *_inbox;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
+    TutorialInboxPopup *_tutorialInboxPopup;
     
-    
+    // declared in class
     SocialMediaStatus *_statuses[NUM_STATUSES];
     NSMutableArray *_topicsToRecirculate;
     NSMutableArray *_topicsToFavorite;
@@ -77,10 +87,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // TODO: remove this
     _meterTop.visible = FALSE;
+    if (TESTING_RUN_TUTORIAL) { [GameState sharedInstance].isTutorialComplete = FALSE; }
+    // ****************//
     
     // initialize variables
     _numStatuses = NUM_STATUSES;
-    _statusSpacing = 4;
+    _statusSpacing = STATUS_SPACING;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
@@ -115,6 +127,7 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     
     // popups
     _tutorialMeterPopup.gameplay = self;
+    _tutorialInboxPopup.gameplay = self;
     
     // stream
     _isScrolling = TRUE;
@@ -281,18 +294,32 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
     timerElapsed = 0.0;
     [self resumeGame];
     
-    // react to timer event here
     int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
     
-    if(_currentLevel.levelNum == 1)
-    {if((newTime == _clock.numSecondsPerLevel - 5) && (!([GameState sharedInstance].isTutorialComplete)))
+    // if tutorial hasn't been completed
+    if(!([GameState sharedInstance].isTutorialComplete))
+    {
+        // meter tutorial
+        if(_currentLevel.levelNum == TUTORIAL_METER_POPUP_IN_LEVEL)
         {
-            _inbox.visible = FALSE;
-            [_tutorialMeterPopup openPopup];
-            [GameState sharedInstance].isTutorialComplete = TRUE;
+            if(newTime == _clock.numSecondsPerLevel - TUTORIAL_METER_POPUP_AT_TIME)
+            {
+                _inbox.visible = FALSE;
+                [_tutorialMeterPopup openPopup];
+            }
+        }
+        
+        // inbox tutorial
+        if(_currentLevel.levelNum == TUTORIAL_INBOX_POPUP_IN_LEVEL)
+        {
+            if(newTime == _clock.numSecondsPerLevel - TUTORIAL_INBOX_POPUP_AT_TIME)
+            {
+                _inbox.visible = FALSE;
+                [_tutorialInboxPopup openPopup];
+            }
         }
     }
-    
+
     _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
     
     // level over
@@ -363,6 +390,12 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 - (void)levelOver
 {
     _isLevelOver = TRUE;
+    
+    // if this level is complete, tutorial has been completed
+    if(_currentLevel.levelNum >= TUTORIAL_INBOX_POPUP_IN_LEVEL)
+    {
+        [GameState sharedInstance].isTutorialComplete = true;
+    }
     
     // pause timer
     [self pauseTimer];

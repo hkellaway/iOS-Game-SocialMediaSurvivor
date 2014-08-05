@@ -234,23 +234,24 @@ static double const DEFAULT_METER_SCALE = 5.0;
 {
     // level num
     [[NSUserDefaults standardUserDefaults]setObject:levelNumDefault forKey:GAME_STATE_LEVEL_NUM_KEY];
-    _levelNum = [levelNumDefault integerValue];
+    [self setLevelNum:[levelNumDefault integerValue]];
     
     // stream speed
     [[NSUserDefaults standardUserDefaults]setObject:streamSpeedDefault forKey:GAME_STATE_STREAM_SPEED_KEY];
-    _streamSpeed = [streamSpeedDefault doubleValue];
+    [self setStreamSpeed:[streamSpeedDefault doubleValue]];
     
     // meter scale
     [[NSUserDefaults standardUserDefaults]setObject:meterScaleDefault forKey:GAME_STATE_METER_SCALE_KEY];
-    _meterScale = [meterScaleDefault doubleValue];
+    [self setMeterScale:[meterScaleDefault doubleValue]];
     
     // player rank
     [[NSUserDefaults standardUserDefaults]setObject:playerRankDefault forKey:GAME_STATE_PLAYER_RANK_KEY];
     _playerRank = [playerRankDefault integerValue];
+    [self setPlayerRank:[playerRankDefault integerValue]];
     
     // player score
     [[NSUserDefaults standardUserDefaults]setObject:playerScoreDefault forKey:GAME_STATE_PLAYER_SCORE_KEY];
-    _playerScore = [playerScoreDefault integerValue];
+    [self setPlayerScore:[playerScoreDefault integerValue]];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

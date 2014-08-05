@@ -48,9 +48,9 @@
 		CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B1C197777D800A2EAD2 /* Inbox.m */; };
 		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
 		CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B23197863AD00A2EAD2 /* GameState.m */; };
+		CE898DB31991168600612895 /* TutorialInboxPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE898DB21991168600612895 /* TutorialInboxPopup.m */; };
 		CE9215AF198172BD00473C87 /* LevelIntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9215AE198172BD00473C87 /* LevelIntroScene.m */; };
 		CEBE2F0C198AADAF007C60B9 /* Ranks.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2F0B198AADAF007C60B9 /* Ranks.plist */; };
-		CEBE2F2A198BDF70007C60B9 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBE2F29198BDF70007C60B9 /* Popup.m */; };
 		CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62CC0197ED10800E3D6A6 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
@@ -127,11 +127,11 @@
 		CE6A7B2019783F3D00A2EAD2 /* Trend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trend.m; path = Source/Trend.m; sourceTree = "<group>"; };
 		CE6A7B22197863AD00A2EAD2 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameState.h; path = Source/GameState.h; sourceTree = "<group>"; };
 		CE6A7B23197863AD00A2EAD2 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameState.m; path = Source/GameState.m; sourceTree = "<group>"; };
+		CE898DB11991168600612895 /* TutorialInboxPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialInboxPopup.h; path = Source/TutorialInboxPopup.h; sourceTree = "<group>"; };
+		CE898DB21991168600612895 /* TutorialInboxPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialInboxPopup.m; path = Source/TutorialInboxPopup.m; sourceTree = "<group>"; };
 		CE9215AD198172BD00473C87 /* LevelIntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelIntroScene.h; path = Source/LevelIntroScene.h; sourceTree = "<group>"; };
 		CE9215AE198172BD00473C87 /* LevelIntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelIntroScene.m; path = Source/LevelIntroScene.m; sourceTree = "<group>"; };
 		CEBE2F0B198AADAF007C60B9 /* Ranks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Ranks.plist; sourceTree = "<group>"; };
-		CEBE2F28198BDF70007C60B9 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Popup.h; path = Source/Popup.h; sourceTree = "<group>"; };
-		CEBE2F29198BDF70007C60B9 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Popup.m; path = Source/Popup.m; sourceTree = "<group>"; };
 		CEF62CBF197ED10800E3D6A6 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
 		CEF62CC0197ED10800E3D6A6 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,8 +189,8 @@
 				CE9215AE198172BD00473C87 /* LevelIntroScene.m */,
 				CE3A83B4198594EC001A0DA8 /* LevelOverPopup.h */,
 				CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */,
-				CEBE2F28198BDF70007C60B9 /* Popup.h */,
-				CEBE2F29198BDF70007C60B9 /* Popup.m */,
+				CE898DB11991168600612895 /* TutorialInboxPopup.h */,
+				CE898DB21991168600612895 /* TutorialInboxPopup.m */,
 				CE089C25198EFC61007A1E22 /* TutorialMeterPopup.h */,
 				CE089C26198EFC61007A1E22 /* TutorialMeterPopup.m */,
 				7AC1996B196DC8E900D216C4 /* SocialMediaStatus.h */,
@@ -420,9 +420,9 @@
 				7ACA6112196EF09000307164 /* Gameplay.m in Sources */,
 				CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */,
 				CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */,
+				CE898DB31991168600612895 /* TutorialInboxPopup.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				7AC1996D196DC8EA00D216C4 /* SocialMediaStatus.m in Sources */,
-				CEBE2F2A198BDF70007C60B9 /* Popup.m in Sources */,
 				CE9215AF198172BD00473C87 /* LevelIntroScene.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CE2C4DD319744E14008C8185 /* Level.m in Sources */,
