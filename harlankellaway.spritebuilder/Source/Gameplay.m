@@ -17,8 +17,10 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 5;
+static const int TESTING_SPEED_MULTIPLIER = 3;
 static const BOOL TESTING_RUN_TUTORIAL = TRUE;
+
+static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
 static const int NUM_STATUSES = 28;
@@ -31,6 +33,7 @@ static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 
 static const int ACTION_TYPE_RECIRCULATE = 1;
 static const int ACTION_TYPE_FAVORITE = 2;
+
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -71,6 +74,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     double timerElapsed;
     NSDate *timerStarted;
     
+    CCAnimationManager *_gameOverAnimationManager;
+    
     OALSimpleAudio *_audio;
     
     BOOL _isScrolling;
@@ -99,6 +104,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // audio
     _audio = [OALSimpleAudio sharedInstance];
+    
+    // animation
+    _gameOverAnimationManager = _meterBackground.animationManager;
     
     // timer
     timerInterval = TIMER_INTERVAL_IN_SECONDS;
@@ -192,6 +200,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)update:(CCTime)delta
 {
+    float meterMiddleStart = _meterMiddle.scaleY;
+    
     if(_isScrolling)
     {
         // scrolling of SocialMediaStatues
@@ -215,26 +225,33 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
                 }
             }
         
+            // status is at bottom of screen
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
             {
                 status.isAtScreenBottom = TRUE;
             
-                float meterMiddleStart = _meterMiddle.scaleY;
-            
                 // if status is not disabled and should have been Recir/Faved, decrease Meter
                 [status checkState];
-            
-                float meterMiddleScaled = _meterMiddle.scaleY;
-            
-                // if meter scaling resulted in scale hitting 1.0, game is over
-                if(meterMiddleStart <= 1.0 || meterMiddleScaled <= 1.0)
-                {
-                    [self gameOver];
-                }
             
                 // change topic, move to top, etc.
                 [status refresh];
             }
+        }
+        
+        float meterMiddleScaled = _meterMiddle.scaleY;
+//        
+//        CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
+//    
+//        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
+//        {
+//            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
+//        }
+//    
+        // if meter scaling resulted in scale hitting 1.0, game is over
+        if(meterMiddleStart < 1.0 || meterMiddleScaled < 1.0)
+        {
+            [self pauseGame];
+            [self gameOver];
         }
     }
     
