@@ -17,7 +17,7 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 1;
+static const int TESTING_SPEED_MULTIPLIER = 8;
 static const BOOL TESTING_RUN_TUTORIAL = TRUE;
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
@@ -71,11 +71,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     double timerElapsed;
     NSDate *timerStarted;
     
-    BOOL _isScrolling;
+    OALSimpleAudio *_audio;
     
-    // animations
-    CCAction *flashFavoriteButton;
-    NSMutableArray *flashFavoriteButtonFrames;
+    BOOL _isScrolling;
 }
 
 - (void)didLoadFromCCB
@@ -98,6 +96,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
+    
+    // audio
+    _audio = [OALSimpleAudio sharedInstance];
     
     // timer
     timerInterval = TIMER_INTERVAL_IN_SECONDS;
@@ -358,7 +359,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)gameOver
 {
-//    [self pauseTimer];
+    // play sound
+    [_audio playEffect:@"Audio/gameover.wav" volume:0.5f pitch:1.0f pan:1.0f loop:FALSE];
     
     // reset global values
     [[GameState sharedInstance] clearGameState];
@@ -381,7 +383,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)increaseRank
 {
-    CCLOG(@"Rank Increased!");
+    // play sound
+    [_audio playEffect:@"Audio/new_rank.mp3" volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
     
     // set flag
     updateRankForLevel = TRUE;

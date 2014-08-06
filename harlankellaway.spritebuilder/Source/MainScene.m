@@ -19,11 +19,13 @@
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     
     // start background music
-    [audio playBg:@"Audio/main_loop4.wav" loop:TRUE];
+    [audio playBg:@"Audio/background_loop.wav" volume:0.7 pan:1.0 loop:TRUE];
     
     // preload other sound effects
-    [audio preloadEffect:@"Audio/zapThreeToneDown.mp3"];
-    [audio preloadEffect:@"Audio/zapThreeToneUp.mp3"];
+    [audio preloadEffect:@"Audio/correct.mp3"];
+    [audio preloadEffect:@"Audio/incorrect.mp3"];
+    [audio preloadEffect:@"Audio/new_rank.wav"];
+    [audio preloadEffect:@"Audio/gameover.wav"];
 }
 
 - (void)play
