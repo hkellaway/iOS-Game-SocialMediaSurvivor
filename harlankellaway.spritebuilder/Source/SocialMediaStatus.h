@@ -14,6 +14,7 @@
 @property (nonatomic, strong) CCLabelTTF *statusText;
 @property (nonatomic, assign) int actionType;
 @property (nonatomic, assign) BOOL isAtScreenBottom;
+@property (nonatomic, assign) BOOL hasFlashedBeforeExitingScreen;
 
 @property (nonatomic, strong) CCNode *recirculateSprite;
 @property (nonatomic, strong) CCNode *favoriteSprite;

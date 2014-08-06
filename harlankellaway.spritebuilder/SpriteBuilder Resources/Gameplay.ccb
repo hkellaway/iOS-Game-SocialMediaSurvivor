@@ -317,7 +317,7 @@
 								<key>displayName</key>
 								<string>ButtonInboxCheck</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_inboxButton</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -469,6 +469,14 @@
 											<string></string>
 											<string>SocialMediaGameAssets/button_message.png</string>
 										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>backgroundOpacity|Disabled</string>
+										<key>type</key>
+										<string>Float</string>
+										<key>value</key>
+										<real>1</real>
 									</dict>
 									<dict>
 										<key>name</key>

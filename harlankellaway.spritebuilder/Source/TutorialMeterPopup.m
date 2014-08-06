@@ -29,6 +29,9 @@
         [_gameplay.inbox toggleVisibility];
     }
     
+    // disable Inbeox button
+    _gameplay.inboxButton.enabled = FALSE;
+    
     // lower volume
     [self lowerVolume];
     
@@ -38,10 +41,13 @@
 
 - (void)closePopup
 {
-    self.visible = FALSE;
-    
     // reset volume
     [self resetVolume];
+    
+    // re-enable Inbeox button
+    _gameplay.inboxButton.enabled = TRUE;
+    
+    self.visible = FALSE;
     
     [_gameplay resumeGame];
 }

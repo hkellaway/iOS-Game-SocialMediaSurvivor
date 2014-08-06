@@ -19,6 +19,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
 @implementation SocialMediaStatus
 {
+    
+    
     CCSprite *_meterBackground;
     
     CCAnimationManager *_recirculateAnimationManager;
@@ -31,6 +33,9 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
 - (void)didLoadFromCCB
 {
+    self.isAtScreenBottom = FALSE;
+    self.hasFlashedBeforeExitingScreen = FALSE;
+    
     self.scaleX = self.scaleX * STATUS_SCALE_FACTOR;
     self.scaleY = self.scaleY * STATUS_SCALE_FACTOR;
     
@@ -86,7 +91,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     if (_actionType == ACTION_TYPE_FAVORITE)
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneUp.mp3"];
+        [_audio playEffect:@"Audio/correct.mp3"];
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_FAVORITE];
@@ -95,7 +100,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneDown.mp3"];
+        [_audio playEffect:@"Audio/incorrect.mp3"];
         
          if(_actionType == ACTION_TYPE_RECIRCULATE)
          {

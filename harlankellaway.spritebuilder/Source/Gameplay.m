@@ -26,7 +26,7 @@ static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 static const int NUM_STATUSES = 28;
 static const int STATUS_SPACING = 4;
 
-static const CGFloat MAX_NUM_LEVELS = 10;
+//static const CGFloat MAX_NUM_LEVELS = 10;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
@@ -54,7 +54,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCSprite *_meterIcon;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
-//    Inbox *_inbox;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
@@ -83,10 +82,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)didLoadFromCCB
 {
-    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
-    {
-        [self gameOver];
-    }
+//    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
+//    {
+//        [self gameOver];
+//    }
     
     // TODO: remove this
     _meterTop.visible = FALSE;
@@ -214,14 +213,22 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             // if status about to exit screen and action not pressed, flash correct action
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
             {
-                if(status.recirculateButton.enabled & (status.actionType == ACTION_TYPE_RECIRCULATE))
+                if(status.recirculateButton.enabled && (status.actionType == ACTION_TYPE_RECIRCULATE))
                 {
-                    [status flashRecirculateButton];
+                    if(!status.hasFlashedBeforeExitingScreen)
+                    {
+                        [status flashRecirculateButton];
+                        status.hasFlashedBeforeExitingScreen = TRUE;
+                    }
                 }
                 
-                if(status.favoriteButton.enabled & (status.actionType == ACTION_TYPE_FAVORITE))
+                if(status.favoriteButton.enabled && (status.actionType == ACTION_TYPE_FAVORITE))
                 {
-                    [status flashFavoriteButton];
+                    if(!status.hasFlashedBeforeExitingScreen)
+                    {
+                        [status flashFavoriteButton];
+                        status.hasFlashedBeforeExitingScreen = TRUE;
+                    }
                 }
             }
         
