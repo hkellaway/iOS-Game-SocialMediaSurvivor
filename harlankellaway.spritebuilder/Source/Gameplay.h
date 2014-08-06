@@ -7,17 +7,16 @@
 //
 
 #import "CCNode.h"
+#import "Inbox.h"
 
 @interface Gameplay : CCNode
 
 @property (nonatomic, strong) CCSprite *meterMiddle;
-//@property (nonatomic, strong) CCSprite *meterTop;
 @property (nonatomic, strong) CCSprite *meterBackground;
+@property (nonatomic, strong) Inbox *inbox;
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;
 @property (nonatomic, assign) BOOL isLevelOver;
-//@property (nonatomic, strong) Level *currentLevel;
-//@property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) CCNode *recirculateSprite;
 

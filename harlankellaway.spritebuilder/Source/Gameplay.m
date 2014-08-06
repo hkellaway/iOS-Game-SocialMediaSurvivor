@@ -54,7 +54,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCSprite *_meterIcon;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
-    Inbox *_inbox;
+//    Inbox *_inbox;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
@@ -321,7 +321,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         {
             if(newTime == _clock.numSecondsPerLevel - TUTORIAL_METER_POPUP_AT_TIME)
             {
-                _inbox.visible = FALSE;
                 [_tutorialMeterPopup openPopup];
             }
         }
@@ -331,7 +330,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         {
             if(newTime == _clock.numSecondsPerLevel - TUTORIAL_INBOX_POPUP_AT_TIME)
             {
-                _inbox.visible = FALSE;
                 [_tutorialInboxPopup openPopup];
             }
         }
@@ -381,12 +379,15 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
+    
+    // lower background music
+    [_audio setBgVolume:([_audio bgVolume]/2)];
 }
 
 # pragma mark - Custom Methods
 
 
-- (void)openInbox
+- (void)toggleInbox
 {
     [_inbox toggleVisibility];
 }
@@ -437,7 +438,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)updateLevelOverPopup
 {
-    [_levelOverPopup updateRecirculateLabel:numFavoritedCorrectly];
+    [_levelOverPopup updateRecirculateLabel:numRecirculatedCorrectly];
     [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
     [_levelOverPopup updateScoreLabel];
     

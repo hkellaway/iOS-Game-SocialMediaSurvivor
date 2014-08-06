@@ -19,12 +19,14 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     CCNode *_inboxTrendsBox;
     NSMutableArray *trendsToRecirculate;
     NSMutableArray *trendsToFavorite;
+    OALSimpleAudio *_audio;
 }
 
 - (void)didLoadFromCCB
 {
     trendsToRecirculate = [NSMutableArray array];
     trendsToFavorite = [NSMutableArray array];
+    _audio = [OALSimpleAudio sharedInstance];
     self.visible = FALSE;
 }
 
@@ -35,11 +37,17 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
 
     if(self.visible)
     {
+        [self lowerVolume];
+        
         if(([trendsToRecirculate count] == 0) & ([trendsToFavorite count] == 0))
         {
             [self refresh];
         }
         _inboxTrendsBox.visible = TRUE;
+    }
+    else
+    {
+        [self resetVolume];
     }
 }
 
@@ -73,6 +81,18 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
 - (void)closeInbox
 {
     self.visible = FALSE;
+    
+    [self resetVolume];
+}
+
+- (void)lowerVolume
+{
+    [_audio setBgVolume:[_audio bgVolume] / 2];
+}
+
+- (void)resetVolume
+{
+    [_audio setBgVolume:([_audio bgVolume] * 2)];
 }
 
 @end

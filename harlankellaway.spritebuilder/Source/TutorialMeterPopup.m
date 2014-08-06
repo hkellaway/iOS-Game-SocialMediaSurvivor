@@ -10,11 +10,12 @@
 
 @implementation TutorialMeterPopup
 {
-    
+    OALSimpleAudio *_audio;
 }
 
 - (void)didLoadFromCCB
 {
+    _audio = [OALSimpleAudio sharedInstance];
     self.visible = FALSE;
 }
 
@@ -22,6 +23,16 @@
 {
     self.visible = TRUE;
     
+    // if open, close Inbox
+    if(_gameplay.inbox.visible)
+    {
+        [_gameplay.inbox toggleVisibility];
+    }
+    
+    // lower volume
+    [self lowerVolume];
+    
+    // pause game
     [_gameplay pauseGame];
 }
 
@@ -29,7 +40,20 @@
 {
     self.visible = FALSE;
     
+    // reset volume
+    [self resetVolume];
+    
     [_gameplay resumeGame];
+}
+
+- (void)lowerVolume
+{
+    [_audio setBgVolume:[_audio bgVolume] / 2];
+}
+
+- (void)resetVolume
+{
+    [_audio setBgVolume:([_audio bgVolume] * 2)];
 }
 
 @end
