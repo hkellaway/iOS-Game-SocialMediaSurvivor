@@ -10,7 +10,6 @@
 #import "GameState.h"
 #import "Trend.h"
 
-static const CGFloat TREND_SCALE_FACTOR = 0.65;
 static NSString *IMAGE_NAME_RECIRCULATE = @"SocialMediaGameAssets/button_recirculate_noshadow.png";
 static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_noshadow.png";
 
@@ -53,9 +52,6 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     
     numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
     numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
-    
-//    numToRecirculate = [[GameState sharedInstance].trendsToRecirculate count];
-//    numToFavorite = [[GameState sharedInstance].trendsToRecirculate count];
     
     // read in current Level and set Scene title
     _levelLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
@@ -108,8 +104,6 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
         [trend setTrendAction:IMAGE_NAME_FAVORITE];
-        trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
-        trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
         [_levelIntroTrendsBox addChild:trend];
     }
     
@@ -118,8 +112,6 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
         [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
-        trend.scaleX = trend.scaleX * TREND_SCALE_FACTOR;
-        trend.scaleY = trend.scaleY * TREND_SCALE_FACTOR;
         [_levelIntroTrendsBox addChild:trend];
     }
 }

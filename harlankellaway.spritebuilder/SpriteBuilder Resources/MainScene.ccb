@@ -127,8 +127,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -489,7 +487,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.51999998092651367</real>
+							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -536,7 +534,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>SocialMediaGameAssets/HammersmithOne.ttf</string>
+						<string>SocialMediaGameAssets/DimboRegular.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -545,7 +543,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>36</real>
+							<real>52</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -643,7 +641,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>2</real>
+							<real>0.0</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -654,14 +652,16 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.004999999888241291</real>
-							<real>-0.004999999888241291</real>
+							<real>0.0</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

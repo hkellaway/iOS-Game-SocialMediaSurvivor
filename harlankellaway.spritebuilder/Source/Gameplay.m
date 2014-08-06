@@ -412,9 +412,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // reset meter height
     _meterMiddle.scaleY = [GameState sharedInstance].meterScaleOriginal;
-//    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
-    
-    CCLOG(@"Rank: %i", [GameState sharedInstance].playerRank);
 }
 
 - (void)levelOver

@@ -54,25 +54,25 @@
 		<key>RankNum</key>
 		<integer>9</integer>
 		<key>RankTitle</key>
-		<string>Jr. Manager&apos;s Assistant</string>
+		<string>Junior Manager&apos;s Assistant</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>10</integer>
 		<key>RankTitle</key>
-		<string>Jr. Manager Level I</string>
+		<string>Junior Manager Level I</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>11</integer>
 		<key>RankTitle</key>
-		<string>Jr. Manager Level II</string>
+		<string>Junior Manager Level II</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>12</integer>
 		<key>RankTitle</key>
-		<string>Jr. Manager Level III</string>
+		<string>Junior Manager Level III</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
@@ -102,55 +102,55 @@
 		<key>RankNum</key>
 		<integer>17</integer>
 		<key>RankTitle</key>
-		<string>Sr. Manager&apos;s Assistant</string>
+		<string>Senior Manager&apos;s Assistant</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>18</integer>
 		<key>RankTitle</key>
-		<string>Sr. Manager Level I</string>
+		<string>Senior Manager Level I</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>19</integer>
 		<key>RankTitle</key>
-		<string>Sr. Manager Level II</string>
+		<string>Senior Manager Level II</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>20</integer>
 		<key>RankTitle</key>
-		<string>Sr. Manager Level III</string>
+		<string>Senior Manager Level III</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>21</integer>
 		<key>RankTitle</key>
-		<string>Social Media Expert</string>
+		<string>Expert</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>22</integer>
 		<key>RankTitle</key>
-		<string>Social Media Maven</string>
+		<string>Maven</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>23</integer>
 		<key>RankTitle</key>
-		<string>Social Media Goddess</string>
+		<string>Maestro</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>24</integer>
 		<key>RankTitle</key>
-		<string>Social Media Survivor</string>
+		<string>Survivor</string>
 	</dict>
 	<dict>
 		<key>RankNum</key>
 		<integer>25</integer>
 		<key>RankTitle</key>
-		<string>Social Media Ultimate Survivor</string>
+		<string>Ultimate Survivor</string>
 	</dict>
 </array>
 </plist>

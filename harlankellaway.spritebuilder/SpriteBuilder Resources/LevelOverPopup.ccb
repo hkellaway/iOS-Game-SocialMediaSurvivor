@@ -79,7 +79,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>600</real>
+									<real>595</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -135,7 +135,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>80</real>
+									<real>72</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -197,9 +197,9 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>0.0</real>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>0.50196081399917603</real>
+									<real>1</real>
+									<real>1</real>
 								</array>
 							</dict>
 							<dict>
@@ -209,7 +209,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
+									<real>6</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -700,7 +700,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>245</real>
+									<real>250</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -737,7 +737,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Social Media Ultimate Survivor</string>
+									<string>Senior Manager Level III</string>
 									<false/>
 								</array>
 							</dict>
@@ -756,7 +756,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>44</real>
+									<real>52</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1547,7 +1547,7 @@
 				<key>value</key>
 				<array>
 					<real>250</real>
-					<real>300</real>
+					<real>360</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
