@@ -20,7 +20,7 @@ static NSString *const GAME_STATE_FLAG_ISTUTORIALCOMPLETE = @"GameStateFlagIsTut
 
 static int const DEFAULT_LEVEL_NUM = 1;
 static double const DEFAULT_STREAM_SPEED = 0.5;
-static int const DEFAULT_PLAYER_RANK = 1;
+static int const DEFAULT_PLAYER_RANK = 0;
 static int const DEFAULT_PLAYER_SCORE = 0;
 static double const DEFAULT_METER_SCALE = 5.0;
 

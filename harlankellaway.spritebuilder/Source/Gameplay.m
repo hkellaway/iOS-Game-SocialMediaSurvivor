@@ -26,7 +26,7 @@ static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 static const int NUM_STATUSES = 28;
 static const int STATUS_SPACING = 4;
 
-static const CGFloat MAX_NUM_LEVELS = 6;
+static const CGFloat MAX_NUM_LEVELS = 10;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
@@ -255,20 +255,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         }
     }
     
-//    float middleHeight = (_meterBottom.scaleY*_meterMiddle.contentSize.height * _meterMiddle.scaleY) + (_meterTop.contentSize.height * _meterTop.scaleY);
-//    float b = _meterBottom.positionInPoints.y + (_meterBottom.contentSize.height * _meterBottom.scaleY);
-//    float middlePosition = b + (_meterMiddle.contentSize.height * _meterMiddle.scaleY);
-//    float backgroundHeight = _meterBackground.contentSize.height * _meterBackground.scaleY;
     float iconPosition = _meterIcon.positionInPoints.y;
     
     // meter middle in world space
     float meterMiddlePosition = [_meterBottom.parent convertToNodeSpace:[[_meterMiddle parent] convertToWorldSpace:_meterMiddle.positionInPoints]].y + ((_meterMiddle.contentSize.height * _meterMiddle.scaleY) * _meterBottom.scaleY);
     
-    // icon in world space
-//    float iconPosition = [[_meterIcon parent] convertToWorldSpace:_meterIcon.positionInPoints].y;
-    
     // if meter scaling resulted in scale hitting the top, increase player rank
-    if(meterMiddlePosition >= iconPosition)
+    if(meterMiddlePosition >= (iconPosition - (_meterIcon.contentSize.height / 2)))
     {
         [self increaseRank];
     }
