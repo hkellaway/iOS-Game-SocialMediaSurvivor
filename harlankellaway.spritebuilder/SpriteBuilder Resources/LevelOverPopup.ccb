@@ -252,6 +252,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -263,7 +265,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>LabelStatRecirculate</string>
+						<string>LabelRecirculate</string>
 						<key>memberVarAssignmentName</key>
 						<string>_recirculateLabel</string>
 						<key>memberVarAssignmentType</key>
@@ -470,7 +472,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>LabelStatFavorites</string>
+						<string>LabelFavorite</string>
 						<key>memberVarAssignmentName</key>
 						<string>_favoritesLabel</string>
 						<key>memberVarAssignmentType</key>
@@ -677,7 +679,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>LabelStatRank</string>
+						<string>LabelRank</string>
 						<key>memberVarAssignmentName</key>
 						<string>_rankLabel</string>
 						<key>memberVarAssignmentType</key>
@@ -884,7 +886,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>LabelStatScore</string>
+						<string>LabelScore</string>
 						<key>memberVarAssignmentName</key>
 						<string>_scoreLabel</string>
 						<key>memberVarAssignmentType</key>

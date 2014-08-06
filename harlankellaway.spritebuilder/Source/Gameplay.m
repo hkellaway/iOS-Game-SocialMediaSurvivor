@@ -57,6 +57,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
+    ///////////////////////////////////////
     
     // declared in class
     SocialMediaStatus *_statuses[NUM_STATUSES];
@@ -66,6 +67,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     int numRecirculatedCorrectly;
     int numFavoritedCorrectly;
+    
     BOOL updateRankForLevel;
     
     NSTimer *timer;
@@ -377,18 +379,20 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // play sound
     [_audio playEffect:@"Audio/gameover.wav" volume:0.5f pitch:1.0f pan:1.0f loop:FALSE];
     
-    // reset global values
-    [[GameState sharedInstance] clearGameState];
-    
-    // reset current Level
-    _currentLevel = nil;
+    [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + numRecirculatedCorrectly + numFavoritedCorrectly;
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
     
+    // reset current Level
+    _currentLevel = nil;
+    
     // lower background music
     [_audio setBgVolume:([_audio bgVolume]/2)];
+    
+    // reset global values
+    [[GameState sharedInstance] clearGameState];
 }
 
 # pragma mark - Custom Methods

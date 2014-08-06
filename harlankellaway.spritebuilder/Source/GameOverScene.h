@@ -7,7 +7,10 @@
 //
 
 #import "CCScene.h"
+#import "Gameplay.h"
 
 @interface GameOverScene : CCScene
+
+@property (nonatomic,weak) Gameplay *gameplay;
 
 @end
