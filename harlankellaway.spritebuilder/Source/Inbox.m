@@ -28,6 +28,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     self.visible = FALSE;
 }
 
+// TODO: consider pre-loading trends in Inbox at start of Level
 - (void)toggleVisibility
 {
     self.visible = !self.visible;
@@ -67,6 +68,11 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
         [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
         [_inboxTrendsBox addChild:trend];
     }
+}
+
+- (void)closeInbox
+{
+    self.visible = FALSE;
 }
 
 @end

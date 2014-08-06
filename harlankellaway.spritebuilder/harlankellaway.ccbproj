@@ -140,6 +140,13 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/button_twitter.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/checkbox_checked.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -150,13 +157,76 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/clock-state0.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/clock-state1.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/clock-state2.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state3.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state4.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state5.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state6.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state7.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/clock-state8.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/inbox_background.png</key>
 		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/level_over_background.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
@@ -166,16 +236,6 @@
 			<integer>2</integer>
 		</dict>
 		<key>SocialMediaGameAssets/meter_bottom.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/meter_icon_happy.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
-		<key>SocialMediaGameAssets/meter_icon_neutral.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>

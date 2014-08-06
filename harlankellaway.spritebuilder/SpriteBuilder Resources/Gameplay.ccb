@@ -377,7 +377,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string>checkInbox</string>
+											<string>openInbox</string>
 											<integer>1</integer>
 										</array>
 									</dict>

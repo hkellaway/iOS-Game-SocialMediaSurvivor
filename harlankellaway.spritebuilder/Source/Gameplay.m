@@ -17,7 +17,7 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 8;
+static const int TESTING_SPEED_MULTIPLIER = 5;
 static const BOOL TESTING_RUN_TUTORIAL = TRUE;
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
@@ -376,7 +376,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 # pragma mark - Custom Methods
 
 
-- (void)checkInbox
+- (void)openInbox
 {
     [_inbox toggleVisibility];
 }
