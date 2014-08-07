@@ -382,6 +382,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [[GameState sharedInstance] clearGameState];
 }
 
+- (void) toggleInbox
+{
+    [_inbox toggleVisibility];
+}
+
 # pragma mark - Custom Methods
 
 - (void)increaseRank
@@ -399,7 +404,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [[GameState sharedInstance] setPlayerRank:([GameState sharedInstance].playerRank + 1)];
     
     // reset meter height
-    _meterMiddle.scaleY = [GameState sharedInstance].meterScaleOriginal;
+    _meterMiddle.scaleY = [GameState sharedInstance].meterScaleDefault;
 }
 
 - (void)levelOver
