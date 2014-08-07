@@ -17,7 +17,7 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 5;
+static const int TESTING_SPEED_MULTIPLIER = 1;
 static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
 static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
@@ -252,14 +252,14 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         }
         
         float meterMiddleScaled = _meterMiddle.scaleY;
-        //
-        //        CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
-        //
-        //        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
-        //        {
-        //            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
-        //        }
-        //
+        
+                CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
+        
+        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
+        {
+            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
+        }
+        
         // if meter scaling resulted in scale hitting 1.0, game is over
         if(meterMiddleStart < 1.0 || meterMiddleScaled < 1.0)
         {
