@@ -252,8 +252,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -739,7 +737,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Senior Manager Level III</string>
+									<string>Junior Manager’s Assistant</string>
 									<false/>
 								</array>
 							</dict>
@@ -758,7 +756,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>52</real>
+									<real>48</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -875,6 +873,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

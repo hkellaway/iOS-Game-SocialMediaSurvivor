@@ -208,7 +208,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>SocialMediaGameAssets/HammersmithOne.ttf</string>
+						<string>SocialMediaGameAssets/Ubuntu-B.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -334,6 +334,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

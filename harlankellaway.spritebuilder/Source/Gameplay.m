@@ -84,10 +84,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)didLoadFromCCB
 {
-//    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
-//    {
-//        [self gameOver];
-//    }
+    //    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
+    //    {
+    //        [self gameOver];
+    //    }
     
     // TODO: remove this
     _meterTop.visible = FALSE;
@@ -138,8 +138,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // meter
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
-//    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
-//    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
+    //    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
+    //    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     // popups
     _tutorialMeterPopup.gameplay = self;
@@ -181,7 +181,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
             status.statusText.string = allTopics[0 + arc4random() % ([allTopics count])];
         }
-            
+        
         status.isAtScreenBottom = FALSE;
         
         // set weak property(s)
@@ -209,7 +209,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         for(int i = 0; i < _numStatuses; i++)
         {
             SocialMediaStatus *status = _statuses[i];
-        
+            
             status.position = ccp(status.position.x, status.position.y - ([GameState sharedInstance].streamSpeed * TESTING_SPEED_MULTIPLIER));
             
             // if status about to exit screen and action not pressed, flash correct action
@@ -233,29 +233,29 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
                     }
                 }
             }
-        
+            
             // status is at bottom of screen
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) * -1))
             {
                 status.isAtScreenBottom = TRUE;
-            
+                
                 // if status is not disabled and should have been Recir/Faved, decrease Meter
                 [status checkState];
-            
+                
                 // change topic, move to top, etc.
                 [status refresh];
             }
         }
         
         float meterMiddleScaled = _meterMiddle.scaleY;
-//        
-//        CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
-//    
-//        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
-//        {
-//            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
-//        }
-//    
+        //
+        //        CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
+        //
+        //        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
+        //        {
+        //            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
+        //        }
+        //
         // if meter scaling resulted in scale hitting 1.0, game is over
         if(meterMiddleStart < 1.0 || meterMiddleScaled < 1.0)
         {
@@ -343,7 +343,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             }
         }
     }
-
+    
     _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
     
     // level over
@@ -461,8 +461,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 }
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
-                         percentToRecirculate:(CGFloat)percentToRecirculate
-                            percentToFavorite:(CGFloat)percentToFavorite
+                    percentToRecirculate:(CGFloat)percentToRecirculate
+                       percentToFavorite:(CGFloat)percentToFavorite
 {
     NSMutableArray *statuses = [[NSMutableArray alloc] initWithCapacity:numStatuses];
     double recirculatedCounter = floor(numStatuses * percentToRecirculate);
@@ -485,7 +485,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             statuses[i] = [NSString stringWithFormat:@"%d", 0];
         }
     }
-
+    
     // shuffle order
     for(int i = 0; i < numStatuses; i++)
     {

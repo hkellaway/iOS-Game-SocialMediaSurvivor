@@ -95,17 +95,42 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/button_favorite_highlighted.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
 		<key>SocialMediaGameAssets/button_favorite_noshadow.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/button_favorite_pressed.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_gameover_facebook.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_gameover_facebook_pressed.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_gameover_restart.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_gameover_restart_pressed.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_gameover_twitter.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/button_gameover_twitter_pressed.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
@@ -140,13 +165,6 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/button_twitter.png</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
 		<key>SocialMediaGameAssets/checkbox_checked.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -159,8 +177,6 @@
 		</dict>
 		<key>SocialMediaGameAssets/clock-state0.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
@@ -171,50 +187,41 @@
 		</dict>
 		<key>SocialMediaGameAssets/clock-state2.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/clock-state3.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/clock-state4.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/clock-state5.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/clock-state6.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/clock-state7.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/clock-state8.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>SocialMediaGameAssets/gameover_background.png</key>
+		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
@@ -223,10 +230,13 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/level_intro_background.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/level_over_background.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
@@ -255,7 +265,7 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
-		<key>SocialMediaGameAssets/popup_background.png</key>
+		<key>SocialMediaGameAssets/popup_tutorial_inbox.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>

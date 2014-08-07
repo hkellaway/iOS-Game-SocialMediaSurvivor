@@ -25,7 +25,7 @@
 {
     // update title label
     int levelNum = [GameState sharedInstance].levelNum;
-    _gameOverLabel.string = ((levelNum == 1) ? [NSString stringWithFormat:@"You Survived %d Day", levelNum] : [NSString stringWithFormat:@"You Survived %d Days", levelNum]);
+    _gameOverLabel.string = ((levelNum == 1) ? [NSString stringWithFormat:@"You Survived %d Day", levelNum-1] : [NSString stringWithFormat:@"You Survived %d Days", levelNum]);
     
     // update score label
     _scoreLabel.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].playerScore];
