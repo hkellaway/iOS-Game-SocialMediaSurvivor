@@ -23,9 +23,9 @@
     
     // preload other sound effects
     [audio preloadEffect:@"Audio/gameover.wav"];
-//    [audio preloadEffect:@"Audio/zapThreetoneUp.mp3"];
-//    [audio preloadEffect:@"Audio/zapThreeToneDown.mp3"];
-//    [audio preloadEffect:@"Audio/highlow.mp3"];
+    [audio preloadEffect:@"Audio/zapThreetoneUp.wav"];
+    [audio preloadEffect:@"Audio/zapThreeToneDown.wav"];
+    [audio preloadEffect:@"Audio/highlow.wav"];
 }
 
 - (void)play

@@ -412,7 +412,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)increaseRank
 {
     // play sound
-    [_audio playEffect:@"Audio/new_rank.mp3" volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
+    [_audio playEffect:@"Audio/highlow.wav" volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
     
     // play animation
     [_increaseRankAnimationManager runAnimationsForSequenceNamed:ANIMATION_INCREASE_RANK];
