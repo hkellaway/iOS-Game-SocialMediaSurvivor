@@ -18,7 +18,7 @@
 		<key>StreamSpeed</key>
 		<real>0.25</real>
 		<key>NumTopicsToRecirculate</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
 		<integer>1</integer>
 	</dict>
@@ -30,7 +30,7 @@
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
-		<integer>2</integer>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>LevelNum</key>
@@ -40,7 +40,7 @@
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
-		<integer>2</integer>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>LevelNum</key>

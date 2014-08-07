@@ -468,7 +468,12 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     double recirculatedCounter = floor(numStatuses * percentToRecirculate);
     double favoritedCounter = floor(numStatuses * percentToFavorite);
     
-    for(int i = 0; i < numStatuses; i++)
+    // make sure first few are not playable
+    statuses[0] = [NSString stringWithFormat:@"%d", 0];
+    statuses[1] = [NSString stringWithFormat:@"%d", 0];
+    
+    // start i after first few
+    for(int i = 2; i < numStatuses; i++)
     {
         if(recirculatedCounter > 0)
         {
@@ -486,8 +491,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         }
     }
     
-    // shuffle order
-    for(int i = 0; i < numStatuses; i++)
+    // shuffle order - start i after first few
+    for(int i = 2; i < numStatuses; i++)
     {
         NSInteger remainingCount = numStatuses - i;
         NSInteger exchangeIndex = i + arc4random_uniform(remainingCount);
