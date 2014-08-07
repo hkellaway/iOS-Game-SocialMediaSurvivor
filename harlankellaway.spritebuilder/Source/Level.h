@@ -13,8 +13,6 @@
 
 }
 
-#pragma mark - p-list data
-
 @property (nonatomic, assign) double streamSpeed;
 @property (nonatomic, assign) NSInteger numTopics;
 
@@ -22,8 +20,6 @@
 @property (nonatomic, strong) NSMutableArray *topicsToFavorite;
 
 @property (nonatomic, assign) int levelNum;
-
-# pragma mark - methods
 
 - (id)initWithLevelNum:(int)levelNum;
 

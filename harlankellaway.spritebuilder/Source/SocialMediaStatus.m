@@ -19,8 +19,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
 @implementation SocialMediaStatus
 {
-    
-    
     CCSprite *_meterBackground;
     
     CCAnimationManager *_recirculateAnimationManager;
@@ -134,15 +132,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     }
 }
 
-- (void)flashRecirculateButton
-{
-    [_recirculateAnimationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
-}
-- (void)flashFavoriteButton
-{
-    [_favoriteAnimationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
-}
-
 - (void)refresh
 {
     int numStatuses = _gameplay.numStatuses;
@@ -156,32 +145,27 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     [self enable];
 }
 
+- (void)flashRecirculateButton
+{
+    [_recirculateAnimationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+}
+- (void)flashFavoriteButton
+{
+    [_favoriteAnimationManager runAnimationsForSequenceNamed:ANIMATION_FLASHING_NAME];
+}
+
 #pragma mark - helper methods
 
 - (void)scaleMeter:(int)scaleDirection
 {
     CCSprite *meterMiddle = _gameplay.meterMiddle;
-//    CCSprite *meterTop = _gameplay.meterTop;
     
     // don't scale while game is over
     if(!_gameplay.isLevelOver)
     {
     
-//    // if scaling down, check if meterMiddle is at origin
-//    if(!scaleDirection)
-//    {
-//        // if scaling down while at origin, game is over
-//        if(!meterMiddle.scaleY == 1)
-//        {
-//             //TODO:
-//        }
-//    }
-    
     // scale down if 0, up if 1
     meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY + METER_SCALE_FACTOR : meterMiddle.scaleY - METER_SCALE_FACTOR);
-    
-    // move top
-//    meterTop.position = ccp(meterTop.position.x, (meterMiddle.position.y + (meterMiddle.contentSize.height * meterMiddle.scaleY)));
     }
     
 }

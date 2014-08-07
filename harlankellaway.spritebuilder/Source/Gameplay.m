@@ -285,28 +285,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     }
 }
 
-// called on every touch in this scene
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    CCLOG(@"Touch Made");
-}
-
-- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    CCLOG(@"Touch Moved");
-}
-
-- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    CCLOG(@"Touch Ended");
-}
-
-- (void)touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    // when touches are cancelled, meaning the users drags their finger off the screen or onto something else
-    CCLOG(@"Touch Cancelled");
-}
-
 # pragma mark - Instance Methods
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType
@@ -406,12 +384,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 # pragma mark - Custom Methods
 
-
-- (void)toggleInbox
-{
-    [_inbox toggleVisibility];
-}
-
 - (void)increaseRank
 {
     // play sound
@@ -433,6 +405,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)levelOver
 {
     _isLevelOver = TRUE;
+    
+    _levelOverPopup.userInteractionEnabled = FALSE;
     _levelOverPopup.visible = TRUE;
     
     // if this level is complete, tutorial has been completed
@@ -452,6 +426,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // display Level Over Popup
     [_levelOverPopup runAction:_easeInToCenter];
+    
+    _levelOverPopup.userInteractionEnabled = TRUE;
     
     // set level number to next level
     [[GameState sharedInstance] setLevelNum:[GameState sharedInstance].levelNum + 1];
