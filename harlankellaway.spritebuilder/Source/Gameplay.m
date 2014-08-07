@@ -80,7 +80,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCAnimationManager *_increaseRankAnimationManager;
     CCAnimationManager *_gameOverAnimationManager;
     
-    CCAction *_easeInLevelOverPopup;
+    CCAction *_easeInToCenter;
     
     OALSimpleAudio *_audio;
     
@@ -114,6 +114,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // animation
     _increaseRankAnimationManager = _meterIcon.animationManager;
     _gameOverAnimationManager = _meterBackground.animationManager;
+    
+    // actions
+     _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
     
     // timer
     timerInterval = TIMER_INTERVAL_IN_SECONDS;
@@ -444,10 +447,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [self updateLevelOverPopup];
     
     // display Level Over Popup
-    CGPoint centerScreen = ccp(0.5, 0.5);
     _levelOverPopup.visible = TRUE;
-    _easeInLevelOverPopup = [CCActionMoveTo actionWithDuration:2.0 position:centerScreen];
-    [_levelOverPopup runAction:_easeInLevelOverPopup];
+    [_levelOverPopup runAction:_easeInToCenter];
     _blurBackgroundLayer.visible = TRUE;
     
     // set level number to next level
