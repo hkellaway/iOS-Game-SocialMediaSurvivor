@@ -17,9 +17,10 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 1;
+static const int TESTING_SPEED_MULTIPLIER = 5;
 static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
+static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 
 // TODO: make this number larger than the largest amount that will fit on the tallest device
@@ -76,6 +77,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     double timerElapsed;
     NSDate *timerStarted;
     
+    CCAnimationManager *_increaseRankAnimationManager;
     CCAnimationManager *_gameOverAnimationManager;
     
     OALSimpleAudio *_audio;
@@ -108,6 +110,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _audio = [OALSimpleAudio sharedInstance];
     
     // animation
+    _increaseRankAnimationManager = _meterIcon.animationManager;
     _gameOverAnimationManager = _meterBackground.animationManager;
     
     // timer
@@ -408,6 +411,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 {
     // play sound
     [_audio playEffect:@"Audio/new_rank.mp3" volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
+    
+    // play animation
+    [_increaseRankAnimationManager runAnimationsForSequenceNamed:ANIMATION_INCREASE_RANK];
     
     // set flag
     updateRankForLevel = TRUE;
