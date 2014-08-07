@@ -433,12 +433,16 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)levelOver
 {
     _isLevelOver = TRUE;
+    _levelOverPopup.visible = TRUE;
     
     // if this level is complete, tutorial has been completed
     if(_currentLevel.levelNum >= TUTORIAL_INBOX_POPUP_IN_LEVEL)
     {
         [GameState sharedInstance].isTutorialComplete = true;
     }
+    
+    // blur background
+    _blurBackgroundLayer.visible = TRUE;
     
     // pause timer
     [self pauseTimer];
@@ -447,9 +451,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [self updateLevelOverPopup];
     
     // display Level Over Popup
-    _levelOverPopup.visible = TRUE;
     [_levelOverPopup runAction:_easeInToCenter];
-    _blurBackgroundLayer.visible = TRUE;
     
     // set level number to next level
     [[GameState sharedInstance] setLevelNum:[GameState sharedInstance].levelNum + 1];

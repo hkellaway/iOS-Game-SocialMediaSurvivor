@@ -1782,6 +1782,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>Inbox</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_inbox</string>
 				<key>memberVarAssignmentType</key>
@@ -1832,8 +1834,6 @@
 						<string>Inbox.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1896,6 +1896,8 @@
 						<string>LevelOverPopup.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1908,8 +1910,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>TutorialMeterPopup</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_tutorialMeterPopup</string>
 				<key>memberVarAssignmentType</key>
@@ -1931,7 +1931,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>-0.5</real>
 							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -1972,8 +1972,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>TutorialInboxPopup</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_tutorialInboxPopup</string>
 				<key>memberVarAssignmentType</key>
@@ -1995,7 +1993,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>-0.5</real>
 							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>

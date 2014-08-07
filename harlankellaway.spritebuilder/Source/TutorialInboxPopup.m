@@ -10,18 +10,22 @@
 
 @implementation TutorialInboxPopup
 {
-     OALSimpleAudio *_audio;
+    OALSimpleAudio *_audio;
+    CCAction *_easeInToCenter;
+    CCAction *_easeToRight;
 }
 
 - (void)didLoadFromCCB
 {
     _audio = [OALSimpleAudio sharedInstance];
-    self.visible = FALSE;
+    
+    _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
+    _easeToRight = [CCActionMoveTo actionWithDuration:2.0 position:ccp(1.5,0.5)];
 }
 
 - (void)openPopup
 {
-    self.visible = TRUE;
+    [self runAction:_easeInToCenter];
     
     // if open, close Inbox
     if(_gameplay.inbox.visible)
@@ -47,7 +51,7 @@
     // re-enable Inbeox button
     _gameplay.inboxButton.enabled = TRUE;
     
-    self.visible = FALSE;
+    [self runAction:_easeToRight];
     
     [_gameplay resumeGame];
 }
