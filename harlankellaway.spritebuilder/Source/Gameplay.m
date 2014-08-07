@@ -80,6 +80,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCAnimationManager *_increaseRankAnimationManager;
     CCAnimationManager *_gameOverAnimationManager;
     
+    CCAction *_easeInLevelOverPopup;
+    
     OALSimpleAudio *_audio;
     
     BOOL _isScrolling;
@@ -252,14 +254,14 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         }
         
         float meterMiddleScaled = _meterMiddle.scaleY;
-        
-                CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
-        
-        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
-        {
-            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
-        }
-        
+//        
+//                CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
+//        
+//        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
+//        {
+//            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
+//        }
+//        
         // if meter scaling resulted in scale hitting 1.0, game is over
         if(meterMiddleStart < 1.0 || meterMiddleScaled < 1.0)
         {
@@ -438,9 +440,14 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // pause timer
     [self pauseTimer];
     
-    // update Level Over Popup and display
+    // update Level Over Popup
     [self updateLevelOverPopup];
+    
+    // display Level Over Popup
+    CGPoint centerScreen = ccp(0.5, 0.5);
     _levelOverPopup.visible = TRUE;
+    _easeInLevelOverPopup = [CCActionMoveTo actionWithDuration:2.0 position:centerScreen];
+    [_levelOverPopup runAction:_easeInLevelOverPopup];
     _blurBackgroundLayer.visible = TRUE;
     
     // set level number to next level

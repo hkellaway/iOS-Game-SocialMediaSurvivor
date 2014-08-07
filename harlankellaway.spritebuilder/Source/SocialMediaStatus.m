@@ -57,7 +57,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     if (_actionType == ACTION_TYPE_RECIRCULATE)
     {
         // play sound
-        [_audio playEffect:@"Audio/correct.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+//        [_audio playEffect:@"Audio/correct.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [_audio playEffect:@"Audio/gameover.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_RECIRCULATE];
@@ -66,7 +67,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/incorrect.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+//        [_audio playEffect:@"Audio/incorrect.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [_audio playEffect:@"Audio/gameover.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
         
         if(_actionType == ACTION_TYPE_FAVORITE)
         {
@@ -91,7 +93,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     if (_actionType == ACTION_TYPE_FAVORITE)
     {
         // play sound
-        [_audio playEffect:@"Audio/correct.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+//        [_audio playEffect:@"Audio/correct.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [_audio playEffect:@"Audio/gameover.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_FAVORITE];
@@ -100,7 +103,8 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/incorrect.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+//        [_audio playEffect:@"Audio/incorrect.mp3" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+                [_audio playEffect:@"Audio/gameover.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
         
          if(_actionType == ACTION_TYPE_RECIRCULATE)
          {
