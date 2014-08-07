@@ -227,6 +227,8 @@
 		</dict>
 		<key>SocialMediaGameAssets/inbox_background.png</key>
 		<dict>
+			<key>isDirty</key>
+			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>

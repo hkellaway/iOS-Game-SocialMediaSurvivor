@@ -17,8 +17,8 @@
 #import "TutorialInboxPopup.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 3;
-static const BOOL TESTING_RUN_TUTORIAL = TRUE;
+static const int TESTING_SPEED_MULTIPLIER = 1;
+static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 
@@ -57,6 +57,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
+    CCNodeColor *_blurBackgroundLayer;
     ///////////////////////////////////////
     
     // declared in class
@@ -433,7 +434,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // update Level Over Popup and display
     [self updateLevelOverPopup];
-    [_levelOverPopup setVisible:TRUE];
+    _levelOverPopup.visible = TRUE;
+    _blurBackgroundLayer.visible = TRUE;
     
     // set level number to next level
     [[GameState sharedInstance] setLevelNum:[GameState sharedInstance].levelNum + 1];

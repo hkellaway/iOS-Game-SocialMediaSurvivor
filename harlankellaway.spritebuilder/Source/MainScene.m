@@ -19,7 +19,7 @@
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     
     // start background music
-    [audio playBg:@"Audio/background_loop.wav" volume:0.25 pan:1.0 loop:TRUE];
+    [audio playBg:@"Audio/background_loop.wav" volume:0.5 pan:1.0 loop:TRUE];
     
     // preload other sound effects
     [audio preloadEffect:@"Audio/correct.mp3"];
