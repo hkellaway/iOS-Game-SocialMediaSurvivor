@@ -382,6 +382,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [[GameState sharedInstance] clearGameState];
 }
 
+- (void)toggleInbox
+{
+    [_inbox toggleVisibility];
+}
+
 # pragma mark - Custom Methods
 
 - (void)increaseRank

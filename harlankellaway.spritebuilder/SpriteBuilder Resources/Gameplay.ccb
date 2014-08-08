@@ -1819,8 +1819,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.1000000238418579</real>
-							<real>1.1000000238418579</real>
+							<real>0.60000002384185791</real>
+							<real>0.60000002384185791</real>
 							<true/>
 							<integer>0</integer>
 						</array>
@@ -1896,8 +1896,6 @@
 						<string>LevelOverPopup.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1972,6 +1970,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>TutorialInboxPopup</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_tutorialInboxPopup</string>
 				<key>memberVarAssignmentType</key>
@@ -2022,6 +2022,8 @@
 						<string>TutorialInboxPopup.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
