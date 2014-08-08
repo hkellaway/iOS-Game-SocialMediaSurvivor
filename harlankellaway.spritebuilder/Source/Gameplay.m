@@ -32,6 +32,7 @@ static const int STATUS_SPACING = 4;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 
+static const int NUM_SECONDS_PER_LEVEL = 30;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -105,7 +106,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _timerElapsed = 0.0;
     
     // clock
-    _clock.gameplay = self;
+    _clock.timeLeft = NUM_SECONDS_PER_LEVEL;
     
     // level
     _isLevelOver = FALSE;
@@ -290,7 +291,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _timerElapsed = 0.0;
     [self resumeGame];
     
-    int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
+    int newTime =  _clock.timeLeft - TIMER_INTERVAL_IN_SECONDS;
     
     // if tutorial hasn't been completed
     if(!([GameState sharedInstance].isTutorialComplete))
@@ -298,7 +299,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         // meter tutorial
         if(_currentLevel.levelNum == TUTORIAL_METER_POPUP_IN_LEVEL)
         {
-            if(newTime == _clock.numSecondsPerLevel - TUTORIAL_METER_POPUP_AT_TIME)
+            if(newTime == NUM_SECONDS_PER_LEVEL - TUTORIAL_METER_POPUP_AT_TIME)
             {
                 [_tutorialMeterPopup openPopup];
             }
@@ -307,14 +308,14 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         // inbox tutorial
         if(_currentLevel.levelNum == TUTORIAL_INBOX_POPUP_IN_LEVEL)
         {
-            if(newTime == _clock.numSecondsPerLevel - TUTORIAL_INBOX_POPUP_AT_TIME)
+            if(newTime == NUM_SECONDS_PER_LEVEL - TUTORIAL_INBOX_POPUP_AT_TIME)
             {
                 [_tutorialInboxPopup openPopup];
             }
         }
     }
     
-    _clock.timeLeft.string = [NSString stringWithFormat:@"%d", newTime];
+    _clock.timeLeft = newTime;
     
     // level over
     if(newTime == 0)

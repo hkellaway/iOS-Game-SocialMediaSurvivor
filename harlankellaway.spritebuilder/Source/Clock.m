@@ -8,15 +8,17 @@
 
 #import "Clock.h"
 
-static const int NUM_SECONDS_IN_LEVEL = 30;
+//static const int NUM_SECONDS_IN_LEVEL = 30;
 
 @implementation Clock
-
-- (void)didLoadFromCCB
 {
-    _numSecondsPerLevel = NUM_SECONDS_IN_LEVEL;
-    
-    _timeLeft.string = [NSString stringWithFormat:@"%d", NUM_SECONDS_IN_LEVEL];
+    CCLabelTTF *_timeLeftLabel;
+}
+
+- (void)setTimeLeft:(int)timeLeft
+{
+    _timeLeft = timeLeft;
+    _timeLeftLabel.string = [NSString stringWithFormat:@"%d", timeLeft];
 }
 
 @end

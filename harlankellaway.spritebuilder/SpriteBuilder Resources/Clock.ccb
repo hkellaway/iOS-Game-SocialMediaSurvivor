@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>LabelTimeLeft</string>
 				<key>memberVarAssignmentName</key>
-				<string>_timeLeft</string>
+				<string>_timeLeftLabel</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>

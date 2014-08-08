@@ -11,9 +11,8 @@
 
 @interface Clock : CCSprite
 
-@property (nonatomic, assign) int numSecondsPerLevel;
-@property (nonatomic, strong) CCLabelTTF *timeLeft;
+@property (nonatomic, assign) int timeLeft;
 
-@property (nonatomic, weak) Gameplay *gameplay;
+- (void)setTimeLeft:(int)timeLeft;
 
 @end
