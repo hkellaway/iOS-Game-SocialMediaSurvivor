@@ -8,6 +8,7 @@
 
 #import "LevelOverPopup.h"
 #import "GameState.h"
+#import "Utilities.h"
 
 static const int MAX_NUM_LEVELS = 40;
 
@@ -21,14 +22,11 @@ static const int MAX_NUM_LEVELS = 40;
     CCLabelTTF *_favoritesLabel;
     CCLabelTTF *_rankLabel;
     CCLabelTTF *_scoreLabel;
-    
-    OALSimpleAudio *_audio;
 }
 
 
 - (void)didLoadFromCCB
 {
-    _audio = [OALSimpleAudio sharedInstance];
     self.visible = FALSE;
 }
 
@@ -46,7 +44,7 @@ static const int MAX_NUM_LEVELS = 40;
         // set content of Level Over node
         _levelOverLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
         
-        [self lowerVolume];
+        [[Utilities sharedInstance] lowerVolume];
     }
     
     [super setVisible:visible];
@@ -104,7 +102,7 @@ static const int MAX_NUM_LEVELS = 40;
     }
     else
     {
-        [self resetVolume];
+        [[Utilities sharedInstance] raiseVolume];
     
         CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
         [[CCDirector sharedDirector] replaceScene:scene];
@@ -128,16 +126,6 @@ static const int MAX_NUM_LEVELS = 40;
     }
     
     return [[NSFileManager defaultManager] contentsAtPath:plistPath];
-}
-
-- (void)lowerVolume
-{
-    [_audio setBgVolume:[_audio bgVolume] / 2];
-}
-
-- (void)resetVolume
-{
-    [_audio setBgVolume:([_audio bgVolume] * 2)];
 }
 
 @end

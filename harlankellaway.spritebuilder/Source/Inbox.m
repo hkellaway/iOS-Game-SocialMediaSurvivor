@@ -9,24 +9,28 @@
 #import "Inbox.h"
 #import "Trend.h"
 #import "GameState.h"
-
-static NSString *IMAGE_NAME_RECIRCULATE = @"SocialMediaGameAssets/button_recirculate_noshadow.png";
-static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_noshadow.png";
+#import "Utilities.h"
 
 @implementation Inbox
 {
     CCLabelTTF *_inboxLabel;
     CCNode *_inboxTrendsBox;
+    
     NSMutableArray *trendsToRecirculate;
     NSMutableArray *trendsToFavorite;
-    OALSimpleAudio *_audio;
+    
+    NSString *_imageNameRecirculate;
+    NSString *_imageNameFavorite;
 }
 
 - (void)didLoadFromCCB
 {
     trendsToRecirculate = [NSMutableArray array];
     trendsToFavorite = [NSMutableArray array];
-    _audio = [OALSimpleAudio sharedInstance];
+    
+    _imageNameRecirculate = [GameState sharedInstance].imageNameRecirculate;
+    _imageNameFavorite = [GameState sharedInstance].imageNameFavorite;
+    
     self.visible = FALSE;
 }
 
@@ -37,7 +41,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
 
     if(self.visible)
     {
-        [self lowerVolume];
+        [[Utilities sharedInstance] lowerVolume];
         
         if(([trendsToRecirculate count] == 0) & ([trendsToFavorite count] == 0))
         {
@@ -47,7 +51,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     }
     else
     {
-        [self resetVolume];
+        [[Utilities sharedInstance] raiseVolume];
     }
 }
 
@@ -65,7 +69,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
-        [trend setTrendAction:IMAGE_NAME_FAVORITE];
+        [trend setTrendAction:_imageNameFavorite];
         [_inboxTrendsBox addChild:trend];
     }
     
@@ -73,7 +77,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
-        [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
+        [trend setTrendAction:_imageNameRecirculate];
         [_inboxTrendsBox addChild:trend];
     }
 }
@@ -82,17 +86,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
 {
     self.visible = FALSE;
     
-    [self resetVolume];
-}
-
-- (void)lowerVolume
-{
-    [_audio setBgVolume:[_audio bgVolume] / 2];
-}
-
-- (void)resetVolume
-{
-    [_audio setBgVolume:([_audio bgVolume] * 2)];
+    [[Utilities sharedInstance] raiseVolume];
 }
 
 @end

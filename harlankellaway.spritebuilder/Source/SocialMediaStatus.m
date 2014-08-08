@@ -8,6 +8,7 @@
 
 #import "SocialMediaStatus.h"
 #import "GameState.h"
+#import "Utilities.h"
 
 static const float STATUS_SCALE_FACTOR = 0.47;
 static const float METER_SCALE_FACTOR = 1;
@@ -23,8 +24,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     
     CCAnimationManager *_recirculateAnimationManager;
     CCAnimationManager *_favoriteAnimationManager;
-    
-    OALSimpleAudio *_audio;
 }
 
 # pragma mark - initializers
@@ -44,8 +43,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
     _recirculateAnimationManager = _recirculateSprite.animationManager;
     _favoriteAnimationManager = _favoriteSprite.animationManager;
-    
-    _audio = [OALSimpleAudio sharedInstance];
 }
 
 # pragma mark - button actions
@@ -58,7 +55,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     if (_actionType == _actionTypeRecirculate)
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneUp.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundCorrect];
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:_actionTypeRecirculate];
@@ -67,7 +64,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneDown.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundIncorrect];
         
         if(_actionType == _actionTypeFavorite)
         {
@@ -92,7 +89,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     if (_actionType == _actionTypeFavorite)
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneUp.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundCorrect];
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:_actionTypeFavorite];
@@ -101,7 +98,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneDown.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundIncorrect];
         
          if(_actionType == _actionTypeRecirculate)
          {

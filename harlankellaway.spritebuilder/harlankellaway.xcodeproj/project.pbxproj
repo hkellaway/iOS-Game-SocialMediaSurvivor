@@ -45,6 +45,7 @@
 		CE37ECC91976C37C0043D969 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE37ECC81976C37B0043D969 /* Levels.plist */; };
 		CE37ECCF1977524F0043D969 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE37ECCE1977524F0043D969 /* Clock.m */; };
 		CE3A83B6198594EC001A0DA8 /* LevelOverPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */; };
+		CE50E8E219944D0000C89E5E /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50E8E119944CFF00C89E5E /* Utilities.m */; };
 		CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B1C197777D800A2EAD2 /* Inbox.m */; };
 		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
 		CE6A7B24197863AD00A2EAD2 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B23197863AD00A2EAD2 /* GameState.m */; };
@@ -122,6 +123,8 @@
 		CE37ECCE1977524F0043D969 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Source/Clock.m; sourceTree = "<group>"; };
 		CE3A83B4198594EC001A0DA8 /* LevelOverPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelOverPopup.h; path = Source/LevelOverPopup.h; sourceTree = "<group>"; };
 		CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelOverPopup.m; path = Source/LevelOverPopup.m; sourceTree = "<group>"; };
+		CE50E8E019944CFF00C89E5E /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = Source/Utilities.h; sourceTree = "<group>"; };
+		CE50E8E119944CFF00C89E5E /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = Source/Utilities.m; sourceTree = "<group>"; };
 		CE6A7B1B197777D800A2EAD2 /* Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Inbox.h; path = Source/Inbox.h; sourceTree = "<group>"; };
 		CE6A7B1C197777D800A2EAD2 /* Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Inbox.m; path = Source/Inbox.m; sourceTree = "<group>"; };
 		CE6A7B1F19783F3D00A2EAD2 /* Trend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Trend.h; path = Source/Trend.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				7AC1996C196DC8EA00D216C4 /* SocialMediaStatus.m */,
 				CE6A7B1F19783F3D00A2EAD2 /* Trend.h */,
 				CE6A7B2019783F3D00A2EAD2 /* Trend.m */,
+				CE50E8E019944CFF00C89E5E /* Utilities.h */,
+				CE50E8E119944CFF00C89E5E /* Utilities.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 			files = (
 				CE37ECCF1977524F0043D969 /* Clock.m in Sources */,
 				7ACA6112196EF09000307164 /* Gameplay.m in Sources */,
+				CE50E8E219944D0000C89E5E /* Utilities.m in Sources */,
 				CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */,
 				CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */,
 				CE898DB31991168600612895 /* TutorialInboxPopup.m in Sources */,

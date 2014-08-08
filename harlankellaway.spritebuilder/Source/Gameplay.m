@@ -15,6 +15,7 @@
 #import "LevelOverPopup.h"
 #import "TutorialMeterPopup.h"
 #import "TutorialInboxPopup.h"
+#import "Utilities.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
 static const int TESTING_SPEED_MULTIPLIER = 1;
@@ -81,8 +82,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     CCAction *_easeInToCenter;
     
-    OALSimpleAudio *_audio;
-    
     BOOL _isScrolling;
 }
 
@@ -106,9 +105,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
-    
-    // audio
-    _audio = [OALSimpleAudio sharedInstance];
     
     // animation
     _increaseRankAnimationManager = _meterIcon.animationManager;
@@ -364,7 +360,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)gameOver
 {
     // play sound
-    [_audio playEffect:@"Audio/gameover.wav" volume:0.5f pitch:1.0f pan:1.0f loop:FALSE];
+    [[Utilities sharedInstance] playSoundGameOver];
     
     [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + numRecirculatedCorrectly + numFavoritedCorrectly;
     
@@ -376,7 +372,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _currentLevel = nil;
     
     // lower background music
-    [_audio setBgVolume:([_audio bgVolume]/2)];
+    [[Utilities sharedInstance] lowerVolume];
     
     // reset global values
     [[GameState sharedInstance] clearGameState];
@@ -392,7 +388,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)increaseRank
 {
     // play sound
-    [_audio playEffect:@"Audio/highlow.wav" volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
+    [[Utilities sharedInstance] playSoundRankIncrease];
     
     // play animation
     [_increaseRankAnimationManager runAnimationsForSequenceNamed:ANIMATION_INCREASE_RANK];

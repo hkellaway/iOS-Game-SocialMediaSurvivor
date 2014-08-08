@@ -10,8 +10,6 @@
 
 @interface GameState : NSObject
 
-+ (instancetype)sharedInstance;
-
 @property (nonatomic, strong) NSString *imageNameRecirculate;
 @property (nonatomic, strong) NSString *imageNameFavorite;
 
@@ -34,5 +32,6 @@
 
 - (void)clearLevelSettings;
 - (void)clearGameState;
++ (instancetype)sharedInstance;
 
 @end
