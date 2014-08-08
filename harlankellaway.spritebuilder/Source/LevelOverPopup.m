@@ -62,12 +62,12 @@ static const int MAX_NUM_LEVELS = 40;
 
 - (void)updateRecirculateLabel:(int)numRecirculated
 {
-    _recirculateLabel.string = [NSString stringWithFormat:@"# recirculated: %i", numRecirculated];
+    _recirculateLabel.string = [NSString stringWithFormat:@"%i", numRecirculated];
 }
 
 - (void)updateFavoriteLabel:(int)numFavorited
 {
-    _favoritesLabel.string = [NSString stringWithFormat:@"# favorited: %i", numFavorited];
+    _favoritesLabel.string = [NSString stringWithFormat:@"%i", numFavorited];
 }
 
 - (void)goToNextLevel
