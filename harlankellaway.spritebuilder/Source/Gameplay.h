@@ -17,6 +17,7 @@
 @property (nonatomic, strong) CCButton *inboxButton;
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;
+@property (nonatomic, assign) BOOL isPaused;
 @property (nonatomic, assign) BOOL isLevelOver;
 
 @property (nonatomic, strong) CCNode *recirculateSprite;

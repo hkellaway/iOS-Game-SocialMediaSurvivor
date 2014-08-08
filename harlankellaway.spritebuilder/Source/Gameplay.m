@@ -15,6 +15,7 @@
 #import "LevelOverPopup.h"
 #import "TutorialMeterPopup.h"
 #import "TutorialInboxPopup.h"
+#import "PausePopup.h"
 #import "Utilities.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
@@ -54,6 +55,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
     CCNodeColor *_blurBackgroundLayer;
+    PausePopup *_pausePopup;
     ///////////////////////////////////////
     
     // declared in class
@@ -134,7 +136,12 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     //    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
     //    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
+    // pause
+    _isPaused = FALSE;
+    _pausePopup.visible = FALSE;
+    
     // popups
+    _pausePopup.gameplay = self;
     _tutorialMeterPopup.gameplay = self;
     _tutorialInboxPopup.gameplay = self;
     
@@ -301,6 +308,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         {
             if(newTime == NUM_SECONDS_PER_LEVEL - TUTORIAL_METER_POPUP_AT_TIME)
             {
+                [self pauseGame];
                 [_tutorialMeterPopup openPopup];
             }
         }
@@ -310,6 +318,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         {
             if(newTime == NUM_SECONDS_PER_LEVEL - TUTORIAL_INBOX_POPUP_AT_TIME)
             {
+                [self pauseGame];
                 [_tutorialInboxPopup openPopup];
             }
         }
@@ -334,6 +343,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)popupPauseScreen
 {
     [self pauseGame];
+ 
+    _isPaused = TRUE;
+    
+    // blur background
+    _blurBackgroundLayer.visible = TRUE;
+    
+    [_pausePopup openPopup];
 }
 
 -(void) pauseGame
@@ -347,7 +363,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _timer = [NSTimer scheduledTimerWithTimeInterval:(_timerInterval - _timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
     _timerStarted = [NSDate date];
     
+    if(_blurBackgroundLayer.visible)
+    {
+        _blurBackgroundLayer.visible = FALSE;
+    }
+    
     _isScrolling = TRUE;
+    _isPaused = FALSE;
 }
 
 - (void)gameOver

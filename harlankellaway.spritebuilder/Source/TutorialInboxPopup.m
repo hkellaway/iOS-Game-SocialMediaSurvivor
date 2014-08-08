@@ -7,18 +7,16 @@
 //
 
 #import "TutorialInboxPopup.h"
+#import "Utilities.h"
 
 @implementation TutorialInboxPopup
 {
-    OALSimpleAudio *_audio;
     CCAction *_easeInToCenter;
     CCAction *_easeToRight;
 }
 
 - (void)didLoadFromCCB
 {
-    _audio = [OALSimpleAudio sharedInstance];
-    
     _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
     _easeToRight = [CCActionMoveTo actionWithDuration:2.0 position:ccp(1.5,0.5)];
 }
@@ -37,33 +35,25 @@
     _gameplay.inboxButton.enabled = FALSE;
     
     // lower volume
-    [self lowerVolume];
-    
-    // pause game
-    [_gameplay pauseGame];
+    [[Utilities sharedInstance] lowerVolume];
 }
 
 - (void)closePopup
 {
-    // reset volume
-    [self resetVolume];
-    
-    // re-enable Inbeox button
-    _gameplay.inboxButton.enabled = TRUE;
-    
+    // move popup offscreen
     [self runAction:_easeToRight];
     
-    [_gameplay resumeGame];
-}
-
-- (void)lowerVolume
-{
-    [_audio setBgVolume:[_audio bgVolume] / 2];
-}
-
-- (void)resetVolume
-{
-    [_audio setBgVolume:([_audio bgVolume] * 2)];
+    // if game is not paused, unpause the game
+    if(!_gameplay.isPaused)
+    {
+        // reset volume
+        [[Utilities sharedInstance] raiseVolume];
+        
+        // re-enable Inbeox button
+        _gameplay.inboxButton.enabled = TRUE;
+        
+        [_gameplay resumeGame];
+    }
 }
 
 @end
