@@ -263,7 +263,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     float meterMiddlePosition = [_meterBottom.parent convertToNodeSpace:[[_meterMiddle parent] convertToWorldSpace:_meterMiddle.positionInPoints]].y + ((_meterMiddle.contentSize.height * _meterMiddle.scaleY) * _meterBottom.scaleY);
     
     // if meter scaling resulted in scale hitting the top, increase player rank
-    if(meterMiddlePosition >= (iconPosition - (_meterIcon.contentSize.height / 2)))
+    if(meterMiddlePosition >= (iconPosition - ((_meterIcon.contentSize.height * _meterIcon.scaleY) / 2)))
     {
         [self increaseRank];
     }
@@ -329,6 +329,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [_timer invalidate];
     _timer = nil;
     _timerElapsed = [[NSDate date] timeIntervalSinceDate:_timerStarted];
+}
+
+- (void)popupPauseScreen
+{
+    [self pauseGame];
 }
 
 -(void) pauseGame
