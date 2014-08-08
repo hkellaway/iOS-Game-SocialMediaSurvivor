@@ -32,9 +32,6 @@ static const int STATUS_SPACING = 4;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 
-static const int ACTION_TYPE_RECIRCULATE = 1;
-static const int ACTION_TYPE_FAVORITE = 2;
-
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -67,6 +64,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     NSMutableArray *_topicsToFavorite;
     Level *_currentLevel;
     
+    int _actionTypeRecirculate;
+    int _actionTypeFavorite;
     int numRecirculatedCorrectly;
     int numFavoritedCorrectly;
     
@@ -135,12 +134,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     float percentToRecirculate = (!([[GameState sharedInstance].trendsToRecirculate count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_RECIRCULATE;
     float percentToFavorite = (!([[GameState sharedInstance].trendsToFavorite count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_FAVORITE;
     
-    
-    NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
-    
     // statuses
+    _actionTypeRecirculate = [GameState sharedInstance].actionTypeRecirculate;
+    _actionTypeFavorite = [GameState sharedInstance].actionTypeFavorite;
     numRecirculatedCorrectly = 0;
     numFavoritedCorrectly = 0;
+    
+    NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
     
     // rank
     updateRankForLevel = TRUE; // set so rank is updated first round
@@ -167,17 +167,17 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         
         status.position = ccp(xPos, (i*(height + _statusSpacing)) + height/2);
         
-        if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
+        if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeRecirculate]])
         {
-            status.actionType = ACTION_TYPE_RECIRCULATE;
+            status.actionType = _actionTypeRecirculate;
             
             _topicsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
             
             status.statusText.string = _topicsToRecirculate[0 + arc4random() % ([_topicsToRecirculate count])];
         }
-        else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE]])
+        else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeFavorite]])
         {
-            status.actionType = ACTION_TYPE_FAVORITE;
+            status.actionType = _actionTypeFavorite;
             
             _topicsToFavorite = [GameState sharedInstance].trendsToFavorite;
             
@@ -224,7 +224,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             // if status about to exit screen and action not pressed, flash correct action
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
             {
-                if(status.recirculateButton.enabled && (status.actionType == ACTION_TYPE_RECIRCULATE))
+                if(status.recirculateButton.enabled && (status.actionType == _actionTypeRecirculate))
                 {
                     if(!status.hasFlashedBeforeExitingScreen)
                     {
@@ -233,7 +233,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
                     }
                 }
                 
-                if(status.favoriteButton.enabled && (status.actionType == ACTION_TYPE_FAVORITE))
+                if(status.favoriteButton.enabled && (status.actionType == _actionTypeFavorite))
                 {
                     if(!status.hasFlashedBeforeExitingScreen)
                     {
@@ -289,12 +289,12 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType
 {
-    if(actionType == ACTION_TYPE_RECIRCULATE)
+    if(actionType == _actionTypeRecirculate)
     {
         numRecirculatedCorrectly++;
     }
     
-    if(actionType == ACTION_TYPE_FAVORITE)
+    if(actionType == _actionTypeFavorite)
     {
         numFavoritedCorrectly++;
     }
@@ -476,12 +476,12 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     {
         if(recirculatedCounter > 0)
         {
-            statuses[i] = [NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE];
+            statuses[i] = [NSString stringWithFormat:@"%d", _actionTypeRecirculate];
             recirculatedCounter--;
         }
         else if(favoritedCounter > 0)
         {
-            statuses[i] = [NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE];
+            statuses[i] = [NSString stringWithFormat:@"%d", _actionTypeFavorite];
             favoritedCounter--;
         }
         else

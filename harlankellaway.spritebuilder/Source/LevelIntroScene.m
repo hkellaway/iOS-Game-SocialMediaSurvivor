@@ -10,9 +10,6 @@
 #import "GameState.h"
 #import "Trend.h"
 
-static NSString *IMAGE_NAME_RECIRCULATE = @"SocialMediaGameAssets/button_recirculate_noshadow.png";
-static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_noshadow.png";
-
 @implementation LevelIntroScene
 {
     CCLabelTTF *_levelLabel;
@@ -103,7 +100,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
-        [trend setTrendAction:IMAGE_NAME_FAVORITE];
+        [trend setTrendAction:[GameState sharedInstance].imageNameFavorite];
         [_levelIntroTrendsBox addChild:trend];
     }
     
@@ -111,7 +108,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
-        [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
+        [trend setTrendAction:[GameState sharedInstance].imageNameRecirculate];
         [_levelIntroTrendsBox addChild:trend];
     }
 }
