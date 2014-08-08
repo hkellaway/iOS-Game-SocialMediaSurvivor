@@ -31,7 +31,8 @@
     _scoreLabel.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].playerScore];
     
     // update rank label
-    [self updateRankLabel];
+    NSArray *ranksArray = [Utilities sharedInstance].ranksArray;
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"]];
     
     // social media buttons
     _twitterButton.enabled = FALSE;
@@ -45,22 +46,15 @@
 }
 
 #pragma mark - Instance Methods
-                                                             
-- (void)updateRankLabel
-{
-    // set rank title
-    NSArray *ranksArray = [Utilities sharedInstance].ranksArray;
-    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"]];
-}
 
 - (void)twitterSelected
 {
-    
+    // to be implemented when Twitter added
 }
 
 - (void)facebookSelected
 {
-    
+    // to be implemented when Twitter added
 }
 
 @end
