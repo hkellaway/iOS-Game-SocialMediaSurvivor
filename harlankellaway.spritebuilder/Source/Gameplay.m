@@ -419,6 +419,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // blur background
     _blurBackgroundLayer.visible = TRUE;
     
+    // lower sound
+    [[Utilities sharedInstance] lowerVolume];
+    
     // pause timer
     [self pauseTimer];
     

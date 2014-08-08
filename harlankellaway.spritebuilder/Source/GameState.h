@@ -32,6 +32,7 @@
 
 - (void)clearLevelSettings;
 - (void)clearGameState;
+
 + (instancetype)sharedInstance;
 
 @end

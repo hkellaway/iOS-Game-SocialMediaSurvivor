@@ -16,6 +16,9 @@
 
 - (void)didLoadFromCCB
 {
+    // preload P-List data
+    [[Utilities sharedInstance] preloadPListData];
+    
     // preload sounds
     [[Utilities sharedInstance] preloadSounds];
 }

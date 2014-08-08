@@ -44,7 +44,7 @@ static const int MAX_NUM_LEVELS = 40;
         // set content of Level Over node
         _levelOverLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
         
-        [[Utilities sharedInstance] lowerVolume];
+//        [[Utilities sharedInstance] lowerVolume];
     }
     
     [super setVisible:visible];
@@ -52,28 +52,9 @@ static const int MAX_NUM_LEVELS = 40;
 
 - (void)updateRankLabel
 {
-    // retreive Rank title from p-list
-    
-    // load Topics from p-list
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    NSData *plistXML = [self getPListXML:@"Ranks"];
-    
-    // convert static property list into corresponding property-list objects
-    // Topics p-list contains array of dictionarys
-    NSArray *ranksArray = (NSArray *)[NSPropertyListSerialization
-                                       propertyListFromData:plistXML
-                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                       format:&format
-                                       errorDescription:&errorDesc];
-    if(!ranksArray)
-    {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-    }
-    
-    NSString* rankTitle = [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"];
-    
-    _rankLabel.string = [NSString stringWithFormat:@"%@", rankTitle];
+    // retreive Rank title from p-list and set
+    NSArray *ranksArray = [Utilities sharedInstance].ranksArray;
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"]];
 }
 
 -(void)updateScoreLabel
@@ -107,25 +88,6 @@ static const int MAX_NUM_LEVELS = 40;
         CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
         [[CCDirector sharedDirector] replaceScene:scene];
     }
-}
-
-# pragma  mark - Helper Methods
-
-- (NSData *)getPListXML: (NSString *)pListName
-{
-    NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    // get file-styem path to file containing XML property list
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-    
-    // if file doesn't exist at file-system path, check application's main bundle
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-    }
-    
-    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end

@@ -10,7 +10,13 @@
 
 @interface Utilities : NSObject
 
+@property (nonatomic, strong) NSArray *allTopicsArray;
+@property (nonatomic, strong) NSArray *levelsArray;
+@property (nonatomic, strong) NSArray *ranksArray;
+
+- (void)preloadPListData;
 - (void)preloadSounds;
+
 - (void)playSoundCorrect;
 - (void)playSoundIncorrect;
 - (void)playSoundRankIncrease;

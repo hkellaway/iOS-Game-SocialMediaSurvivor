@@ -9,6 +9,7 @@
 #import "LevelIntroScene.h"
 #import "GameState.h"
 #import "Trend.h"
+#import "Utilities.h"
 
 @implementation LevelIntroScene
 {
@@ -25,28 +26,10 @@
 {
     int levelNum = [GameState sharedInstance].levelNum;
 
-    
-    // otherwise, create Trends for level and start
     _allTopics = [NSMutableArray array];
     _usedTopics = [NSMutableSet set];
     
-    // read in numTopics from Levels pList
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    NSData *plistXML = [self getPListXML:@"Levels"];
-    
-    // convert static property list into corresponding property-list objects
-    // Topics p-list contains array of dictionarys
-    NSArray *levelsArray = (NSArray *)[NSPropertyListSerialization
-                                       propertyListFromData:plistXML
-                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                       format:&format
-                                       errorDescription:&errorDesc];
-    if(!levelsArray)
-    {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-    }
-    
+    NSArray *levelsArray = [Utilities sharedInstance].levelsArray;
     numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
     numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
     
@@ -128,23 +111,6 @@
 {
     NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
     return allTopics[0 + arc4random() % ([allTopics count])];
-}
-
-- (NSData *)getPListXML: (NSString *)pListName
-{
-    NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    // get file-styem path to file containing XML property list
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-    
-    // if file doesn't exist at file-system path, check application's main bundle
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-    }
-    
-    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end
