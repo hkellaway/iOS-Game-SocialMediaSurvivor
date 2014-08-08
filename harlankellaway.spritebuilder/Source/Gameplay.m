@@ -24,8 +24,7 @@ static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 
-// TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 28;
+static const int NUM_STATUSES = 28; // num larger than the tallest device screen height
 static const int STATUS_SPACING = 4;
 
 //static const CGFloat MAX_NUM_LEVELS = 10;
@@ -43,9 +42,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 @implementation Gameplay
 {
-    // TODO: remove this
-    CCSprite *_meterTop;
-    
     // declared in SpriteBuilder
     CCNode *_stream;
     Clock *_clock;
@@ -67,15 +63,15 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     int _actionTypeRecirculate;
     int _actionTypeFavorite;
-    int numRecirculatedCorrectly;
-    int numFavoritedCorrectly;
+    int _numRecirculatedCorrectly;
+    int _numFavoritedCorrectly;
     
     BOOL updateRankForLevel;
     
-    NSTimer *timer;
-    int timerInterval;
-    double timerElapsed;
-    NSDate *timerStarted;
+    NSTimer *_timer;
+    int _timerInterval;
+    double _timerElapsed;
+    NSDate *_timerStarted;
     
     CCAnimationManager *_increaseRankAnimationManager;
     CCAnimationManager *_gameOverAnimationManager;
@@ -87,17 +83,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)didLoadFromCCB
 {
-    //    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
-    //    {
-    //        [self gameOver];
-    //    }
-    
-    // TODO: remove this
-    _meterTop.visible = FALSE;
+    // always run Tutorial if in test
     if (TESTING_RUN_TUTORIAL) { [GameState sharedInstance].isTutorialComplete = FALSE; }
-    // ****************//
-    
-    
     
     // initialize variables
     _numStatuses = NUM_STATUSES;
@@ -114,8 +101,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
      _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
     
     // timer
-    timerInterval = TIMER_INTERVAL_IN_SECONDS;
-    timerElapsed = 0.0;
+    _timerInterval = TIMER_INTERVAL_IN_SECONDS;
+    _timerElapsed = 0.0;
     
     // clock
     _clock.gameplay = self;
@@ -133,8 +120,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // statuses
     _actionTypeRecirculate = [GameState sharedInstance].actionTypeRecirculate;
     _actionTypeFavorite = [GameState sharedInstance].actionTypeFavorite;
-    numRecirculatedCorrectly = 0;
-    numFavoritedCorrectly = 0;
+    _numRecirculatedCorrectly = 0;
+    _numFavoritedCorrectly = 0;
     
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
     
@@ -287,20 +274,20 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 {
     if(actionType == _actionTypeRecirculate)
     {
-        numRecirculatedCorrectly++;
+        _numRecirculatedCorrectly++;
     }
     
     if(actionType == _actionTypeFavorite)
     {
-        numFavoritedCorrectly++;
+        _numFavoritedCorrectly++;
     }
 }
 
 -(void) fired
 {
-    [timer invalidate];
-    timer = nil;
-    timerElapsed = 0.0;
+    [_timer invalidate];
+    _timer = nil;
+    _timerElapsed = 0.0;
     [self resumeGame];
     
     int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
@@ -338,9 +325,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)pauseTimer
 {
-    [timer invalidate];
-    timer = nil;
-    timerElapsed = [[NSDate date] timeIntervalSinceDate:timerStarted];
+    [_timer invalidate];
+    _timer = nil;
+    _timerElapsed = [[NSDate date] timeIntervalSinceDate:_timerStarted];
 }
 
 -(void) pauseGame
@@ -351,8 +338,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 -(void) resumeGame
 {
-    timer = [NSTimer scheduledTimerWithTimeInterval:(timerInterval - timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
-    timerStarted = [NSDate date];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:(_timerInterval - _timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
+    _timerStarted = [NSDate date];
     
     _isScrolling = TRUE;
 }
@@ -362,7 +349,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // play sound
     [[Utilities sharedInstance] playSoundGameOver];
     
-    [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + numRecirculatedCorrectly + numFavoritedCorrectly;
+    [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + _numRecirculatedCorrectly + _numFavoritedCorrectly;
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
@@ -444,8 +431,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)updateLevelOverPopup
 {
-    [_levelOverPopup updateRecirculateLabel:numRecirculatedCorrectly];
-    [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
+    [_levelOverPopup updateRecirculateLabel:_numRecirculatedCorrectly];
+    [_levelOverPopup updateFavoriteLabel:_numFavoritedCorrectly];
     [_levelOverPopup updateScoreLabel];
     
     // if Rank increased this level, update Rank label

@@ -10,9 +10,6 @@
 #import "Utilities.h"
 
 @implementation MainScene
-{
-    
-}
 
 - (void)didLoadFromCCB
 {

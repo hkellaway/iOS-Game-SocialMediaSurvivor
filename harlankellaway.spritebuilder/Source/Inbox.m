@@ -16,8 +16,8 @@
     CCLabelTTF *_inboxLabel;
     CCNode *_inboxTrendsBox;
     
-    NSMutableArray *trendsToRecirculate;
-    NSMutableArray *trendsToFavorite;
+    NSMutableArray *_trendsToRecirculate;
+    NSMutableArray *_trendsToFavorite;
     
     NSString *_imageNameRecirculate;
     NSString *_imageNameFavorite;
@@ -25,8 +25,8 @@
 
 - (void)didLoadFromCCB
 {
-    trendsToRecirculate = [NSMutableArray array];
-    trendsToFavorite = [NSMutableArray array];
+    _trendsToRecirculate = [NSMutableArray array];
+    _trendsToFavorite = [NSMutableArray array];
     
     _imageNameRecirculate = [GameState sharedInstance].imageNameRecirculate;
     _imageNameFavorite = [GameState sharedInstance].imageNameFavorite;
@@ -43,7 +43,7 @@
     {
         [[Utilities sharedInstance] lowerVolume];
         
-        if(([trendsToRecirculate count] == 0) & ([trendsToFavorite count] == 0))
+        if(([_trendsToRecirculate count] == 0) & ([_trendsToFavorite count] == 0))
         {
             [self refresh];
         }
@@ -61,22 +61,22 @@
     _inboxLabel.string = [NSString stringWithFormat:@"Day %i", [GameState sharedInstance].levelNum];
     
     // read Trends from shared GameState
-    trendsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
-    trendsToFavorite = [GameState sharedInstance].trendsToFavorite;
+    _trendsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
+    _trendsToFavorite = [GameState sharedInstance].trendsToFavorite;
     
-    for(int j = 0; j < [trendsToFavorite count]; j++)
+    for(int j = 0; j < [_trendsToFavorite count]; j++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         
-        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
+        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)_trendsToFavorite[j]).capitalizedString]];
         [trend setTrendAction:_imageNameFavorite];
         [_inboxTrendsBox addChild:trend];
     }
     
-    for(int i = 0; i < [trendsToRecirculate count]; i++)
+    for(int i = 0; i < [_trendsToRecirculate count]; i++)
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
-        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
+        [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)_trendsToRecirculate[i]).capitalizedString]];
         [trend setTrendAction:_imageNameRecirculate];
         [_inboxTrendsBox addChild:trend];
     }

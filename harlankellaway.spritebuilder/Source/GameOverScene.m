@@ -19,7 +19,6 @@
     CCButton * _twitterButton;
     CCButton *_facebookButton;
     ///////////////////////////
-    
 }
 
 - (void)didLoadFromCCB

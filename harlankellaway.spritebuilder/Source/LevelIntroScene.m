@@ -18,8 +18,8 @@
     
     NSMutableArray *_allTopics;
     NSMutableSet *_usedTopics;
-    int numToRecirculate;
-    int numToFavorite;
+    int _numToRecirculate;
+    int _numToFavorite;
 }
 
 - (void)didLoadFromCCB
@@ -30,8 +30,8 @@
     _usedTopics = [NSMutableSet set];
     
     NSArray *levelsArray = [Utilities sharedInstance].levelsArray;
-    numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
-    numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
+    _numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
+    _numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
     
     // read in current Level and set Scene title
     _levelLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
@@ -39,7 +39,7 @@
     NSMutableArray *tempTopics = [[NSMutableArray alloc] init];
     
     // generate Trend objects to global GameState Topics array
-    for(int j = 0; j < numToRecirculate; j++)
+    for(int j = 0; j < _numToRecirculate; j++)
     {
         // get random topic
         NSString *randomTopic = [self getRandomTopic];
@@ -59,7 +59,7 @@
     
     tempTopics = [[NSMutableArray alloc] init];
     
-    for(int k = 0; k < numToFavorite; k++)
+    for(int k = 0; k < _numToFavorite; k++)
     {
         NSString *randomTopic = [self getRandomTopic];
         

@@ -7,6 +7,7 @@
 //
 
 #import "GameState.h"
+#import "Utilities.h"
 
 // shared resource names
 static NSString *const GAME_STATE_IMAGE_NAME_RECIRCULATE_KEY = @"GameStateImageNameRecirculateKey";
@@ -47,15 +48,15 @@ static int const DEFAULT_PLAYER_SCORE = 0;
 
 @implementation GameState
 {    
-    NSNumber *levelNumDefault;
-    NSNumber *streamSpeedDefault;
+    NSNumber *_levelNumDefault;
+    NSNumber *_streamSpeedDefault;
     
-    NSNumber *playerRankDefault;
-    NSNumber *playerScoreDefault;
+    NSNumber *_playerRankDefault;
+    NSNumber *_playerScoreDefault;
 
-    NSMutableArray *allTopicsDefault;
-    NSMutableArray *trendsToRecirculateDefault;
-    NSMutableArray *trendsToFavoriteDefault;
+    NSMutableArray *_allTopicsDefault;
+    NSMutableArray *_trendsToRecirculateDefault;
+    NSMutableArray *_trendsToFavoriteDefault;
 }
 
 +(instancetype)sharedInstance
@@ -91,13 +92,13 @@ static int const DEFAULT_PLAYER_SCORE = 0;
         _actionTypeFavorite = ACTION_TYPE_FAVORITE;
         
         // set defaults
-        levelNumDefault = [NSNumber numberWithInt:DEFAULT_LEVEL_NUM];
-        streamSpeedDefault = [NSNumber numberWithDouble: DEFAULT_STREAM_SPEED];
-        playerRankDefault = [NSNumber numberWithInt: DEFAULT_PLAYER_RANK];
-        playerScoreDefault = [NSNumber numberWithInt: DEFAULT_PLAYER_SCORE];
-        allTopicsDefault = [NSMutableArray array];
-        trendsToRecirculateDefault = [NSMutableArray array];
-        trendsToFavoriteDefault = [NSMutableArray array];
+        _levelNumDefault = [NSNumber numberWithInt:DEFAULT_LEVEL_NUM];
+        _streamSpeedDefault = [NSNumber numberWithDouble: DEFAULT_STREAM_SPEED];
+        _playerRankDefault = [NSNumber numberWithInt: DEFAULT_PLAYER_RANK];
+        _playerScoreDefault = [NSNumber numberWithInt: DEFAULT_PLAYER_SCORE];
+        _allTopicsDefault = [NSMutableArray array];
+        _trendsToRecirculateDefault = [NSMutableArray array];
+        _trendsToFavoriteDefault = [NSMutableArray array];
         
         // clear GameState
         [self clearGameState];
@@ -118,22 +119,9 @@ static int const DEFAULT_PLAYER_SCORE = 0;
         {
             _allTopics = [NSMutableArray array];
             
-            // load Topics from p-list
-            NSString *errorDesc = nil;
-            NSPropertyListFormat format;
-            NSData *plistXML = [self getPListXML:@"Topics"];
-            
             // convert static property list into corresponding property-list objects
             // Topics p-list contains array of dictionarys
-            NSArray *topicsArray = (NSArray *)[NSPropertyListSerialization
-                                               propertyListFromData:plistXML
-                                               mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                               format:&format
-                                               errorDescription:&errorDesc];
-            if(!topicsArray)
-            {
-                NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-            }
+            NSArray *topicsArray = [Utilities sharedInstance].allTopicsArray;
             
             for(int i = 0; i < [topicsArray count]; i++)
             {
@@ -247,12 +235,12 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateTrendsToFavoriteKey"];
     
     // level num
-    [[NSUserDefaults standardUserDefaults]setObject:levelNumDefault forKey:GAME_STATE_LEVEL_NUM_KEY];
-    _levelNum = [levelNumDefault integerValue];
+    [[NSUserDefaults standardUserDefaults]setObject:_levelNumDefault forKey:GAME_STATE_LEVEL_NUM_KEY];
+    _levelNum = [_levelNumDefault integerValue];
     
     // stream speed
-    [[NSUserDefaults standardUserDefaults]setObject:streamSpeedDefault forKey:GAME_STATE_STREAM_SPEED_KEY];
-    _streamSpeed = [streamSpeedDefault doubleValue];
+    [[NSUserDefaults standardUserDefaults]setObject:_streamSpeedDefault forKey:GAME_STATE_STREAM_SPEED_KEY];
+    _streamSpeed = [_streamSpeedDefault doubleValue];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -272,12 +260,12 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     _meterScale = _meterScaleDefault;
     
     // player rank
-    [[NSUserDefaults standardUserDefaults]setObject:playerRankDefault forKey:GAME_STATE_PLAYER_RANK_KEY];
-    _playerRank = [playerRankDefault integerValue];
+    [[NSUserDefaults standardUserDefaults]setObject:_playerRankDefault forKey:GAME_STATE_PLAYER_RANK_KEY];
+    _playerRank = [_playerRankDefault integerValue];
     
     // player score
-    [[NSUserDefaults standardUserDefaults]setObject:playerScoreDefault forKey:GAME_STATE_PLAYER_SCORE_KEY];
-    _playerScore = [playerScoreDefault integerValue];
+    [[NSUserDefaults standardUserDefaults]setObject:_playerScoreDefault forKey:GAME_STATE_PLAYER_SCORE_KEY];
+    _playerScore = [_playerScoreDefault integerValue];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

@@ -43,8 +43,6 @@ static const int MAX_NUM_LEVELS = 40;
         
         // set content of Level Over node
         _levelOverLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
-        
-//        [[Utilities sharedInstance] lowerVolume];
     }
     
     [super setVisible:visible];
