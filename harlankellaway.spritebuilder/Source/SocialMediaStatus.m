@@ -8,9 +8,7 @@
 
 #import "SocialMediaStatus.h"
 #import "GameState.h"
-
-static const int ACTION_TYPE_RECIRCULATE = 1;
-static const int ACTION_TYPE_FAVORITE = 2;
+#import "Utilities.h"
 
 static const float STATUS_SCALE_FACTOR = 0.47;
 static const float METER_SCALE_FACTOR = 1;
@@ -21,10 +19,11 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 {
     CCSprite *_meterBackground;
     
+    int _actionTypeRecirculate;
+    int _actionTypeFavorite;
+    
     CCAnimationManager *_recirculateAnimationManager;
     CCAnimationManager *_favoriteAnimationManager;
-    
-    OALSimpleAudio *_audio;
 }
 
 # pragma mark - initializers
@@ -38,11 +37,12 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     self.scaleY = self.scaleY * STATUS_SCALE_FACTOR;
     
     _meterBackground = _gameplay.meterBackground;
+    
+    _actionTypeRecirculate = [GameState sharedInstance].actionTypeRecirculate;
+    _actionTypeFavorite = [GameState sharedInstance].actionTypeFavorite;
 
     _recirculateAnimationManager = _recirculateSprite.animationManager;
     _favoriteAnimationManager = _favoriteSprite.animationManager;
-    
-    _audio = [OALSimpleAudio sharedInstance];
 }
 
 # pragma mark - button actions
@@ -52,21 +52,21 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 - (void)recirculate
 {
     // scale up if correction action selected
-    if (_actionType == ACTION_TYPE_RECIRCULATE)
+    if (_actionType == _actionTypeRecirculate)
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneUp.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundCorrect];
         
         [self scaleMeter:1];
-        [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_RECIRCULATE];
+        [_gameplay incrementStatusHandledCorrectlyOfActionType:_actionTypeRecirculate];
         [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneDown.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundIncorrect];
         
-        if(_actionType == ACTION_TYPE_FAVORITE)
+        if(_actionType == _actionTypeFavorite)
         {
             // flash correct action
             [self flashFavoriteButton];
@@ -86,21 +86,21 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 - (void)favorite
 {
     // scale up if correction action selected
-    if (_actionType == ACTION_TYPE_FAVORITE)
+    if (_actionType == _actionTypeFavorite)
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneUp.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundCorrect];
         
         [self scaleMeter:1];
-        [_gameplay incrementStatusHandledCorrectlyOfActionType:ACTION_TYPE_FAVORITE];
+        [_gameplay incrementStatusHandledCorrectlyOfActionType:_actionTypeFavorite];
         [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
         // play sound
-        [_audio playEffect:@"Audio/zapThreeToneDown.wav" volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+        [[Utilities sharedInstance] playSoundIncorrect];
         
-         if(_actionType == ACTION_TYPE_RECIRCULATE)
+         if(_actionType == _actionTypeRecirculate)
          {
              // flash correct action
              [self flashRecirculateButton];
@@ -125,7 +125,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     if(_recirculateButton.enabled || _favoriteButton.enabled)
     {
         // if if should have been recirc/faved, scaled down
-        if((self.actionType == ACTION_TYPE_RECIRCULATE && _recirculateButton.enabled) || (self.actionType == ACTION_TYPE_FAVORITE && _favoriteButton.enabled))
+        if((self.actionType == _actionTypeRecirculate && _recirculateButton.enabled) || (self.actionType == _actionTypeFavorite && _favoriteButton.enabled))
         {
             [self scaleMeter:(0)];
         }

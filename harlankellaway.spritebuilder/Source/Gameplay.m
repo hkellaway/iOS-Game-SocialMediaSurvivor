@@ -15,6 +15,7 @@
 #import "LevelOverPopup.h"
 #import "TutorialMeterPopup.h"
 #import "TutorialInboxPopup.h"
+#import "Utilities.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
 static const int TESTING_SPEED_MULTIPLIER = 1;
@@ -23,17 +24,13 @@ static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 
-// TODO: make this number larger than the largest amount that will fit on the tallest device
-static const int NUM_STATUSES = 28;
+static const int NUM_STATUSES = 28; // num larger than the tallest device screen height
 static const int STATUS_SPACING = 4;
 
 //static const CGFloat MAX_NUM_LEVELS = 10;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
-
-static const int ACTION_TYPE_RECIRCULATE = 1;
-static const int ACTION_TYPE_FAVORITE = 2;
 
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
@@ -45,9 +42,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 @implementation Gameplay
 {
-    // TODO: remove this
-    CCSprite *_meterTop;
-    
     // declared in SpriteBuilder
     CCNode *_stream;
     Clock *_clock;
@@ -67,39 +61,30 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     NSMutableArray *_topicsToFavorite;
     Level *_currentLevel;
     
-    int numRecirculatedCorrectly;
-    int numFavoritedCorrectly;
+    int _actionTypeRecirculate;
+    int _actionTypeFavorite;
+    int _numRecirculatedCorrectly;
+    int _numFavoritedCorrectly;
     
     BOOL updateRankForLevel;
     
-    NSTimer *timer;
-    int timerInterval;
-    double timerElapsed;
-    NSDate *timerStarted;
+    NSTimer *_timer;
+    int _timerInterval;
+    double _timerElapsed;
+    NSDate *_timerStarted;
     
     CCAnimationManager *_increaseRankAnimationManager;
     CCAnimationManager *_gameOverAnimationManager;
     
     CCAction *_easeInToCenter;
     
-    OALSimpleAudio *_audio;
-    
     BOOL _isScrolling;
 }
 
 - (void)didLoadFromCCB
 {
-    //    if([GameState sharedInstance].levelNum > MAX_NUM_LEVELS)
-    //    {
-    //        [self gameOver];
-    //    }
-    
-    // TODO: remove this
-    _meterTop.visible = FALSE;
+    // always run Tutorial if in test
     if (TESTING_RUN_TUTORIAL) { [GameState sharedInstance].isTutorialComplete = FALSE; }
-    // ****************//
-    
-    
     
     // initialize variables
     _numStatuses = NUM_STATUSES;
@@ -107,9 +92,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // set visibility of elements
     _messageNotification.visible = FALSE;
-    
-    // audio
-    _audio = [OALSimpleAudio sharedInstance];
     
     // animation
     _increaseRankAnimationManager = _meterIcon.animationManager;
@@ -119,8 +101,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
      _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
     
     // timer
-    timerInterval = TIMER_INTERVAL_IN_SECONDS;
-    timerElapsed = 0.0;
+    _timerInterval = TIMER_INTERVAL_IN_SECONDS;
+    _timerElapsed = 0.0;
     
     // clock
     _clock.gameplay = self;
@@ -135,12 +117,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     float percentToRecirculate = (!([[GameState sharedInstance].trendsToRecirculate count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_RECIRCULATE;
     float percentToFavorite = (!([[GameState sharedInstance].trendsToFavorite count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_FAVORITE;
     
+    // statuses
+    _actionTypeRecirculate = [GameState sharedInstance].actionTypeRecirculate;
+    _actionTypeFavorite = [GameState sharedInstance].actionTypeFavorite;
+    _numRecirculatedCorrectly = 0;
+    _numFavoritedCorrectly = 0;
     
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
-    
-    // statuses
-    numRecirculatedCorrectly = 0;
-    numFavoritedCorrectly = 0;
     
     // rank
     updateRankForLevel = TRUE; // set so rank is updated first round
@@ -167,17 +150,17 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         
         status.position = ccp(xPos, (i*(height + _statusSpacing)) + height/2);
         
-        if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE]])
+        if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeRecirculate]])
         {
-            status.actionType = ACTION_TYPE_RECIRCULATE;
+            status.actionType = _actionTypeRecirculate;
             
             _topicsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
             
             status.statusText.string = _topicsToRecirculate[0 + arc4random() % ([_topicsToRecirculate count])];
         }
-        else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE]])
+        else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeFavorite]])
         {
-            status.actionType = ACTION_TYPE_FAVORITE;
+            status.actionType = _actionTypeFavorite;
             
             _topicsToFavorite = [GameState sharedInstance].trendsToFavorite;
             
@@ -224,7 +207,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             // if status about to exit screen and action not pressed, flash correct action
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
             {
-                if(status.recirculateButton.enabled && (status.actionType == ACTION_TYPE_RECIRCULATE))
+                if(status.recirculateButton.enabled && (status.actionType == _actionTypeRecirculate))
                 {
                     if(!status.hasFlashedBeforeExitingScreen)
                     {
@@ -233,7 +216,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
                     }
                 }
                 
-                if(status.favoriteButton.enabled && (status.actionType == ACTION_TYPE_FAVORITE))
+                if(status.favoriteButton.enabled && (status.actionType == _actionTypeFavorite))
                 {
                     if(!status.hasFlashedBeforeExitingScreen)
                     {
@@ -289,22 +272,22 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType
 {
-    if(actionType == ACTION_TYPE_RECIRCULATE)
+    if(actionType == _actionTypeRecirculate)
     {
-        numRecirculatedCorrectly++;
+        _numRecirculatedCorrectly++;
     }
     
-    if(actionType == ACTION_TYPE_FAVORITE)
+    if(actionType == _actionTypeFavorite)
     {
-        numFavoritedCorrectly++;
+        _numFavoritedCorrectly++;
     }
 }
 
 -(void) fired
 {
-    [timer invalidate];
-    timer = nil;
-    timerElapsed = 0.0;
+    [_timer invalidate];
+    _timer = nil;
+    _timerElapsed = 0.0;
     [self resumeGame];
     
     int newTime =  _clock.timeLeft.string.intValue - TIMER_INTERVAL_IN_SECONDS;
@@ -342,9 +325,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)pauseTimer
 {
-    [timer invalidate];
-    timer = nil;
-    timerElapsed = [[NSDate date] timeIntervalSinceDate:timerStarted];
+    [_timer invalidate];
+    _timer = nil;
+    _timerElapsed = [[NSDate date] timeIntervalSinceDate:_timerStarted];
 }
 
 -(void) pauseGame
@@ -355,8 +338,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 -(void) resumeGame
 {
-    timer = [NSTimer scheduledTimerWithTimeInterval:(timerInterval - timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
-    timerStarted = [NSDate date];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:(_timerInterval - _timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
+    _timerStarted = [NSDate date];
     
     _isScrolling = TRUE;
 }
@@ -364,9 +347,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)gameOver
 {
     // play sound
-    [_audio playEffect:@"Audio/gameover.wav" volume:0.5f pitch:1.0f pan:1.0f loop:FALSE];
+    [[Utilities sharedInstance] playSoundGameOver];
     
-    [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + numRecirculatedCorrectly + numFavoritedCorrectly;
+    [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + _numRecirculatedCorrectly + _numFavoritedCorrectly;
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
@@ -376,7 +359,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _currentLevel = nil;
     
     // lower background music
-    [_audio setBgVolume:([_audio bgVolume]/2)];
+    [[Utilities sharedInstance] lowerVolume];
     
     // reset global values
     [[GameState sharedInstance] clearGameState];
@@ -392,7 +375,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)increaseRank
 {
     // play sound
-    [_audio playEffect:@"Audio/highlow.wav" volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
+    [[Utilities sharedInstance] playSoundRankIncrease];
     
     // play animation
     [_increaseRankAnimationManager runAnimationsForSequenceNamed:ANIMATION_INCREASE_RANK];
@@ -404,7 +387,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [[GameState sharedInstance] setPlayerRank:([GameState sharedInstance].playerRank + 1)];
     
     // reset meter height
-    _meterMiddle.scaleY = [GameState sharedInstance].meterScaleOriginal;
+    _meterMiddle.scaleY = [GameState sharedInstance].meterScaleDefault;
 }
 
 - (void)levelOver
@@ -422,6 +405,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // blur background
     _blurBackgroundLayer.visible = TRUE;
+    
+    // lower sound
+    [[Utilities sharedInstance] lowerVolume];
     
     // pause timer
     [self pauseTimer];
@@ -445,8 +431,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)updateLevelOverPopup
 {
-    [_levelOverPopup updateRecirculateLabel:numRecirculatedCorrectly];
-    [_levelOverPopup updateFavoriteLabel:numFavoritedCorrectly];
+    [_levelOverPopup updateRecirculateLabel:_numRecirculatedCorrectly];
+    [_levelOverPopup updateFavoriteLabel:_numFavoritedCorrectly];
     [_levelOverPopup updateScoreLabel];
     
     // if Rank increased this level, update Rank label
@@ -476,12 +462,12 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     {
         if(recirculatedCounter > 0)
         {
-            statuses[i] = [NSString stringWithFormat:@"%d", ACTION_TYPE_RECIRCULATE];
+            statuses[i] = [NSString stringWithFormat:@"%d", _actionTypeRecirculate];
             recirculatedCounter--;
         }
         else if(favoritedCounter > 0)
         {
-            statuses[i] = [NSString stringWithFormat:@"%d", ACTION_TYPE_FAVORITE];
+            statuses[i] = [NSString stringWithFormat:@"%d", _actionTypeFavorite];
             favoritedCounter--;
         }
         else

@@ -7,25 +7,17 @@
 //
 
 #import "MainScene.h"
+#import "Utilities.h"
 
 @implementation MainScene
-{
-    
-}
 
 - (void)didLoadFromCCB
 {
-    // access audio object
-    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // preload P-List data
+    [[Utilities sharedInstance] preloadPListData];
     
-    // start background music
-    [audio playBg:@"Audio/background_loop.wav" volume:0.5 pan:0.5 loop:TRUE];
-    
-    // preload other sound effects
-    [audio preloadEffect:@"Audio/gameover.wav"];
-    [audio preloadEffect:@"Audio/zapThreetoneUp.wav"];
-    [audio preloadEffect:@"Audio/zapThreeToneDown.wav"];
-    [audio preloadEffect:@"Audio/highlow.wav"];
+    // preload sounds
+    [[Utilities sharedInstance] preloadSounds];
 }
 
 - (void)play

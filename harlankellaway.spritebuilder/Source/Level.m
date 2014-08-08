@@ -7,6 +7,7 @@
 //
 
 #import "Level.h"
+#import "Utilities.h"
 
 @implementation Level
 
@@ -18,24 +19,11 @@
     
     if(self)
     {
+        // set level num
         self.levelNum = levelNum;
         
-        NSString *errorDesc = nil;
-        NSPropertyListFormat format;
-        
-        // get Level data from p-list
-        NSData *plistXML = [self getPListXML:@"Levels"];
-        
-        NSArray *levelsArray = (NSArray *)[NSPropertyListSerialization
-                                              propertyListFromData:plistXML
-                                              mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                              format:&format
-                                              errorDescription:&errorDesc];
-        
-        if(!levelsArray)
-        {
-            NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-        }
+        // get Level details from P-List
+        NSArray *levelsArray = [Utilities sharedInstance].levelsArray;
         
         // initialize instance variables
         _numTopics = [[levelsArray[levelNum - 1] objectForKey:@"NumTopics"] integerValue];
@@ -45,25 +33,6 @@
     }
     
     return self;
-}
-    
-# pragma mark - helper methods
-
-- (NSData *)getPListXML: (NSString *)pListName
-{
-    NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    // get file-styem path to file containing XML property list
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-    
-    // if file doesn't exist at file-system path, check application's main bundle
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-    }
-                 
-    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end

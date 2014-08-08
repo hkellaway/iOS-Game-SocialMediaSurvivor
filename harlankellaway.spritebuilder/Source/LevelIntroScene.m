@@ -9,9 +9,7 @@
 #import "LevelIntroScene.h"
 #import "GameState.h"
 #import "Trend.h"
-
-static NSString *IMAGE_NAME_RECIRCULATE = @"SocialMediaGameAssets/button_recirculate_noshadow.png";
-static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_noshadow.png";
+#import "Utilities.h"
 
 @implementation LevelIntroScene
 {
@@ -20,38 +18,20 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     
     NSMutableArray *_allTopics;
     NSMutableSet *_usedTopics;
-    int numToRecirculate;
-    int numToFavorite;
+    int _numToRecirculate;
+    int _numToFavorite;
 }
 
 - (void)didLoadFromCCB
 {
     int levelNum = [GameState sharedInstance].levelNum;
 
-    
-    // otherwise, create Trends for level and start
     _allTopics = [NSMutableArray array];
     _usedTopics = [NSMutableSet set];
     
-    // read in numTopics from Levels pList
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    NSData *plistXML = [self getPListXML:@"Levels"];
-    
-    // convert static property list into corresponding property-list objects
-    // Topics p-list contains array of dictionarys
-    NSArray *levelsArray = (NSArray *)[NSPropertyListSerialization
-                                       propertyListFromData:plistXML
-                                       mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                       format:&format
-                                       errorDescription:&errorDesc];
-    if(!levelsArray)
-    {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-    }
-    
-    numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
-    numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
+    NSArray *levelsArray = [Utilities sharedInstance].levelsArray;
+    _numToRecirculate = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToRecirculate"] intValue];
+    _numToFavorite = [[levelsArray[levelNum - 1] objectForKey:@"NumTopicsToFavorite"] intValue];
     
     // read in current Level and set Scene title
     _levelLabel.string = [NSString stringWithFormat:@"Day %d", [GameState sharedInstance].levelNum];
@@ -59,7 +39,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     NSMutableArray *tempTopics = [[NSMutableArray alloc] init];
     
     // generate Trend objects to global GameState Topics array
-    for(int j = 0; j < numToRecirculate; j++)
+    for(int j = 0; j < _numToRecirculate; j++)
     {
         // get random topic
         NSString *randomTopic = [self getRandomTopic];
@@ -79,7 +59,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     
     tempTopics = [[NSMutableArray alloc] init];
     
-    for(int k = 0; k < numToFavorite; k++)
+    for(int k = 0; k < _numToFavorite; k++)
     {
         NSString *randomTopic = [self getRandomTopic];
         
@@ -103,7 +83,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToFavorite[j]).capitalizedString]];
-        [trend setTrendAction:IMAGE_NAME_FAVORITE];
+        [trend setTrendAction:[GameState sharedInstance].imageNameFavorite];
         [_levelIntroTrendsBox addChild:trend];
     }
     
@@ -111,7 +91,7 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
     {
         Trend *trend = (Trend *)[CCBReader load:@"Trend"];
         [trend setTrendText:[NSString stringWithFormat:@"%@", ((NSString *)trendsToRecirculate[i]).capitalizedString]];
-        [trend setTrendAction:IMAGE_NAME_RECIRCULATE];
+        [trend setTrendAction:[GameState sharedInstance].imageNameRecirculate];
         [_levelIntroTrendsBox addChild:trend];
     }
 }
@@ -131,23 +111,6 @@ static NSString *IMAGE_NAME_FAVORITE = @"SocialMediaGameAssets/button_favorite_n
 {
     NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
     return allTopics[0 + arc4random() % ([allTopics count])];
-}
-
-- (NSData *)getPListXML: (NSString *)pListName
-{
-    NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    // get file-styem path to file containing XML property list
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-    
-    // if file doesn't exist at file-system path, check application's main bundle
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-    }
-    
-    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end
