@@ -35,4 +35,9 @@
     return self;
 }
 
+- (void)setStreamSpeed:(double)streamSpeed
+{
+    _streamSpeed = streamSpeed;
+}
+
 @end

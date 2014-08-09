@@ -8,8 +8,6 @@
 
 #import "Clock.h"
 
-//static const int NUM_SECONDS_IN_LEVEL = 30;
-
 @implementation Clock
 {
     CCLabelTTF *_timeLeftLabel;

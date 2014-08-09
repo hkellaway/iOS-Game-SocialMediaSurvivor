@@ -19,7 +19,6 @@
 #import "Utilities.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
-static const int TESTING_SPEED_MULTIPLIER = 1;
 static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
 static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
@@ -28,12 +27,13 @@ static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 static const int NUM_STATUSES = 28; // num larger than the tallest device screen height
 static const int STATUS_SPACING = 4;
 
-//static const CGFloat MAX_NUM_LEVELS = 10;
+static const int NUM_STATUSES_HANDLED_CORRECTLY_BEFORE_SPEED_INCREASED = 3;
+static const float STREAM_SPEED_INCREASE = 0.25;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 
-static const int NUM_SECONDS_PER_LEVEL = 30;
+static const int NUM_SECONDS_PER_LEVEL = 48;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -68,6 +68,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     int _actionTypeFavorite;
     int _numRecirculatedCorrectly;
     int _numFavoritedCorrectly;
+    int _numRecirculatedIncorrectly;
+    int _numFavoritedIncorrectly;
+    int _statusesHandledCorrectlyStreakCounter;
     
     BOOL updateRankForLevel;
     
@@ -125,6 +128,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _actionTypeFavorite = [GameState sharedInstance].actionTypeFavorite;
     _numRecirculatedCorrectly = 0;
     _numFavoritedCorrectly = 0;
+    _numRecirculatedIncorrectly = 0;
+    _numFavoritedIncorrectly = 0;;
+    _statusesHandledCorrectlyStreakCounter = 0;
     
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
     
@@ -203,6 +209,15 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 {
     float meterMiddleStart = _meterMiddle.scaleY;
     
+    if((_statusesHandledCorrectlyStreakCounter > 0) && ((_statusesHandledCorrectlyStreakCounter % NUM_STATUSES_HANDLED_CORRECTLY_BEFORE_SPEED_INCREASED) == 0))
+    {
+        // increase stream speed
+        [self increaseStreamSpeed];
+        
+        // reset counter
+        _statusesHandledCorrectlyStreakCounter = 0;
+    }
+    
     if(_isScrolling)
     {
         // scrolling of SocialMediaStatues
@@ -210,7 +225,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         {
             SocialMediaStatus *status = _statuses[i];
             
-            status.position = ccp(status.position.x, status.position.y - ([GameState sharedInstance].streamSpeed * TESTING_SPEED_MULTIPLIER));
+            status.position = ccp(status.position.x, status.position.y - (_currentLevel.streamSpeed));
             
             // if status about to exit screen and action not pressed, flash correct action
             if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
@@ -280,14 +295,39 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType
 {
+    _statusesHandledCorrectlyStreakCounter++;
+    
     if(actionType == _actionTypeRecirculate)
     {
         _numRecirculatedCorrectly++;
+        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     
     if(actionType == _actionTypeFavorite)
     {
         _numFavoritedCorrectly++;
+        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
+    }
+}
+
+- (void)decrementStatusHandledCorrectlyOfActionType:(int)actionType
+{
+    // reset streak
+    _statusesHandledCorrectlyStreakCounter = 0;
+    
+    // reset speed
+    [self resetStreamSpeed];
+    
+    if(actionType == _actionTypeRecirculate)
+    {
+        _numRecirculatedIncorrectly++;
+        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore - 1;
+    }
+    
+    if(actionType == _actionTypeFavorite)
+    {
+        _numFavoritedIncorrectly++;
+        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore - 1;
     }
 }
 
@@ -513,6 +553,16 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     }
     
     return statuses;
+}
+
+- (void)increaseStreamSpeed
+{
+    _currentLevel.streamSpeed = _currentLevel.streamSpeed + STREAM_SPEED_INCREASE;
+}
+
+- (void)resetStreamSpeed
+{
+    _currentLevel.streamSpeed = [GameState sharedInstance].streamSpeed;
 }
 
 - (void)pauseScrolling

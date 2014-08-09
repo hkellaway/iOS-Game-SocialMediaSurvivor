@@ -59,7 +59,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:_actionTypeRecirculate];
-        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
@@ -74,6 +73,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
         
         // scale meter down
         [self scaleMeter:0];
+        [_gameplay decrementStatusHandledCorrectlyOfActionType:_actionTypeRecirculate];
     }
     
     // disable button
@@ -93,7 +93,6 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
         
         [self scaleMeter:1];
         [_gameplay incrementStatusHandledCorrectlyOfActionType:_actionTypeFavorite];
-        [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + 1;
     }
     else
     {
@@ -108,6 +107,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
         
         // scale meter down
         [self scaleMeter:0];
+        [_gameplay decrementStatusHandledCorrectlyOfActionType:_actionTypeFavorite];
     }
     
     // disable button

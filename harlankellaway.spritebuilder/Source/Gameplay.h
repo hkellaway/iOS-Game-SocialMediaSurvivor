@@ -13,17 +13,18 @@
 
 @property (nonatomic, strong) CCSprite *meterMiddle;
 @property (nonatomic, strong) CCSprite *meterBackground;
+@property (nonatomic, strong) CCNode *recirculateSprite;
 @property (nonatomic, strong) Inbox *inbox;
 @property (nonatomic, strong) CCButton *inboxButton;
 @property (nonatomic, strong) CCButton *pauseButton;
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;
+
 @property (nonatomic, assign) BOOL isPaused;
 @property (nonatomic, assign) BOOL isLevelOver;
 
-@property (nonatomic, strong) CCNode *recirculateSprite;
-
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType;
+- (void)decrementStatusHandledCorrectlyOfActionType:(int)actionType;
 - (void) pauseTimer;
 -(void) pauseGame;
 -(void) resumeGame;
