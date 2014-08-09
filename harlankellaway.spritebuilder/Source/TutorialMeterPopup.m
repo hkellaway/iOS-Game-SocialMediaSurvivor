@@ -31,8 +31,9 @@
         [_gameplay.inbox toggleVisibility];
     }
     
-    // disable Inbeox button
+    // disable buttons
     _gameplay.inboxButton.enabled = FALSE;
+    _gameplay.pauseButton.enabled = FALSE;
     
     // lower volume
     [[Utilities sharedInstance] lowerVolume];
@@ -47,8 +48,9 @@
         // reset volume
         [[Utilities sharedInstance] raiseVolume];
     
-        // re-enable Inbeox button
+        // re-enable buttons
         _gameplay.inboxButton.enabled = TRUE;
+        _gameplay.pauseButton.enabled = TRUE;
     
         [_gameplay resumeGame];
     }

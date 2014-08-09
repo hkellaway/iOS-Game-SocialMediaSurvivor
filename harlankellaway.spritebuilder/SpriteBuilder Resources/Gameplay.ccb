@@ -1783,7 +1783,7 @@
 				<key>displayName</key>
 				<string>ButtonPause</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_pauseButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -2112,6 +2112,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2250,6 +2252,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>PausePopup</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_pausePopup</string>
 				<key>memberVarAssignmentType</key>
@@ -2300,8 +2304,6 @@
 						<string>PausePopup.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) CCSprite *meterBackground;
 @property (nonatomic, strong) Inbox *inbox;
 @property (nonatomic, strong) CCButton *inboxButton;
+@property (nonatomic, strong) CCButton *pauseButton;
 @property (nonatomic, assign) int numStatuses;
 @property (nonatomic, assign) int statusSpacing;
 @property (nonatomic, assign) BOOL isPaused;
