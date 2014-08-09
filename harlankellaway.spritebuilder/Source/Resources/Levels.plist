@@ -6,7 +6,7 @@
 		<key>LevelNum</key>
 		<integer>1</integer>
 		<key>StreamSpeed</key>
-		<real>0.25</real>
+		<integer>2</integer>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>

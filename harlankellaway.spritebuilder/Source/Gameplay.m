@@ -23,11 +23,12 @@ static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
 static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
+static NSString *ANIMATION_STREAK_ACHEIVED = @"StreakAnimation";
 
 static const int NUM_STATUSES = 28; // num larger than the tallest device screen height
 static const int STATUS_SPACING = 4;
 
-static const int NUM_STATUSES_HANDLED_CORRECTLY_BEFORE_SPEED_INCREASED = 3;
+static const int NUM_STATUSES_HANDLED_FOR_STREAK = 3;
 static const float STREAM_SPEED_INCREASE = 0.25;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
@@ -51,6 +52,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCSprite *_meterIcon;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
+    CCLabelTTF *_streakLabel;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
@@ -70,7 +72,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     int _numFavoritedCorrectly;
     int _numRecirculatedIncorrectly;
     int _numFavoritedIncorrectly;
-    int _statusesHandledCorrectlyStreakCounter;
+    int _streakCounter;
     
     BOOL updateRankForLevel;
     
@@ -83,6 +85,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCAnimationManager *_gameOverAnimationManager;
     
     CCAction *_easeInToCenter;
+    CCAction *_fadeIn;
+    CCAction *_fadeOut;
+    
     
     BOOL _isScrolling;
 }
@@ -103,8 +108,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _increaseRankAnimationManager = _meterIcon.animationManager;
     _gameOverAnimationManager = _meterBackground.animationManager;
     
+    
     // actions
      _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
+    _fadeIn = [CCActionFadeIn actionWithDuration:1.0];
+    _fadeOut = [CCActionFadeOut actionWithDuration:1.0];
     
     // timer
     _timerInterval = TIMER_INTERVAL_IN_SECONDS;
@@ -129,8 +137,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _numRecirculatedCorrectly = 0;
     _numFavoritedCorrectly = 0;
     _numRecirculatedIncorrectly = 0;
-    _numFavoritedIncorrectly = 0;;
-    _statusesHandledCorrectlyStreakCounter = 0;
+    _numFavoritedIncorrectly = 0;
+    
+    // streak
+    _streakCounter = 0;
+//    _streakLabel.visible = FALSE;
     
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
     
@@ -209,13 +220,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 {
     float meterMiddleStart = _meterMiddle.scaleY;
     
-    if((_statusesHandledCorrectlyStreakCounter > 0) && ((_statusesHandledCorrectlyStreakCounter % NUM_STATUSES_HANDLED_CORRECTLY_BEFORE_SPEED_INCREASED) == 0))
+    if((_streakCounter > 0) && ((_streakCounter % NUM_STATUSES_HANDLED_FOR_STREAK) == 0))
     {
         // increase stream speed
         [self increaseStreamSpeed];
         
         // reset counter
-        _statusesHandledCorrectlyStreakCounter = 0;
+        _streakCounter = 0;
     }
     
     if(_isScrolling)
@@ -232,11 +243,15 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             {
                 if(status.recirculateButton.enabled && (status.actionType == _actionTypeRecirculate))
                 {
+                    // flash
                     if(!status.hasFlashedBeforeExitingScreen)
                     {
                         [status flashRecirculateButton];
                         status.hasFlashedBeforeExitingScreen = TRUE;
                     }
+                    
+                    // reset speed
+                    [self resetStreamSpeed];
                 }
                 
                 if(status.favoriteButton.enabled && (status.actionType == _actionTypeFavorite))
@@ -295,7 +310,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)incrementStatusHandledCorrectlyOfActionType:(int)actionType
 {
-    _statusesHandledCorrectlyStreakCounter++;
+    _streakCounter++;
     
     if(actionType == _actionTypeRecirculate)
     {
@@ -313,7 +328,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 - (void)decrementStatusHandledCorrectlyOfActionType:(int)actionType
 {
     // reset streak
-    _statusesHandledCorrectlyStreakCounter = 0;
+    _streakCounter = 0;
     
     // reset speed
     [self resetStreamSpeed];
@@ -495,8 +510,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [[GameState sharedInstance] setMeterScale:_meterMiddle.scaleY];
 }
 
-# pragma mark - Helper Methods
-
 - (void)updateLevelOverPopup
 {
     [_levelOverPopup updateRecirculateLabel:_numRecirculatedCorrectly];
@@ -557,6 +570,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 
 - (void)increaseStreamSpeed
 {
+    // play animation
+    [_streakLabel runAction:_fadeIn];
+    [_streakLabel runAction:_fadeOut];
+    
+    // increase speed
     _currentLevel.streamSpeed = _currentLevel.streamSpeed + STREAM_SPEED_INCREASE;
 }
 
