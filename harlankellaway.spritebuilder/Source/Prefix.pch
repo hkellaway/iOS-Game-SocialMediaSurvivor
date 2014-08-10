@@ -14,4 +14,8 @@
 #import "cocos2d.h"
 #import "cocos2d-ui.h"
 #import "CCBuilderReader.h"
+
+// MGWU SDK
+#import <mgwuSDK/MGWU.h>
+
 #endif

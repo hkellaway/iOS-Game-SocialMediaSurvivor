@@ -54,6 +54,9 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    // MGWU SDK
+    [MGWU loadMGWU:@"otxN2vR0qLCIAxEhU7Od0j9yL6yivvPr"];
+    
     return YES;
 }
 
