@@ -127,11 +127,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     [[GameState sharedInstance] setStreamSpeed:_currentLevel.streamSpeed];
     _levelOverPopup.gameplay = self;
     
-    // get order recirculate/favorite/avoid for this set of Statuses
-    float percentToRecirculate = (!([[GameState sharedInstance].trendsToRecirculate count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_RECIRCULATE;
-    float percentToFavorite = (!([[GameState sharedInstance].trendsToFavorite count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_FAVORITE;
-    
-    // statuses
+    // topics/actions
+    _topicsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
+    _topicsToFavorite = [GameState sharedInstance].trendsToFavorite;
     _actionTypeRecirculate = [GameState sharedInstance].actionTypeRecirculate;
     _actionTypeFavorite = [GameState sharedInstance].actionTypeFavorite;
     _numRecirculatedCorrectly = 0;
@@ -139,11 +137,15 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _numRecirculatedIncorrectly = 0;
     _numFavoritedIncorrectly = 0;
     
+    // get order recirculate/favorite/avoid for this set of Statuses
+    float percentToRecirculate = (!([[GameState sharedInstance].trendsToRecirculate count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_RECIRCULATE;
+    float percentToFavorite = (!([[GameState sharedInstance].trendsToFavorite count]) > 0) ? 0.0 : PERCENTAGE_STATUS_TO_FAVORITE;
+    
     // streak
     _streakCounter = 0;
     
     // rank
-    updateRankForLevel = TRUE; // set so rank is updated first round
+    updateRankForLevel = FALSE;
     
     // meter
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
@@ -164,7 +166,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // SocialMediaStatus objects
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
-    NSMutableSet *usedTopics = [NSMutableSet setWithArray:_topicsToRecirculate];
+    NSMutableArray *usedTopics = [NSMutableArray arrayWithArray:_topicsToRecirculate];
     [usedTopics addObjectsFromArray:_topicsToFavorite];
     
     for(int i = 0; i < _numStatuses; i++)
@@ -180,15 +182,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         {
             status.actionType = _actionTypeRecirculate;
             
-            _topicsToRecirculate = [GameState sharedInstance].trendsToRecirculate;
-            
             status.statusText.string = _topicsToRecirculate[0 + arc4random() % ([_topicsToRecirculate count])];
         }
         else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeFavorite]])
         {
             status.actionType = _actionTypeFavorite;
-            
-            _topicsToFavorite = [GameState sharedInstance].trendsToFavorite;
             
             status.statusText.string = _topicsToFavorite[0 + arc4random() % ([_topicsToFavorite count])];
         }
@@ -198,11 +196,16 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             
             NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
             
+            // don't use a topic thats to be recirculated/favorited as a random topic
             NSString *randomTopic = allTopics[0 + arc4random() % ([allTopics count])];
             
-            while(![usedTopics containsObject:randomTopic])
+            // TODO: still possible to use incorrect topic
+            for (NSString *topic in usedTopics)
             {
-                randomTopic = allTopics[0 + arc4random() % ([allTopics count])];
+                if([randomTopic isEqualToString:topic])
+                {
+                    randomTopic = allTopics[0 + arc4random() % ([allTopics count])];
+                }
             }
             
             status.statusText.string = allTopics[0 + arc4random() % ([allTopics count])];
