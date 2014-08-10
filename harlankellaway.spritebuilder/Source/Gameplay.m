@@ -508,6 +508,17 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // persist meter scale
     [[GameState sharedInstance] setMeterScale:_meterMiddle.scaleY];
+    
+    // MGWU SDK - Analytics
+    NSNumber *score = [NSNumber numberWithInt:[GameState sharedInstance].playerScore];
+    NSNumber *level = [NSNumber numberWithInt:_currentLevel.levelNum];
+    NSNumber *rank = [NSNumber numberWithInt:[GameState sharedInstance].playerRank];
+    NSNumber *recirculatedCorrectly = [NSNumber numberWithInt:_numRecirculatedCorrectly];
+    NSNumber *favoritedCorrectly = [NSNumber numberWithInt:_numRecirculatedIncorrectly];
+    NSNumber *recirculatedIncorrectly = [NSNumber numberWithInt:_numFavoritedCorrectly];
+    NSNumber *favoritedIncorrectly = [NSNumber numberWithInt:_numFavoritedIncorrectly];
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys: score, @"score", level, @"level", rank, @"rank", recirculatedCorrectly, @"recirculatedCorrectly", favoritedCorrectly, @"favoritedCorrectly", recirculatedIncorrectly, @"recirculatedIncorrectly", favoritedIncorrectly, @"favoritedIncorrectly", nil];
+    [MGWU logEvent:@"level_complete" withParams:params];
 }
 
 - (void)updateLevelOverPopup
