@@ -286,7 +286,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>565</real>
+									<real>560</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -493,7 +493,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>435</real>
+									<real>445</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -666,6 +666,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -873,8 +875,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1490,7 +1490,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>SocialMediaGameAssets/level_over_background.png</string>
+							<string>SocialMediaGameAssets/levelover_background.png</string>
 						</array>
 					</dict>
 					<dict>

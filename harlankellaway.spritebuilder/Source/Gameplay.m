@@ -25,7 +25,7 @@ static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 static NSString *ANIMATION_STREAK_ACHEIVED = @"StreakAnimation";
 
-static const int NUM_STATUSES = 28; // num larger than the tallest device screen height
+static const int NUM_STATUSES = 21; // num larger than the tallest device screen height (1024)
 static const int STATUS_SPACING = 4;
 
 static const int NUM_STATUSES_HANDLED_FOR_STREAK = 3;
