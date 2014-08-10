@@ -432,7 +432,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     // play sound
     [[Utilities sharedInstance] playSoundGameOver];
     
-    [GameState sharedInstance].playerScore = [GameState sharedInstance].playerScore + _numRecirculatedCorrectly + _numFavoritedCorrectly;
+    // set score
+    int score = [GameState sharedInstance].playerScore + _numRecirculatedCorrectly + _numFavoritedCorrectly;
+    if(score < 0) { score = 0; }
+    [GameState sharedInstance].playerScore = score;
     
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
