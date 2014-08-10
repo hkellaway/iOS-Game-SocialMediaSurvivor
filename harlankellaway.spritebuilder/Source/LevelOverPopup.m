@@ -52,7 +52,13 @@ static const int MAX_NUM_LEVELS = 40;
 {
     // retreive Rank title from p-list and set
     NSArray *ranksArray = [Utilities sharedInstance].ranksArray;
-    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"]];
+    
+    int numRanks = [ranksArray count];
+    int rankNum = [GameState sharedInstance].playerRank;
+    
+    if(rankNum > numRanks) { rankNum = rankNum; }
+    
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
 }
 
 -(void)updateScoreLabel

@@ -10,6 +10,15 @@
 #import "Utilities.h"
 
 @implementation MainScene
+{
+    // declared in SpriteBuilder
+    CCNode *_moreOptionsNode;
+    ///////////////////////////
+    
+    CCAction *_easeInToCenter;
+    CCAction *_easeOutOfCenter;
+    BOOL _moreOptionsDisplayed;
+}
 
 - (void)didLoadFromCCB
 {
@@ -18,11 +27,39 @@
     
     // preload sounds
     [[Utilities sharedInstance] preloadSounds];
+    
+    // actions
+    _easeInToCenter = [CCActionMoveTo actionWithDuration:1.0 position:ccp(0.5,0.05)];
+    _easeOutOfCenter = [CCActionMoveTo actionWithDuration:1.0 position:ccp(-0.22,0.05)];
+
+    _moreOptionsDisplayed = FALSE;
 }
+
+#pragma mark - Button Actions
 
 - (void)play
 {
     CCScene *scene = [CCBReader loadAsScene:@"LevelIntroScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+- (void)displayMoreOptions
+{
+    _moreOptionsDisplayed = !_moreOptionsDisplayed;
+    
+    if(_moreOptionsDisplayed)
+    {
+        [_moreOptionsNode runAction:_easeInToCenter];
+    }
+    else
+    {
+        [_moreOptionsNode runAction:_easeOutOfCenter];
+    }
+}
+
+- (void)displayCredits
+{
+    CCScene *scene = [CCBReader loadAsScene:@"CreditsScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 

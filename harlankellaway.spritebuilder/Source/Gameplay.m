@@ -141,9 +141,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // streak
     _streakCounter = 0;
-//    _streakLabel.visible = FALSE;
-    
-    NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
     
     // rank
     updateRankForLevel = TRUE; // set so rank is updated first round
@@ -166,6 +163,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _isScrolling = TRUE;
     
     // SocialMediaStatus objects
+    NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
+    NSMutableSet *usedTopics = [NSMutableSet setWithArray:_topicsToRecirculate];
+    [usedTopics addObjectsFromArray:_topicsToFavorite];
+    
     for(int i = 0; i < _numStatuses; i++)
     {
         SocialMediaStatus *status = (SocialMediaStatus*)[CCBReader load:@"SocialMediaStatus"];
@@ -196,6 +197,14 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             status.actionType = 0;
             
             NSMutableArray *allTopics = [GameState sharedInstance].allTopics;
+            
+            NSString *randomTopic = allTopics[0 + arc4random() % ([allTopics count])];
+            
+            while(![usedTopics containsObject:randomTopic])
+            {
+                randomTopic = allTopics[0 + arc4random() % ([allTopics count])];
+            }
+            
             status.statusText.string = allTopics[0 + arc4random() % ([allTopics count])];
         }
         
