@@ -131,6 +131,7 @@
 		CEC006F41997D519008F1C8F /* send-button-instate.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC006AE1997D519008F1C8F /* send-button-instate.png */; };
 		CEC006F51997D519008F1C8F /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC006AF1997D519008F1C8F /* send-field-landscape.png */; };
 		CEC006F819981416008F1C8F /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC006F719981416008F1C8F /* CreditsScene.m */; };
+		CEC006FB19982AD2008F1C8F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC006FA19982AD2008F1C8F /* Crashlytics.framework */; };
 		CEC97DD7199581BF0017A390 /* PausePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC97DD6199581BF0017A390 /* PausePopup.m */; };
 		CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF62CC0197ED10800E3D6A6 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
@@ -295,6 +296,7 @@
 		CEC006AF1997D519008F1C8F /* send-field-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-field-landscape.png"; sourceTree = "<group>"; };
 		CEC006F619981416008F1C8F /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsScene.h; path = Source/CreditsScene.h; sourceTree = "<group>"; };
 		CEC006F719981416008F1C8F /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsScene.m; path = Source/CreditsScene.m; sourceTree = "<group>"; };
+		CEC006FA19982AD2008F1C8F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CEC97DD5199581BF0017A390 /* PausePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PausePopup.h; path = Source/PausePopup.h; sourceTree = "<group>"; };
 		CEC97DD6199581BF0017A390 /* PausePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PausePopup.m; path = Source/PausePopup.m; sourceTree = "<group>"; };
 		CEF62CBF197ED10800E3D6A6 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			files = (
 				CEC006651997D46E008F1C8F /* SystemConfiguration.framework in Frameworks */,
 				CEC006631997D466008F1C8F /* StoreKit.framework in Frameworks */,
+				CEC006FB19982AD2008F1C8F /* Crashlytics.framework in Frameworks */,
 				CEC006611997D460008F1C8F /* Twitter.framework in Frameworks */,
 				CEC0065F1997D45A008F1C8F /* Social.framework in Frameworks */,
 				CEC0065D1997D453008F1C8F /* MessageUI.framework in Frameworks */,
@@ -431,6 +434,7 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEC006FA19982AD2008F1C8F /* Crashlytics.framework */,
 				CEC006681997D519008F1C8F /* mgwuSDK.embeddedframework */,
 				CEC006641997D46E008F1C8F /* SystemConfiguration.framework */,
 				CEC006621997D466008F1C8F /* StoreKit.framework */,
@@ -574,6 +578,7 @@
 				B77F1B2A17B978D7009739AE /* Sources */,
 				B77F1B2B17B978D7009739AE /* Frameworks */,
 				B77F1B2C17B978D7009739AE /* Resources */,
+				CEC006F919982A81008F1C8F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -738,6 +743,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CEC006F919982A81008F1C8F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run ae253c4e8c2c3ff46fdd4383cd97d56bd340b55e 427fd6d48e917d1c3ae7146a5926909dac4570727cb7489062d00ed68735f451";
+		};
 		D2E0167A18D782EC00927430 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -861,6 +879,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mgwuSDK.embeddedframework",
+					"$(PROJECT_DIR)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -899,6 +918,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mgwuSDK.embeddedframework",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;

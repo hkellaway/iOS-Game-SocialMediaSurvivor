@@ -27,11 +27,18 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppController
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // MGWU SDK
+    [MGWU loadMGWU:@"otxN2vR0qLCIAxEhU7Od0j9yL6yivvPr"];
+    
+    // CRASHLYTICS
+    [Crashlytics startWithAPIKey:@"ae253c4e8c2c3ff46fdd4383cd97d56bd340b55e"];
+    
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];
@@ -53,9 +60,6 @@
     //[cocos2dSetup setObject:kEAGLColorFormatRGB565 forKey:CCConfigPixelFormat];
     
     [self setupCocos2dWithOptions:cocos2dSetup];
-    
-    // MGWU SDK
-    [MGWU loadMGWU:@"otxN2vR0qLCIAxEhU7Od0j9yL6yivvPr"];
     
     return YES;
 }
