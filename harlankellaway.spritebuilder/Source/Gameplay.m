@@ -34,7 +34,7 @@ static const float STREAM_SPEED_INCREASE = 0.25;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 
-static const int NUM_SECONDS_PER_LEVEL = 48;
+static const int NUM_SECONDS_PER_LEVEL = 10;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -47,12 +47,12 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
 {
     // declared in SpriteBuilder
     CCNode *_stream;
-    Clock *_clock;
     CCSprite *_meterBottom;
     CCSprite *_meterIcon;
     CCNode *_messageNotification;
     CCLabelTTF *_numInboxNotifications;
     CCLabelTTF *_streakLabel;
+    Clock *_clock;
     LevelOverPopup *_levelOverPopup;
     TutorialMeterPopup *_tutorialMeterPopup;
     TutorialInboxPopup *_tutorialInboxPopup;
@@ -468,6 +468,17 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // reset global values
     [[GameState sharedInstance] clearGameState];
+    
+    // MGWU SDK - Analytics
+    NSNumber *playerScore = [NSNumber numberWithInt:[GameState sharedInstance].playerScore];
+    NSNumber *level = [NSNumber numberWithInt:_currentLevel.levelNum];
+    NSNumber *rank = [NSNumber numberWithInt:[GameState sharedInstance].playerRank];
+    NSNumber *recirculatedCorrectly = [NSNumber numberWithInt:_numRecirculatedCorrectly];
+    NSNumber *favoritedCorrectly = [NSNumber numberWithInt:_numRecirculatedIncorrectly];
+    NSNumber *recirculatedIncorrectly = [NSNumber numberWithInt:_numFavoritedCorrectly];
+    NSNumber *favoritedIncorrectly = [NSNumber numberWithInt:_numFavoritedIncorrectly];
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys: playerScore, @"score", level, @"level", rank, @"rank", recirculatedCorrectly, @"recirculatedCorrectly", favoritedCorrectly, @"favoritedCorrectly", recirculatedIncorrectly, @"recirculatedIncorrectly", favoritedIncorrectly, @"favoritedIncorrectly", nil];
+    [MGWU logEvent:@"game_over" withParams:params];
 }
 
 - (void)toggleInbox

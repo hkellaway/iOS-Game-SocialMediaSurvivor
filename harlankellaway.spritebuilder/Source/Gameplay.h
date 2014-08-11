@@ -7,6 +7,7 @@
 //
 
 #import "CCNode.h"
+#import "Clock.h"
 #import "Inbox.h"
 
 @interface Gameplay : CCNode

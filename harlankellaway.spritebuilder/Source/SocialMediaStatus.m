@@ -11,7 +11,8 @@
 #import "Utilities.h"
 
 static const float STATUS_SCALE_FACTOR = 0.47;
-static const float METER_SCALE_FACTOR = 0.25;
+static const float METER_SCALE_FACTOR_UP = 0.5;
+static const float METER_SCALE_FACTOR_DOWN = 1.0;
 
 static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 
@@ -165,7 +166,7 @@ static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
     {
     
     // scale down if 0, up if 1
-    meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY + METER_SCALE_FACTOR : meterMiddle.scaleY - METER_SCALE_FACTOR);
+    meterMiddle.scaleY = (scaleDirection ? meterMiddle.scaleY + METER_SCALE_FACTOR_UP : meterMiddle.scaleY - METER_SCALE_FACTOR_DOWN);
     }
     
 }

@@ -9,8 +9,6 @@
 #import "CCSprite.h"
 
 @interface Inbox : CCSprite
-{
-}
 
 - (void)toggleVisibility;
 

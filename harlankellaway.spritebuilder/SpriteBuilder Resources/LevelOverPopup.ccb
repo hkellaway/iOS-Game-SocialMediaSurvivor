@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>14</integer>
+	<integer>15</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -669,7 +669,7 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
-						<integer>9</integer>
+						<integer>14</integer>
 						<key>baseClass</key>
 						<string>CCLabelTTF</string>
 						<key>children</key>
@@ -699,7 +699,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.5</real>
+									<real>0.48000001907348633</real>
 									<real>260</real>
 									<integer>0</integer>
 									<integer>2</integer>
@@ -737,7 +737,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Junior Manager’s Assistant</string>
+									<string>Slug</string>
 									<false/>
 								</array>
 							</dict>
@@ -756,7 +756,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>54</real>
+									<real>60</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -767,6 +767,19 @@
 								<string>Check</string>
 								<key>value</key>
 								<false/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.50196081399917603</real>
+									<real>1</real>
+									<real>1</real>
+								</array>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -787,7 +800,7 @@
 								<key>type</key>
 								<string>IntegerLabeled</string>
 								<key>value</key>
-								<integer>1</integer>
+								<integer>0</integer>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -795,7 +808,7 @@
 								<key>type</key>
 								<string>IntegerLabeled</string>
 								<key>value</key>
-								<integer>1</integer>
+								<integer>0</integer>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -804,8 +817,8 @@
 								<string>Color4</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>0.50196081399917603</real>
+									<real>1</real>
+									<real>1</real>
 									<real>1</real>
 									<real>1</real>
 								</array>
@@ -873,6 +886,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

@@ -48,6 +48,12 @@
             [self refresh];
         }
         _inboxTrendsBox.visible = TRUE;
+        
+        // MGWU SDK - Analytics
+        NSNumber *level = [NSNumber numberWithInt:[GameState sharedInstance].levelNum];
+        NSNumber *numTopics = [NSNumber numberWithInt:([[GameState sharedInstance].trendsToRecirculate count] + [[GameState sharedInstance].trendsToFavorite count])];
+        NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys: level, @"level", numTopics, @"numTopics", nil];
+        [MGWU logEvent:@"inbox_opened" withParams:params];
     }
     else
     {
