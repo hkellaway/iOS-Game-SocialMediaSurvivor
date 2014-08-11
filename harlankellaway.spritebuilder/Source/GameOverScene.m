@@ -45,7 +45,13 @@
     
     // update rank label
     NSArray *ranksArray = [Utilities sharedInstance].ranksArray;
-    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[[GameState sharedInstance].playerRank] objectForKey:@"RankTitle"]];
+    
+    int numRanks = [ranksArray count];
+    int rankNum = [GameState sharedInstance].playerRank;
+    
+    if(rankNum > numRanks) { rankNum = numRanks; }
+    
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
     
     // social media buttons
     _twitterButton.enabled = FALSE;

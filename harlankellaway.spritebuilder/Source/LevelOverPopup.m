@@ -58,7 +58,7 @@ static const int MAX_NUM_LEVELS = 40;
     int numRanks = [ranksArray count];
     int rankNum = [GameState sharedInstance].playerRank;
     
-    if(rankNum > numRanks) { rankNum = rankNum; }
+    if(rankNum > numRanks) { rankNum = numRanks; }
     
     _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
 }
