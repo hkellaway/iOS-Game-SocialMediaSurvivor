@@ -23,6 +23,8 @@ static NSString *const GAME_STATE_ACTION_TYPE_FAVORITE_KEY = @"GameStateActionTy
 // player values
 static NSString *const GAME_STATE_PLAYER_RANK_KEY = @"GameStatePlayerRankKey";
 static NSString *const GAME_STATE_PLAYER_SCORE_KEY = @"GameStatePlayerScoreKey";
+static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
+static NSString *const GAME_STATE_FLAG_HASACHIEVEDHIGHSCORE_KEY = @"GameStateFlagHasAchievedHighScoreKey";
 
 // topics
 static NSString *const GAME_STATE_LEVEL_ALL_TOPICS_KEY = @"GameStateAllTopicsKey";
@@ -30,7 +32,7 @@ static NSString *const GAME_STATE_TRENDS_TO_RECIRCULATE_KEY = @"GameStateTrendsT
 static NSString *const GAME_STATE_TRENDS_TO_FAVORITE_KEY = @"GameStateTrendsToFavoriteKey";
 
 // tutorial
-static NSString *const GAME_STATE_FLAG_ISTUTORIALCOMPLETE = @"GameStateFlagIsTutorialComplete";
+static NSString *const GAME_STATE_FLAG_ISTUTORIALCOMPLETE_KEY = @"GameStateFlagIsTutorialCompleteKey";
 
 
 // set defaults
@@ -103,13 +105,31 @@ static int const DEFAULT_PLAYER_SCORE = 0;
         // clear GameState
         [self clearGameState];
 
+        // high score
+        NSString *currentHighScore = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_HIGH_SCORE_KEY];
+        
+        if(currentHighScore == nil)
+        {
+            [self setHighScore:0];
+        }
+
+        // high score flag
+        NSString *currentHighScoreFlagState = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_FLAG_HASACHIEVEDHIGHSCORE_KEY];
+        
+        // if state not recorded, set to false
+        if(currentHighScoreFlagState == nil || ([currentHighScoreFlagState isEqual: @"0"]))
+        {
+            [self setHasAchievedHighScore:FALSE];
+        }
+        
+        
         // if tutorial not already marked as complete ever, record
-        NSString *currentTutorialState = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE];
+        NSString *currentTutorialState = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE_KEY];
         
         // if tutorial state not recorded, set to not complete
         if(currentTutorialState == nil || ([currentTutorialState isEqual: @"0"]))
         {
-            [self setFlagIsTutorialComplete:FALSE];
+            [self setIsTutorialComplete:FALSE];
         }
         
         // load in all Topics if none are available
@@ -140,14 +160,13 @@ static int const DEFAULT_PLAYER_SCORE = 0;
 
 # pragma mark - setter overides
 
-- (void)setFlagIsTutorialComplete:(BOOL)isTutorialComplete
+- (void)setIsTutorialComplete:(BOOL)isTutorialComplete
 {
     _isTutorialComplete = isTutorialComplete;
     NSString *isTutorialCompleteString = [NSString stringWithFormat:@"%i", isTutorialComplete];
     
-    
     // store change
-    [[NSUserDefaults standardUserDefaults]setObject:isTutorialCompleteString forKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE];
+    [[NSUserDefaults standardUserDefaults]setObject:isTutorialCompleteString forKey:GAME_STATE_FLAG_ISTUTORIALCOMPLETE_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
@@ -203,6 +222,28 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     
     // store chance
     [[NSUserDefaults standardUserDefaults]setObject:scoreNSNumber forKey:GAME_STATE_PLAYER_SCORE_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+- (void)setHighScore:(NSInteger)highScore
+{
+    _highScore = highScore;
+    
+    NSNumber *scoreNSNumber = [NSNumber numberWithInt:highScore];
+    
+    // store chance
+    [[NSUserDefaults standardUserDefaults]setObject:scoreNSNumber forKey:GAME_STATE_HIGH_SCORE_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+- (void)setHasAchievedHighScore:(BOOL)hasAchievedHighScore
+{
+    _hasAchievedHighScore = hasAchievedHighScore;
+    NSString *hasAchievedHighScoreString = [NSString stringWithFormat:@"%i", hasAchievedHighScore];
+    
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults]setObject:hasAchievedHighScoreString forKey:GAME_STATE_FLAG_HASACHIEVEDHIGHSCORE_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 

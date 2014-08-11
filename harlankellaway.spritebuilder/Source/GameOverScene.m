@@ -16,6 +16,7 @@
     CCLabelTTF *_gameOverLabel;
     CCLabelTTF *_rankLabel;
     CCLabelTTF *_scoreLabel;
+    CCLabelTTF *_highScoreLabel;
     CCButton * _twitterButton;
     CCButton *_facebookButton;
     ///////////////////////////
@@ -23,6 +24,18 @@
 
 - (void)didLoadFromCCB
 {
+    if([GameState sharedInstance].hasAchievedHighScore)
+    {
+        _highScoreLabel.visible = TRUE;
+        
+        // reset flag
+        [GameState sharedInstance].hasAchievedHighScore = FALSE;
+    }
+    else
+    {
+        _highScoreLabel.visible = FALSE;
+    }
+    
     // update title label
     int levelNum = [GameState sharedInstance].levelNum;
     _gameOverLabel.string = ((levelNum == 2) ? [NSString stringWithFormat:@"You Survived %d Day", levelNum-1] : [NSString stringWithFormat:@"You Survived %d Days", levelNum-1]);

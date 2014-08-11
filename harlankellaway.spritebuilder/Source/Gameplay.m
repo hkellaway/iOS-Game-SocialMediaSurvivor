@@ -449,6 +449,13 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     if(score < 0) { score = 0; }
     [GameState sharedInstance].playerScore = score;
     
+    // check if high score
+    if(score > [GameState sharedInstance].highScore)
+    {
+        [GameState sharedInstance].highScore = score;
+        [GameState sharedInstance].hasAchievedHighScore = TRUE;
+    }
+    
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene];

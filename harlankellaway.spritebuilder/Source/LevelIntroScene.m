@@ -7,9 +7,9 @@
 //
 
 #import "LevelIntroScene.h"
-#import "GameState.h"
 #import "Trend.h"
 #import "Utilities.h"
+#import "GameState.h"
 
 @implementation LevelIntroScene
 {

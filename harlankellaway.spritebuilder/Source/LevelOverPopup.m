@@ -22,11 +22,13 @@ static const int MAX_NUM_LEVELS = 40;
     CCLabelTTF *_favoritesLabel;
     CCLabelTTF *_rankLabel;
     CCLabelTTF *_scoreLabel;
+    CCLabelTTF *_highScoreLabel;
 }
 
 
 - (void)didLoadFromCCB
 {
+    _highScoreLabel.visible = FALSE;
     self.visible = FALSE;
 }
 
@@ -63,7 +65,14 @@ static const int MAX_NUM_LEVELS = 40;
 
 -(void)updateScoreLabel
 {
-    _scoreLabel.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].playerScore];
+    int score = [GameState sharedInstance].playerScore;
+    
+    _scoreLabel.string = [NSString stringWithFormat:@"%i", score];
+    
+    if(score > [GameState sharedInstance].highScore)
+    {
+        _highScoreLabel.visible = TRUE;
+    }
 }
 
 - (void)updateRecirculateLabel:(int)numRecirculated
@@ -81,8 +90,6 @@ static const int MAX_NUM_LEVELS = 40;
     // if max number of levels not reached, continue
     if([GameState sharedInstance].levelNum == (MAX_NUM_LEVELS) + 1)
     {
-        CCLOG(@"MAX_NUM_LEVELS = %i - GAME OVER", MAX_NUM_LEVELS);
-        
         [_gameplay gameOver];
     }
     else

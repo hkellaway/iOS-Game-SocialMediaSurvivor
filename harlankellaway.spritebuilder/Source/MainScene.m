@@ -8,10 +8,12 @@
 
 #import "MainScene.h"
 #import "Utilities.h"
+#import "GameState.h"
 
 @implementation MainScene
 {
     // declared in SpriteBuilder
+    CCLabelTTF *_highScoreLabel;
     CCNode *_moreOptionsNode;
     ///////////////////////////
     
@@ -27,6 +29,9 @@
     
     // preload sounds
     [[Utilities sharedInstance] preloadSounds];
+    
+    /// high score label
+    _highScoreLabel.string = [NSString stringWithFormat:@"High Score: %i", [GameState sharedInstance].highScore];
     
     // actions
     _easeInToCenter = [CCActionMoveTo actionWithDuration:1.0 position:ccp(0.5,0.05)];

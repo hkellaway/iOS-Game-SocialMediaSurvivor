@@ -25,6 +25,8 @@
 
 @property (nonatomic, assign) NSInteger playerRank;
 @property (nonatomic, assign) NSInteger playerScore;
+@property (nonatomic, assign) NSInteger highScore;
+@property (nonatomic, assign) BOOL hasAchievedHighScore;
 
 @property (nonatomic, assign) BOOL isTutorialComplete;
 
