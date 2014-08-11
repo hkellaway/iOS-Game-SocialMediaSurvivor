@@ -81,22 +81,22 @@ static NSString *PLIST_NAME_RANKS = @"Ranks";
 
 - (void)playSoundCorrect
 {
-    [_audio playEffect:SOUND_CORRECT volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+    [_audio playEffect:SOUND_CORRECT volume:1.0f pitch:1.0f pan:0.5f loop:FALSE];
 }
 
 - (void)playSoundIncorrect
 {
-    [_audio playEffect:SOUND_INCORRECT volume:100.0f pitch:1.0f pan:1.0f loop:FALSE];
+    [_audio playEffect:SOUND_INCORRECT volume:1.0f pitch:1.0f pan:0.5f loop:FALSE];
 }
 
 - (void)playSoundRankIncrease
 {
-    [_audio playEffect:SOUND_RANK_INCREASE volume:50.0f pitch:1.0f pan:1.0f loop:FALSE];
+    [_audio playEffect:SOUND_RANK_INCREASE volume:1.0f pitch:1.0f pan:0.5f loop:FALSE];
 }
 
 - (void)playSoundGameOver
 {
-    [_audio playEffect:SOUND_GAMEOVER volume:0.5f pitch:1.0f pan:1.0f loop:FALSE];
+    [_audio playEffect:SOUND_GAMEOVER volume:1.0f pitch:1.0f pan:0.5f loop:FALSE];
 }
 
 - (void)lowerVolume

@@ -210,7 +210,7 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     NSNumber *rankNSNumber = [NSNumber numberWithInt:playerRank];
     
     // store change
-    [[NSUserDefaults standardUserDefaults]setObject:rankNSNumber forKey:GAME_STATE_PLAYER_RANK_KEY];
+    [MGWU setObject:rankNSNumber forKey:GAME_STATE_PLAYER_RANK_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
@@ -220,8 +220,8 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     
     NSNumber *scoreNSNumber = [NSNumber numberWithInt:playerScore];
     
-    // store chance
-    [[NSUserDefaults standardUserDefaults]setObject:scoreNSNumber forKey:GAME_STATE_PLAYER_SCORE_KEY];
+    // store change
+    [MGWU setObject:scoreNSNumber forKey:GAME_STATE_PLAYER_SCORE_KEY];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
@@ -293,8 +293,8 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     [self clearLevelSettings]; // level num, stream speed, trends
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStateMeterScaleKey"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStatePlayerRankKey"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"GameStatePlayerScoreKey"];
+    [MGWU removeObjectForKey:@"GameStatePlayerRankKey"]; // encrypted
+    [MGWU removeObjectForKey:@"GameStatePlayerScoreKey"]; // encrypted
     
     // meter scale
     [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithDouble:DEFAULT_METER_SCALE] forKey:GAME_STATE_METER_SCALE_KEY];
@@ -309,25 +309,6 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     _playerScore = [_playerScoreDefault integerValue];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-# pragma mark - Helper Methods
-
-- (NSData *)getPListXML: (NSString *)pListName
-{
-    NSString *plistPath;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        
-    // get file-styem path to file containing XML property list
-    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
-        
-    // if file doesn't exist at file-system path, check application's main bundle
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
-    }
-        
-    return [[NSFileManager defaultManager] contentsAtPath:plistPath];
 }
 
 @end
