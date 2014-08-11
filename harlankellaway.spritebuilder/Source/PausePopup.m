@@ -54,8 +54,7 @@
 
 - (void)restart
 {
-    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    [_gameplay gameOver];
 }
 
 @end
