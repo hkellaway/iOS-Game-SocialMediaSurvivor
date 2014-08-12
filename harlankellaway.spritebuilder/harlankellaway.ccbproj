@@ -220,6 +220,11 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/credits_background.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+		</dict>
 		<key>SocialMediaGameAssets/gameover_background.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -253,10 +258,7 @@
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/meter_icon_thumbsup.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>1</integer>
-		</dict>
+		<dict/>
 		<key>SocialMediaGameAssets/meter_middle.png</key>
 		<dict>
 			<key>scaleFrom</key>

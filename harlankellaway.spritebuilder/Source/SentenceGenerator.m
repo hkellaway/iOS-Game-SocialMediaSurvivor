@@ -7,7 +7,25 @@
 //
 
 #import "SentenceGenerator.h"
+#import "Utilities.h"
 
 @implementation SentenceGenerator
+{
+    NSArray *sentenceTemplates;
+}
+
+- (id)init
+{
+    self = [super init];
+    
+    sentenceTemplates = [Utilities sharedInstance].sentenceTemplatesArray;
+    
+    return self;
+}
+
+- (NSString *)getSentencWithTopic:(NSString *)topic
+{
+    return [NSString stringWithFormat:@"Hello World"];
+}
 
 @end

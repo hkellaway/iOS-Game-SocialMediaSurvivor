@@ -34,7 +34,7 @@ static const float STREAM_SPEED_INCREASE = 0.25;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
 
-static const int NUM_SECONDS_PER_LEVEL = 10;
+static const int NUM_SECONDS_PER_LEVEL = 45;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -251,7 +251,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             status.position = ccp(status.position.x, status.position.y - (_currentLevel.streamSpeed));
             
             // if status about to exit screen and action not pressed, flash correct action
-            if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2)))
+            if(!status.isAtScreenBottom && ((status.position.y) < ((status.contentSize.height * status.scaleY) / 2) + 50))
             {
                 if(status.recirculateButton.enabled && (status.actionType == _actionTypeRecirculate))
                 {
@@ -456,10 +456,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         [GameState sharedInstance].hasAchievedHighScore = TRUE;
     }
     
-    // load GameOver scene
-    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
-    
     // reset current Level
     _currentLevel = nil;
     
@@ -479,6 +475,11 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     NSNumber *favoritedIncorrectly = [NSNumber numberWithInt:_numFavoritedIncorrectly];
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys: playerScore, @"score", level, @"level", rank, @"rank", recirculatedCorrectly, @"recirculatedCorrectly", favoritedCorrectly, @"favoritedCorrectly", recirculatedIncorrectly, @"recirculatedIncorrectly", favoritedIncorrectly, @"favoritedIncorrectly", nil];
     [MGWU logEvent:@"game_over" withParams:params];
+    
+    // load GameOver scene
+    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+
 }
 
 - (void)toggleInbox

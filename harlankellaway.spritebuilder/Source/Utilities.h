@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSArray *allTopicsArray;
 @property (nonatomic, strong) NSArray *levelsArray;
 @property (nonatomic, strong) NSArray *ranksArray;
+@property (nonatomic, strong) NSArray *sentenceTemplatesArray;
 
 - (void)preloadPListData;
 - (void)preloadSounds;

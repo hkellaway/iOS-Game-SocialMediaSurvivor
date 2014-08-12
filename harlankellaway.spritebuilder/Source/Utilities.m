@@ -17,6 +17,7 @@ static NSString *SOUND_RANK_INCREASE = @"Audio/highlow.wav";
 static NSString *PLIST_NAME_TOPICS = @"Topics";
 static NSString *PLIST_NAME_LEVELS = @"Levels";
 static NSString *PLIST_NAME_RANKS = @"Ranks";
+static NSString *PLIST_NAME_SENTENCE_TEMPLATES = @"Sentences";
 
 @implementation Utilities
 {
@@ -60,6 +61,7 @@ static NSString *PLIST_NAME_RANKS = @"Ranks";
     _allTopicsArray = [self getPListDataArray:PLIST_NAME_TOPICS];
     _levelsArray = [self getPListDataArray:PLIST_NAME_LEVELS];
     _ranksArray = [self getPListDataArray:PLIST_NAME_RANKS];
+    _sentenceTemplatesArray = [self getPListDataArray:PLIST_NAME_SENTENCE_TEMPLATES];
 }
 
 #pragma mark - Audio Utilities

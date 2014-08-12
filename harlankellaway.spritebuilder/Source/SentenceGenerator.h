@@ -10,4 +10,6 @@
 
 @interface SentenceGenerator : NSObject
 
+- (NSString *)getSentencWithTopic:(NSString *)topic;
+
 @end
