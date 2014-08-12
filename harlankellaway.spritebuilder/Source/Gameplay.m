@@ -16,6 +16,7 @@
 #import "TutorialMeterPopup.h"
 #import "TutorialInboxPopup.h"
 #import "PausePopup.h"
+#import "SentenceGenerator.h"
 #import "Utilities.h"
 
 // TODO: remove this - only here to compensate for slow simulator animation
@@ -61,6 +62,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     ///////////////////////////////////////
     
     // declared in class
+    BOOL _isScrolling;
+    
     SocialMediaStatus *_statuses[NUM_STATUSES];
     NSMutableArray *_topicsToRecirculate;
     NSMutableArray *_topicsToFavorite;
@@ -88,8 +91,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     CCAction *_fadeIn;
     CCAction *_fadeOut;
     
-    
-    BOOL _isScrolling;
+    SentenceGenerator *_sentenceGenerator;
 }
 
 - (void)didLoadFromCCB
@@ -98,6 +100,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     if (TESTING_RUN_TUTORIAL) { [GameState sharedInstance].isTutorialComplete = FALSE; }
     
     // initialize variables
+    _isScrolling = TRUE;
+    
     _numStatuses = NUM_STATUSES;
     _statusSpacing = STATUS_SPACING;
     
@@ -149,8 +153,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     
     // meter
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
-    //    _meterMiddle.positionInPoints = ccp(_meterMiddle.positionInPoints.x, _meterBottom.contentSize.height);
-    //    _meterTop.position = ccp(_meterTop.position.x, (_meterMiddle.position.y + (_meterMiddle.contentSize.height * _meterMiddle.scaleY)));
     
     // pause
     _isPaused = FALSE;
@@ -161,8 +163,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
     _tutorialMeterPopup.gameplay = self;
     _tutorialInboxPopup.gameplay = self;
     
-    // stream
-    _isScrolling = TRUE;
+    // Sentence generator
+    _sentenceGenerator = [[SentenceGenerator alloc] init];
     
     // SocialMediaStatus objects
     NSMutableArray *randomActions = [self getRandomActionTypes:_numStatuses percentToRecirculate:percentToRecirculate percentToFavorite:percentToFavorite];
@@ -180,15 +182,19 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         
         if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeRecirculate]])
         {
+            NSString *randomTopic = _topicsToRecirculate[0 + arc4random() % ([_topicsToRecirculate count])];
+                                     
             status.actionType = _actionTypeRecirculate;
             
-            status.statusText.string = _topicsToRecirculate[0 + arc4random() % ([_topicsToRecirculate count])];
+            status.statusText.string = [_sentenceGenerator getSentencWithTopic:randomTopic];
         }
         else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeFavorite]])
         {
+            NSString *randomTopic = _topicsToFavorite[0 + arc4random() % ([_topicsToFavorite count])];
+            
             status.actionType = _actionTypeFavorite;
             
-            status.statusText.string = _topicsToFavorite[0 + arc4random() % ([_topicsToFavorite count])];
+            status.statusText.string = [_sentenceGenerator getSentencWithTopic:randomTopic];
         }
         else
         {

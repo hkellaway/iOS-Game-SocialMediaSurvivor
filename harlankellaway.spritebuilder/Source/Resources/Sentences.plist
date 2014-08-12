@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>This #NOUN is dope</string>
-	<string>Cray abt this new #NOUN!</string>
+	<string>This #NOUN is #sodope</string>
+	<string>Cray abt this #NOUN!</string>
 	<string>Need a #NOUN right now</string>
 	<string>Where is my #NOUN?</string>
 	<string>I love my #NOUN</string>
+	<string>Can’t find any good #PLURAL.</string>
+	<string>#PLURAL are the COOLEST!</string>
+	<string>Check me out with this #NOUN! #selfie</string>
+	<string>You need to get one of these #PLURAL now!</string>
 </array>
 </plist>

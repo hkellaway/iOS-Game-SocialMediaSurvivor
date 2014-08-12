@@ -51,7 +51,7 @@
     
     if(rankNum > numRanks) { rankNum = numRanks; }
     
-    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum-1] objectForKey:@"RankTitle"]];
     
     // social media buttons
     _twitterButton.enabled = FALSE;

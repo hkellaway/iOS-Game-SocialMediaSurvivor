@@ -11,21 +11,45 @@
 
 @implementation SentenceGenerator
 {
-    NSArray *sentenceTemplates;
+    NSArray *_sentenceTemplates;
 }
 
 - (id)init
 {
     self = [super init];
     
-    sentenceTemplates = [Utilities sharedInstance].sentenceTemplatesArray;
+    _sentenceTemplates = [Utilities sharedInstance].sentenceTemplatesArray;
     
     return self;
 }
 
 - (NSString *)getSentencWithTopic:(NSString *)topic
 {
-    return [NSString stringWithFormat:@"Hello World"];
+    // get sentence template
+    NSString *randomSentence = _sentenceTemplates[0 + arc4random() % [_sentenceTemplates count]];
+    
+    // get plural form of topic
+    NSString *plural = nil;
+    NSArray *topicDictionaries = [Utilities sharedInstance].allTopicsArray;
+    
+    for(int i = 0; i < [topicDictionaries count]; i++)
+    {
+        NSString *noun = [topicDictionaries[i] objectForKey:@"Noun"];
+        
+        if([noun isEqualToString:topic])
+        {
+            plural = [topicDictionaries[i] objectForKey:@"Plural"];
+            break;
+        }
+    }
+    
+    // replace plurals
+    NSString *pluralNounsReplaced = [randomSentence stringByReplacingOccurrencesOfString:@"PLURAL" withString:plural];
+    
+    // replace nouns
+    NSString *sentence = ([pluralNounsReplaced stringByReplacingOccurrencesOfString:@"NOUN" withString:topic.lowercaseString]);
+    
+    return sentence;
 }
 
 @end

@@ -4,755 +4,795 @@
 <array>
 	<dict>
 		<key>Noun</key>
-		<string>Bucket</string>
+		<string>Door</string>
+		<key>Plural</key>
+		<string>Doors</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Snake</string>
+		<string>Dice</string>
+		<key>Plural</key>
+		<string>Dice</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Straw</string>
+		<string>Dart</string>
+		<key>Plural</key>
+		<string>Darts</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Song</string>
+		<string>Flag</string>
+		<key>Plural</key>
+		<string>Flags</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Tree</string>
+		<string>Band</string>
+		<key>Plural</key>
+		<string>Bands</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Adult</string>
+		<string>Stool</string>
+		<key>Plural</key>
+		<string>Stools</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Air</string>
+		<string>Bag</string>
+		<key>Plural</key>
+		<string>Bags</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Airplane</string>
+		<string>Basket</string>
+		<key>Plural</key>
+		<string>Baskets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Airport</string>
+		<string>Cellphone</string>
+		<key>Plural</key>
+		<string>Cellphones</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Alligator</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Alphabet</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Apple</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Arm</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Army</string>
+		<string>Binder</string>
+		<key>Plural</key>
+		<string>Binders</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Baby</string>
+		<key>Plural</key>
+		<string>Babies</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Backpack</string>
+		<key>Plural</key>
+		<string>Backpacks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Balloon</string>
+		<key>Plural</key>
+		<string>Balloons</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Banana</string>
+		<key>Plural</key>
+		<string>Bananas</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bank</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>BBQ</string>
+		<key>Plural</key>
+		<string>Banks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bathroom</string>
+		<key>Plural</key>
+		<string>Bathrooms</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bathtub</string>
+		<key>Plural</key>
+		<string>Bathtubs</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bed</string>
+		<key>Plural</key>
+		<string>Beds</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Bee</string>
+		<string>Bike</string>
+		<key>Plural</key>
+		<string>Bikes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bird</string>
+		<key>Plural</key>
+		<string>Birds</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bomb</string>
+		<key>Plural</key>
+		<string>Bombs</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Book</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Boss</string>
+		<key>Plural</key>
+		<string>Books</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bottle</string>
+		<key>Plural</key>
+		<string>Bottles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bowl</string>
+		<key>Plural</key>
+		<string>Bowls</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Box</string>
+		<key>Plural</key>
+		<string>Boxes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Brain</string>
+		<string>Brick</string>
+		<key>Plural</key>
+		<string>Bricks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Bridge</string>
+		<key>Plural</key>
+		<string>Bridges</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Butterfly</string>
+		<string>Bucket</string>
+		<key>Plural</key>
+		<string>Buckets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Button</string>
+		<key>Plural</key>
+		<string>Buttons</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>Camera</string>
+		<key>Plural</key>
+		<string>Cameras</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>Candle</string>
+		<key>Plural</key>
+		<string>Candles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Cappucino</string>
+		<key>Plural</key>
+		<string>Cappucinos</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Car</string>
+		<key>Plural</key>
+		<string>Cars</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Carpet</string>
+		<key>Plural</key>
+		<string>Carpets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Carrot</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Cave</string>
+		<key>Plural</key>
+		<string>Carrots</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Chair</string>
+		<key>Plural</key>
+		<string>Chairs</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Chess Board</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Chief</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Child</string>
+		<string>Cheese</string>
+		<key>Plural</key>
+		<string>Cheeses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Chisel</string>
+		<key>Plural</key>
+		<string>Chisels</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Chocolate</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Circle</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Circus</string>
+		<key>Plural</key>
+		<string>Chocolates</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Clock</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Clown</string>
+		<key>Plural</key>
+		<string>Clocks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Coffee</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Comet</string>
+		<key>Plural</key>
+		<string>Coffees</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Compass</string>
+		<key>Plural</key>
+		<string>Compasses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Computer</string>
+		<key>Plural</key>
+		<string>Computers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Cup</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Cycle</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Database</string>
+		<key>Plural</key>
+		<string>Cups</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Desk</string>
+		<key>Plural</key>
+		<string>Desks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Diamond</string>
+		<key>Plural</key>
+		<string>Diamonds</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Dress</string>
+		<key>Plural</key>
+		<string>Dresses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Drill</string>
+		<key>Plural</key>
+		<string>Drills</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Drink</string>
+		<key>Plural</key>
+		<string>Drinks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Drum</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Ears</string>
+		<key>Plural</key>
+		<string>Drums</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Egg</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Electricity</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Elephant</string>
+		<key>Plural</key>
+		<string>Eggs</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Eraser</string>
+		<key>Plural</key>
+		<string>Erasers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Explosive</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Eye</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Family</string>
+		<key>Plural</key>
+		<string>Explosives</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Fan</string>
+		<key>Plural</key>
+		<string>Fans</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Feather</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Festival</string>
+		<key>Plural</key>
+		<string>Feathers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Film</string>
+		<key>Plural</key>
+		<string>Films</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Finger</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Fire</string>
+		<string>File</string>
+		<key>Plural</key>
+		<string>Files</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Flower</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Foot</string>
+		<key>Plural</key>
+		<string>Flowers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Fork</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Freeway</string>
+		<key>Plural</key>
+		<string>Forks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Fruit</string>
+		<key>Plural</key>
+		<string>Fruits</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Fungus</string>
+		<string>Funnel</string>
+		<key>Plural</key>
+		<string>Funnels</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Game</string>
+		<key>Plural</key>
+		<string>Games</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Garden</string>
+		<key>Plural</key>
+		<string>Gardens</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Gate</string>
+		<key>Plural</key>
+		<string>Gates</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Glove</string>
+		<key>Plural</key>
+		<string>Gloves</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Grape</string>
+		<string>Grate</string>
+		<key>Plural</key>
+		<string>Grates</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Guitar</string>
+		<key>Plural</key>
+		<string>Guitars</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Hammer</string>
+		<key>Plural</key>
+		<string>Hammers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Hat</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Horoscope</string>
+		<key>Plural</key>
+		<string>Hats</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Horse</string>
+		<key>Plural</key>
+		<string>Horses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Hose</string>
+		<key>Plural</key>
+		<string>Hoses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Ice</string>
+		<string>Icicle</string>
+		<key>Plural</key>
+		<string>Icicles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Icecream</string>
+		<key>Plural</key>
+		<string>Icecreams</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Insect</string>
+		<key>Plural</key>
+		<string>Insects</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Jet</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Junk</string>
+		<key>Plural</key>
+		<string>Jets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Kitchen</string>
+		<key>Plural</key>
+		<string>Kitchens</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Knife</string>
+		<key>Plural</key>
+		<string>Knives</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Leg</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Library</string>
+		<string>List</string>
+		<key>Plural</key>
+		<string>Lists</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Liquid</string>
+		<key>Plural</key>
+		<string>Liquids</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Magnet</string>
+		<key>Plural</key>
+		<string>Magnets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Man</string>
+		<string>Mantle</string>
+		<key>Plural</key>
+		<string>Mantles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Map</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Maze</string>
+		<key>Plural</key>
+		<string>Maps</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Meat</string>
+		<key>Plural</key>
+		<string>Meats</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Meteor</string>
+		<string>Meter</string>
+		<key>Plural</key>
+		<string>Meters</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Microscope</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Milk</string>
+		<key>Plural</key>
+		<string>Microscopes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Milkshake</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Mist</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Money</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Monster</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Mosquito</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Mouth</string>
+		<key>Plural</key>
+		<string>Milkshakes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Nail</string>
+		<key>Plural</key>
+		<string>Nails</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Necklace</string>
+		<key>Plural</key>
+		<string>Necklaces</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Needle</string>
+		<key>Plural</key>
+		<string>Needles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Onion</string>
+		<key>Plural</key>
+		<string>Onions</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Paintbrush</string>
+		<key>Plural</key>
+		<string>Painbrushes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Parachute</string>
+		<key>Plural</key>
+		<string>Parachutes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Passport</string>
+		<key>Plural</key>
+		<string>Passports</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Pebble</string>
+		<key>Plural</key>
+		<string>Pebbles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Pendulum</string>
+		<key>Plural</key>
+		<string>Pendulums</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Pepper</string>
+		<key>Plural</key>
+		<string>Peppers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Perfume</string>
+		<key>Plural</key>
+		<string>Perfumes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Pillow</string>
+		<key>Plural</key>
+		<string>Pillows</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Plane</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Planet</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Pocket</string>
+		<key>Plural</key>
+		<string>Planes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Potato</string>
+		<key>Plural</key>
+		<string>Potatoes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Printer</string>
+		<key>Plural</key>
+		<string>Printers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Radar</string>
+		<key>Plural</key>
+		<string>Radars</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Rainbow</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Restaurant</string>
+		<string>Raincoat</string>
+		<key>Plural</key>
+		<string>Raincoats</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Ring</string>
+		<key>Plural</key>
+		<string>Rings</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Robot</string>
+		<key>Plural</key>
+		<string>Robots</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Rock</string>
+		<key>Plural</key>
+		<string>Rocks</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Rocket</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Roof</string>
+		<key>Plural</key>
+		<string>Rockets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Room</string>
+		<key>Plural</key>
+		<string>Rooms</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>Root</string>
+		<key>Plural</key>
+		<string>Roots</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Rope</string>
+		<key>Plural</key>
+		<string>Ropes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Saddle</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Salt</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Sandpaper</string>
+		<key>Plural</key>
+		<string>Saddles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Sandwich</string>
+		<key>Plural</key>
+		<string>Sandwiches</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Satellite</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>School</string>
+		<key>Plural</key>
+		<string>Satellites</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Ship</string>
+		<key>Plural</key>
+		<string>Ships</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Shoe</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Shop</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Shower</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Skeleton</string>
+		<key>Plural</key>
+		<string>Shoes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Snail</string>
+		<key>Plural</key>
+		<string>Snails</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Software</string>
+		<string>Snake</string>
+		<key>Plural</key>
+		<string>Snakes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Spoon</string>
+		<key>Plural</key>
+		<string>Spoons</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Stair</string>
+		<string>Straw</string>
+		<key>Plural</key>
+		<string>Straws</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Star</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Stomach</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Sun</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
+		<string>Sunglasses</string>
+		<key>Plural</key>
 		<string>Sunglasses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Sword</string>
+		<key>Plural</key>
+		<string>Swords</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Table</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Tooth</string>
+		<key>Plural</key>
+		<string>Tables</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Telescope</string>
+		<key>Plural</key>
+		<string>Telescopes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>T.V.</string>
+		<key>Plural</key>
+		<string>T.V.s</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Thermometer</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Tiger</string>
+		<key>Plural</key>
+		<string>Thermometers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Toilet</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Tongue</string>
+		<key>Plural</key>
+		<string>Toilets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Torch</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Torpedo</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Train</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Triangle</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Tunnel</string>
+		<key>Plural</key>
+		<string>Torches</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Typewriter</string>
+		<key>Plural</key>
+		<string>Typewriters</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Umbrella</string>
+		<key>Plural</key>
+		<string>Umbrellas</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Vacuum</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Vampire</string>
+		<key>Plural</key>
+		<string>Vaccuums</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Video</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Vulture</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Web</string>
+		<key>Plural</key>
+		<string>Videos</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Window</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Worm</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>X-ray</string>
+		<key>Plural</key>
+		<string>Windows</string>
 	</dict>
 </array>
 </plist>

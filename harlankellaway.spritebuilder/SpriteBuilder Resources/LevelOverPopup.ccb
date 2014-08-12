@@ -699,7 +699,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.48000001907348633</real>
+									<real>0.5</real>
 									<real>260</real>
 									<integer>0</integer>
 									<integer>2</integer>
@@ -756,7 +756,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>60</real>
+									<real>54</real>
 									<integer>0</integer>
 								</array>
 							</dict>
