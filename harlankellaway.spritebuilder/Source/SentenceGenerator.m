@@ -44,7 +44,7 @@
     }
     
     // replace plurals
-    NSString *pluralNounsReplaced = [randomSentence stringByReplacingOccurrencesOfString:@"PLURAL" withString:plural];
+    NSString *pluralNounsReplaced = [randomSentence stringByReplacingOccurrencesOfString:@"PLURAL" withString:plural.lowercaseString];
     
     // replace nouns
     NSString *sentence = ([pluralNounsReplaced stringByReplacingOccurrencesOfString:@"NOUN" withString:topic.lowercaseString]);

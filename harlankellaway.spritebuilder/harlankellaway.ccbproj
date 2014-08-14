@@ -221,10 +221,7 @@
 			<integer>1</integer>
 		</dict>
 		<key>SocialMediaGameAssets/credits_background.png</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>SocialMediaGameAssets/gameover_background.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -232,8 +229,6 @@
 		</dict>
 		<key>SocialMediaGameAssets/inbox_background.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>

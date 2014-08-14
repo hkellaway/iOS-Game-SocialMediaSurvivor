@@ -26,11 +26,11 @@ static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
 static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 static NSString *ANIMATION_STREAK_ACHEIVED = @"StreakAnimation";
 
-static const int NUM_STATUSES = 21; // num larger than the tallest device screen height (1024)
+static const int NUM_STATUSES = 19; // num larger than the tallest device screen height (1024)
 static const int STATUS_SPACING = 4;
 
 static const int NUM_STATUSES_HANDLED_FOR_STREAK = 3;
-static const float STREAM_SPEED_INCREASE = 0.25;
+static const float STREAM_SPEED_INCREASE = 0.2;
 
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
@@ -40,9 +40,9 @@ static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
 static const int TUTORIAL_METER_POPUP_IN_LEVEL = 1;
-static const int TUTORIAL_METER_POPUP_AT_TIME = 5;
-static const int TUTORIAL_INBOX_POPUP_IN_LEVEL = 2;
-static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
+static const int TUTORIAL_METER_POPUP_AT_TIME = 3;
+static const int TUTORIAL_INBOX_POPUP_IN_LEVEL = 1;
+static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
 
 @implementation Gameplay
 {
@@ -186,7 +186,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
                                      
             status.actionType = _actionTypeRecirculate;
             
-            status.statusText.string = [_sentenceGenerator getSentencWithTopic:randomTopic];
+            NSString *statusText = [_sentenceGenerator getSentencWithTopic:randomTopic];
+            status.statusText.string = statusText;
+            
+            CCLOG(@"Status: %@", statusText);
         }
         else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeFavorite]])
         {
@@ -194,7 +197,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
             
             status.actionType = _actionTypeFavorite;
             
-            status.statusText.string = [_sentenceGenerator getSentencWithTopic:randomTopic];
+            NSString *statusText = [_sentenceGenerator getSentencWithTopic:randomTopic];
+            status.statusText.string = statusText;
+            
+            CCLOG(@"Status: %@", statusText);
         }
         else
         {
@@ -214,7 +220,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
                 }
             }
             
-            status.statusText.string = allTopics[0 + arc4random() % ([allTopics count])];
+            NSString *statusText = [_sentenceGenerator getSentencWithTopic:randomTopic];
+            status.statusText.string = statusText;
+            
+            CCLOG(@"Status: %@", statusText);
         }
         
         status.isAtScreenBottom = FALSE;
@@ -223,6 +232,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 5;
         status.gameplay = self;
         
         _statuses[i] = status;
+        
+//        status.position = ccp(0.5, 0.0);
         
         [_stream addChild:status];
     }

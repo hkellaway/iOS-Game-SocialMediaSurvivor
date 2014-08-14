@@ -29,12 +29,16 @@
 #import "CCBuilderReader.h"
 #import <Crashlytics/Crashlytics.h>
 
+static NSString *LINK_TO_GAME = @"http://harlankellaway.com/games#SocialMediaSurvival";
+
 @implementation AppController
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // MGWU SDK
     [MGWU loadMGWU:@"otxN2vR0qLCIAxEhU7Od0j9yL6yivvPr"];
+    
+    [MGWU setGameLinkURL:LINK_TO_GAME];
     
     // CRASHLYTICS
     [Crashlytics startWithAPIKey:@"ae253c4e8c2c3ff46fdd4383cd97d56bd340b55e"];

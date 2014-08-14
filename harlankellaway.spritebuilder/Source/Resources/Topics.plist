@@ -4,60 +4,6 @@
 <array>
 	<dict>
 		<key>Noun</key>
-		<string>Door</string>
-		<key>Plural</key>
-		<string>Doors</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Dice</string>
-		<key>Plural</key>
-		<string>Dice</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Dart</string>
-		<key>Plural</key>
-		<string>Darts</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Flag</string>
-		<key>Plural</key>
-		<string>Flags</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Band</string>
-		<key>Plural</key>
-		<string>Bands</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Stool</string>
-		<key>Plural</key>
-		<string>Stools</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Bag</string>
-		<key>Plural</key>
-		<string>Bags</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Basket</string>
-		<key>Plural</key>
-		<string>Baskets</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Cellphone</string>
-		<key>Plural</key>
-		<string>Cellphones</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Binder</string>
 		<key>Plural</key>
 		<string>Binders</string>
@@ -86,11 +32,29 @@
 		<key>Plural</key>
 		<string>Bananas</string>
 	</dict>
-	<dict>
+    <dict>
+		<key>Noun</key>
+		<string>Band</string>
+		<key>Plural</key>
+		<string>Bands</string>
+	</dict>
+    <dict>
 		<key>Noun</key>
 		<string>Bank</string>
 		<key>Plural</key>
 		<string>Banks</string>
+	</dict>
+    <dict>
+		<key>Noun</key>
+		<string>Bag</string>
+		<key>Plural</key>
+		<string>Bags</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>Basket</string>
+		<key>Plural</key>
+		<string>Baskets</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -212,17 +176,17 @@
 		<key>Plural</key>
 		<string>Carrots</string>
 	</dict>
+    <dict>
+		<key>Noun</key>
+		<string>Cellphone</string>
+		<key>Plural</key>
+		<string>Cellphones</string>
+	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Chair</string>
 		<key>Plural</key>
 		<string>Chairs</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Cheese</string>
-		<key>Plural</key>
-		<string>Cheeses</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -266,6 +230,12 @@
 		<key>Plural</key>
 		<string>Cups</string>
 	</dict>
+    <dict>
+		<key>Noun</key>
+		<string>Dart</string>
+		<key>Plural</key>
+		<string>Darts</string>
+	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Desk</string>
@@ -277,6 +247,12 @@
 		<string>Diamond</string>
 		<key>Plural</key>
 		<string>Diamonds</string>
+	</dict>
+    <dict>
+		<key>Noun</key>
+		<string>Door</string>
+		<key>Plural</key>
+		<string>Doors</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -343,6 +319,12 @@
 		<string>File</string>
 		<key>Plural</key>
 		<string>Files</string>
+	</dict>
+    <dict>
+		<key>Noun</key>
+		<string>Flag</string>
+		<key>Plural</key>
+		<string>Flags</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -430,24 +412,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Icicle</string>
-		<key>Plural</key>
-		<string>Icicles</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Icecream</string>
-		<key>Plural</key>
-		<string>Icecreams</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Insect</string>
-		<key>Plural</key>
-		<string>Insects</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Jet</string>
 		<key>Plural</key>
 		<string>Jets</string>
@@ -481,12 +445,6 @@
 		<string>Magnet</string>
 		<key>Plural</key>
 		<string>Magnets</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Mantle</string>
-		<key>Plural</key>
-		<string>Mantles</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -568,7 +526,7 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Pendulum</string>
+		<string>Pen</string>
 		<key>Plural</key>
 		<string>Pendulums</string>
 	</dict>
@@ -577,12 +535,6 @@
 		<string>Pepper</string>
 		<key>Plural</key>
 		<string>Peppers</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Perfume</string>
-		<key>Plural</key>
-		<string>Perfumes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -710,6 +662,12 @@
 		<key>Plural</key>
 		<string>Spoons</string>
 	</dict>
+    <dict>
+		<key>Noun</key>
+		<string>Stool</string>
+		<key>Plural</key>
+		<string>Stools</string>
+	</dict>
 	<dict>
 		<key>Noun</key>
 		<string>Straw</string>
@@ -718,7 +676,7 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Sunglasses</string>
+		<string>Sundial</string>
 		<key>Plural</key>
 		<string>Sunglasses</string>
 	</dict>

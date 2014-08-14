@@ -37,23 +37,32 @@
     }
     
     // update title label
-    int levelNum = [GameState sharedInstance].levelNum;
+    NSInteger levelNum = [GameState sharedInstance].levelNum;
     _gameOverLabel.string = ((levelNum == 2) ? [NSString stringWithFormat:@"You Survived %d Day", levelNum-1] : [NSString stringWithFormat:@"You Survived %d Days", levelNum-1]);
     
     // update score label
-    _scoreLabel.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].playerScore];
+    _scoreLabel.string = [NSString stringWithFormat:@"%li", (long)[GameState sharedInstance].playerScore];
     
     // update rank label
     NSArray *ranksArray = [Utilities sharedInstance].ranksArray;
     
-    int numRanks = [ranksArray count];
-    int rankNum = [GameState sharedInstance].playerRank;
+    NSUInteger numRanks = [ranksArray count];
+    NSInteger rankNum = [GameState sharedInstance].playerRank;
     
     if(rankNum > numRanks) { rankNum = numRanks; }
     
-    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum-1] objectForKey:@"RankTitle"]];
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
     
-    // social media buttons
+    // social media
+//    if([MGWU isTwitterActive])
+//    {
+//        [MGWU postToTwitter:[NSString stringWithFormat:@"I'm winning at Social Media! Just got %li Followers in Social Media Survival @SMSurvivalGame", (long)[GameState sharedInstance].playerScore]];
+//    }
+//    else
+//    {
+//       / _twitterButton.enabled = FALSE;
+//    }
+    
     _twitterButton.enabled = FALSE;
     _facebookButton.enabled = FALSE;
 }
