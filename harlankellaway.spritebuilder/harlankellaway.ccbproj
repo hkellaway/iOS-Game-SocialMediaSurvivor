@@ -145,6 +145,13 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>SocialMediaGameAssets/button_more.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>SocialMediaGameAssets/button_play.png</key>
 		<dict>
 			<key>scaleFrom</key>

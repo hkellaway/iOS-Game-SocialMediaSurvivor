@@ -68,4 +68,9 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
+- (void)displayMoreGames
+{
+    
+}
+
 @end
