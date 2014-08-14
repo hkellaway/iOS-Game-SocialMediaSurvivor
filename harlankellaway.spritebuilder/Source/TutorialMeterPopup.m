@@ -51,8 +51,7 @@
         // re-enable buttons
         _gameplay.inboxButton.enabled = TRUE;
         _gameplay.pauseButton.enabled = TRUE;
-    
-        [_gameplay.inbox toggleVisibility];
+        
         [_gameplay resumeGame];
     }
 }

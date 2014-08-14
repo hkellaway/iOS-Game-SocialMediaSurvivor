@@ -2192,6 +2192,8 @@
 						<string>Inbox.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2496,8 +2498,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>PausePopup</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_pausePopup</string>
 				<key>memberVarAssignmentType</key>
@@ -2533,8 +2533,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -2560,6 +2560,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>TutorialMeterPopup</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_tutorialMeterPopup</string>
 				<key>memberVarAssignmentType</key>
