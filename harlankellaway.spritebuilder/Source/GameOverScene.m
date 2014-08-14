@@ -54,16 +54,15 @@
     _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
     
     // social media
-//    if([MGWU isTwitterActive])
-//    {
-//        [MGWU postToTwitter:[NSString stringWithFormat:@"I'm winning at Social Media! Just got %li Followers in Social Media Survival @SMSurvivalGame", (long)[GameState sharedInstance].playerScore]];
-//    }
-//    else
-//    {
-//       / _twitterButton.enabled = FALSE;
-//    }
+    if([MGWU isTwitterActive])
+    {
+        [MGWU postToTwitter:[NSString stringWithFormat:@"I'm winning at Social Media! Just got %li Followers in Social Media Survival @SMSurvivalGame", (long)[GameState sharedInstance].playerScore]];
+    }
+    else
+    {
+       _twitterButton.enabled = FALSE;
+    }
     
-    _twitterButton.enabled = FALSE;
     _facebookButton.enabled = FALSE;
 }
 

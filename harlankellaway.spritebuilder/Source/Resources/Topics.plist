@@ -16,12 +16,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Backpack</string>
-		<key>Plural</key>
-		<string>Backpacks</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Balloon</string>
 		<key>Plural</key>
 		<string>Balloons</string>
@@ -502,18 +496,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Paintbrush</string>
-		<key>Plural</key>
-		<string>Painbrushes</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Parachute</string>
-		<key>Plural</key>
-		<string>Parachutes</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Passport</string>
 		<key>Plural</key>
 		<string>Passports</string>
@@ -528,7 +510,7 @@
 		<key>Noun</key>
 		<string>Pen</string>
 		<key>Plural</key>
-		<string>Pendulums</string>
+		<string>Pens</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -622,12 +604,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Sandwich</string>
-		<key>Plural</key>
-		<string>Sandwiches</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Satellite</string>
 		<key>Plural</key>
 		<string>Satellites</string>
@@ -703,12 +679,6 @@
 		<string>T.V.</string>
 		<key>Plural</key>
 		<string>T.V.s</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Thermometer</string>
-		<key>Plural</key>
-		<string>Thermometers</string>
 	</dict>
 	<dict>
 		<key>Noun</key>

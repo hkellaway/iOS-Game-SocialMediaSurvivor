@@ -32,8 +32,8 @@ static const int STATUS_SPACING = 4;
 static const int NUM_STATUSES_HANDLED_FOR_STREAK = 3;
 static const float STREAM_SPEED_INCREASE = 0.2;
 
-static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.3;
-static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.3;
+static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.4;
+static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.4;
 
 static const int NUM_SECONDS_PER_LEVEL = 45;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
@@ -479,9 +479,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     // lower background music
     [[Utilities sharedInstance] lowerVolume];
     
-    // reset global values
-    [[GameState sharedInstance] clearGameState];
-    
     // MGWU SDK - Analytics
     NSNumber *playerScore = [NSNumber numberWithInt:[GameState sharedInstance].playerScore];
     NSNumber *level = [NSNumber numberWithInt:_currentLevel.levelNum];
@@ -496,7 +493,9 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     // load GameOver scene
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
-
+    
+    // reset global values
+    [[GameState sharedInstance] clearGameState];
 }
 
 - (void)toggleInbox
