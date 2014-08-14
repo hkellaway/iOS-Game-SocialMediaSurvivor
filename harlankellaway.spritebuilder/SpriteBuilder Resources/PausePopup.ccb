@@ -103,8 +103,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.20000000298023224</real>
-									<real>0.20000000298023224</real>
+									<real>1</real>
+									<real>1</real>
 									<true/>
 									<integer>0</integer>
 								</array>
@@ -127,8 +127,8 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>1183</real>
-									<real>387</real>
+									<real>296</real>
+									<real>97</real>
 									<integer>0</integer>
 									<integer>0</integer>
 								</array>
@@ -173,7 +173,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_goto_game.png</string>
+									<string>SocialMediaGameAssets/button_continue.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -371,6 +371,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -697,8 +699,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

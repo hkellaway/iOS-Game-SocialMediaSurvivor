@@ -7,9 +7,9 @@
 	<string>Need a #NOUN right now</string>
 	<string>Where is my #NOUN?</string>
 	<string>I &lt;3 my #NOUN</string>
-	<string>Can’t find ANY good #PLURAL.</string>
+	<string>Can’t find ANY #PLURAL.</string>
 	<string>WHOA #PLURAL are the COOLEST!</string>
 	<string>Check me out with this #NOUN! #selfie</string>
-	<string>U need 2 get 1 of these #PLURAL now!</string>
+	<string>U need 2 get these #PLURAL now!</string>
 </array>
 </plist>

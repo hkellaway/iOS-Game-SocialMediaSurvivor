@@ -112,7 +112,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     _increaseRankAnimationManager = _meterIcon.animationManager;
     _gameOverAnimationManager = _meterBackground.animationManager;
     
-    
     // actions
      _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
     _fadeIn = [CCActionFadeIn actionWithDuration:1.0];

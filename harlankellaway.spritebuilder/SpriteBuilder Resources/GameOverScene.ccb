@@ -725,7 +725,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.87999999523162842</real>
+									<real>0.85000002384185791</real>
 									<real>420</real>
 									<integer>0</integer>
 									<integer>2</integer>
@@ -1671,7 +1671,7 @@ Score!</string>
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>100</real>
+									<real>115</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -2023,7 +2023,7 @@ Score!</string>
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>0.55000001192092896</real>
 							<real>0.55000001192092896</real>
 							<false/>
 							<integer>0</integer>
@@ -2054,8 +2054,6 @@ Score!</string>
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

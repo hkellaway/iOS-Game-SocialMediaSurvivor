@@ -45,6 +45,7 @@
 		CE37ECC91976C37C0043D969 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE37ECC81976C37B0043D969 /* Levels.plist */; };
 		CE37ECCF1977524F0043D969 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE37ECCE1977524F0043D969 /* Clock.m */; };
 		CE3A83B6198594EC001A0DA8 /* LevelOverPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */; };
+		CE3F8905199D4349007D5567 /* LoadingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3F8904199D4349007D5567 /* LoadingScene.m */; };
 		CE50E8E219944D0000C89E5E /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50E8E119944CFF00C89E5E /* Utilities.m */; };
 		CE6A7B1D197777D800A2EAD2 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B1C197777D800A2EAD2 /* Inbox.m */; };
 		CE6A7B2119783F3D00A2EAD2 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B2019783F3D00A2EAD2 /* Trend.m */; };
@@ -207,6 +208,8 @@
 		CE37ECCE1977524F0043D969 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Source/Clock.m; sourceTree = "<group>"; };
 		CE3A83B4198594EC001A0DA8 /* LevelOverPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelOverPopup.h; path = Source/LevelOverPopup.h; sourceTree = "<group>"; };
 		CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelOverPopup.m; path = Source/LevelOverPopup.m; sourceTree = "<group>"; };
+		CE3F8903199D4349007D5567 /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingScene.h; path = Source/LoadingScene.h; sourceTree = "<group>"; };
+		CE3F8904199D4349007D5567 /* LoadingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingScene.m; path = Source/LoadingScene.m; sourceTree = "<group>"; };
 		CE50E8E019944CFF00C89E5E /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = Source/Utilities.h; sourceTree = "<group>"; };
 		CE50E8E119944CFF00C89E5E /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = Source/Utilities.m; sourceTree = "<group>"; };
 		CE6A7B1B197777D800A2EAD2 /* Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Inbox.h; path = Source/Inbox.h; sourceTree = "<group>"; };
@@ -373,6 +376,8 @@
 				CE9215AE198172BD00473C87 /* LevelIntroScene.m */,
 				CE3A83B4198594EC001A0DA8 /* LevelOverPopup.h */,
 				CE3A83B5198594EC001A0DA8 /* LevelOverPopup.m */,
+				CE3F8903199D4349007D5567 /* LoadingScene.h */,
+				CE3F8904199D4349007D5567 /* LoadingScene.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				CEC97DD5199581BF0017A390 /* PausePopup.h */,
@@ -807,6 +812,7 @@
 				CE9215AF198172BD00473C87 /* LevelIntroScene.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CE2C4DD319744E14008C8185 /* Level.m in Sources */,
+				CE3F8905199D4349007D5567 /* LoadingScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CEF62CC1197ED10800E3D6A6 /* GameOverScene.m in Sources */,
 				CE089C27198EFC61007A1E22 /* TutorialMeterPopup.m in Sources */,

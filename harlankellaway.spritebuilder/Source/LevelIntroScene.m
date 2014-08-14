@@ -125,8 +125,8 @@
 - (void)startLevel
 {
     // start Gameplay
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
-    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    CCScene *scene = [CCBReader loadAsScene:@"LoadingScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 # pragma mark - helper methods

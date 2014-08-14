@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>54</integer>
+	<integer>60</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -421,7 +421,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.92000001668930054</real>
+									<real>0.88999998569488525</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -628,7 +628,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.76999998092651367</real>
+									<real>0.75</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -1099,7 +1099,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.34000000357627869</real>
+									<real>0.37999999523162842</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -1201,7 +1201,7 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>0.55000001192092896</real>
 							<real>0.55000001192092896</real>
 							<false/>
 							<integer>0</integer>

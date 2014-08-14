@@ -20,10 +20,14 @@
     CCButton * _twitterButton;
     CCButton *_facebookButton;
     ///////////////////////////
+    
+    long _score;
 }
 
 - (void)didLoadFromCCB
 {
+    _score = [GameState sharedInstance].playerScore;
+    
     if([GameState sharedInstance].hasAchievedHighScore)
     {
         _highScoreLabel.visible = TRUE;
@@ -56,7 +60,7 @@
     // social media
     if([MGWU isTwitterActive])
     {
-        [MGWU postToTwitter:[NSString stringWithFormat:@"I'm winning at Social Media! Just got %li Followers in Social Media Survival @SMSurvivalGame", (long)[GameState sharedInstance].playerScore]];
+        _twitterButton.enabled = TRUE;
     }
     else
     {
@@ -76,7 +80,7 @@
 
 - (void)twitterSelected
 {
-    // to be implemented when Twitter added
+    [MGWU postToTwitter:[NSString stringWithFormat:@"I'm winning at Social Media! Just got %li Followers in Social Media Survivor @SMSurvivorGame", _score]];
 }
 
 - (void)facebookSelected
