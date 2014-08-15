@@ -6,7 +6,7 @@
 		<key>LevelNum</key>
 		<integer>1</integer>
 		<key>StreamSpeed</key>
-		<real>0.5</real>
+		<real>0.7</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -16,7 +16,7 @@
 		<key>LevelNum</key>
 		<integer>2</integer>
 		<key>StreamSpeed</key>
-		<real>0.5</real>
+		<real>0.7</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>0</integer>
 		<key>NumTopicsToFavorite</key>
@@ -26,7 +26,7 @@
 		<key>LevelNum</key>
 		<integer>3</integer>
 		<key>StreamSpeed</key>
-		<real>0.5</real>
+		<real>0.7</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -36,7 +36,7 @@
 		<key>LevelNum</key>
 		<integer>4</integer>
 		<key>StreamSpeed</key>
-		<real>0.6</real>
+		<real>0.7</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -46,7 +46,7 @@
 		<key>LevelNum</key>
 		<integer>5</integer>
 		<key>StreamSpeed</key>
-		<real>0.6</real>
+		<real>0.8</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -56,7 +56,7 @@
 		<key>LevelNum</key>
 		<integer>6</integer>
 		<key>StreamSpeed</key>
-		<real>0.6</real>
+		<real>0.8</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -66,7 +66,7 @@
 		<key>LevelNum</key>
 		<integer>7</integer>
 		<key>StreamSpeed</key>
-		<real>0.7</real>
+		<real>0.8</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -76,7 +76,7 @@
 		<key>LevelNum</key>
 		<integer>8</integer>
 		<key>StreamSpeed</key>
-		<real>0.7</real>
+		<real>0.9</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -86,7 +86,7 @@
 		<key>LevelNum</key>
 		<integer>9</integer>
 		<key>StreamSpeed</key>
-		<real>0.7</real>
+		<real>0.9</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -96,7 +96,7 @@
 		<key>LevelNum</key>
 		<integer>10</integer>
 		<key>StreamSpeed</key>
-		<real>0.7</real>
+		<real>0.9</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -106,7 +106,7 @@
 		<key>LevelNum</key>
 		<integer>11</integer>
 		<key>StreamSpeed</key>
-		<real>0.8</real>
+		<real>1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -116,7 +116,7 @@
 		<key>LevelNum</key>
 		<integer>12</integer>
 		<key>StreamSpeed</key>
-		<real>0.8</real>
+		<real>1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -126,7 +126,7 @@
 		<key>LevelNum</key>
 		<integer>13</integer>
 		<key>StreamSpeed</key>
-		<real>0.8</real>
+		<real>1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -136,7 +136,7 @@
 		<key>LevelNum</key>
 		<integer>14</integer>
 		<key>StreamSpeed</key>
-		<real>0.8</real>
+		<real>1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -146,7 +146,7 @@
 		<key>LevelNum</key>
 		<integer>15</integer>
 		<key>StreamSpeed</key>
-		<real>0.9</real>
+		<real>1.1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -156,7 +156,7 @@
 		<key>LevelNum</key>
 		<integer>16</integer>
 		<key>StreamSpeed</key>
-		<real>0.9</real>
+		<real>1.1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -166,7 +166,7 @@
 		<key>LevelNum</key>
 		<integer>17</integer>
 		<key>StreamSpeed</key>
-		<real>0.9</real>
+		<real>1.1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -176,7 +176,7 @@
 		<key>LevelNum</key>
 		<integer>18</integer>
 		<key>StreamSpeed</key>
-		<real>0.9</real>
+		<real>1.1</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>
@@ -186,7 +186,7 @@
 		<key>LevelNum</key>
 		<integer>19</integer>
 		<key>StreamSpeed</key>
-		<real>1</real>
+		<real>1.2</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>1</integer>
 		<key>NumTopicsToFavorite</key>
@@ -196,7 +196,7 @@
 		<key>LevelNum</key>
 		<integer>20</integer>
 		<key>StreamSpeed</key>
-		<real>1</real>
+		<real>1.2</real>
 		<key>NumTopicsToRecirculate</key>
 		<integer>2</integer>
 		<key>NumTopicsToFavorite</key>

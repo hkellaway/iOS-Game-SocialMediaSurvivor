@@ -4,6 +4,90 @@
 <array>
 	<dict>
 		<key>Noun</key>
+		<string>bar</string>
+		<key>Plural</key>
+		<string>bars</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>bat</string>
+		<key>Plural</key>
+		<string>bats</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>bell</string>
+		<key>Plural</key>
+		<string>bells</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>board</string>
+		<key>Plural</key>
+		<string>boards</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>boat</string>
+		<key>Plural</key>
+		<string>boat</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>branch</string>
+		<key>Plural</key>
+		<string>branches</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>car</string>
+		<key>Plural</key>
+		<string>cars</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>card</string>
+		<key>Plural</key>
+		<string>cards</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>cat</string>
+		<key>Plural</key>
+		<string>cats</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>coat</string>
+		<key>Plural</key>
+		<string>coats</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>key</string>
+		<key>Plural</key>
+		<string>keys</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>train</string>
+		<key>Plural</key>
+		<string>trains</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>truck</string>
+		<key>Plural</key>
+		<string>trucks</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
+		<string>wire</string>
+		<key>Plural</key>
+		<string>wires</string>
+	</dict>
+	<dict>
+		<key>Noun</key>
 		<string>Binder</string>
 		<key>Plural</key>
 		<string>Binders</string>
@@ -448,12 +532,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Meat</string>
-		<key>Plural</key>
-		<string>Meats</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Meter</string>
 		<key>Plural</key>
 		<string>Meters</string>
@@ -654,7 +732,7 @@
 		<key>Noun</key>
 		<string>Sundial</string>
 		<key>Plural</key>
-		<string>Sunglasses</string>
+		<string>Sundials</string>
 	</dict>
 	<dict>
 		<key>Noun</key>

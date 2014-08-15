@@ -12,7 +12,7 @@
 
 static const float STATUS_SCALE_FACTOR = 0.32;
 static const float METER_SCALE_FACTOR_UP = 0.25;
-static const float METER_SCALE_FACTOR_DOWN = 1.75;
+static const float METER_SCALE_FACTOR_DOWN = 2.0;
 
 static NSString *ANIMATION_FLASHING_NAME = @"FlashingAnimation";
 

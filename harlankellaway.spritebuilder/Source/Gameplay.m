@@ -23,7 +23,6 @@
 static const BOOL TESTING_RUN_TUTORIAL = FALSE;
 
 static NSString *ANIMATION_INCREASE_RANK = @"FlashingIconAnimation";
-static NSString *ANIMATION_NEARING_GAME_OVER = @"FlashingMeterAnimation";
 static NSString *ANIMATION_STREAK_ACHEIVED = @"StreakAnimation";
 
 static const int NUM_STATUSES = 19; // num larger than the tallest device screen height (1024)
@@ -35,7 +34,7 @@ static const float STREAM_SPEED_INCREASE = 0.2;
 static const CGFloat PERCENTAGE_STATUS_TO_RECIRCULATE = 0.4;
 static const CGFloat PERCENTAGE_STATUS_TO_FAVORITE = 0.4;
 
-static const int NUM_SECONDS_PER_LEVEL = 45;
+static const int NUM_SECONDS_PER_LEVEL = 36;
 static const int TIMER_INTERVAL_IN_SECONDS = 1;
 
 // configuration when tutorial popups occur
@@ -85,7 +84,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     NSDate *_timerStarted;
     
     CCAnimationManager *_increaseRankAnimationManager;
-    CCAnimationManager *_gameOverAnimationManager;
     
     CCAction *_easeInToCenter;
     CCAction *_fadeIn;
@@ -110,7 +108,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     
     // animation
     _increaseRankAnimationManager = _meterIcon.animationManager;
-    _gameOverAnimationManager = _meterBackground.animationManager;
     
     // actions
      _easeInToCenter = [CCActionMoveTo actionWithDuration:2.0 position:ccp(0.5,0.5)];
@@ -306,14 +303,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
         }
         
         float meterMiddleScaled = _meterMiddle.scaleY;
-//        
-//                CCLOG(@"meterMiddleStart = %f; meterMiddleScaled = %f", meterMiddleStart, meterMiddleScaled);
-//        
-//        if(meterMiddleScaled <= 3.0 & meterMiddleScaled > 1.0)
-//        {
-//            [_gameOverAnimationManager runAnimationsForSequenceNamed:ANIMATION_NEARING_GAME_OVER];
-//        }
-//        
+        
         // if meter scaling resulted in scale hitting 1.0, game is over
         if(meterMiddleStart < 1.0 || meterMiddleScaled < 1.0)
         {
@@ -490,8 +480,10 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     [MGWU logEvent:@"game_over" withParams:params];
     
     // load GameOver scene
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionDown duration:1.0];
+    
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
     
     // reset global values
     [[GameState sharedInstance] clearGameState];

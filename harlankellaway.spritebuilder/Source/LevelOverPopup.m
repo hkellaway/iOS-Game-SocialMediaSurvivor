@@ -60,7 +60,7 @@ static const int MAX_NUM_LEVELS = 40;
     
     if(rankNum > numRanks) { rankNum = numRanks; }
     
-    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum-1] objectForKey:@"RankTitle"]];
+    _rankLabel.string = [NSString stringWithFormat:@"%@", [ranksArray[rankNum] objectForKey:@"RankTitle"]];
 }
 
 -(void)updateScoreLabel
