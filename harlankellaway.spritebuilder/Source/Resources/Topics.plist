@@ -298,12 +298,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Computer</string>
-		<key>Plural</key>
-		<string>Computers</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Cup</string>
 		<key>Plural</key>
 		<string>Cups</string>
@@ -544,9 +538,9 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Milkshake</string>
+		<string>Shake</string>
 		<key>Plural</key>
-		<string>Milkshakes</string>
+		<string>Shakes</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
@@ -628,12 +622,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Raincoat</string>
-		<key>Plural</key>
-		<string>Raincoats</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Ring</string>
 		<key>Plural</key>
 		<string>Rings</string>
@@ -679,12 +667,6 @@
 		<string>Saddle</string>
 		<key>Plural</key>
 		<string>Saddles</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Satellite</string>
-		<key>Plural</key>
-		<string>Satellites</string>
 	</dict>
 	<dict>
 		<key>Noun</key>
