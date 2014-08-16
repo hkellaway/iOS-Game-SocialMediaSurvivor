@@ -76,8 +76,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     int _numFavoritedIncorrectly;
     int _streakCounter;
     
-    BOOL updateRankForLevel;
-    
     NSTimer *_timer;
     int _timerInterval;
     double _timerElapsed;
@@ -143,9 +141,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     
     // streak
     _streakCounter = 0;
-    
-    // rank
-    updateRankForLevel = FALSE;
     
     // meter
     _meterMiddle.scaleY = [GameState sharedInstance].meterScale;
@@ -504,9 +499,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     // play animation
     [_increaseRankAnimationManager runAnimationsForSequenceNamed:ANIMATION_INCREASE_RANK];
     
-    // set flag
-    updateRankForLevel = TRUE;
-    
     // save increased rank to GameState
     [[GameState sharedInstance] setPlayerRank:([GameState sharedInstance].playerRank + 1)];
     
@@ -568,14 +560,8 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
     [_levelOverPopup updateFavoriteLabel:_numFavoritedCorrectly];
     [_levelOverPopup updateScoreLabel];
     
-    // if Rank increased this level, update Rank label
-    if(updateRankForLevel)
-    {
-        [_levelOverPopup updateRankLabel];
-        
-        // reset Rank flag
-        updateRankForLevel = FALSE;
-    }
+    // update rank label
+    [_levelOverPopup updateRankLabel];
 }
 
 - (NSMutableArray *)getRandomActionTypes:(int)numStatuses
