@@ -110,19 +110,19 @@
 		<key>Plural</key>
 		<string>Bananas</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Band</string>
 		<key>Plural</key>
 		<string>Bands</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Bank</string>
 		<key>Plural</key>
 		<string>Banks</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Bag</string>
 		<key>Plural</key>
@@ -232,12 +232,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Cappucino</string>
-		<key>Plural</key>
-		<string>Cappucinos</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Car</string>
 		<key>Plural</key>
 		<string>Cars</string>
@@ -254,7 +248,7 @@
 		<key>Plural</key>
 		<string>Carrots</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Cellphone</string>
 		<key>Plural</key>
@@ -302,7 +296,7 @@
 		<key>Plural</key>
 		<string>Cups</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Dart</string>
 		<key>Plural</key>
@@ -320,7 +314,7 @@
 		<key>Plural</key>
 		<string>Diamonds</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Door</string>
 		<key>Plural</key>
@@ -392,7 +386,7 @@
 		<key>Plural</key>
 		<string>Files</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Flag</string>
 		<key>Plural</key>
@@ -698,7 +692,7 @@
 		<key>Plural</key>
 		<string>Spoons</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Noun</key>
 		<string>Stool</string>
 		<key>Plural</key>
@@ -751,12 +745,6 @@
 		<string>Torch</string>
 		<key>Plural</key>
 		<string>Torches</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Typewriter</string>
-		<key>Plural</key>
-		<string>Typewriters</string>
 	</dict>
 	<dict>
 		<key>Noun</key>

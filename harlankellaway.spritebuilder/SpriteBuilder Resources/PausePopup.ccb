@@ -184,7 +184,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_goto_game.png</string>
+									<string>SocialMediaGameAssets/button_continue.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -208,7 +208,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_goto_game.png</string>
+									<string>SocialMediaGameAssets/button_continue.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -227,7 +227,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>SocialMediaGameAssets/button_goto_game.png</string>
+									<string>SocialMediaGameAssets/button_continue.png</string>
 								</array>
 							</dict>
 							<dict>
