@@ -210,7 +210,7 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     NSNumber *rankNSNumber = [NSNumber numberWithInt:playerRank];
     
     // store change
-    [MGWU setObject:rankNSNumber forKey:GAME_STATE_PLAYER_RANK_KEY];
+    [MGWU setObject:rankNSNumber forKey:GAME_STATE_PLAYER_RANK_KEY]; // encrypted
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
@@ -221,7 +221,7 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     NSNumber *scoreNSNumber = [NSNumber numberWithInt:playerScore];
     
     // store change
-    [MGWU setObject:scoreNSNumber forKey:GAME_STATE_PLAYER_SCORE_KEY];
+    [MGWU setObject:scoreNSNumber forKey:GAME_STATE_PLAYER_SCORE_KEY]; // encrypted
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
@@ -283,12 +283,20 @@ static int const DEFAULT_PLAYER_SCORE = 0;
     [[NSUserDefaults standardUserDefaults]setObject:_streamSpeedDefault forKey:GAME_STATE_STREAM_SPEED_KEY];
     _streamSpeed = [_streamSpeedDefault doubleValue];
     
+    // trends to recirculate
+    [[NSUserDefaults standardUserDefaults]setObject:_trendsToRecirculateDefault forKey:GAME_STATE_TRENDS_TO_RECIRCULATE_KEY];
+    _trendsToRecirculate = _trendsToRecirculateDefault;
+    
+    // trends to favorite
+    [[NSUserDefaults standardUserDefaults]setObject:_trendsToFavoriteDefault forKey:GAME_STATE_TRENDS_TO_FAVORITE_KEY];
+    _trendsToFavorite = _trendsToFavoriteDefault;
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)clearGameState
 {
-    // NOTE: do not clear isTutorialComplete
+    // NOTE: do not clear isTutorialComplete or high score
     
     [self clearLevelSettings]; // level num, stream speed, trends
     
