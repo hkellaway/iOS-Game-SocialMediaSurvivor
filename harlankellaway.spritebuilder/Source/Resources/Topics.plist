@@ -268,12 +268,6 @@
 	</dict>
 	<dict>
 		<key>Noun</key>
-		<string>Chocolate</string>
-		<key>Plural</key>
-		<string>Chocolates</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
 		<string>Clock</string>
 		<key>Plural</key>
 		<string>Clocks</string>
@@ -343,12 +337,6 @@
 		<string>Drum</string>
 		<key>Plural</key>
 		<string>Drums</string>
-	</dict>
-	<dict>
-		<key>Noun</key>
-		<string>Egg</string>
-		<key>Plural</key>
-		<string>Eggs</string>
 	</dict>
 	<dict>
 		<key>Noun</key>

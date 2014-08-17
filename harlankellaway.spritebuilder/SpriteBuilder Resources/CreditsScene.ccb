@@ -14,7 +14,7 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -455,8 +455,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.1699999570846558</real>
-							<real>1.1699999570846558</real>
+							<real>1.1499999761581421</real>
+							<real>1.1499999761581421</real>
 							<true/>
 							<integer>0</integer>
 						</array>
@@ -486,6 +486,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
