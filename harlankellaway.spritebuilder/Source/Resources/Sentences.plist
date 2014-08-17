@@ -6,10 +6,10 @@
 	<string>Crazy abt this #NOUN!</string>
 	<string>Need a #NOUN RIGHT NOW</string>
 	<string>Where is my #NOUN?</string>
-	<string>I &lt;3 this #NOUN</string>
+	<string>Super &lt;3 this #NOUN</string>
 	<string>Can’t find ANY #PLURAL</string>
 	<string>WHOA #PLURAL are the COOLEST!</string>
-	<string>Check me out w this #NOUN! #selfie</string>
+	<string>Chk me out w this #NOUN! #selfie</string>
 	<string>I can’t even w these #PLURAL.</string>
 	<string>Free #PLURAL if you share this!</string>
 	<string>Which #NOUN is best?</string>
@@ -18,6 +18,8 @@
 	<string>Idc what u think: #PLURAL 4ever</string>
 	<string>Can’t get enough #PLURAL</string>
 	<string>#PLURAL. #amiright</string>
-	<string>Whats so cool about #PLURAL?</string>
+	<string>Whats so cool abt #PLURAL?</string>
+    <string>Life is like a #NOUN. #truth</string>
+    <string>@SMSurvivorGame IRL! #NOUN</string>
 </array>
 </plist>

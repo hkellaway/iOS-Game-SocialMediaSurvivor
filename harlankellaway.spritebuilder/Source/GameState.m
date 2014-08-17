@@ -162,7 +162,7 @@ static int const DEFAULT_PLAYER_SCORE = 0;
 
 - (void)setIsTutorialComplete:(BOOL)isTutorialComplete
 {
-    _isTutorialComplete = FALSE;
+    _isTutorialComplete = isTutorialComplete;
     NSString *isTutorialCompleteString = [NSString stringWithFormat:@"%i", isTutorialComplete];
     
     // store change
