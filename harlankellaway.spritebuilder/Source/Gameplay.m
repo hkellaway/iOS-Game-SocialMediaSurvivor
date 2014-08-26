@@ -179,8 +179,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
             
             NSString *statusText = [_sentenceGenerator getSentencWithTopic:randomTopic];
             status.statusText.string = statusText;
-            
-            CCLOG(@"Status: %@", statusText);
         }
         else if([randomActions[i] isEqualToString:[NSString stringWithFormat:@"%d", _actionTypeFavorite]])
         {
@@ -190,8 +188,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
             
             NSString *statusText = [_sentenceGenerator getSentencWithTopic:randomTopic];
             status.statusText.string = statusText;
-            
-            CCLOG(@"Status: %@", statusText);
         }
         else
         {
@@ -202,7 +198,7 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
             // don't use a topic thats to be recirculated/favorited as a random topic
             NSString *randomTopic = allTopics[0 + arc4random() % ([allTopics count])];
             
-            // TODO: still possible to use incorrect topic
+            // TODO: still possible, though highly unlikely, to use incorrect topic
             for (NSString *topic in usedTopics)
             {
                 if([randomTopic isEqualToString:topic])
@@ -213,8 +209,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
             
             NSString *statusText = [_sentenceGenerator getSentencWithTopic:randomTopic];
             status.statusText.string = statusText;
-            
-            CCLOG(@"Status: %@", statusText);
         }
         
         status.isAtScreenBottom = FALSE;
@@ -223,8 +217,6 @@ static const int TUTORIAL_INBOX_POPUP_AT_TIME = 8;
         status.gameplay = self;
         
         _statuses[i] = status;
-        
-//        status.position = ccp(0.5, 0.0);
         
         [_stream addChild:status];
     }

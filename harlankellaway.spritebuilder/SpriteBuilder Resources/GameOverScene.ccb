@@ -14,7 +14,7 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -1587,10 +1587,10 @@ Score!</string>
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.25</real>
+									<real>280</real>
 									<integer>0</integer>
 									<integer>2</integer>
-									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1671,7 +1671,7 @@ Score!</string>
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>115</real>
+									<real>168</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -1971,6 +1971,8 @@ Score!</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1999,7 +2001,7 @@ Score!</string>
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.44999998807907104</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -2023,8 +2025,8 @@ Score!</string>
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.60000002384185791</real>
+							<real>0.52999997138977051</real>
+							<real>0.56999999284744263</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -2054,8 +2056,6 @@ Score!</string>
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
