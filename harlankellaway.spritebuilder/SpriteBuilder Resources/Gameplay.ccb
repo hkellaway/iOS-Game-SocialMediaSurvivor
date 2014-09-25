@@ -2192,8 +2192,6 @@
 						<string>Inbox.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2498,6 +2496,8 @@
 				<string></string>
 				<key>displayName</key>
 				<string>PausePopup</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_pausePopup</string>
 				<key>memberVarAssignmentType</key>
@@ -2548,6 +2548,8 @@
 						<string>PausePopup.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

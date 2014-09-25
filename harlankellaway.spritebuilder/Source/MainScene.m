@@ -68,11 +68,4 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-- (void)displayMoreGames
-{
-    // display MGWU games
-    
-    [MGWU displayCrossPromo];
-}
-
 @end
